@@ -40,6 +40,50 @@ func run() {
 > This Tween with id 'intTween' goes from 0 to 10 over 5 seconds using an elastic easing. The current value will be printed with every update.
 .memoryReference(.Weak) will store this tween weakly, Ubergang won't increment the reference count. It's up to you to keep the Tween alive.
 
+### Start a numeric Tween repeating 5 times with yoyo
+
+```swift
+var tween: NumericTween<Int>?
+
+func run() {
+  tween = UTweenBuilder
+      .to( 10, current: { 0 }, update: { value in print("test int: \(value)") }, duration: 5, id: "intTween")
+      .ease(Elastic.easeOut)
+      .options(.Repeat(5), .Yoyo)
+      .memoryReference(.Weak)
+      .start()
+}
+```
+
+### Start a weak numeric Tween (Int)
+
+```swift
+@IBOutlet var testView: UIView!
+var tween: TransformTween?
+
+func run() {
+    //declare the target values
+    var to = testView.transform
+    to.ty = 200.0
+    
+    tween = UTweenBuilder
+        .to( to,
+            current: { [weak self] in
+                guard let welf = self else {
+                    return CGAffineTransform()
+                }
+                return welf.testView.transform },
+            update: { [weak self] value in
+                guard let welf = self else {
+                    return
+                }
+                welf.testView.transform = value },
+            duration: 2.5,
+            id: "testView")
+        .memoryReference(.Weak)
+    .start()
+```
+> This Tween with id 'testView' tweens a transform over 2.5 secondsg. The resulting tranform will be assigned to the testView with every update 'welf.testView.transform = value'.
 
 
 ## Todos
