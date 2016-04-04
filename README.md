@@ -55,7 +55,7 @@ func run() {
 }
 ```
 
-### Start a weak numeric Tween (Int)
+### Start a weak numeric Tween (CGAffineTransform)
 
 ```swift
 @IBOutlet var testView: UIView!
