@@ -1,0 +1,362 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F567BBF1CB1932200222006 /* TweenMemoryReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BAF1CB1932200222006 /* TweenMemoryReference.swift */; };
+		6F567BC01CB1932200222006 /* TweenOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB01CB1932200222006 /* TweenOptions.swift */; };
+		6F567BC11CB1932200222006 /* Cubic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB21CB1932200222006 /* Cubic.swift */; };
+		6F567BC21CB1932200222006 /* Ease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB31CB1932200222006 /* Ease.swift */; };
+		6F567BC31CB1932200222006 /* Elastic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB41CB1932200222006 /* Elastic.swift */; };
+		6F567BC41CB1932200222006 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB51CB1932200222006 /* Engine.swift */; };
+		6F567BC51CB1932200222006 /* UTween.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F567BB61CB1932200222006 /* UTween.h */; };
+		6F567BC61CB1932200222006 /* UTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB71CB1932200222006 /* UTween.swift */; };
+		6F567BC71CB1932200222006 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F567BB81CB1932200222006 /* Info.plist */; };
+		6F567BC81CB1932200222006 /* NumericTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB91CB1932200222006 /* NumericTween.swift */; };
+		6F567BC91CB1932200222006 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BBB1CB1932200222006 /* Numeric.swift */; };
+		6F567BCA1CB1932200222006 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BBC1CB1932200222006 /* Timer.swift */; };
+		6F567BCB1CB1932200222006 /* TransformTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BBD1CB1932200222006 /* TransformTween.swift */; };
+		6F567BCC1CB1932200222006 /* TweenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BBE1CB1932200222006 /* TweenManager.swift */; };
+		6F8A22DC1CB2DADC0035D78A /* UTweenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A22DB1CB2DADC0035D78A /* UTweenBuilder.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6F567BAF1CB1932200222006 /* TweenMemoryReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenMemoryReference.swift; sourceTree = "<group>"; };
+		6F567BB01CB1932200222006 /* TweenOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenOptions.swift; sourceTree = "<group>"; };
+		6F567BB21CB1932200222006 /* Cubic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cubic.swift; sourceTree = "<group>"; };
+		6F567BB31CB1932200222006 /* Ease.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ease.swift; sourceTree = "<group>"; };
+		6F567BB41CB1932200222006 /* Elastic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Elastic.swift; sourceTree = "<group>"; };
+		6F567BB51CB1932200222006 /* Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		6F567BB61CB1932200222006 /* UTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTween.h; sourceTree = "<group>"; };
+		6F567BB71CB1932200222006 /* UTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTween.swift; sourceTree = "<group>"; };
+		6F567BB81CB1932200222006 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F567BB91CB1932200222006 /* NumericTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTween.swift; sourceTree = "<group>"; };
+		6F567BBB1CB1932200222006 /* Numeric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
+		6F567BBC1CB1932200222006 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		6F567BBD1CB1932200222006 /* TransformTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformTween.swift; sourceTree = "<group>"; };
+		6F567BBE1CB1932200222006 /* TweenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenManager.swift; sourceTree = "<group>"; };
+		6F8A22DB1CB2DADC0035D78A /* UTweenBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenBuilder.swift; sourceTree = "<group>"; };
+		6FAD4FDB1C9DAD9800291A9D /* Ubergang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ubergang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6FAD4FD71C9DAD9800291A9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6F567BAD1CB1932200222006 /* Ubergang */ = {
+			isa = PBXGroup;
+			children = (
+				6F567BAE1CB1932200222006 /* Data */,
+				6F567BB11CB1932200222006 /* Ease */,
+				6F567BB51CB1932200222006 /* Engine.swift */,
+				6F567BB61CB1932200222006 /* UTween.h */,
+				6F567BB71CB1932200222006 /* UTween.swift */,
+				6F8A22DB1CB2DADC0035D78A /* UTweenBuilder.swift */,
+				6F567BB81CB1932200222006 /* Info.plist */,
+				6F567BB91CB1932200222006 /* NumericTween.swift */,
+				6F567BBA1CB1932200222006 /* Protocols */,
+				6F567BBC1CB1932200222006 /* Timer.swift */,
+				6F567BBD1CB1932200222006 /* TransformTween.swift */,
+				6F567BBE1CB1932200222006 /* TweenManager.swift */,
+			);
+			path = Ubergang;
+			sourceTree = "<group>";
+		};
+		6F567BAE1CB1932200222006 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6F567BAF1CB1932200222006 /* TweenMemoryReference.swift */,
+				6F567BB01CB1932200222006 /* TweenOptions.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6F567BB11CB1932200222006 /* Ease */ = {
+			isa = PBXGroup;
+			children = (
+				6F567BB21CB1932200222006 /* Cubic.swift */,
+				6F567BB31CB1932200222006 /* Ease.swift */,
+				6F567BB41CB1932200222006 /* Elastic.swift */,
+			);
+			path = Ease;
+			sourceTree = "<group>";
+		};
+		6F567BBA1CB1932200222006 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6F567BBB1CB1932200222006 /* Numeric.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		6FAD4FD11C9DAD9800291A9D = {
+			isa = PBXGroup;
+			children = (
+				6F567BAD1CB1932200222006 /* Ubergang */,
+				6FAD4FDC1C9DAD9800291A9D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6FAD4FDC1C9DAD9800291A9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6FAD4FDB1C9DAD9800291A9D /* Ubergang.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6FAD4FD81C9DAD9800291A9D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F567BC51CB1932200222006 /* UTween.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6FAD4FDA1C9DAD9800291A9D /* Ubergang */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FAD4FE31C9DAD9800291A9D /* Build configuration list for PBXNativeTarget "Ubergang" */;
+			buildPhases = (
+				6FAD4FD61C9DAD9800291A9D /* Sources */,
+				6FAD4FD71C9DAD9800291A9D /* Frameworks */,
+				6FAD4FD81C9DAD9800291A9D /* Headers */,
+				6FAD4FD91C9DAD9800291A9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ubergang;
+			productName = EasternYellowTween;
+			productReference = 6FAD4FDB1C9DAD9800291A9D /* Ubergang.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6FAD4FD21C9DAD9800291A9D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Robin Falko";
+				TargetAttributes = {
+					6FAD4FDA1C9DAD9800291A9D = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 6FAD4FD51C9DAD9800291A9D /* Build configuration list for PBXProject "Ubergang" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6FAD4FD11C9DAD9800291A9D;
+			productRefGroup = 6FAD4FDC1C9DAD9800291A9D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6FAD4FDA1C9DAD9800291A9D /* Ubergang */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6FAD4FD91C9DAD9800291A9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F567BC71CB1932200222006 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6FAD4FD61C9DAD9800291A9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F567BC01CB1932200222006 /* TweenOptions.swift in Sources */,
+				6F567BC41CB1932200222006 /* Engine.swift in Sources */,
+				6F567BC11CB1932200222006 /* Cubic.swift in Sources */,
+				6F567BCA1CB1932200222006 /* Timer.swift in Sources */,
+				6F8A22DC1CB2DADC0035D78A /* UTweenBuilder.swift in Sources */,
+				6F567BC81CB1932200222006 /* NumericTween.swift in Sources */,
+				6F567BC91CB1932200222006 /* Numeric.swift in Sources */,
+				6F567BCB1CB1932200222006 /* TransformTween.swift in Sources */,
+				6F567BBF1CB1932200222006 /* TweenMemoryReference.swift in Sources */,
+				6F567BC31CB1932200222006 /* Elastic.swift in Sources */,
+				6F567BC61CB1932200222006 /* UTween.swift in Sources */,
+				6F567BC21CB1932200222006 /* Ease.swift in Sources */,
+				6F567BCC1CB1932200222006 /* TweenManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6FAD4FE11C9DAD9800291A9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6FAD4FE21C9DAD9800291A9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6FAD4FE41C9DAD9800291A9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Ubergang/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robinfalko.mobile.Ubergang;
+				PRODUCT_NAME = Ubergang;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6FAD4FE51C9DAD9800291A9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Ubergang/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robinfalko.mobile.Ubergang;
+				PRODUCT_NAME = Ubergang;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6FAD4FD51C9DAD9800291A9D /* Build configuration list for PBXProject "Ubergang" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FAD4FE11C9DAD9800291A9D /* Debug */,
+				6FAD4FE21C9DAD9800291A9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FAD4FE31C9DAD9800291A9D /* Build configuration list for PBXNativeTarget "Ubergang" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FAD4FE41C9DAD9800291A9D /* Debug */,
+				6FAD4FE51C9DAD9800291A9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6FAD4FD21C9DAD9800291A9D /* Project object */;
+}
