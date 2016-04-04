@@ -8,6 +8,6 @@ Pod::Spec.new do |spec|
 
   spec.platform = :ios, "9.3"
   spec.requires_arc = true
-  spec.source = { git: "https://github.com/RobinFalko/Ubergang.git", tag: "v#{spec.version}", submodules: true }
-  spec.source_files = "Ubergang/Framework/Ubergang.framework"
+  spec.source = { git: "https://github.com/RobinFalko/Ubergang.git", :branch => "master", tag: "v#{spec.version}", submodules: true }
+  spec.source_files = "Ubergang/Framework/**"
 end
