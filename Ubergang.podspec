@@ -1,4 +1,4 @@
-Pod::Spec.new do |spec|
+Pod::Spec.new do |s|
   spec.name = "Ubergang"
   spec.version = "0.0.6"
   spec.summary = "A low level tweening engine."
@@ -8,6 +8,6 @@ Pod::Spec.new do |spec|
 
   spec.platform = :ios, "9.3"
   spec.requires_arc = true
-  spec.source = { git: "https://github.com/RobinFalko/Ubergang.git", :branch => "master", tag: "v#{spec.version}", submodules: true }
+  spec.source = { :git => "https://github.com/RobinFalko/Ubergang.git", :branch => "master", :tag => s.version }
   spec.source_files = "Ubergang/Framework/**"
 end
