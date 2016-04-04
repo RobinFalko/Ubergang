@@ -1,4 +1,4 @@
-# Ubergang (Übergang)
+# Ubergang (Übergang) - Early stage
 
 Ubergang is a low level tweening engine.
 
@@ -91,3 +91,5 @@ func run() {
 - [x] Tween sequences
 - [x] Logging and log levels
 - [x] Timeline controls
+
+Feedback is always appreciated
