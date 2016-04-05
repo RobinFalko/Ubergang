@@ -1,6 +1,6 @@
 # Ubergang (Übergang) - Early stage
 
-Ubergang is a low level tweening engine.
+Ubergang is a low level tweening engine for iOS.
 
 ## Features
 
