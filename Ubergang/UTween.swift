@@ -9,18 +9,12 @@
 import Foundation
 import UIKit
 
-public protocol Tweenable {
-    var id: String { get }
-    
-    func start() -> Self
-    func stop()
-    func pause()
-    func resume()
-    func kill()
-}
-
 protocol WeaklyLoopable {
     func loopWeakly()
+}
+
+public enum TweenDirection {
+    case Forward, Reverse
 }
 
 public class UTween<T> {
@@ -34,30 +28,33 @@ public class UTween<T> {
     var to: T!
     
     var current: (() -> T)!
-    var update: ((T) -> Void)!
+    var updateValue: ((T) -> Void)!
+    var updateValueAndProgress: ((T, Double) -> Void)!
     var complete: (() -> Void)?
     
     var tweenOptions: [TweenOptions]!
     
-    var duration = 1.0
-    var durationTotal = 1.0
+    var duration = 0.0
+    var durationTotal = 0.0
     
-    var ease: Easing = Cubic.easeOut
+    var ease: Easing = Ease.linear
     var easeValue = 0.0
     
     var absolute = false
     
     var time = 0.0
-    var direction = 1
     
     var memoryReference: TweenMemoryReference = .Strong
+    
+    var direction: TweenDirection = .Forward
     
     public var progress: Double {
         set {
             time = newValue * duration
             easeValue = ease(t: time, b: 0.0, c: 1.0, d: duration)
             
-            update?( compute(easeValue) )
+            updateValue?( compute(easeValue) )
+            updateValueAndProgress?( compute(easeValue), newValue )
         }
         get {
             return time / duration
@@ -101,11 +98,9 @@ public class UTween<T> {
     func checkForStop() {
         var willStop = false
         
-        if time >= duration {
-            time = duration
-            easeValue = ease(t: time, b: 0.0, c: 1.0, d: duration)
-            update?( compute(easeValue) )
-
+        if progress > 1.0 {
+            progress = 1.0
+            
             if tweenOptionYoyo() {
                 return
             }
@@ -116,10 +111,8 @@ public class UTween<T> {
             
             willStop = true
         }
-        else if time < 0 {
-            time = 0
-            easeValue = ease(t: time, b: 0.0, c: 1.0, d: duration)
-            update?( compute(easeValue) )
+        else if progress < 0 {
+            progress = 0
             
             if tweenOptionRepeat() {
                 return
@@ -131,16 +124,12 @@ public class UTween<T> {
         if willStop {
             stop()
             complete?()
-            
-            current = nil
-            update = nil
-            complete = nil
         }
     }
     
     func tweenOptionYoyo() -> Bool {
         if tweenOptions.contains(.Yoyo) {
-            direction = -1
+            direction = .Reverse
             return true
         }
         
@@ -157,7 +146,7 @@ public class UTween<T> {
                     tweenOptions.removeAtIndex(index!)
                     tweenOptions.insert(.Repeat(count - 1), atIndex: index!)
                     
-                    direction = 1
+                    direction = .Forward
                     time = 0
                     return true
                 }
@@ -176,12 +165,11 @@ public class UTween<T> {
     }
     
     func loop() {
+        
+        //time += Timer.delta * Double(direction == .Forward ? 1 : -1)
+        progress += Timer.delta / durationTotal * Double(direction == .Forward ? 1 : -1)
+        
         checkForStop()
-        
-        time += Timer.delta * Double(direction)
-        easeValue = ease(t: time, b: 0.0, c: 1.0, d: duration)
-        
-        update?( compute(easeValue) )
     }
 }
 
@@ -193,6 +181,14 @@ extension UTween: Tweenable, WeaklyLoopable {
     }
     
     public func start() -> Self {
+        switch direction {
+        case .Forward:
+            progress = 0.0
+            break
+        case .Reverse:
+            progress = 1.0
+            break
+        }
         
         unregisterLoop()
         registerLoop()
@@ -203,10 +199,24 @@ extension UTween: Tweenable, WeaklyLoopable {
     public func stop() {
         print("stop")
         unregisterLoop()
+        
+        switch direction {
+        case .Forward:
+            progress = 1.0
+            break
+        case .Reverse:
+            progress = 0.0
+            break
+        }
     }
     
     public func kill() {
-        stop()
+        unregisterLoop()
+        
+        current = nil
+        updateValue = nil
+        updateValueAndProgress = nil
+        complete = nil
         
         //TweenManager.unregisterTween(self)
         
@@ -220,11 +230,29 @@ extension UTween: Tweenable, WeaklyLoopable {
     public func resume() {
         registerLoop()
     }
+    
+    public func tweenDirection(direction: TweenDirection) -> Self {
+        self.direction = direction
+        
+        return self
+    }
 }
 
 
 extension UTween {
     public func to(to: T, current: () -> T, update: (T) -> Void) -> Self {
+        
+        self.to = to
+        
+        self.current(current)
+            .update(update)
+        
+        from = current()
+        
+        return self
+    }
+    
+    public func to(to: T, current: () -> T, update: (T, Double) -> Void) -> Self {
         
         self.to = to
         
@@ -244,6 +272,14 @@ extension UTween {
         return self
     }
     
+    public func to(to: T, current: () -> T, update: (T, Double) -> Void, complete: () -> Void) -> Self {
+        
+        self.to(to, current: current, update: update)
+            .complete(complete)
+        
+        return self
+    }
+    
     public func to(to: T, current: () -> T, update: (T) -> Void, duration: Double) -> Self {
         
         self.to(to, current: current, update: update)
@@ -252,7 +288,23 @@ extension UTween {
         return self
     }
     
+    public func to(to: T, current: () -> T, update: (T, Double) -> Void, duration: Double) -> Self {
+        
+        self.to(to, current: current, update: update)
+            .duration(duration)
+        
+        return self
+    }
+    
     public func to(to: T, current: () -> T, update: (T) -> Void, complete: () -> Void, duration: Double) -> Self {
+        
+        self.to(to, current: current, update: update, complete:  complete)
+            .duration(duration)
+        
+        return self
+    }
+    
+    public func to(to: T, current: () -> T, update: (T, Double) -> Void, complete: () -> Void, duration: Double) -> Self {
         
         self.to(to, current: current, update: update, complete:  complete)
             .duration(duration)
@@ -269,7 +321,14 @@ extension UTween {
     
     
     public func update(value: (T) -> Void) -> Self {
-        update = value
+        updateValue = value
+        
+        return self
+    }
+    
+    
+    public func update(value: (T, Double) -> Void) -> Self {
+        updateValueAndProgress = value
         
         return self
     }
@@ -284,6 +343,7 @@ extension UTween {
     
     public func duration(value: Double) -> Self {
         duration = value
+        durationTotal = value
         
         return self
     }

@@ -36,7 +36,7 @@ class ConstraintViewController: UIViewController {
         tween1 = UTweenBuilder
             .to( CGFloat(10.0),
                 current: { from },
-                update: { [weak self] value in
+                update: { [weak self] value, progress in
                     guard let welf = self else {
                         return
                     }
@@ -53,7 +53,7 @@ class ConstraintViewController: UIViewController {
         tween2 = UTweenBuilder
             .to( CGFloat(100.0),
                 current: { from },
-                update: { [weak self] value in
+                update: { [weak self] value, progress in
                     guard let welf = self else {
                         return
                     }
@@ -72,7 +72,7 @@ class ConstraintViewController: UIViewController {
         UTweenBuilder
             .to( CGFloat(50.0),
                 current: { from },
-                update: { [weak self] value in
+                update: { [weak self] value, progress in
                     guard let welf = self else {
                         return
                     }

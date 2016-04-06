@@ -31,6 +31,7 @@ class NumericViewController: UIViewController {
         let test2 = 0.0
         UTweenBuilder
             .to( 10.0, current: { test2 }, update: { value in print("test double: \(value)") }, duration: 5, id: "doubleTween")
+            .options(.Repeat(2), .Yoyo)
             .ease(Elastic.easeOut)
             .start()
     }

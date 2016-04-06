@@ -21,8 +21,13 @@ class TransformViewController: UIViewController {
     var tween2: TransformTween?
     var tween3: TransformTween?
     
-    //var tween: Tweenable?
-    @IBAction func start() {
+    var timeline: UTimeline<CGAffineTransform>?
+    
+    @IBOutlet var slider: UISlider!
+    
+    override func viewDidLoad() {
+        slider.value = 0.0
+        
         testView.transform.tx = 0
         testView.transform.ty = 0
         
@@ -36,18 +41,19 @@ class TransformViewController: UIViewController {
                         return CGAffineTransform()
                     }
                     return welf.testView.transform },
-                update: { [weak self] value in
+                update: { [weak self] (value, progress) in
                     guard let welf = self else {
                         return
                     }
                     
+                    //welf.slider.value = Float(progress)
                     welf.testView.transform = value },
-                duration: 2.5,
+                duration: 1,
                 id: "testView")
-            .options(.Repeat(0))
             .ease(Ease.linear)
             .memoryReference(.Weak)
-        .start()
+        
+        
         
         testView2.transform.tx = 0
         testView2.transform.ty = 0
@@ -58,10 +64,10 @@ class TransformViewController: UIViewController {
             .to( to,
                 current: { self.testView2.transform },
                 update: { value in self.testView2.transform = value },
-                duration: 0.5,
+                duration: 3,
                 id: "testView2")
-            .options(.Repeat(2), .Yoyo)
             .ease(Elastic.easeOut)
+        
         
         testView3.transform.tx = 0
         testView3.transform.ty = 0
@@ -72,17 +78,50 @@ class TransformViewController: UIViewController {
             .to( to,
                 current: { self.testView3.transform },
                 update: { value in self.testView3.transform = value },
-                duration: 2,
+                duration: 1,
                 id: "testView3")
-            .options(.Repeat(1))
+            .options(.Repeat(2), .Yoyo)
             .ease(Elastic.easeOut)
+        
+        timeline = UTimeline<CGAffineTransform>(id: "test")
+        timeline?.append(tween!)
+        timeline?.append(tween2!)
+        timeline?.insert(tween3!, at: 0.5)
+    }
+    
+    //var tween: Tweenable?
+    @IBAction func start() {
+        //timeline!.start()
+        
+        tween3!.start()
+    }
+    
+    
+    @IBAction func stop(sender: UIButton) {
+        timeline!.stop()
+    }
+    
+    
+    @IBAction func pause(sender: UIButton) {
+        timeline!.pause()
+    }
+    
+    
+    @IBAction func resume(sender: UIButton) {
+        timeline!.resume()
+    }
+    
+    @IBAction func reverse(sender: UIButton) {
+        sender.selected = !sender.selected
+        sender.setTitle("Forward", forState: .Normal)
+        sender.setTitle("Reverse", forState: .Selected)
+        
+        timeline!.tweenDirection(sender.selected ? .Reverse : .Forward)
     }
     
     
     @IBAction func timeSliderChanged(sender: UISlider) {
-        tween?.progress = Double(sender.value)
-        tween2?.progress = Double(sender.value)
-        tween3?.progress = Double(sender.value)
+        timeline?.progress = Double(sender.value)
     }
 }
 

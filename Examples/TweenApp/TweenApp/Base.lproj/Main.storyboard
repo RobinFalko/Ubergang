@@ -193,6 +193,13 @@
                                     <action selector="start" destination="BYZ-38-t0r" eventType="touchUpInside" id="qEM-ET-Wt9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7G-Fh-Cnt">
+                                <rect key="frame" x="84" y="86" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kbd-LX-hnx"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cwf-vy-0BA">
                                 <rect key="frame" x="330" y="144" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -217,26 +224,56 @@
                                     <action selector="timeSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="VVs-Bv-PqG"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTR-Bt-pe1">
+                                <rect key="frame" x="136" y="86" width="42" height="30"/>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1G8-jj-shb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVr-qb-tHu">
+                                <rect key="frame" x="198" y="86" width="56" height="30"/>
+                                <state key="normal" title="Forward"/>
+                                <connections>
+                                    <action selector="reverse:" destination="BYZ-38-t0r" eventType="touchUpInside" id="peJ-e0-gQb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6O-19-00v">
+                                <rect key="frame" x="130" y="111" width="55" height="30"/>
+                                <state key="normal" title="Resume"/>
+                                <connections>
+                                    <action selector="resume:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zXX-OS-GyA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="G6O-19-00v" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="47" id="0r3-kU-txd"/>
                             <constraint firstItem="Cwf-vy-0BA" firstAttribute="leading" secondItem="maW-5A-qag" secondAttribute="leading" constant="300" id="0uU-tQ-Vtk"/>
+                            <constraint firstItem="G7G-Fh-Cnt" firstAttribute="leading" secondItem="KsU-D8-gxB" secondAttribute="trailing" constant="20" id="2Fn-bd-nTG"/>
                             <constraint firstItem="Cwf-vy-0BA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-92" id="4aP-eF-Ytm"/>
                             <constraint firstItem="KsU-D8-gxB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="54r-dO-rnI"/>
                             <constraint firstAttribute="trailing" secondItem="Eiy-ak-hbc" secondAttribute="trailing" constant="20" id="5aJ-0T-aqc"/>
+                            <constraint firstItem="G6O-19-00v" firstAttribute="leading" secondItem="G7G-Fh-Cnt" secondAttribute="trailing" constant="14" id="8dV-TQ-A22"/>
                             <constraint firstItem="maW-5A-qag" firstAttribute="top" secondItem="Cwf-vy-0BA" secondAttribute="bottom" constant="-128" id="8f4-Z0-g7p"/>
+                            <constraint firstItem="eTR-Bt-pe1" firstAttribute="leading" secondItem="G7G-Fh-Cnt" secondAttribute="trailing" constant="20" id="9S2-uM-ylk"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EE9-TD-lQ5" secondAttribute="bottom" constant="120" id="LUo-P0-GM6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Eiy-ak-hbc" secondAttribute="bottom" constant="20" id="OO7-Cx-fpZ"/>
+                            <constraint firstItem="G7G-Fh-Cnt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="QDW-ha-nOE"/>
                             <constraint firstItem="EE9-TD-lQ5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="T6T-bn-03f"/>
+                            <constraint firstItem="eTR-Bt-pe1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="TKi-0z-YrJ"/>
                             <constraint firstAttribute="trailing" secondItem="EE9-TD-lQ5" secondAttribute="trailing" constant="30" id="UD5-tz-mza"/>
                             <constraint firstItem="KsU-D8-gxB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="86" id="UKK-q1-puK"/>
                             <constraint firstItem="Eiy-ak-hbc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Uzw-48-MBg"/>
+                            <constraint firstItem="xVr-qb-tHu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="gYu-WR-s13"/>
                             <constraint firstItem="EE9-TD-lQ5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="326" id="gui-pH-6gS"/>
+                            <constraint firstItem="xVr-qb-tHu" firstAttribute="leading" secondItem="eTR-Bt-pe1" secondAttribute="trailing" constant="20" id="hQL-Ep-f0h"/>
                             <constraint firstItem="Cwf-vy-0BA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="150" id="iAk-wA-1Ej"/>
                             <constraint firstItem="maW-5A-qag" firstAttribute="width" secondItem="Cwf-vy-0BA" secondAttribute="width" id="xSe-Zt-N6A"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="slider" destination="Eiy-ak-hbc" id="zrB-Ux-vTc"/>
                         <outlet property="testView" destination="maW-5A-qag" id="hL2-8n-8en"/>
                         <outlet property="testView2" destination="Cwf-vy-0BA" id="mNW-dE-4s3"/>
                         <outlet property="testView3" destination="EE9-TD-lQ5" id="gpp-yg-Ipm"/>
