@@ -15,7 +15,6 @@ public class UTimeline<T>: UTween<T> {
     }
     
     public func append(tween: Tweenable) {
-        tween.
         tweens.append(tween)
         
         startTimeForTweenId[tween.id] = duration
