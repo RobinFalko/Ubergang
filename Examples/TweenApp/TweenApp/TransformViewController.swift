@@ -91,9 +91,7 @@ class TransformViewController: UIViewController {
     
     //var tween: Tweenable?
     @IBAction func start() {
-        //timeline!.start()
-        
-        tween3!.start()
+        timeline!.start()
     }
     
     

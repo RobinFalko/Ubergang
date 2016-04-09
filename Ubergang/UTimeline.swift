@@ -7,14 +7,15 @@
 //
 
 public class UTimeline<T>: UTween<T> {
-    var tweens: [UTween<T>] = []
+    var tweens: [Tweenable] = []
     var startTimeForTweenId: [String : Double] = [:]
     
     public override init(id: String) {
         super.init(id: id)
     }
     
-    public func append(tween: UTween<T>) {
+    public func append(tween: Tweenable) {
+        tween.
         tweens.append(tween)
         
         startTimeForTweenId[tween.id] = duration
@@ -24,7 +25,7 @@ public class UTimeline<T>: UTween<T> {
         durationTotal = duration
     }
     
-    public func insert(tween: UTween<T>, at time: Double) {
+    public func insert(tween: Tweenable, at time: Double) {
         tweens.append(tween)
         
         startTimeForTweenId[tween.id] = time
@@ -40,7 +41,7 @@ public class UTimeline<T>: UTween<T> {
         set {
             time = newValue * duration
             
-            for tween in tweens {
+            for var tween in tweens {
                 let startTime = startTimeForTweenId[tween.id]!
                 
                 let mapped = mapValueInRange(time,

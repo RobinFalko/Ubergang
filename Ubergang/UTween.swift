@@ -34,7 +34,6 @@ public class UTween<T> {
     
     var tweenOptions: [TweenOptions]!
     
-    var duration = 0.0
     var durationTotal = 0.0
     
     var ease: Easing = Ease.linear
@@ -48,6 +47,7 @@ public class UTween<T> {
     
     var direction: TweenDirection = .Forward
     
+    public var duration = 0.0
     public var progress: Double {
         set {
             time = newValue * duration
@@ -147,7 +147,7 @@ public class UTween<T> {
                     tweenOptions.insert(.Repeat(count - 1), atIndex: index!)
                     
                     direction = .Forward
-                    time = 0
+                    progress = 0
                     return true
                 }
             default:
@@ -167,7 +167,7 @@ public class UTween<T> {
     func loop() {
         
         //time += Timer.delta * Double(direction == .Forward ? 1 : -1)
-        progress += Timer.delta / durationTotal * Double(direction == .Forward ? 1 : -1)
+        progress += Timer.delta / duration * Double(direction == .Forward ? 1 : -1)
         
         checkForStop()
     }
