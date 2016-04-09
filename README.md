@@ -10,6 +10,14 @@ Ubergang is a low level tweening engine for iOS.
 - [x] Repeat and Yoyo tween options
 - [x] Memory management for strong and weak tween object references
 
+## Installation
+
+### [CocoaPods](http://cocoapods.org)
+```ruby
+platform :ios, '8.2'
+use_frameworks!
+pod 'Ubergang', '~> 0.0.6'
+```
 
 ## Usage
 
