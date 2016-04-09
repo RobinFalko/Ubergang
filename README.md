@@ -88,8 +88,11 @@ func run() {
 
 ## Todos
 
-- [x] Tween sequences
+- [x] Timeline controls       ✓
+- [x] Tween sequences         ✓
 - [x] Logging and log levels
-- [x] Timeline controls
+- [x] Color tweens
+- [x] Remove Tween ID if not needed (e.g. if the Tween exists within a Timeline)
+- [x] Remove Timeline generic type
 
 Feedback is always appreciated
