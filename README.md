@@ -9,6 +9,7 @@ Ubergang is a low level tweening engine for iOS.
 - [x] Generic tween setup
 - [x] Repeat and Yoyo tween options
 - [x] Memory management for strong and weak tween object references
+- [x] Tween Timelines
 
 ## Installation
 
@@ -96,11 +97,9 @@ func run() {
 
 ## Todos
 
-- [x] Timeline controls       ✓
-- [x] Tween sequences         ✓
-- [x] Logging and log levels
-- [x] Color tweens
-- [x] Remove Tween ID if not needed (e.g. if the Tween exists within a Timeline)
-- [x] Remove Timeline generic type
+- Logging and log levels
+- Color tweens
+- Remove Tween ID if not needed (e.g. if the Tween exists within a Timeline)
+- Remove Timeline generic type
 
 Feedback is always appreciated
