@@ -15,15 +15,46 @@ class NumericViewController: UIViewController {
     
     @IBOutlet var progressBar: CircularProgressBar!
     
-    var timeline: UTimeline<CGFloat>?
+    var tweenControls: TweenControlsView!
+    
+    var timelineContainer: UTimeline!
+    var timeline: UTimeline!
     
     var labelTween: NumericTween<Int>?
     
     override func viewDidLoad() {
+        tweenControls = TweenControlsView.instanceFromNib()
+        tweenControls.onPlay = { [unowned self] in
+            self.timeline.start()
+            self.labelTween?.start()
+        }
+        tweenControls.onStop = { [unowned self] in
+            self.timeline.stop()
+            self.labelTween?.stop()
+        }
+        tweenControls.onPause = { [unowned self] in
+            self.timeline.pause()
+            self.labelTween?.pause()
+        }
+        tweenControls.onResume = { [unowned self] in
+            self.timeline.resume()
+            self.labelTween?.resume()
+        }
+        tweenControls.onProgress = { [unowned self] value in
+            self.timeline.progress = value
+        }
+        view.addSubview(tweenControls)
+        
         
         timeline = UTimeline(id: "timeline")
-        timeline?.memoryReference(.Weak)
-        timeline?.options(.Repeat(9))
+        timeline.memoryReference(.Weak)
+        timeline.options(.Repeat(9))
+        timeline.update { [unowned self] (progress) in
+            self.tweenControls.progress(progress)
+        }
+        timeline.complete {
+            print("complete")
+        }
         
         timeline?.append( UTweenBuilder
             .to( CGFloat(0.0),
@@ -33,8 +64,7 @@ class NumericViewController: UIViewController {
                 },
                 duration: 0.5,
                 id: "arcIncreaseTween")
-            .ease(Cubic.easeInOut)
-            .memoryReference(.Weak))
+            .ease(Cubic.easeInOut))
         
         timeline?.append( UTweenBuilder
             .to( CGFloat(0.0),
@@ -44,8 +74,25 @@ class NumericViewController: UIViewController {
                 },
                 duration: 0.5,
                 id: "arcDecreaseTween")
-            .ease(Cubic.easeInOut)
-            .memoryReference(.Weak))
+            .ease(Cubic.easeInOut))
+        
+        
+        timelineContainer = UTimeline(id: "timelineContainer")
+        timelineContainer.memoryReference(.Weak)
+        
+        timelineContainer.insert(timeline, at: 0)
+        
+        
+        labelTween = UTweenBuilder
+            .to( 0,
+                current: { 10 },
+                update: { [unowned self] (value: Int) in
+                    self.numberLabel.text = String(value)
+                },
+                duration: 10.0,
+                id: "countTween")
+            .ease(Ease.linear)
+            .memoryReference(.Weak)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -53,20 +100,6 @@ class NumericViewController: UIViewController {
     }
     
     @IBAction func start() {
-        labelTween = UTweenBuilder
-            .to( 0,
-                current: { 10 },
-                update: { [unowned self] value in
-                self.numberLabel.text = String(value)
-                },
-                duration: 10.0,
-                id: "countTween")
-            .ease(Ease.linear)
-            .memoryReference(.Weak)
-            .start()
-        
-        timeline?.options(.Repeat(9))
-        timeline?.start()
         
         
         /*let test2 = 0.0

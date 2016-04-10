@@ -14,7 +14,7 @@ class TitleIconTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: NSLayoutConstraint!
     @IBOutlet var iconView: NSLayoutConstraint!
     
-    var timeline: UTimeline<CGFloat>!
+    var timeline: UTimeline!
     
     override func awakeFromNib() {
         setup()
@@ -39,12 +39,8 @@ class TitleIconTableViewCell: UITableViewCell {
             UTweenBuilder
                 .to( titleLabel.constant,
                     current: { from },
-                    update: { [weak self] (value, progress) in
-                        guard let welf = self else {
-                            return
-                        }
-                        
-                        welf.titleLabel.constant = value
+                    update: { [unowned self] value in
+                        self.titleLabel.constant = value
                         },
                     duration: duration,
                     id: "titleLabelTween")
@@ -52,17 +48,12 @@ class TitleIconTableViewCell: UITableViewCell {
             , at: 0)
         
         
-        
         timeline.insert(
             UTweenBuilder
                 .to( iconView.constant,
                     current: { from },
-                    update: { [weak self] (value, progress) in
-                        guard let welf = self else {
-                            return
-                        }
-                        
-                        welf.iconView.constant = value },
+                    update: { [unowned self] value in
+                        self.iconView.constant = value },
                     duration: duration,
                     id: "iconViewTween")
                 .ease(Cubic.easeOut)

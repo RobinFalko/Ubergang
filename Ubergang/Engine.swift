@@ -48,11 +48,13 @@ public class Engine: NSObject {
     
     
     func register(loopable: WeaklyLoopable, forKey key: String) {
+        print("register loop \(key) weakly")
         mapTable.setObject(loopable as? AnyObject, forKey: key)
     }
     
     
     func unregister(key: String) {
+        print("unregister loop \(key)")
         mapTable.removeObjectForKey(key)
         
         closures.removeValueForKey(key)

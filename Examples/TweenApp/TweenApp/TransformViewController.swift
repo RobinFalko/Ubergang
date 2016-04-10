@@ -21,7 +21,7 @@ class TransformViewController: UIViewController {
     var tween2: TransformTween?
     var tween3: TransformTween?
     
-    var timeline: UTimeline<CGAffineTransform>?
+    var timeline: UTimeline?
     
     @IBOutlet var slider: UISlider!
     
@@ -83,7 +83,7 @@ class TransformViewController: UIViewController {
             .options(.Repeat(2), .Yoyo)
             .ease(Elastic.easeOut)
         
-        timeline = UTimeline<CGAffineTransform>(id: "test")
+        timeline = UTimeline(id: "test")
         timeline?.append(tween!)
         timeline?.append(tween2!)
         timeline?.insert(tween3!, at: 0.5)

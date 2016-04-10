@@ -33,34 +33,32 @@ class ConstraintViewController: UIViewController {
     //var tween: Tweenable?
     @IBAction func start() {
         var from = defaultRedViewHeight
-        tween1 = UTweenBuilder
+        tween1 = NumericTween<CGFloat>(id: "testView1")
             .to( CGFloat(10.0),
                 current: { from },
-                update: { [weak self] value, progress in
+                update: { [weak self] (value:CGFloat) in
                     guard let welf = self else {
                         return
                     }
                     
                     welf.redViewHeight.constant = value },
-                duration: 2.5,
-                id: "testView1")
+                duration: 2.5)
             .options(.Repeat(0))
             .ease(Ease.linear)
             .memoryReference(.Weak)
             .start()
         
         from = defaultGrayViewWidth
-        tween2 = UTweenBuilder
+        tween2 = NumericTween<CGFloat>(id: "testView2")
             .to( CGFloat(100.0),
                 current: { from },
-                update: { [weak self] value, progress in
+                update: { [weak self] (value:CGFloat) in
                     guard let welf = self else {
                         return
                     }
                     
                     welf.grayViewWidth.constant = value },
-                duration: 0.5,
-                id: "testView2")
+                duration: 0.5)
             .options(.Repeat(Int.max), .Yoyo)
             .ease(Cubic.easeInOut)
             .memoryReference(.Weak)
@@ -69,17 +67,16 @@ class ConstraintViewController: UIViewController {
         
         
         from = defaultGreenViewBottom
-        UTweenBuilder
+        NumericTween<CGFloat>(id: "testView3")
             .to( CGFloat(50.0),
                 current: { from },
-                update: { [weak self] value, progress in
+                update: { [weak self] (value:CGFloat) in
                     guard let welf = self else {
                         return
                     }
                     
                     welf.greenViewBottom.constant = value },
-                duration: 1.5,
-                id: "testView3")
+                duration: 1.5)
             .options(.Repeat(1))
             .ease(Elastic.easeOut)
             .start()

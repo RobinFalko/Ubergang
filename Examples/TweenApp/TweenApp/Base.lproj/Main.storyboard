@@ -951,13 +951,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjQ-Y5-AIl">
-                                <rect key="frame" x="20" y="84" width="34" height="30"/>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="start" destination="apf-QV-kRj" eventType="touchUpInside" id="wRk-ZZ-3gN"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fG6-Pq-wbo">
                                 <rect key="frame" x="230" y="230" width="140" height="140"/>
                                 <constraints>
@@ -965,7 +958,7 @@
                                     <constraint firstAttribute="height" constant="140" id="wmI-ER-lCb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="72"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Id3-i6-Acq" customClass="CircularProgressBar" customModule="TweenApp" customModuleProvider="target">
@@ -979,9 +972,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Id3-i6-Acq" firstAttribute="centerY" secondItem="7MJ-aM-bai" secondAttribute="centerY" id="7D9-T1-1xw"/>
-                            <constraint firstItem="bjQ-Y5-AIl" firstAttribute="top" secondItem="dTX-Fx-UYJ" secondAttribute="bottom" constant="20" id="O1M-qe-8EL"/>
                             <constraint firstItem="fG6-Pq-wbo" firstAttribute="centerX" secondItem="7MJ-aM-bai" secondAttribute="centerX" id="Ohe-Uu-URh"/>
-                            <constraint firstItem="bjQ-Y5-AIl" firstAttribute="leading" secondItem="7MJ-aM-bai" secondAttribute="leading" constant="20" id="Rkm-bT-o95"/>
                             <constraint firstItem="Id3-i6-Acq" firstAttribute="centerX" secondItem="7MJ-aM-bai" secondAttribute="centerX" id="YWS-kY-crD"/>
                             <constraint firstItem="fG6-Pq-wbo" firstAttribute="centerY" secondItem="7MJ-aM-bai" secondAttribute="centerY" id="id0-4H-nkK"/>
                         </constraints>
