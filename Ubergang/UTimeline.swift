@@ -23,12 +23,9 @@ public class UTimeline: UTweenBase {
         
         startTimeForTweenId[tween.id] = initialDuration
         
-        print("append tween: \(tween.id) - startTime: \(initialDuration) - durationTotal: \(tween.durationTotal)")
         initialDuration += tween.durationTotal
         
         computeConfigs()
-        
-        print("tween: \(id) - duration: \(duration) - durationTotal: \(durationTotal)")
     }
     
     public func insert(tween: UTweenBase, at time: Double) {
@@ -36,7 +33,6 @@ public class UTimeline: UTweenBase {
         
         tweens.append(tween)
         
-        print("insert tween: \(tween.id) - durationTotal: \(tween.durationTotal)")
         startTimeForTweenId[tween.id] = time
         
         for tween in tweens {
@@ -46,9 +42,6 @@ public class UTimeline: UTweenBase {
         initialDuration = duration
         
         computeConfigs()
-        
-        
-        print("tween: \(id) - duration: \(duration) - durationTotal: \(durationTotal)")
     }
     
     override public var progress: Double {
