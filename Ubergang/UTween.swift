@@ -22,36 +22,19 @@ public class UTween<T>: UTweenBase {
         super.init(id: id)
     }
     
-    override public var segmentProgress: Double {
+    override public var progress: Double {
         set {
             time = newValue * duration
             
             easeValue = ease(t: time, b: 0.0, c: 1.0, d: duration)
             
-            super.segmentProgress = newValue
-        }
-        get {
-            return time / duration
-        }
-    }
-    
-    override public var progress: Double {
-        set {
-//            if newValue != 1.0 {
-//                segmentProgress = newValue - floor( newValue )
-            //            }
-            
-            segmentProgress = newValue
-            
-            timeTotal = segmentProgress * durationTotal
-            //implement repeat count somehow
-            
             updateValue?( value: compute(easeValue) )
             updateValueAndProgress?( value: compute(easeValue), progress: newValue )
+            
             super.progress = newValue
         }
         get {
-            return timeTotal / durationTotal
+            return time / duration
         }
     }
     
@@ -60,8 +43,6 @@ public class UTween<T>: UTweenBase {
         
         return current()
     }
-    
-    
     
     //override Tweenable methods
     override public func kill() {
@@ -176,12 +157,12 @@ extension UTween {
     }
     
     public func duration(value: Double) -> Self {
+        initialDuration = value
         duration = value
         durationTotal = value
         
         return self
     }
-    
     
     public func ease(ease: Easing) -> Self {
         self.ease = ease

@@ -44,7 +44,7 @@ class ConstraintViewController: UIViewController {
                     welf.redViewHeight.constant = value },
                 duration: 2.5)
             .options(.Repeat(0))
-            .ease(Ease.linear)
+            .ease(Linear.ease)
             .memoryReference(.Weak)
             .start()
         

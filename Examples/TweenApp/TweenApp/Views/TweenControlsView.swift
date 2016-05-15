@@ -46,6 +46,8 @@ class TweenControlsView: UIView {
         playPauseButton.addTarget(self, action: #selector(TweenControlsView.playPauseResume), forControlEvents: .TouchUpInside)
         stopButton.addTarget(self, action: #selector(TweenControlsView.stop), forControlEvents: .TouchUpInside)
         directionButton.addTarget(self, action: #selector(TweenControlsView.toggleDirection), forControlEvents: .TouchUpInside)
+        
+        
         progressSlider.addTarget(self, action: #selector(TweenControlsView.sliderValueChanged(_:)), forControlEvents: .ValueChanged)
     }
     
@@ -93,6 +95,7 @@ class TweenControlsView: UIView {
     
     func stop() {
         playState = .Stopped
+        playPauseButton.selected = false
         
         onStop?()
     }
@@ -109,16 +112,19 @@ class TweenControlsView: UIView {
         switch currentDerection {
         case .Forward:
             currentDerection = .Reverse
+            directionButton.selected = true
             break
         case .Reverse:
             currentDerection = .Forward
+            directionButton.selected = false
             break
         }
         
         onDirection?(direction: currentDerection)
     }
     
-    func sliderValueChanged(sender: UISlider) {
+    func sliderValueChanged(sender: UISlider?) {
+        onProgress?(value: Double(sender!.value))
     }
     
     func progress(value: Double) {

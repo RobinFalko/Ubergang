@@ -68,7 +68,7 @@
                                                         <constraint firstAttribute="width" secondItem="xXf-bG-Su7" secondAttribute="height" multiplier="35:35" id="s61-aB-NwX"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transform" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q76-4A-8AU" userLabel="Title">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q76-4A-8AU" userLabel="Title">
                                                     <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="xvg-d6-icE"/>
@@ -90,7 +90,7 @@
                                         <connections>
                                             <outlet property="iconView" destination="ehF-a3-DYZ" id="LnL-eE-BPp"/>
                                             <outlet property="titleLabel" destination="gPL-Hk-gSz" id="1uH-MO-Pkb"/>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="pnr-In-Wll"/>
+                                            <segue destination="BSO-bP-UHS" kind="show" id="gyH-LJ-Tw3"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2cy-mk-qUP" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
@@ -106,7 +106,7 @@
                                                         <constraint firstAttribute="width" secondItem="nig-VI-KZK" secondAttribute="height" multiplier="35:35" id="dwb-8z-1xo"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Particle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gI0-g3-27s" userLabel="Title">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transform" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gI0-g3-27s" userLabel="Title">
                                                     <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="6fW-4m-UYY"/>
@@ -129,6 +129,7 @@
                                             <outlet property="iconView" destination="CiV-6g-LqJ" id="inR-4h-4WM"/>
                                             <outlet property="titleLabel" destination="Jbj-dy-I74" id="gR0-06-f7q"/>
                                             <segue destination="FW0-jg-8e8" kind="show" id="FN1-F1-bBW"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" trigger="accessoryAction" id="kJU-to-IJN"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="N01-LJ-12U" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
@@ -182,7 +183,7 @@
                                                         <constraint firstAttribute="width" secondItem="uGS-L6-ZAr" secondAttribute="height" multiplier="35:35" id="9eH-ED-h1h"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Constraints" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwd-3f-9NP" userLabel="Title">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timelines" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwd-3f-9NP" userLabel="Title">
                                                     <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="tGU-X3-mzO"/>
@@ -204,6 +205,7 @@
                                         <connections>
                                             <outlet property="iconView" destination="j6A-kj-0SE" id="rls-fd-Abd"/>
                                             <outlet property="titleLabel" destination="Klg-8T-yTr" id="Pbx-bA-kA5"/>
+                                            <segue destination="uAf-8d-eF3" kind="show" id="2hZ-f1-kUC"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rYb-oc-q7q" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
@@ -219,7 +221,7 @@
                                                         <constraint firstAttribute="width" secondItem="7XP-LX-UCT" secondAttribute="height" multiplier="35:35" id="fdB-ml-cQ5"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Constraints" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN2-SQ-Ifw" userLabel="Title">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Particle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN2-SQ-Ifw" userLabel="Title">
                                                     <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="pZ7-9E-pZr"/>
@@ -984,7 +986,109 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PU4-35-KRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="619" y="155"/>
+            <point key="canvasLocation" x="619" y="-545"/>
+        </scene>
+        <!--Progress View Controller-->
+        <scene sceneID="g6q-wj-aD2">
+            <objects>
+                <viewController id="BSO-bP-UHS" customClass="ProgressViewController" customModule="TweenApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W2Q-63-x6h"/>
+                        <viewControllerLayoutGuide type="bottom" id="AwF-rD-sHU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Jq-cr-dgx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LD-oc-eKu">
+                                <rect key="frame" x="276" y="114" width="47" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="zuc-5L-Vdu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="72"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIG-yr-0bk">
+                                <rect key="frame" x="40" y="346" width="150" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="pMJ-qt-8ny"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Repeat cycle:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHz-Op-2vM" userLabel="Repeat">
+                                <rect key="frame" x="194" y="346" width="66" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="8lZ-7s-vFj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KmD-W2-ZO8">
+                                <rect key="frame" x="40" y="359" width="150" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="Mnn-5c-Qgy"/>
+                                    <constraint firstAttribute="width" constant="150" id="doC-zV-0sT"/>
+                                </constraints>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ud-wx-vng">
+                                <rect key="frame" x="40" y="368" width="70" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="cwn-TB-LaN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jxx-22-dmE">
+                                <rect key="frame" x="40" y="381" width="150" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="ZgR-hu-M2f"/>
+                                    <constraint firstAttribute="width" constant="150" id="sYM-nr-a4v"/>
+                                </constraints>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSS-xF-HGU" userLabel="Repeat count">
+                                <rect key="frame" x="265" y="346" width="6.5" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="sMV-zR-VAp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8LD-oc-eKu" firstAttribute="top" secondItem="W2Q-63-x6h" secondAttribute="bottom" constant="50" id="5cS-tU-biA"/>
+                            <constraint firstItem="KmD-W2-ZO8" firstAttribute="top" secondItem="nIG-yr-0bk" secondAttribute="bottom" constant="-2" id="6Eu-rY-mIf"/>
+                            <constraint firstItem="UHz-Op-2vM" firstAttribute="bottom" secondItem="nIG-yr-0bk" secondAttribute="bottom" id="6yM-Ii-tkG"/>
+                            <constraint firstItem="jxx-22-dmE" firstAttribute="top" secondItem="KmD-W2-ZO8" secondAttribute="bottom" constant="20" id="D4W-ek-rBl"/>
+                            <constraint firstItem="jxx-22-dmE" firstAttribute="top" secondItem="3Ud-wx-vng" secondAttribute="bottom" constant="-2" id="FLp-2i-8xI"/>
+                            <constraint firstItem="NSS-xF-HGU" firstAttribute="leading" secondItem="UHz-Op-2vM" secondAttribute="trailing" constant="5" id="GFC-AA-Gwf"/>
+                            <constraint firstItem="3Ud-wx-vng" firstAttribute="leading" secondItem="jxx-22-dmE" secondAttribute="leading" id="GIP-6o-QLb"/>
+                            <constraint firstItem="KmD-W2-ZO8" firstAttribute="leading" secondItem="6Jq-cr-dgx" secondAttribute="leading" constant="40" id="JBR-EO-dRl"/>
+                            <constraint firstItem="UHz-Op-2vM" firstAttribute="leading" secondItem="nIG-yr-0bk" secondAttribute="trailing" constant="8" id="PSQ-uo-Eck"/>
+                            <constraint firstItem="8LD-oc-eKu" firstAttribute="centerX" secondItem="6Jq-cr-dgx" secondAttribute="centerX" id="RJt-O6-ZSX"/>
+                            <constraint firstItem="nIG-yr-0bk" firstAttribute="leading" secondItem="KmD-W2-ZO8" secondAttribute="leading" id="U1W-vA-3t7"/>
+                            <constraint firstItem="nIG-yr-0bk" firstAttribute="trailing" secondItem="KmD-W2-ZO8" secondAttribute="trailing" id="bXU-gb-szf"/>
+                            <constraint firstItem="KmD-W2-ZO8" firstAttribute="top" secondItem="8LD-oc-eKu" secondAttribute="bottom" constant="105" id="i1i-D3-VVv"/>
+                            <constraint firstItem="NSS-xF-HGU" firstAttribute="bottom" secondItem="UHz-Op-2vM" secondAttribute="bottom" id="ndq-T0-MNw"/>
+                            <constraint firstItem="jxx-22-dmE" firstAttribute="leading" secondItem="6Jq-cr-dgx" secondAttribute="leading" constant="40" id="ucm-SI-EON"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressBar" destination="KmD-W2-ZO8" id="pJR-uF-fOp"/>
+                        <outlet property="progressBarTotal" destination="jxx-22-dmE" id="7SJ-mZ-Kyg"/>
+                        <outlet property="repeatCycleLabel" destination="NSS-xF-HGU" id="eQR-xK-aRm"/>
+                        <outlet property="tweenLabel" destination="8LD-oc-eKu" id="V14-bJ-2sv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="scI-kx-Eba" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1411" y="-545"/>
         </scene>
         <!--Transform View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1097,7 +1201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="619" y="873"/>
+            <point key="canvasLocation" x="619" y="297"/>
         </scene>
         <!--Particle View Controller-->
         <scene sceneID="7P8-PH-ex3">
@@ -1149,7 +1253,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IPx-dK-pxu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="619" y="1573"/>
+            <point key="canvasLocation" x="619" y="1145"/>
+        </scene>
+        <!--Timelines View Controller-->
+        <scene sceneID="VF2-qU-yqw">
+            <objects>
+                <viewController id="uAf-8d-eF3" customClass="TimelinesViewController" customModule="TweenApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VKs-CJ-VtN"/>
+                        <viewControllerLayoutGuide type="bottom" id="AMk-B8-XMF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7tV-Ur-uSm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iU1-0E-0sH">
+                                <rect key="frame" x="230" y="230" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="Els-kA-WRO"/>
+                                    <constraint firstAttribute="width" constant="140" id="bGd-9B-Ns1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="72"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iO6-Jv-W2R" customClass="CircularProgressBar" customModule="TweenApp" customModuleProvider="target">
+                                <rect key="frame" x="240" y="240" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="72y-pQ-Ytn"/>
+                                    <constraint firstAttribute="width" secondItem="iO6-Jv-W2R" secondAttribute="height" multiplier="1:1" id="kmC-A8-4bH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iO6-Jv-W2R" firstAttribute="centerY" secondItem="7tV-Ur-uSm" secondAttribute="centerY" id="L3N-ec-obT"/>
+                            <constraint firstItem="iU1-0E-0sH" firstAttribute="centerX" secondItem="7tV-Ur-uSm" secondAttribute="centerX" id="U1j-NT-iE1"/>
+                            <constraint firstItem="iO6-Jv-W2R" firstAttribute="centerX" secondItem="7tV-Ur-uSm" secondAttribute="centerX" id="dAO-ej-bNU"/>
+                            <constraint firstItem="iO6-Jv-W2R" firstAttribute="width" secondItem="iO6-Jv-W2R" secondAttribute="height" multiplier="1:1" id="h59-25-SaO"/>
+                            <constraint firstItem="iU1-0E-0sH" firstAttribute="centerY" secondItem="7tV-Ur-uSm" secondAttribute="centerY" id="mdD-aU-xCz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="numberLabel" destination="iU1-0E-0sH" id="gQt-1e-CfQ"/>
+                        <outlet property="progressBar" destination="iO6-Jv-W2R" id="6et-3W-DRT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rLY-gn-mS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="619" y="1966"/>
         </scene>
         <!--Constraint View Controller-->
         <scene sceneID="AVe-yZ-Cbe">
@@ -1225,7 +1377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NW-x7-QWO" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1315" y="873"/>
+            <point key="canvasLocation" x="1423" y="297"/>
         </scene>
     </scenes>
     <resources>

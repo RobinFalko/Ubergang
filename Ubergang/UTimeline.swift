@@ -21,51 +21,62 @@ public class UTimeline: UTweenBase {
         
         tweens.append(tween)
         
-        startTimeForTweenId[tween.id] = duration
+        startTimeForTweenId[tween.id] = initialDuration
         
-        duration += tween.duration
+        print("append tween: \(tween.id) - startTime: \(initialDuration) - durationTotal: \(tween.durationTotal)")
+        initialDuration += tween.durationTotal
         
         computeConfigs()
+        
+        print("tween: \(id) - duration: \(duration) - durationTotal: \(durationTotal)")
     }
     
     public func insert(tween: UTweenBase, at time: Double) {
         tween.computeConfigs()
+        
         tweens.append(tween)
         
+        print("insert tween: \(tween.id) - durationTotal: \(tween.durationTotal)")
         startTimeForTweenId[tween.id] = time
         
         for tween in tweens {
-            duration = max(duration, time + tween.duration)
+            duration = max(duration, time + tween.durationTotal)
         }
         
+        initialDuration = duration
+        
         computeConfigs()
+        
+        
+        print("tween: \(id) - duration: \(duration) - durationTotal: \(durationTotal)")
     }
     
     override public var progress: Double {
         set {
             time = newValue * duration
-            timeTotal = newValue * durationTotal
             
             for tween in tweens {
-                let startTime = startTimeForTweenId[tween.id]!
+                
+                let repeatCount = tweenOptions.repeatCount()
+                var cycles = Double(repeatCount + 1)
+                
+                if tweenOptions.contains(.Yoyo) && !tweenOptions.containsRepeat() {
+                    cycles *= 2.0
+                }
+                
+                let startTime = startTimeForTweenId[tween.id]! / cycles
                 
                 let mapped = mapValueInRange(time,
-                                             fromLower: startTime, fromUpper: duration + startTime,
-                                             toLower: 0.0, toUpper: duration / tween.duration )
+                                             fromLower: startTime, fromUpper: startTime + tween.durationTotal / cycles,
+                                             toLower: 0.0, toUpper: 1.0)
                 
-//                if mapped > 1.0 && mapped < Double(currentRepeatCount + 1) {
-//                    mapped = mapped - floor(mapped)
-//                }
-                
-                tween.progress = clamp(mapped, lower: 0.0, upper: 1.0)
-                
-                //implement repeat count somehow
+                tween.progressTotal = clamp(mapped, lower: 0.0, upper: 1.0)
             }
             
             super.progress = newValue
         }
         get {
-            return timeTotal / durationTotal
+            return time / duration
         }
     }
     

@@ -13,7 +13,7 @@ class CircularProgressBar: UIView {
     
     var shapeLayer:CAShapeLayer!
     
-    var _startAngle: CGFloat = 0.0
+    var _startAngle: CGFloat = -90.0
     var startAngle: CGFloat {
         get {
             return _startAngle
@@ -23,7 +23,7 @@ class CircularProgressBar: UIView {
             update()
         }
     }
-    var _endAngle: CGFloat = 0.0
+    var _endAngle: CGFloat = -90.0
     var endAngle: CGFloat {
         get {
             return _endAngle

@@ -12,6 +12,8 @@
 		6F43AA6F1C70D2AA00B75FF2 /* ConstraintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F43AA6E1C70D2A900B75FF2 /* ConstraintViewController.swift */; };
 		6F4DC16C1CB9D23B00EF6B4D /* TweenControls.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F4DC16B1CB9D23B00EF6B4D /* TweenControls.xib */; };
 		6F4DC16E1CB9D54800EF6B4D /* TweenControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DC16D1CB9D54800EF6B4D /* TweenControlsView.swift */; };
+		6F4DEF7D1CC1736C00E464EB /* TimelinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEF7C1CC1736C00E464EB /* TimelinesViewController.swift */; };
+		6F4DEFAD1CE7693F00E464EB /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFAC1CE7693F00E464EB /* ProgressViewController.swift */; };
 		6F567BCE1CB1954300222006 /* Ubergang.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F567BCD1CB1954300222006 /* Ubergang.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6F8A232F1CB826FE0035D78A /* TitleIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A232E1CB826FE0035D78A /* TitleIconTableViewCell.swift */; };
 		6F8A23311CB839AC0035D78A /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A23301CB839AC0035D78A /* MainTableViewController.swift */; };
@@ -43,6 +45,8 @@
 		6F43AA6E1C70D2A900B75FF2 /* ConstraintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintViewController.swift; sourceTree = "<group>"; };
 		6F4DC16B1CB9D23B00EF6B4D /* TweenControls.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweenControls.xib; sourceTree = "<group>"; };
 		6F4DC16D1CB9D54800EF6B4D /* TweenControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenControlsView.swift; sourceTree = "<group>"; };
+		6F4DEF7C1CC1736C00E464EB /* TimelinesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinesViewController.swift; sourceTree = "<group>"; };
+		6F4DEFAC1CE7693F00E464EB /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		6F567BCD1CB1954300222006 /* Ubergang.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ubergang.framework; path = TweenApp/Ubergang.framework; sourceTree = "<group>"; };
 		6F8A232E1CB826FE0035D78A /* TitleIconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleIconTableViewCell.swift; sourceTree = "<group>"; };
 		6F8A23301CB839AC0035D78A /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -102,9 +106,11 @@
 				6F97C9731C3F026F00E4DB73 /* AppDelegate.swift */,
 				6F8A23301CB839AC0035D78A /* MainTableViewController.swift */,
 				6F43AA641C49858E00B75FF2 /* NumericViewController.swift */,
+				6F4DEFAC1CE7693F00E464EB /* ProgressViewController.swift */,
 				6F97C9751C3F026F00E4DB73 /* TransformViewController.swift */,
 				6F43AA661C49931200B75FF2 /* ParticleViewController.swift */,
 				6F43AA6E1C70D2A900B75FF2 /* ConstraintViewController.swift */,
+				6F4DEF7C1CC1736C00E464EB /* TimelinesViewController.swift */,
 				6F97C9771C3F026F00E4DB73 /* Main.storyboard */,
 				6F97C97A1C3F026F00E4DB73 /* Assets.xcassets */,
 				6F97C97C1C3F026F00E4DB73 /* LaunchScreen.storyboard */,
@@ -190,10 +196,12 @@
 				6F43AA651C49858E00B75FF2 /* NumericViewController.swift in Sources */,
 				6F97C9761C3F026F00E4DB73 /* TransformViewController.swift in Sources */,
 				6F43AA671C49931200B75FF2 /* ParticleViewController.swift in Sources */,
+				6F4DEFAD1CE7693F00E464EB /* ProgressViewController.swift in Sources */,
 				6F8A23331CB945C10035D78A /* CircularProgressBar.swift in Sources */,
 				6F8A232F1CB826FE0035D78A /* TitleIconTableViewCell.swift in Sources */,
 				6F43AA6F1C70D2AA00B75FF2 /* ConstraintViewController.swift in Sources */,
 				6F4DC16E1CB9D54800EF6B4D /* TweenControlsView.swift in Sources */,
+				6F4DEF7D1CC1736C00E464EB /* TimelinesViewController.swift in Sources */,
 				6F97C9741C3F026F00E4DB73 /* AppDelegate.swift in Sources */,
 				6F8A23311CB839AC0035D78A /* MainTableViewController.swift in Sources */,
 			);

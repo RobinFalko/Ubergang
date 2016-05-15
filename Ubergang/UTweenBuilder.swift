@@ -9,6 +9,7 @@
 import UIKit
 
 public class UTweenBuilder {
+    
     public class func to<T: Numeric>(to: T, current: () -> T, update: (value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)

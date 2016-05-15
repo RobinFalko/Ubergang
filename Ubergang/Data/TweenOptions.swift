@@ -14,6 +14,27 @@ public func ==(a: TweenOptions, b: TweenOptions) -> Bool {
     }
 }
 
+internal extension SequenceType where Generator.Element == TweenOptions {
+    func repeatCount() -> Int {
+        var repeatCount = 0
+        self.forEach {
+            if case .Repeat(let count) = $0 {
+                repeatCount = count
+            }
+        }
+        
+        return repeatCount
+    }
+    
+    func containsRepeat() -> Bool {
+        return repeatCount() > 0
+    }
+    
+    func containsYoyo() -> Bool {
+        return self.contains(.Yoyo)
+    }
+}
+
 public enum TweenOptions: Equatable {
     case Yoyo
     case Repeat(Int)

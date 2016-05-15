@@ -50,7 +50,7 @@ class TransformViewController: UIViewController {
                     welf.testView.transform = value },
                 duration: 1,
                 id: "testView")
-            .ease(Ease.linear)
+            .ease(Linear.ease)
             .memoryReference(.Weak)
         
         

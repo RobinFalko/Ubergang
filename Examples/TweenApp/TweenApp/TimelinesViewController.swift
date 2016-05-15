@@ -9,7 +9,7 @@
 import UIKit
 import Ubergang
 
-class NumericViewController: UIViewController {
+class TimelinesViewController: UIViewController {
     
     @IBOutlet var numberLabel: UILabel!
     
@@ -59,26 +59,24 @@ class NumericViewController: UIViewController {
         let tween = UTweenBuilder
             .to( CGFloat(-0.1),
                  current: { CGFloat(-360.0) },
-                 update: { [unowned self] (value: CGFloat) in
-                    print("value: \(value)")
+                 update: { [unowned self] (value: CGFloat, progress: Double) in
+                    print("update arcIncreaseTween: \(value) - progress: \(progress)")
                     self.progressBar.endAngle = value
                 },
-                 duration: 3,
+                 duration: 5,
                  id: "arcIncreaseTween")
-        tween.options(.Yoyo).ease(Cubic.easeInOut)
-        tween.start()
+            tween.ease(Cubic.easeInOut)
         
-        timeline?.append(
-            tween
-            )
+        timeline?.append(tween)
         
         timeline?.append( UTweenBuilder
-            .to( CGFloat(0.0),
+            .to( CGFloat(-0.1),
                 current: { CGFloat(-360.0) },
                 update: { [unowned self] (value: CGFloat) in
+                    print("update arcDecreaseTween: \(value)")
                     self.progressBar.startAngle = value
                 },
-                duration: 1.5,
+                duration: 5,
                 id: "arcDecreaseTween")
             .ease(Cubic.easeInOut))
         
@@ -98,6 +96,10 @@ class NumericViewController: UIViewController {
                 id: "countTween")
             .ease(Linear.ease)
             .memoryReference(.Weak), at: 0.0)
+        
+        timelineContainer.complete {
+            self.tweenControls.stop()
+        }
     }
 }
 

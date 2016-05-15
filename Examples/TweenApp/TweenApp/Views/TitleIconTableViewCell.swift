@@ -25,9 +25,9 @@ class TitleIconTableViewCell: UITableViewCell {
         timeline.start()
     }
     
-    func progress(value: Double) {
-        timeline.progress = value
-    }
+//    func progress(value: Double) {
+//        timeline.progress = value
+//    }
     
     func setup() {
         timeline = UTimeline(id: "timeline \(arc4random())")
@@ -35,20 +35,18 @@ class TitleIconTableViewCell: UITableViewCell {
         let from = CGFloat(120)
         let duration = 0.4
         
-        timeline.insert(
+        let labelTween: NumericTween<CGFloat> =
             UTweenBuilder
                 .to( titleLabel.constant,
                     current: { from },
                     update: { [unowned self] value in
                         self.titleLabel.constant = value
-                        },
+                    },
                     duration: duration,
                     id: "titleLabelTween")
                 .ease(Cubic.easeOut)
-            , at: 0)
         
-        
-        timeline.insert(
+        let dotTween: NumericTween<CGFloat> =
             UTweenBuilder
                 .to( iconView.constant,
                     current: { from },
@@ -57,7 +55,9 @@ class TitleIconTableViewCell: UITableViewCell {
                     duration: duration,
                     id: "iconViewTween")
                 .ease(Cubic.easeOut)
-            , at: 0)
+        
+        timeline.insert(labelTween, at: 0)
+        timeline.insert(dotTween, at: 0)
         
     }
 }
