@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TweenControlsView" customModule="TweenApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2fd-l4-4ya">
+                    <rect key="frame" x="171" y="17" width="332" height="31"/>
+                </slider>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKF-1J-4pl">
+                    <rect key="frame" x="16" y="0.0" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="bBW-ge-BiL"/>
+                        <constraint firstAttribute="width" constant="64" id="uuR-tb-OPq"/>
+                    </constraints>
+                    <state key="normal" title="Play" image="PlayIcon"/>
+                    <state key="selected" image="PauseIcon"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIH-sb-zxJ">
+                    <rect key="frame" x="93" y="0.0" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="BLO-Y1-msm"/>
+                        <constraint firstAttribute="width" constant="64" id="Myf-Pa-jMF"/>
+                    </constraints>
+                    <state key="normal" title="Stop" image="StopIcon"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADR-e7-XGA">
+                    <rect key="frame" x="520" y="0.0" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="5d7-cT-bs1"/>
+                        <constraint firstAttribute="height" constant="64" id="mB6-Tg-26f"/>
+                    </constraints>
+                    <state key="normal" title="Reverse"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ADR-e7-XGA" secondAttribute="trailing" constant="16" id="1Po-Dc-tVH"/>
+                <constraint firstItem="EKF-1J-4pl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="1bl-RG-8cA"/>
+                <constraint firstItem="HIH-sb-zxJ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7rB-DA-hyx"/>
+                <constraint firstItem="ADR-e7-XGA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8jC-bm-HoY"/>
+                <constraint firstItem="ADR-e7-XGA" firstAttribute="leading" secondItem="2fd-l4-4ya" secondAttribute="trailing" constant="19" id="aiS-Di-eOg"/>
+                <constraint firstItem="2fd-l4-4ya" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dvZ-aY-vKg"/>
+                <constraint firstItem="EKF-1J-4pl" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="her-oZ-ldr"/>
+                <constraint firstItem="2fd-l4-4ya" firstAttribute="leading" secondItem="HIH-sb-zxJ" secondAttribute="trailing" constant="16" id="lNg-Tu-QHX"/>
+                <constraint firstItem="HIH-sb-zxJ" firstAttribute="leading" secondItem="EKF-1J-4pl" secondAttribute="trailing" constant="13" id="nQO-n3-KzO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="directionButton" destination="ADR-e7-XGA" id="vcp-6E-jby"/>
+                <outlet property="playPauseButton" destination="EKF-1J-4pl" id="hOZ-0q-Tjh"/>
+                <outlet property="progressSlider" destination="2fd-l4-4ya" id="bwy-oV-bTw"/>
+                <outlet property="stopButton" destination="HIH-sb-zxJ" id="Fvp-aT-YAq"/>
+            </connections>
+            <point key="canvasLocation" x="348" y="41.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="PauseIcon" width="64" height="64"/>
+        <image name="PlayIcon" width="64" height="64"/>
+        <image name="StopIcon" width="64" height="64"/>
+    </resources>
+</document>

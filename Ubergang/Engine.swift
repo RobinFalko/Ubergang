@@ -23,9 +23,9 @@ public class Engine: NSObject {
     }()
     
     func start() {
-        let displayLink = CADisplayLink(target: self, selector: Selector("update"))
+        let displayLink = CADisplayLink(target: self, selector: #selector(Engine.update))
         displayLink.frameInterval = 1
-        displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
+        displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
     }
     
     func update() {

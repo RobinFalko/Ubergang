@@ -9,31 +9,33 @@
 import UIKit
 import Ubergang
 
-class NumericViewController: UIViewController {
+class NumericViewController: ExampleViewController {
     
-    override func viewDidAppear(animated: Bool) {
+    @IBOutlet var numberLabel: UILabel!
+    
+    var tween: NumericTween<Int>!
+    
+    override func viewDidLoad() {
+        
+        setupTween()
+        
+        addTweenControls(tween)
     }
     
-    var tween: NumericTween<Int>?
-    
-    @IBAction func start() {
-        let test = 0
-        
+    func setupTween() {
         tween = UTweenBuilder
-            .to( 10, current: { test }, update: { value in print("test int: \(value)") }, duration: 5, id: "intTween")
-            .ease(Elastic.easeOut)
-            .memoryReference(.Weak)
-            .start()
-        
-        print("test: \(test)")
-        
-        
-        let test2 = 0.0
-        UTweenBuilder
-            .to( 10.0, current: { test2 }, update: { value in print("test double: \(value)") }, duration: 5, id: "doubleTween")
-            .options(.Repeat(2), .Yoyo)
-            .ease(Elastic.easeOut)
-            .start()
+            .to( 100,
+                 current: { 0 },
+                 update: { [unowned self] (value:Int, progress: Double) in
+                    self.numberLabel.text = "\(value)"
+                    self.tweenControls.progress(progress)
+                },
+                 duration: 5,
+                 id: "tween")
+        tween.ease(Linear.ease)
+        tween.complete {
+            self.tweenControls.stop()
+        }
     }
 }
 

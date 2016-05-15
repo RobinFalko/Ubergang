@@ -9,7 +9,7 @@
 import UIKit
 import Ubergang
 
-class ConstraintViewController: UIViewController {
+class ConstraintViewController: ExampleViewController {
     
     @IBOutlet var redViewHeight: NSLayoutConstraint!
     
@@ -21,72 +21,73 @@ class ConstraintViewController: UIViewController {
     var defaultGrayViewWidth: CGFloat!
     var defaultGreenViewBottom: CGFloat!
     
-    var tween1: NumericTween<CGFloat>?
-    var tween2: NumericTween<CGFloat>?
+    var timeline: UTimeline!
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidLoad() {
         defaultRedViewHeight = redViewHeight.constant
         defaultGrayViewWidth = grayViewWidth.constant
         defaultGreenViewBottom = greenViewBottom.constant
+        
+        setupTween()
+        
+        addTweenControls(timeline)
     }
     
-    //var tween: Tweenable?
-    @IBAction func start() {
+    func setupTween() {
+        timeline = UTimeline(id: "particleTimeline")
+        timeline.updateTotal { [unowned self] (progressTotal) in
+            self.tweenControls.progress(progressTotal)
+        }
+        timeline.complete {
+            self.tweenControls.stop()
+        }
+        
         var from = defaultRedViewHeight
-        tween1 = UTweenBuilder
-            .to( CGFloat(10.0),
+        let tween1 = NumericTween<CGFloat>(id: "testView1")
+            .to( CGFloat(50.0),
                 current: { from },
-                update: { [weak self] value, progress in
+                update: { [weak self] (value:CGFloat) in
                     guard let welf = self else {
                         return
                     }
                     
                     welf.redViewHeight.constant = value },
-                duration: 2.5,
-                id: "testView1")
-            .options(.Repeat(0))
-            .ease(Ease.linear)
+                duration: 1)
+            .ease(Linear.ease)
             .memoryReference(.Weak)
-            .start()
         
         from = defaultGrayViewWidth
-        tween2 = UTweenBuilder
-            .to( CGFloat(100.0),
+        let tween2 = NumericTween<CGFloat>(id: "testView2")
+            .to( CGFloat(150.0),
                 current: { from },
-                update: { [weak self] value, progress in
+                update: { [weak self] (value:CGFloat) in
                     guard let welf = self else {
                         return
                     }
                     
                     welf.grayViewWidth.constant = value },
-                duration: 0.5,
-                id: "testView2")
-            .options(.Repeat(Int.max), .Yoyo)
-            .ease(Cubic.easeInOut)
+                duration: 3)
+            .ease(Elastic.easeOut)
             .memoryReference(.Weak)
-            .start()
-        
-        
         
         from = defaultGreenViewBottom
-        UTweenBuilder
-            .to( CGFloat(50.0),
+        let tween3 = NumericTween<CGFloat>(id: "testView3")
+            .to( CGFloat(100.0),
                 current: { from },
-                update: { [weak self] value, progress in
+                update: { [weak self] (value:CGFloat) in
                     guard let welf = self else {
                         return
                     }
                     
                     welf.greenViewBottom.constant = value },
-                duration: 1.5,
-                id: "testView3")
-            .options(.Repeat(1))
-            .ease(Elastic.easeOut)
-            .start()
-    }
-    
-    @IBAction func timeSliderChanged(sender: UISlider) {
-        tween1?.progress = Double(sender.value)
+                duration: 3)
+            .options(.Repeat(1), .Yoyo)
+            .ease(Cubic.easeInOut)
+            .memoryReference(.Weak)
+        
+        timeline.append(tween1)
+        timeline.append(tween2)
+        timeline.append(tween3)
     }
 }
 

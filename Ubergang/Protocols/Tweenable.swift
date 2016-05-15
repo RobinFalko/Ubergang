@@ -8,6 +8,8 @@
 
 public protocol Tweenable {
     var id: String { get }
+    var duration: Double { get set }
+    var progress: Double { get set }
     
     func start() -> Self
     func stop()
