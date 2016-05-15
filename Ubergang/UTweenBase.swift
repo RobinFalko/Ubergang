@@ -103,7 +103,7 @@ public class UTweenBase {
     }
     
     func loop() {
-        progressTotal += Timer.delta / durationTotal
+        progressTotal += Timer.delta / durationTotal * Double(direction == .Forward ? 1 : -1)
             
             //* Double(direction == .Forward ? 1 : -1)
         

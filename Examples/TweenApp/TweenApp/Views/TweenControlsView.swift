@@ -49,6 +49,8 @@ class TweenControlsView: UIView {
         
         
         progressSlider.addTarget(self, action: #selector(TweenControlsView.sliderValueChanged(_:)), forControlEvents: .ValueChanged)
+        
+        progress(0)
     }
     
     override func didMoveToSuperview() {
@@ -129,6 +131,5 @@ class TweenControlsView: UIView {
     
     func progress(value: Double) {
         progressSlider.value = Float(value)
-//        onProgress?(value: value)
     }
 }

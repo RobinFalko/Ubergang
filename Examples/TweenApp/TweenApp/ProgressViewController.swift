@@ -9,9 +9,7 @@
 import UIKit
 import Ubergang
 
-class ProgressViewController: UIViewController {
-    
-    var tweenControls: TweenControlsView!
+class ProgressViewController: ExampleViewController {
     
     var tween: NumericTween<Double>!
     
@@ -28,28 +26,12 @@ class ProgressViewController: UIViewController {
         self.progressBar.progress = 0.0
         self.progressBarTotal.progress = 0.0
         
-        tweenControls = TweenControlsView.instanceFromNib()
-        tweenControls.progress(0.0)
-        tweenControls.onPlay = { [unowned self] in
-            self.tween.start()
-        }
-        tweenControls.onStop = { [unowned self] in
-            self.tween.stop()
-        }
-        tweenControls.onPause = { [unowned self] in
-            self.tween.pause()
-        }
-        tweenControls.onResume = { [unowned self] in
-            self.tween.resume()
-        }
-        tweenControls.onDirection = { [unowned self] direction in
-        }
-        tweenControls.onProgress = { [unowned self] (value:Double) in
-            self.tween.progressTotal = value
-        }
-        view.addSubview(tweenControls)
+        setupTween()
         
-        
+        addTweenControlls(tween)
+    }
+    
+    func setupTween() {
         tween = UTweenBuilder
             .to( 10.0,
                  current: { 0.0 },

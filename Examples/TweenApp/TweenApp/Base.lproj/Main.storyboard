@@ -963,25 +963,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Id3-i6-Acq" customClass="CircularProgressBar" customModule="TweenApp" customModuleProvider="target">
-                                <rect key="frame" x="240" y="240" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Id3-i6-Acq" secondAttribute="height" multiplier="1:1" id="1vX-Zx-h3G"/>
-                                    <constraint firstAttribute="height" constant="120" id="e8Y-Jw-PD7"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Id3-i6-Acq" firstAttribute="centerY" secondItem="7MJ-aM-bai" secondAttribute="centerY" id="7D9-T1-1xw"/>
                             <constraint firstItem="fG6-Pq-wbo" firstAttribute="centerX" secondItem="7MJ-aM-bai" secondAttribute="centerX" id="Ohe-Uu-URh"/>
-                            <constraint firstItem="Id3-i6-Acq" firstAttribute="centerX" secondItem="7MJ-aM-bai" secondAttribute="centerX" id="YWS-kY-crD"/>
                             <constraint firstItem="fG6-Pq-wbo" firstAttribute="centerY" secondItem="7MJ-aM-bai" secondAttribute="centerY" id="id0-4H-nkK"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="numberLabel" destination="fG6-Pq-wbo" id="q9H-Hx-EWd"/>
-                        <outlet property="progressBar" destination="Id3-i6-Acq" id="liX-SM-aZ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PU4-35-KRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
