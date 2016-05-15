@@ -28,7 +28,7 @@ class ProgressViewController: ExampleViewController {
         
         setupTween()
         
-        addTweenControlls(tween)
+        addTweenControls(tween)
     }
     
     func setupTween() {

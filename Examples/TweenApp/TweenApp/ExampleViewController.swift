@@ -13,7 +13,7 @@ class ExampleViewController: UIViewController {
     
     var tweenControls: TweenControlsView!
     
-    func addTweenControlls(tween: UTweenBase) {
+    func addTweenControls(tween: UTweenBase) {
         tweenControls = TweenControlsView.instanceFromNib()
         tweenControls.progress(0.0)
         tweenControls.onPlay = {

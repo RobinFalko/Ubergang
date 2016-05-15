@@ -19,7 +19,7 @@ class NumericViewController: ExampleViewController {
         
         setupTween()
         
-        addTweenControlls(tween)
+        addTweenControls(tween)
     }
     
     func setupTween() {

@@ -31,6 +31,11 @@ public class TransformTween: UTween<CGAffineTransform> {
         currentValue.tx = from.tx + (to.tx - from.tx) * CGFloat(value)
         currentValue.ty = from.ty + (to.ty - from.ty) * CGFloat(value)
         
+        currentValue.a = from.a + (to.a - from.a) * CGFloat(value)
+        currentValue.b = from.b + (to.b - from.b) * CGFloat(value)
+        currentValue.c = from.c + (to.c - from.c) * CGFloat(value)
+        currentValue.d = from.d + (to.d - from.d) * CGFloat(value)
+        
         return currentValue
     }
 }
