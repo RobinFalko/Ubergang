@@ -47,12 +47,8 @@ class ConstraintViewController: ExampleViewController {
         let tween1 = NumericTween<CGFloat>(id: "testView1")
             .to( CGFloat(50.0),
                 current: { from },
-                update: { [weak self] (value:CGFloat) in
-                    guard let welf = self else {
-                        return
-                    }
-                    
-                    welf.redViewHeight.constant = value },
+                update: { [unowned self] (value:CGFloat) in
+                    self.redViewHeight.constant = value },
                 duration: 1)
             .ease(Linear.ease)
         
@@ -60,12 +56,8 @@ class ConstraintViewController: ExampleViewController {
         let tween2 = NumericTween<CGFloat>(id: "testView2")
             .to( CGFloat(150.0),
                 current: { from },
-                update: { [weak self] (value:CGFloat) in
-                    guard let welf = self else {
-                        return
-                    }
-                    
-                    welf.grayViewWidth.constant = value },
+                update: { [unowned self] (value:CGFloat) in
+                    self.grayViewWidth.constant = value },
                 duration: 3)
             .ease(Elastic.easeOut)
         
@@ -73,12 +65,8 @@ class ConstraintViewController: ExampleViewController {
         let tween3 = NumericTween<CGFloat>(id: "testView3")
             .to( CGFloat(100.0),
                 current: { from },
-                update: { [weak self] (value:CGFloat) in
-                    guard let welf = self else {
-                        return
-                    }
-                    
-                    welf.greenViewBottom.constant = value },
+                update: { [unowned self] (value:CGFloat) in
+                    self.greenViewBottom.constant = value },
                 duration: 3)
             .options(.Repeat(1), .Yoyo)
             .ease(Cubic.easeInOut)

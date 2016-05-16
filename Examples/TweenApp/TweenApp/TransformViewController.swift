@@ -35,17 +35,10 @@ class TransformViewController: ExampleViewController {
         
         tween = UTweenBuilder
             .to( to,
-                current: { [weak self] in
-                    guard let welf = self else {
-                        return CGAffineTransformIdentity
-                    }
-                    return welf.testView.transform },
-                update: { [weak self] (value, progress) in
-                    guard let welf = self else {
-                        return
-                    }
-                    
-                    welf.testView.transform = value },
+                current: { [unowned self] in
+                    self.testView.transform },
+                update: { [unowned self] (value, progress) in
+                    self.testView.transform = value },
                 duration: 4,
                 id: "testViewTween")
             .ease(Elastic.easeOut)
