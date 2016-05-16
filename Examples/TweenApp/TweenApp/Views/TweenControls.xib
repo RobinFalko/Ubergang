@@ -46,7 +46,7 @@
                     <state key="normal" title="Stop" image="StopIcon"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="tintNormal">
-                            <color key="value" red="0.0" green="0.58039215686274503" blue="0.81960784313725488" alpha="0.78737256205673756" colorSpace="calibratedRGB"/>
+                            <color key="value" red="0.0" green="0.58039215686274503" blue="0.81960784313725488" alpha="0.75" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
