@@ -47,8 +47,10 @@ class TweenControlsView: UIView {
         stopButton.addTarget(self, action: #selector(TweenControlsView.stop), forControlEvents: .TouchUpInside)
         directionButton.addTarget(self, action: #selector(TweenControlsView.toggleDirection), forControlEvents: .TouchUpInside)
         
-        
         progressSlider.addTarget(self, action: #selector(TweenControlsView.sliderValueChanged(_:)), forControlEvents: .ValueChanged)
+        
+        progressSlider.setThumbImage(UIImage(named: "SliderThumb"), forState: .Normal)
+        progressSlider.setThumbImage(UIImage(named: "SliderThumb"), forState: .Highlighted)
         
         progress(0)
     }

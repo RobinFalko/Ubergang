@@ -41,6 +41,10 @@ public class UTweenBase {
     var initialRepeatCount: Int = 0
     var currentRepeatCycle: Int = 0
     
+    public var isPlaying: Bool {
+        return Engine.instance.contains(id)
+    }
+    
     public var progress: Double {
         get { return 0.0 }
         set {
@@ -104,60 +108,23 @@ public class UTweenBase {
     
     func loop() {
         progressTotal += Timer.delta / durationTotal * Double(direction == .Forward ? 1 : -1)
-            
-            //* Double(direction == .Forward ? 1 : -1)
-        
-//        print("id: \(id) - durationTotal: \(durationTotal) - duration: \(duration) - progress: \(progress) - progressTotal: \(progressTotal)")
         
         checkForStop()
     }
     
     func checkForStop() {
-        
-        if progressTotal >= 1.0 {
+        if progressTotal > 1.0 {
             progressTotal = 1.0
             stop()
             complete?()
         }
         
-        if progressTotal <= 0.0 {
+        if progressTotal < 0.0 {
             progressTotal = 0.0
             stop()
             complete?()
         }
     }
-    
-//    func tweenOptionYoyo() -> Bool {
-//        print("yoyo tweenOptions: \(tweenOptions)")
-//        if tweenOptions.contains(.Yoyo) {
-//            direction = .Reverse
-//            return true
-//        }
-//        
-//        return false
-//    }
-    
-//    func tweenOptionRepeat() -> Bool {
-//        for tweenOption in tweenOptions {
-//            switch tweenOption {
-//            case .Repeat(let count):
-//                
-//                if count > 0 {
-//                    let index = tweenOptions.indexOf(.Repeat(count))
-//                    tweenOptions.removeAtIndex(index!)
-//                    tweenOptions.insert(.Repeat(count - 1), atIndex: index!)
-//                    
-//                    direction = .Forward
-//                    progress = 0
-//                    return true
-//                }
-//            default:
-//                return false
-//            }
-//        }
-//        
-//        return false
-//    }
     
     func computeConfigs() {
         durationTotal = initialDuration
@@ -171,29 +138,6 @@ public class UTweenBase {
            let cycles = tweenOptions.repeatCount() + 1
             duration = initialDuration / Double(cycles)
         }
-        
-//        for value in tweenOptions {
-//            
-//            switch value {
-//            case .Yoyo:
-//                //compute duration
-//                print("yoyo duration: \(duration)")
-//                durationTotal *= 2.0
-//                break
-//            case .Repeat(let previousCount):
-//                let count = initialRepeatCount
-//                
-//                //reset repeat count
-//                let index = tweenOptions.indexOf(.Repeat(previousCount))
-//                tweenOptions.removeAtIndex(index!)
-//                tweenOptions.insert(.Repeat(count), atIndex: index!)
-//                
-//                //compute duration
-//                let durationMultiplier = count == Int.max ? Int.max : count + 1
-//                durationTotal = duration * Double(durationMultiplier)
-//                break
-//            }
-//        }
     }
     
     //Declared in protocol Tweenable
@@ -260,6 +204,11 @@ extension UTweenBase: WeaklyLoopable {
 
 extension UTweenBase: Tweenable {
     public func start() -> Self {
+        guard !isPlaying else {
+            print("tween: \(id) already playing")
+            return self
+        }
+        
         print("start: \(id) with direction: \(direction)")
         switch direction {
         case .Forward:
