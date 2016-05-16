@@ -31,6 +31,10 @@ class ProgressViewController: ExampleViewController {
         addTweenControls(tween)
     }
     
+    deinit {
+        print("deinit controller")
+    }
+    
     func setupTween() {
         tween = UTweenBuilder
             .to( 10.0,
@@ -48,10 +52,10 @@ class ProgressViewController: ExampleViewController {
             self.tweenControls.progress(progressTotal)
             self.progressBarTotal.progress = Float(progressTotal)
         }
-        tween.repeatCycleChange { cycle in
+        tween.repeatCycleChange { [unowned self] cycle in
             self.repeatCycleLabel.text = "\(cycle)"
         }
-        tween.complete {
+        tween.complete { [unowned self] in
             self.tweenControls.stop()
         }
     }

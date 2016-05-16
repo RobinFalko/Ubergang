@@ -35,10 +35,11 @@ class ConstraintViewController: ExampleViewController {
     
     func setupTween() {
         timeline = UTimeline(id: "particleTimeline")
+        timeline.memoryReference(.Weak)
         timeline.updateTotal { [unowned self] (progressTotal) in
             self.tweenControls.progress(progressTotal)
         }
-        timeline.complete {
+        timeline.complete { [unowned self] in
             self.tweenControls.stop()
         }
         
@@ -54,7 +55,6 @@ class ConstraintViewController: ExampleViewController {
                     welf.redViewHeight.constant = value },
                 duration: 1)
             .ease(Linear.ease)
-            .memoryReference(.Weak)
         
         from = defaultGrayViewWidth
         let tween2 = NumericTween<CGFloat>(id: "testView2")
@@ -68,7 +68,6 @@ class ConstraintViewController: ExampleViewController {
                     welf.grayViewWidth.constant = value },
                 duration: 3)
             .ease(Elastic.easeOut)
-            .memoryReference(.Weak)
         
         from = defaultGreenViewBottom
         let tween3 = NumericTween<CGFloat>(id: "testView3")
@@ -83,7 +82,6 @@ class ConstraintViewController: ExampleViewController {
                 duration: 3)
             .options(.Repeat(1), .Yoyo)
             .ease(Cubic.easeInOut)
-            .memoryReference(.Weak)
         
         timeline.append(tween1)
         timeline.append(tween2)

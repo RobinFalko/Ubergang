@@ -23,6 +23,10 @@ class TransformViewController: ExampleViewController {
         addTweenControls(tween)
     }
     
+    deinit {
+        print("deinit controller")
+    }
+    
     func setupTween() {
         testView.transform = CGAffineTransformIdentity
         
@@ -50,7 +54,7 @@ class TransformViewController: ExampleViewController {
         tween.updateTotal { [unowned self] (progressTotal) in
             self.tweenControls.progress(progressTotal)
         }
-        tween.complete {
+        tween.complete { [unowned self] in
             self.tweenControls.stop()
         }
     }

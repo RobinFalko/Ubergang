@@ -12,16 +12,12 @@ import UIKit
 public class TransformTween: UTween<CGAffineTransform> {
     
     public convenience init() {
-        let id = "\(__FILE__)_\(random() * 1000)_update"
+        let id = "\(#file)_\(random() * 1000)_update"
         self.init(id: id)
     }
     
     public override init(id: String) {
         super.init(id: id)
-    }
-    
-    override func loop() {
-        super.loop()
     }
     
     override func compute(value: Double) -> CGAffineTransform {
