@@ -99,6 +99,5 @@ func run() {
 
 - Logging and log levels
 - Color tweens
-- Remove Tween ID if not needed (e.g. if the Tween exists within a Timeline)
 
 Feedback is always appreciated
