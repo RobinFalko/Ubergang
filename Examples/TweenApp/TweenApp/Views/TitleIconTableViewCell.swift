@@ -37,10 +37,6 @@ class TitleIconTableViewCell: UITableViewCell {
         timeline.start()
     }
     
-//    func progress(value: Double) {
-//        timeline.progress = value
-//    }
-    
     func setup() {
         timeline = UTimeline(id: "timeline \(arc4random())")
         
@@ -70,6 +66,5 @@ class TitleIconTableViewCell: UITableViewCell {
         
         timeline.insert(labelTween, at: 0)
         timeline.insert(dotTween, at: 0)
-        
     }
 }
