@@ -1,4 +1,4 @@
-# Ubergang (Übergang) - Version 0.0.8
+# Ubergang (Übergang) - Version 0.2.0
 
 Ubergang is a low level tweening engine for iOS.
 
@@ -17,7 +17,7 @@ Ubergang is a low level tweening engine for iOS.
 ```ruby
 platform :ios, '8.2'
 use_frameworks!
-pod 'Ubergang', '~> 0.0.8'
+pod 'Ubergang', '~> 0.2.0'
 ```
 
 ## Usage
