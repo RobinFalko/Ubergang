@@ -35,7 +35,7 @@ class ParticleViewController: ExampleViewController {
         timeline.updateTotal { [unowned self] (progressTotal) in
             self.tweenControls.progress(progressTotal)
         }
-        timeline.complete {
+        timeline.complete { [unowned self] in
             self.tweenControls.stop()
         }
         
@@ -52,6 +52,7 @@ class ParticleViewController: ExampleViewController {
                 .ease(Cubic.easeInOut)
                 .options(.Yoyo)
             timeline.insert(tween, at: 0)
+            timeline.memoryReference(.Weak)
         }
     }
     

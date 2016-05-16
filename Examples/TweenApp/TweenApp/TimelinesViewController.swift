@@ -9,71 +9,50 @@
 import UIKit
 import Ubergang
 
-class TimelinesViewController: UIViewController {
+class TimelinesViewController: ExampleViewController {
     
     @IBOutlet var numberLabel: UILabel!
     
     @IBOutlet var progressBar: CircularProgressBar!
     
-    var tweenControls: TweenControlsView!
-    
     var timelineContainer: UTimeline!
-    var timeline: UTimeline!
     
     var labelTween: NumericTween<Int>?
     
-    var direction = false
+    deinit {
+        print("deinit controller")
+    }
+    
     override func viewDidLoad() {
-        tweenControls = TweenControlsView.instanceFromNib()
-        tweenControls.onPlay = { [unowned self] in
-            self.timelineContainer.start()
-        }
-        tweenControls.onStop = { [unowned self] in
-            self.timelineContainer.stop()
-        }
-        tweenControls.onPause = { [unowned self] in
-            self.timelineContainer.pause()
-        }
-        tweenControls.onResume = { [unowned self] in
-            self.timelineContainer.resume()
-        }
-        tweenControls.onDirection = { [unowned self] direction in
-            self.timelineContainer.tweenDirection(direction)
-        }
-        tweenControls.onProgress = { [unowned self] value in
-            self.timelineContainer.progressTotal = value
-        }
-        view.addSubview(tweenControls)
+        setupTween()
         
+        addTweenControls(timelineContainer)
+    }
+    
+    func setupTween() {
         
-        timeline = UTimeline(id: "timeline")
-        timeline.memoryReference(.Weak)
+        let timeline = UTimeline(id: "timeline")
         timeline.options(.Repeat(9))
         timeline.updateTotal { [unowned self] (progressTotal) in
             self.tweenControls.progress(progressTotal)
         }
-        timeline.complete {
-            print("complete")
-        }
         
-        let tween = UTweenBuilder
+        //closing arc
+        timeline.append(UTweenBuilder
             .to( CGFloat(-0.1),
-                 current: { CGFloat(-360.0) },
-                 update: { [unowned self] (value: CGFloat, progress: Double) in
-                    print("update arcIncreaseTween: \(value) - progress: \(progress)")
+                current: { CGFloat(-360.0) },
+                update: { [unowned self] (value: CGFloat, progress: Double) in
                     self.progressBar.endAngle = value
                 },
-                 duration: 5,
-                 id: "arcIncreaseTween")
-            tween.ease(Cubic.easeInOut)
+                duration: 5,
+                id: "arcIncreaseTween")
+            .ease(Cubic.easeInOut))
         
-        timeline?.append(tween)
-        
-        timeline?.append( UTweenBuilder
+        //opening arc
+        timeline.append(UTweenBuilder
             .to( CGFloat(-0.1),
                 current: { CGFloat(-360.0) },
                 update: { [unowned self] (value: CGFloat) in
-                    print("update arcDecreaseTween: \(value)")
                     self.progressBar.startAngle = value
                 },
                 duration: 5,
@@ -81,11 +60,15 @@ class TimelinesViewController: UIViewController {
             .ease(Cubic.easeInOut))
         
         
-        timelineContainer = UTimeline(id: "timelineContainer")
-        timelineContainer.memoryReference(.Weak)
+        timelineContainer = UTimeline(id: "timelineContainer").memoryReference(.Weak)
+        timelineContainer.complete { [unowned self] in
+            self.tweenControls.stop()
+        }
+        
+        //timeline arcs
         timelineContainer.insert(timeline, at: 0)
         
-        
+        //countdown
         timelineContainer.insert( UTweenBuilder
             .to( 0,
                 current: { 10 },
@@ -96,10 +79,6 @@ class TimelinesViewController: UIViewController {
                 id: "countTween")
             .ease(Linear.ease)
             .memoryReference(.Weak), at: 0.0)
-        
-        timelineContainer.complete {
-            self.tweenControls.stop()
-        }
     }
 }
 
