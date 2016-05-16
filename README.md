@@ -99,5 +99,6 @@ func run() {
 
 - Logging and log levels
 - Color tweens
+- Additional examples
 
 Feedback is always appreciated
