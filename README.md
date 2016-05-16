@@ -1,4 +1,4 @@
-# Ubergang (Übergang) - Early stage
+# Ubergang (Übergang) - Version 0.0.8
 
 Ubergang is a low level tweening engine for iOS.
 
@@ -17,7 +17,7 @@ Ubergang is a low level tweening engine for iOS.
 ```ruby
 platform :ios, '8.2'
 use_frameworks!
-pod 'Ubergang', '~> 0.0.6'
+pod 'Ubergang', '~> 0.0.8'
 ```
 
 ## Usage
@@ -100,6 +100,5 @@ func run() {
 - Logging and log levels
 - Color tweens
 - Remove Tween ID if not needed (e.g. if the Tween exists within a Timeline)
-- Remove Timeline generic type
 
 Feedback is always appreciated
