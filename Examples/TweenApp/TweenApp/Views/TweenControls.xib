@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,46 +12,73 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2fd-l4-4ya">
-                    <rect key="frame" x="171" y="17" width="332" height="31"/>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2fd-l4-4ya">
+                    <rect key="frame" x="108" y="17" width="428" height="31"/>
+                    <color key="thumbTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                 </slider>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKF-1J-4pl">
-                    <rect key="frame" x="16" y="0.0" width="64" height="64"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKF-1J-4pl" customClass="TweenControlButton" customModule="TweenApp" customModuleProvider="target">
+                    <rect key="frame" x="8" y="10" width="44" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="64" id="bBW-ge-BiL"/>
-                        <constraint firstAttribute="width" constant="64" id="uuR-tb-OPq"/>
+                        <constraint firstAttribute="width" secondItem="EKF-1J-4pl" secondAttribute="height" multiplier="1:1" id="7JW-F6-5tZ"/>
+                        <constraint firstAttribute="width" constant="44" id="uuR-tb-OPq"/>
                     </constraints>
+                    <color key="tintColor" red="1" green="0.43366446130000003" blue="0.53044323910000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                     <state key="normal" title="Play" image="PlayIcon"/>
                     <state key="selected" image="PauseIcon"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintNormal">
+                            <color key="value" red="0.30196078431372547" green="0.81960784313725488" blue="0.0" alpha="0.75703679078014185" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintSelected">
+                            <color key="value" red="0.0" green="0.58039215686274503" blue="0.81960784313725488" alpha="0.74750664893617025" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIH-sb-zxJ">
-                    <rect key="frame" x="93" y="0.0" width="64" height="64"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIH-sb-zxJ" customClass="TweenControlButton" customModule="TweenApp" customModuleProvider="target">
+                    <rect key="frame" x="52" y="10" width="44" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="64" id="BLO-Y1-msm"/>
-                        <constraint firstAttribute="width" constant="64" id="Myf-Pa-jMF"/>
+                        <constraint firstAttribute="width" constant="44" id="Myf-Pa-jMF"/>
+                        <constraint firstAttribute="width" secondItem="HIH-sb-zxJ" secondAttribute="height" multiplier="1:1" id="idS-ZK-NKw"/>
                     </constraints>
+                    <color key="tintColor" red="1" green="0.43366446130000003" blue="0.53044323910000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                     <state key="normal" title="Stop" image="StopIcon"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintNormal">
+                            <color key="value" red="0.0" green="0.58039215686274503" blue="0.81960784313725488" alpha="0.75" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADR-e7-XGA">
-                    <rect key="frame" x="520" y="0.0" width="64" height="64"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADR-e7-XGA" customClass="ReverseButtton" customModule="TweenApp" customModuleProvider="target">
+                    <rect key="frame" x="548" y="10" width="44" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="64" id="5d7-cT-bs1"/>
-                        <constraint firstAttribute="height" constant="64" id="mB6-Tg-26f"/>
+                        <constraint firstAttribute="width" constant="44" id="5d7-cT-bs1"/>
+                        <constraint firstAttribute="width" secondItem="ADR-e7-XGA" secondAttribute="height" multiplier="1:1" id="IB7-GW-WEm"/>
                     </constraints>
-                    <state key="normal" title="Reverse"/>
+                    <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                    <state key="normal" image="ReverseIcon"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintNormal">
+                            <color key="value" red="0.0" green="0.58039215686274503" blue="0.81960784313725488" alpha="0.75" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintSelected">
+                            <color key="value" red="0.0" green="0.58039215686274503" blue="0.81960784313725488" alpha="0.75" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="ADR-e7-XGA" secondAttribute="trailing" constant="16" id="1Po-Dc-tVH"/>
-                <constraint firstItem="EKF-1J-4pl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="1bl-RG-8cA"/>
+                <constraint firstAttribute="trailing" secondItem="ADR-e7-XGA" secondAttribute="trailing" constant="8" id="1Po-Dc-tVH"/>
+                <constraint firstItem="EKF-1J-4pl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="1bl-RG-8cA"/>
                 <constraint firstItem="HIH-sb-zxJ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7rB-DA-hyx"/>
                 <constraint firstItem="ADR-e7-XGA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8jC-bm-HoY"/>
-                <constraint firstItem="ADR-e7-XGA" firstAttribute="leading" secondItem="2fd-l4-4ya" secondAttribute="trailing" constant="19" id="aiS-Di-eOg"/>
+                <constraint firstItem="ADR-e7-XGA" firstAttribute="leading" secondItem="2fd-l4-4ya" secondAttribute="trailing" constant="14" id="aiS-Di-eOg"/>
                 <constraint firstItem="2fd-l4-4ya" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dvZ-aY-vKg"/>
                 <constraint firstItem="EKF-1J-4pl" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="her-oZ-ldr"/>
-                <constraint firstItem="2fd-l4-4ya" firstAttribute="leading" secondItem="HIH-sb-zxJ" secondAttribute="trailing" constant="16" id="lNg-Tu-QHX"/>
-                <constraint firstItem="HIH-sb-zxJ" firstAttribute="leading" secondItem="EKF-1J-4pl" secondAttribute="trailing" constant="13" id="nQO-n3-KzO"/>
+                <constraint firstItem="2fd-l4-4ya" firstAttribute="leading" secondItem="HIH-sb-zxJ" secondAttribute="trailing" constant="14" id="lNg-Tu-QHX"/>
+                <constraint firstItem="HIH-sb-zxJ" firstAttribute="leading" secondItem="EKF-1J-4pl" secondAttribute="trailing" id="nQO-n3-KzO"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -63,8 +91,9 @@
         </view>
     </objects>
     <resources>
-        <image name="PauseIcon" width="64" height="64"/>
-        <image name="PlayIcon" width="64" height="64"/>
-        <image name="StopIcon" width="64" height="64"/>
+        <image name="PauseIcon" width="52" height="52"/>
+        <image name="PlayIcon" width="52" height="52"/>
+        <image name="ReverseIcon" width="48" height="48"/>
+        <image name="StopIcon" width="52" height="52"/>
     </resources>
 </document>

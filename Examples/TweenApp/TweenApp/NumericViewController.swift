@@ -22,6 +22,10 @@ class NumericViewController: ExampleViewController {
         addTweenControls(tween)
     }
     
+    deinit {
+        print("deinit controller")
+    }
+    
     func setupTween() {
         tween = UTweenBuilder
             .to( 100,
@@ -33,7 +37,8 @@ class NumericViewController: ExampleViewController {
                  duration: 5,
                  id: "tween")
         tween.ease(Linear.ease)
-        tween.complete {
+        tween.memoryReference(.Weak)
+        tween.complete { [unowned self] in
             self.tweenControls.stop()
         }
     }

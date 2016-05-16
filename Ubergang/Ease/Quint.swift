@@ -1,5 +1,5 @@
 //
-//  Cubic.swift
+//  Quint.swift
 //  Tween
 //
 //  Created by RF on 07/01/16.
@@ -8,28 +8,25 @@
 
 import Foundation
 
-public class Cubic: Ease {
+public class Quint: Ease {
     
     public class func easeIn(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
-        t = t/d
-        return c*t*t*t + b
+        t/=d
+        return c*(t)*t*t*t*t + b
     }
     
     public class func easeOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
-        t = t/d-1
-        return c*(t*t*t + 1) + b
+        t=t/d-1
+        return c*((t)*t*t*t*t + 1) + b
     }
     
     public class func easeInOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
-        t = t/(d/2)
-        if t < 1 {
-            return c/2*t*t*t + b
-        }
-        
-        t = t-2
-        return c/2*(t*t*t + 2) + b;
+        t/=d/2
+        if ((t) < 1) { return c/2*t*t*t*t*t + b }
+        t-=2
+        return c/2*((t)*t*t*t*t + 2) + b
     }
 }

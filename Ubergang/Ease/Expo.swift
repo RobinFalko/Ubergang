@@ -1,5 +1,5 @@
 //
-//  Cubic.swift
+//  Expo.swift
 //  Tween
 //
 //  Created by RF on 07/01/16.
@@ -8,28 +8,23 @@
 
 import Foundation
 
-public class Cubic: Ease {
+public class Expo: Ease {
     
     public class func easeIn(t t: Double, b: Double, c: Double, d: Double) -> Double {
-        var t = t
-        t = t/d
-        return c*t*t*t + b
+        return (t==0) ? b : c * pow(2, 10 * (t/d - 1)) + b
     }
     
     public class func easeOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
-        var t = t
-        t = t/d-1
-        return c*(t*t*t + 1) + b
+        return (t==d) ? b+c : c * (-pow(2, -10 * t/d) + 1) + b
     }
     
     public class func easeInOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
-        t = t/(d/2)
-        if t < 1 {
-            return c/2*t*t*t + b
-        }
-        
-        t = t-2
-        return c/2*(t*t*t + 2) + b;
+        if (t==0) { return b }
+        if (t==d) { return b+c }
+        t/=d/2
+        if ((t) < 1) { return c/2 * pow(2, 10 * (t - 1)) + b }
+        t-=1
+        return c/2 * (-pow(2, -10 * t) + 2) + b
     }
 }

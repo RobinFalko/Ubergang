@@ -57,4 +57,9 @@ public class Engine: NSObject {
         
         closures.removeValueForKey(key)
     }
+    
+    
+    func contains(key: String) -> Bool {
+        return mapTable.objectForKey(key) != nil || closures[key] != nil
+    }
 }

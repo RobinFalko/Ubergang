@@ -1,0 +1,3 @@
+framework module Ubergang {
+    header "Ubergang-Swift.h"
+}

@@ -35,10 +35,11 @@ class ConstraintViewController: ExampleViewController {
     
     func setupTween() {
         timeline = UTimeline(id: "particleTimeline")
+        timeline.memoryReference(.Weak)
         timeline.updateTotal { [unowned self] (progressTotal) in
             self.tweenControls.progress(progressTotal)
         }
-        timeline.complete {
+        timeline.complete { [unowned self] in
             self.tweenControls.stop()
         }
         
@@ -46,44 +47,29 @@ class ConstraintViewController: ExampleViewController {
         let tween1 = NumericTween<CGFloat>(id: "testView1")
             .to( CGFloat(50.0),
                 current: { from },
-                update: { [weak self] (value:CGFloat) in
-                    guard let welf = self else {
-                        return
-                    }
-                    
-                    welf.redViewHeight.constant = value },
+                update: { [unowned self] (value:CGFloat) in
+                    self.redViewHeight.constant = value },
                 duration: 1)
-            .ease(Linear.ease)
-            .memoryReference(.Weak)
+            .ease(Quint.easeInOut)
         
         from = defaultGrayViewWidth
         let tween2 = NumericTween<CGFloat>(id: "testView2")
             .to( CGFloat(150.0),
                 current: { from },
-                update: { [weak self] (value:CGFloat) in
-                    guard let welf = self else {
-                        return
-                    }
-                    
-                    welf.grayViewWidth.constant = value },
-                duration: 3)
-            .ease(Elastic.easeOut)
-            .memoryReference(.Weak)
+                update: { [unowned self] (value:CGFloat) in
+                    self.grayViewWidth.constant = value },
+                duration: 2)
+            .ease(Bounce.easeOut)
         
         from = defaultGreenViewBottom
         let tween3 = NumericTween<CGFloat>(id: "testView3")
             .to( CGFloat(100.0),
                 current: { from },
-                update: { [weak self] (value:CGFloat) in
-                    guard let welf = self else {
-                        return
-                    }
-                    
-                    welf.greenViewBottom.constant = value },
+                update: { [unowned self] (value:CGFloat) in
+                    self.greenViewBottom.constant = value },
                 duration: 3)
             .options(.Repeat(1), .Yoyo)
-            .ease(Cubic.easeInOut)
-            .memoryReference(.Weak)
+            .ease(Expo.easeInOut)
         
         timeline.append(tween1)
         timeline.append(tween2)

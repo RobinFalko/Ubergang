@@ -11,12 +11,24 @@ import Ubergang
 
 class TitleIconTableViewCell: UITableViewCell {
     
-    @IBOutlet var titleLabel: NSLayoutConstraint!
-    @IBOutlet var iconView: NSLayoutConstraint!
+    @IBOutlet var titleLabelConstraints: NSLayoutConstraint!
+    @IBOutlet var iconViewConstraints: NSLayoutConstraint!
+    
+    @IBOutlet var iconView: UIImageView!
     
     var timeline: UTimeline!
     
     override func awakeFromNib() {
+        iconView.image = iconView.image?.imageWithRenderingMode(.AlwaysTemplate)
+        
+        var color: UIColor?
+        if userInteractionEnabled {
+            color = UIColor(red: 77.0 / 255.0, green: 209.0 / 255.0, blue: 0.0, alpha: 0.75)
+        } else {
+            color = UIColor(red: 0.0, green: 148.0 / 255.0, blue: 209.0 / 255.0, alpha: 0.75)
+        }
+        iconView.tintColor = color
+        
         setup()
     }
     
@@ -24,10 +36,6 @@ class TitleIconTableViewCell: UITableViewCell {
     func animateIn() {
         timeline.start()
     }
-    
-//    func progress(value: Double) {
-//        timeline.progress = value
-//    }
     
     func setup() {
         timeline = UTimeline(id: "timeline \(arc4random())")
@@ -37,10 +45,10 @@ class TitleIconTableViewCell: UITableViewCell {
         
         let labelTween: NumericTween<CGFloat> =
             UTweenBuilder
-                .to( titleLabel.constant,
+                .to( titleLabelConstraints.constant,
                     current: { from },
                     update: { [unowned self] value in
-                        self.titleLabel.constant = value
+                        self.titleLabelConstraints.constant = value
                     },
                     duration: duration,
                     id: "titleLabelTween")
@@ -48,16 +56,15 @@ class TitleIconTableViewCell: UITableViewCell {
         
         let dotTween: NumericTween<CGFloat> =
             UTweenBuilder
-                .to( iconView.constant,
+                .to( iconViewConstraints.constant,
                     current: { from },
                     update: { [unowned self] value in
-                        self.iconView.constant = value },
+                        self.iconViewConstraints.constant = value },
                     duration: duration,
                     id: "iconViewTween")
                 .ease(Cubic.easeOut)
         
         timeline.insert(labelTween, at: 0)
         timeline.insert(dotTween, at: 0)
-        
     }
 }

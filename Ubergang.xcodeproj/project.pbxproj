@@ -6,12 +6,34 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		6F4DEFB91CEA597700E464EB /* Ubergang-Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6F4DEFBC1CEA597700E464EB /* Build configuration list for PBXAggregateTarget "Ubergang-Universal" */;
+			buildPhases = (
+				6F4DEFBD1CEA599900E464EB /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Ubergang-Universal";
+			productName = "Ubergang-Universal";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		6F4DC1701CBA47D500EF6B4D /* UTweenBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DC16F1CBA47D500EF6B4D /* UTweenBase.swift */; };
 		6F4DC1721CBA481800EF6B4D /* WeaklyLoopable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DC1711CBA481800EF6B4D /* WeaklyLoopable.swift */; };
 		6F4DC1741CBA483800EF6B4D /* TweenDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DC1731CBA483800EF6B4D /* TweenDirection.swift */; };
 		6F4DEFB01CE8852F00E464EB /* MathUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFAF1CE8852F00E464EB /* MathUtil.swift */; };
 		6F4DEFB21CE8CD3F00E464EB /* Linear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFB11CE8CD3F00E464EB /* Linear.swift */; };
+		6F4DEFC61CEA5B9900E464EB /* Back.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFBE1CEA5B9900E464EB /* Back.swift */; };
+		6F4DEFC71CEA5B9900E464EB /* Bounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFBF1CEA5B9900E464EB /* Bounce.swift */; };
+		6F4DEFC81CEA5B9900E464EB /* Circ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFC01CEA5B9900E464EB /* Circ.swift */; };
+		6F4DEFC91CEA5B9900E464EB /* Expo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFC11CEA5B9900E464EB /* Expo.swift */; };
+		6F4DEFCA1CEA5B9900E464EB /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFC21CEA5B9900E464EB /* Quad.swift */; };
+		6F4DEFCB1CEA5B9900E464EB /* Quart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFC31CEA5B9900E464EB /* Quart.swift */; };
+		6F4DEFCC1CEA5B9900E464EB /* Quint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFC41CEA5B9900E464EB /* Quint.swift */; };
+		6F4DEFCD1CEA5B9900E464EB /* Sine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFC51CEA5B9900E464EB /* Sine.swift */; };
 		6F567BBF1CB1932200222006 /* TweenMemoryReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BAF1CB1932200222006 /* TweenMemoryReference.swift */; };
 		6F567BC01CB1932200222006 /* TweenOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB01CB1932200222006 /* TweenOptions.swift */; };
 		6F567BC11CB1932200222006 /* Cubic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB21CB1932200222006 /* Cubic.swift */; };
@@ -37,6 +59,14 @@
 		6F4DC1731CBA483800EF6B4D /* TweenDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenDirection.swift; sourceTree = "<group>"; };
 		6F4DEFAF1CE8852F00E464EB /* MathUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathUtil.swift; sourceTree = "<group>"; };
 		6F4DEFB11CE8CD3F00E464EB /* Linear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Linear.swift; sourceTree = "<group>"; };
+		6F4DEFBE1CEA5B9900E464EB /* Back.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Back.swift; sourceTree = "<group>"; };
+		6F4DEFBF1CEA5B9900E464EB /* Bounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bounce.swift; sourceTree = "<group>"; };
+		6F4DEFC01CEA5B9900E464EB /* Circ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circ.swift; sourceTree = "<group>"; };
+		6F4DEFC11CEA5B9900E464EB /* Expo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expo.swift; sourceTree = "<group>"; };
+		6F4DEFC21CEA5B9900E464EB /* Quad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
+		6F4DEFC31CEA5B9900E464EB /* Quart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quart.swift; sourceTree = "<group>"; };
+		6F4DEFC41CEA5B9900E464EB /* Quint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quint.swift; sourceTree = "<group>"; };
+		6F4DEFC51CEA5B9900E464EB /* Sine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sine.swift; sourceTree = "<group>"; };
 		6F567BAF1CB1932200222006 /* TweenMemoryReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenMemoryReference.swift; sourceTree = "<group>"; };
 		6F567BB01CB1932200222006 /* TweenOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenOptions.swift; sourceTree = "<group>"; };
 		6F567BB21CB1932200222006 /* Cubic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cubic.swift; sourceTree = "<group>"; };
@@ -111,6 +141,14 @@
 		6F567BB11CB1932200222006 /* Ease */ = {
 			isa = PBXGroup;
 			children = (
+				6F4DEFBE1CEA5B9900E464EB /* Back.swift */,
+				6F4DEFBF1CEA5B9900E464EB /* Bounce.swift */,
+				6F4DEFC01CEA5B9900E464EB /* Circ.swift */,
+				6F4DEFC11CEA5B9900E464EB /* Expo.swift */,
+				6F4DEFC21CEA5B9900E464EB /* Quad.swift */,
+				6F4DEFC31CEA5B9900E464EB /* Quart.swift */,
+				6F4DEFC41CEA5B9900E464EB /* Quint.swift */,
+				6F4DEFC51CEA5B9900E464EB /* Sine.swift */,
 				6F4DEFB11CE8CD3F00E464EB /* Linear.swift */,
 				6F567BB21CB1932200222006 /* Cubic.swift */,
 				6F567BB31CB1932200222006 /* Ease.swift */,
@@ -186,6 +224,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Robin Falko";
 				TargetAttributes = {
+					6F4DEFB91CEA597700E464EB = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					6FAD4FDA1C9DAD9800291A9D = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -204,6 +245,7 @@
 			projectRoot = "";
 			targets = (
 				6FAD4FDA1C9DAD9800291A9D /* Ubergang */,
+				6F4DEFB91CEA597700E464EB /* Ubergang-Universal */,
 			);
 		};
 /* End PBXProject section */
@@ -219,23 +261,44 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6F4DEFBD1CEA599900E464EB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "######################\n# Options\n######################\n\nREVEAL_ARCHIVE_IN_FINDER=false\n\nFRAMEWORK_NAME=\"${PROJECT_NAME}\"\n\nSIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_NAME}.framework\"\n\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_NAME}.framework\"\n\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\"\n\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${FRAMEWORK_NAME}.framework\"\n\n\n######################\n# Build Frameworks\n######################\n\nxcodebuild -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphonesimulator -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator 2>&1\n\nxcodebuild -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphoneos -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos 2>&1\n\n######################\n# Create directory for universal\n######################\n\nrm -rf \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${FRAMEWORK}\"\n\n\n######################\n# Copy files Framework\n######################\n\ncp -r \"${DEVICE_LIBRARY_PATH}/.\" \"${FRAMEWORK}\"\n\n\n######################\n# Make an universal binary\n######################\n\nlipo \"${SIMULATOR_LIBRARY_PATH}/${FRAMEWORK_NAME}\" \"${DEVICE_LIBRARY_PATH}/${FRAMEWORK_NAME}\" -create -output \"${FRAMEWORK}/${FRAMEWORK_NAME}\" | echo\n\n# For Swift framework, Swiftmodule needs to be copied in the universal framework\nif [ -d \"${SIMULATOR_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" ]; then\ncp -f ${SIMULATOR_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/* \"${FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" | echo\n                                                                      fi\n                                                                      \n                                                                      if [ -d \"${DEVICE_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" ]; then\n                                                                      cp -f ${DEVICE_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/* \"${FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" | echo\n                                                                      fi\n                                                                      \n                                                                      ######################\n                                                                      # On Release, copy the result to release directory\n                                                                      ######################\n                                                                      OUTPUT_DIR=\"${PROJECT_DIR}/Output/${FRAMEWORK_NAME}-${CONFIGURATION}-iphoneuniversal/\"\n                                                                      \n                                                                      rm -rf \"$OUTPUT_DIR\"\n                                                                      mkdir -p \"$OUTPUT_DIR\"\n                                                                      \n                                                                      cp -r \"${FRAMEWORK}\" \"$OUTPUT_DIR\"\n                                                                      \n                                                                      if [ ${REVEAL_ARCHIVE_IN_FINDER} = true ]; then\n                                                                      open \"${OUTPUT_DIR}/\"\n                                                                      fi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6FAD4FD61C9DAD9800291A9D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6F8A22FC1CB446340035D78A /* UTimeline.swift in Sources */,
+				6F4DEFC91CEA5B9900E464EB /* Expo.swift in Sources */,
+				6F4DEFCA1CEA5B9900E464EB /* Quad.swift in Sources */,
 				6F567BC01CB1932200222006 /* TweenOptions.swift in Sources */,
 				6F567BC41CB1932200222006 /* Engine.swift in Sources */,
 				6F4DEFB01CE8852F00E464EB /* MathUtil.swift in Sources */,
 				6F4DC1741CBA483800EF6B4D /* TweenDirection.swift in Sources */,
 				6F567BC11CB1932200222006 /* Cubic.swift in Sources */,
+				6F4DEFCD1CEA5B9900E464EB /* Sine.swift in Sources */,
 				6F567BCA1CB1932200222006 /* Timer.swift in Sources */,
 				6F8A22DC1CB2DADC0035D78A /* UTweenBuilder.swift in Sources */,
 				6F567BC81CB1932200222006 /* NumericTween.swift in Sources */,
 				6F567BC91CB1932200222006 /* Numeric.swift in Sources */,
 				6F567BCB1CB1932200222006 /* TransformTween.swift in Sources */,
+				6F4DEFCB1CEA5B9900E464EB /* Quart.swift in Sources */,
 				6F4DC1721CBA481800EF6B4D /* WeaklyLoopable.swift in Sources */,
+				6F4DEFCC1CEA5B9900E464EB /* Quint.swift in Sources */,
 				6F567BBF1CB1932200222006 /* TweenMemoryReference.swift in Sources */,
 				6F567BC31CB1932200222006 /* Elastic.swift in Sources */,
 				6F4DEFB21CE8CD3F00E464EB /* Linear.swift in Sources */,
@@ -243,6 +306,9 @@
 				6F567BC21CB1932200222006 /* Ease.swift in Sources */,
 				6F567BCC1CB1932200222006 /* TweenManager.swift in Sources */,
 				6F4DC1701CBA47D500EF6B4D /* UTweenBase.swift in Sources */,
+				6F4DEFC71CEA5B9900E464EB /* Bounce.swift in Sources */,
+				6F4DEFC61CEA5B9900E464EB /* Back.swift in Sources */,
+				6F4DEFC81CEA5B9900E464EB /* Circ.swift in Sources */,
 				6F8A22FE1CB4477D0035D78A /* Tweenable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +316,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		6F4DEFBA1CEA597700E464EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6F4DEFBB1CEA597700E464EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		6FAD4FE11C9DAD9800291A9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -374,6 +454,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6F4DEFBC1CEA597700E464EB /* Build configuration list for PBXAggregateTarget "Ubergang-Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F4DEFBA1CEA597700E464EB /* Debug */,
+				6F4DEFBB1CEA597700E464EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		6FAD4FD51C9DAD9800291A9D /* Build configuration list for PBXProject "Ubergang" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

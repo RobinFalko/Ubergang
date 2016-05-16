@@ -11,16 +11,12 @@ import Foundation
 public class NumericTween<T: Numeric>: UTween<T> {
     
     public convenience init() {
-        let id = "\(__FILE__)_\(random() * 1000)_update"
+        let id = "\(#file)_\(random() * 1000)_update"
         self.init(id: id)
     }
     
     public override init(id: String) {
         super.init(id: id)
-    }
-    
-    public func ease(ease: Easing) {
-        self.ease = ease
     }
     
     override func compute(value: Double) -> T {
