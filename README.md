@@ -1,4 +1,4 @@
-# Ubergang (Übergang) - Version 0.2.0
+# Ubergang [ˈyːbɐɡaŋ] - Version 0.2.0
 
 Ubergang is a low level tweening engine for iOS.
 
