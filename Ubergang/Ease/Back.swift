@@ -1,5 +1,5 @@
 //
-//  Cubic.swift
+//  Back.swift
 //  Tween
 //
 //  Created by RF on 07/01/16.
@@ -8,28 +8,31 @@
 
 import Foundation
 
-public class Cubic: Ease {
+public class Back: Ease {
     
     public class func easeIn(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
-        t = t/d
-        return c*t*t*t + b
+        let s = 1.70158
+        t/=d
+        let postFix = t
+        return c*(postFix)*t*((s+1)*t - s) + b
     }
     
     public class func easeOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
-        t = t/d-1
-        return c*(t*t*t + 1) + b
+        let s = 1.70158
+        t=t/d-1
+        return c*(t*t*((s+1)*t + s) + 1) + b
     }
     
     public class func easeInOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
-        t = t/(d/2)
-        if t < 1 {
-            return c/2*t*t*t + b
-        }
-        
-        t = t-2
-        return c/2*(t*t*t + 2) + b;
+        var s = 1.70158
+        t/=d/2
+        if (t < 1) { s*=(1.525); return c/2*(t*t*(((s)+1)*t - s)) + b }
+        t-=2
+        let postFix = t
+        s*=(1.525)
+        return c/2*((postFix)*t*(((s)+1)*t + s) + 2) + b
     }
 }

@@ -50,7 +50,7 @@ class ConstraintViewController: ExampleViewController {
                 update: { [unowned self] (value:CGFloat) in
                     self.redViewHeight.constant = value },
                 duration: 1)
-            .ease(Linear.ease)
+            .ease(Quint.easeInOut)
         
         from = defaultGrayViewWidth
         let tween2 = NumericTween<CGFloat>(id: "testView2")
@@ -58,8 +58,8 @@ class ConstraintViewController: ExampleViewController {
                 current: { from },
                 update: { [unowned self] (value:CGFloat) in
                     self.grayViewWidth.constant = value },
-                duration: 3)
-            .ease(Elastic.easeOut)
+                duration: 2)
+            .ease(Bounce.easeOut)
         
         from = defaultGreenViewBottom
         let tween3 = NumericTween<CGFloat>(id: "testView3")
@@ -69,7 +69,7 @@ class ConstraintViewController: ExampleViewController {
                     self.greenViewBottom.constant = value },
                 duration: 3)
             .options(.Repeat(1), .Yoyo)
-            .ease(Cubic.easeInOut)
+            .ease(Expo.easeInOut)
         
         timeline.append(tween1)
         timeline.append(tween2)

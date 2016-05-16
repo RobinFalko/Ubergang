@@ -10,7 +10,8 @@ import Foundation
 
 public class Elastic: Ease {
     
-    public class func easeIn(var t t: Double, b: Double, c: Double, d: Double) -> Double {
+    public class func easeIn(t t: Double, b: Double, c: Double, d: Double) -> Double {
+        var t = t
         if t == 0 {
             return b
         }
@@ -30,7 +31,8 @@ public class Elastic: Ease {
         return -(postFix * sin((t*d-s) * (2 * M_PI)/p )) + b
     }
     
-    public class func easeOut(var t t: Double, b: Double, c: Double, d: Double) -> Double {
+    public class func easeOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
+        var t = t
         if t == 0 {
             return b
         }
@@ -47,7 +49,8 @@ public class Elastic: Ease {
         return (a * pow(2, -10 * t) * sin( (t*d-s) * (2*M_PI)/p ) + c + b)
     }
     
-    public class func easeInOut(var t t: Double, b: Double, c: Double, d: Double) -> Double {
+    public class func easeInOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
+        var t = t
         if t == 0 {
             return b
         }
