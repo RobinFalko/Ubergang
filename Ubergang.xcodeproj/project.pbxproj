@@ -34,6 +34,7 @@
 		6F4DEFCB1CEA5B9900E464EB /* Quart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFC31CEA5B9900E464EB /* Quart.swift */; };
 		6F4DEFCC1CEA5B9900E464EB /* Quint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFC41CEA5B9900E464EB /* Quint.swift */; };
 		6F4DEFCD1CEA5B9900E464EB /* Sine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFC51CEA5B9900E464EB /* Sine.swift */; };
+		6F4DEFCF1CEB84D200E464EB /* ColorTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFCE1CEB84D200E464EB /* ColorTween.swift */; };
 		6F567BBF1CB1932200222006 /* TweenMemoryReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BAF1CB1932200222006 /* TweenMemoryReference.swift */; };
 		6F567BC01CB1932200222006 /* TweenOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB01CB1932200222006 /* TweenOptions.swift */; };
 		6F567BC11CB1932200222006 /* Cubic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB21CB1932200222006 /* Cubic.swift */; };
@@ -47,7 +48,6 @@
 		6F567BC91CB1932200222006 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BBB1CB1932200222006 /* Numeric.swift */; };
 		6F567BCA1CB1932200222006 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BBC1CB1932200222006 /* Timer.swift */; };
 		6F567BCB1CB1932200222006 /* TransformTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BBD1CB1932200222006 /* TransformTween.swift */; };
-		6F567BCC1CB1932200222006 /* TweenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BBE1CB1932200222006 /* TweenManager.swift */; };
 		6F8A22DC1CB2DADC0035D78A /* UTweenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A22DB1CB2DADC0035D78A /* UTweenBuilder.swift */; };
 		6F8A22FC1CB446340035D78A /* UTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A22FB1CB446340035D78A /* UTimeline.swift */; };
 		6F8A22FE1CB4477D0035D78A /* Tweenable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A22FD1CB4477D0035D78A /* Tweenable.swift */; };
@@ -67,6 +67,7 @@
 		6F4DEFC31CEA5B9900E464EB /* Quart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quart.swift; sourceTree = "<group>"; };
 		6F4DEFC41CEA5B9900E464EB /* Quint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quint.swift; sourceTree = "<group>"; };
 		6F4DEFC51CEA5B9900E464EB /* Sine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sine.swift; sourceTree = "<group>"; };
+		6F4DEFCE1CEB84D200E464EB /* ColorTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTween.swift; sourceTree = "<group>"; };
 		6F567BAF1CB1932200222006 /* TweenMemoryReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenMemoryReference.swift; sourceTree = "<group>"; };
 		6F567BB01CB1932200222006 /* TweenOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenOptions.swift; sourceTree = "<group>"; };
 		6F567BB21CB1932200222006 /* Cubic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cubic.swift; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		6F567BBB1CB1932200222006 /* Numeric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
 		6F567BBC1CB1932200222006 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		6F567BBD1CB1932200222006 /* TransformTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformTween.swift; sourceTree = "<group>"; };
-		6F567BBE1CB1932200222006 /* TweenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenManager.swift; sourceTree = "<group>"; };
 		6F8A22DB1CB2DADC0035D78A /* UTweenBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenBuilder.swift; sourceTree = "<group>"; };
 		6F8A22FB1CB446340035D78A /* UTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTimeline.swift; sourceTree = "<group>"; };
 		6F8A22FD1CB4477D0035D78A /* Tweenable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweenable.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 				6F567BBA1CB1932200222006 /* Protocols */,
 				6F567BBC1CB1932200222006 /* Timer.swift */,
 				6F567BBD1CB1932200222006 /* TransformTween.swift */,
-				6F567BBE1CB1932200222006 /* TweenManager.swift */,
+				6F4DEFCE1CEB84D200E464EB /* ColorTween.swift */,
 				6F4DEFAE1CE8852300E464EB /* Util */,
 			);
 			path = Ubergang;
@@ -221,6 +221,7 @@
 		6FAD4FD21C9DAD9800291A9D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Robin Falko";
 				TargetAttributes = {
@@ -287,6 +288,7 @@
 				6F4DEFCA1CEA5B9900E464EB /* Quad.swift in Sources */,
 				6F567BC01CB1932200222006 /* TweenOptions.swift in Sources */,
 				6F567BC41CB1932200222006 /* Engine.swift in Sources */,
+				6F4DEFCF1CEB84D200E464EB /* ColorTween.swift in Sources */,
 				6F4DEFB01CE8852F00E464EB /* MathUtil.swift in Sources */,
 				6F4DC1741CBA483800EF6B4D /* TweenDirection.swift in Sources */,
 				6F567BC11CB1932200222006 /* Cubic.swift in Sources */,
@@ -304,7 +306,6 @@
 				6F4DEFB21CE8CD3F00E464EB /* Linear.swift in Sources */,
 				6F567BC61CB1932200222006 /* UTween.swift in Sources */,
 				6F567BC21CB1932200222006 /* Ease.swift in Sources */,
-				6F567BCC1CB1932200222006 /* TweenManager.swift in Sources */,
 				6F4DC1701CBA47D500EF6B4D /* UTweenBase.swift in Sources */,
 				6F4DEFC71CEA5B9900E464EB /* Bounce.swift in Sources */,
 				6F4DEFC61CEA5B9900E464EB /* Back.swift in Sources */,
@@ -319,13 +320,18 @@
 		6F4DEFBA1CEA597700E464EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		6F4DEFBB1CEA597700E464EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -461,6 +467,7 @@
 				6F4DEFBB1CEA597700E464EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6FAD4FD51C9DAD9800291A9D /* Build configuration list for PBXProject "Ubergang" */ = {
 			isa = XCConfigurationList;

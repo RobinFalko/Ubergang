@@ -36,4 +36,19 @@ public class UTweenBuilder {
         let tween = TransformTween(id: id)
         return tween.to( to, current: current, update: update, duration: duration )
     }
+    
+    
+    
+    
+    public class func to(to: UIColor, current: () -> UIColor, update: (value: UIColor) -> Void, duration: Double, id: String) -> ColorTween {
+        
+        let tween = ColorTween(id: id)
+        return tween.to( to, current: current, update: update, duration: duration )
+    }
+    
+    public class func to(to: UIColor, current: () -> UIColor, update: (value: UIColor, progress: Double) -> Void, duration: Double, id: String) -> ColorTween {
+        
+        let tween = ColorTween(id: id)
+        return tween.to( to, current: current, update: update, duration: duration )
+    }
 }

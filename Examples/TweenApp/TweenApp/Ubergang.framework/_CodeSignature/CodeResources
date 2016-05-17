@@ -18,7 +18,7 @@
 		</data>
 		<key>Modules/Ubergang.swiftmodule/arm.swiftmodule</key>
 		<data>
-		iKe5Vmn4rmdCwVHWqW7sTNsV/4M=
+		WUiLx3eoWIBXrqHkvdq7vVeO1eU=
 		</data>
 		<key>Modules/Ubergang.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/Ubergang.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		XRmFr3Z0Akpd6lxtGqbUA8/m5KI=
+		ectIJzs9If7eZ71pxUogrdTNscw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -61,11 +61,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			iKe5Vmn4rmdCwVHWqW7sTNsV/4M=
+			WUiLx3eoWIBXrqHkvdq7vVeO1eU=
 			</data>
 			<key>hash2</key>
 			<data>
-			fDpqovnhUVjP8G5QOlCykTMIauXROOPoRBiz4CXFVqU=
+			sc3E5TeGaL9c9wRfAndrs3RtRi/7xSqsmpvtZfgvSgU=
 			</data>
 		</dict>
 		<key>Modules/Ubergang.swiftmodule/arm64.swiftdoc</key>
@@ -83,11 +83,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XRmFr3Z0Akpd6lxtGqbUA8/m5KI=
+			ectIJzs9If7eZ71pxUogrdTNscw=
 			</data>
 			<key>hash2</key>
 			<data>
-			Q//roP4bdrN12SsLmMR5gCQjm4pAtA0sQu1/oKxu+HQ=
+			b7/mLoklw6m7qd/y5uVBAAMSEcYJlrbU7kPh9TdfHK4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
