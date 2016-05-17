@@ -11,7 +11,7 @@ import Ubergang
 
 class ParticleViewController: ExampleViewController {
     
-    var numTweens: UInt32 = 2000
+    var numTweens: UInt32 = 500
     
     var particles = [UIView]()
     

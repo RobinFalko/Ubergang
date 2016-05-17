@@ -68,7 +68,7 @@
                     </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ADR-e7-XGA" secondAttribute="trailing" constant="8" id="1Po-Dc-tVH"/>
                 <constraint firstItem="EKF-1J-4pl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="1bl-RG-8cA"/>
