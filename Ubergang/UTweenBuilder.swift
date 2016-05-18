@@ -51,4 +51,19 @@ public class UTweenBuilder {
         let tween = ColorTween(id: id)
         return tween.to( to, current: current, update: update, duration: duration )
     }
+    
+    
+    
+    
+    public class func to(to: UIBezierPath, current: () -> UIBezierPath, update: (value: CGPoint) -> Void, duration: Double, id: String) -> BezierPathTween {
+        
+        let tween = BezierPathTween(id: id)
+        return tween.to( to, current: current, update: update, duration: duration )
+    }
+    
+    public class func to(to: UIBezierPath, current: () -> UIBezierPath, update: (value: CGPoint, progress: Double) -> Void, duration: Double, id: String) -> BezierPathTween {
+        
+        let tween = BezierPathTween(id: id)
+        return tween.to( to, current: current, update: update, duration: duration )
+    }
 }

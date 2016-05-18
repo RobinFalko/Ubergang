@@ -59,11 +59,11 @@ public class UTimeline: UTweenBase {
                 
                 let startTime = startTimeForTweenId[tween.id]! / cycles
                 
-                let mapped = mapValueInRange(time,
+                let mapped = Math.mapValueInRange(time,
                                              fromLower: startTime, fromUpper: startTime + tween.durationTotal / cycles,
                                              toLower: 0.0, toUpper: 1.0)
                 
-                tween.progressTotal = clamp(mapped, lower: 0.0, upper: 1.0)
+                tween.progressTotal = Math.clamp(mapped, lower: 0.0, upper: 1.0)
             }
             
             super.progress = newValue
@@ -73,16 +73,7 @@ public class UTimeline: UTweenBase {
         }
     }
     
-    func mapValueInRange(value: Double, fromLower: Double, fromUpper: Double, toLower: Double, toUpper: Double) -> Double {
-        let fromRangeSize = fromUpper - fromLower
-        let toRangeSize = toUpper - toLower
-        let valueScale = (value - fromLower) / fromRangeSize
-        return toLower + (valueScale * toRangeSize)
-    }
     
-    func clamp<T: Comparable>(value: T, lower: T, upper: T) -> T {
-        return max(lower, min(value, upper))
-    }
     
     override public func memoryReference(value: TweenMemoryReference) -> Self {
         memoryReference = value

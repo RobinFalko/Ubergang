@@ -24,7 +24,7 @@
 		6F4DC1701CBA47D500EF6B4D /* UTweenBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DC16F1CBA47D500EF6B4D /* UTweenBase.swift */; };
 		6F4DC1721CBA481800EF6B4D /* WeaklyLoopable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DC1711CBA481800EF6B4D /* WeaklyLoopable.swift */; };
 		6F4DC1741CBA483800EF6B4D /* TweenDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DC1731CBA483800EF6B4D /* TweenDirection.swift */; };
-		6F4DEFB01CE8852F00E464EB /* MathUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFAF1CE8852F00E464EB /* MathUtil.swift */; };
+		6F4DEFB01CE8852F00E464EB /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFAF1CE8852F00E464EB /* Math.swift */; };
 		6F4DEFB21CE8CD3F00E464EB /* Linear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFB11CE8CD3F00E464EB /* Linear.swift */; };
 		6F4DEFC61CEA5B9900E464EB /* Back.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFBE1CEA5B9900E464EB /* Back.swift */; };
 		6F4DEFC71CEA5B9900E464EB /* Bounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFBF1CEA5B9900E464EB /* Bounce.swift */; };
@@ -35,6 +35,8 @@
 		6F4DEFCC1CEA5B9900E464EB /* Quint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFC41CEA5B9900E464EB /* Quint.swift */; };
 		6F4DEFCD1CEA5B9900E464EB /* Sine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFC51CEA5B9900E464EB /* Sine.swift */; };
 		6F4DEFCF1CEB84D200E464EB /* ColorTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFCE1CEB84D200E464EB /* ColorTween.swift */; };
+		6F4DEFD31CEBA20A00E464EB /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFD21CEBA20A00E464EB /* Bezier.swift */; };
+		6F4DEFD51CEBA27700E464EB /* BezierPathTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFD41CEBA27700E464EB /* BezierPathTween.swift */; };
 		6F567BBF1CB1932200222006 /* TweenMemoryReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BAF1CB1932200222006 /* TweenMemoryReference.swift */; };
 		6F567BC01CB1932200222006 /* TweenOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB01CB1932200222006 /* TweenOptions.swift */; };
 		6F567BC11CB1932200222006 /* Cubic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB21CB1932200222006 /* Cubic.swift */; };
@@ -57,7 +59,7 @@
 		6F4DC16F1CBA47D500EF6B4D /* UTweenBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenBase.swift; sourceTree = "<group>"; };
 		6F4DC1711CBA481800EF6B4D /* WeaklyLoopable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaklyLoopable.swift; sourceTree = "<group>"; };
 		6F4DC1731CBA483800EF6B4D /* TweenDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenDirection.swift; sourceTree = "<group>"; };
-		6F4DEFAF1CE8852F00E464EB /* MathUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathUtil.swift; sourceTree = "<group>"; };
+		6F4DEFAF1CE8852F00E464EB /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		6F4DEFB11CE8CD3F00E464EB /* Linear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Linear.swift; sourceTree = "<group>"; };
 		6F4DEFBE1CEA5B9900E464EB /* Back.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Back.swift; sourceTree = "<group>"; };
 		6F4DEFBF1CEA5B9900E464EB /* Bounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bounce.swift; sourceTree = "<group>"; };
@@ -68,6 +70,8 @@
 		6F4DEFC41CEA5B9900E464EB /* Quint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quint.swift; sourceTree = "<group>"; };
 		6F4DEFC51CEA5B9900E464EB /* Sine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sine.swift; sourceTree = "<group>"; };
 		6F4DEFCE1CEB84D200E464EB /* ColorTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTween.swift; sourceTree = "<group>"; };
+		6F4DEFD21CEBA20A00E464EB /* Bezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bezier.swift; sourceTree = "<group>"; };
+		6F4DEFD41CEBA27700E464EB /* BezierPathTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathTween.swift; sourceTree = "<group>"; };
 		6F567BAF1CB1932200222006 /* TweenMemoryReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenMemoryReference.swift; sourceTree = "<group>"; };
 		6F567BB01CB1932200222006 /* TweenOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenOptions.swift; sourceTree = "<group>"; };
 		6F567BB21CB1932200222006 /* Cubic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cubic.swift; sourceTree = "<group>"; };
@@ -101,7 +105,8 @@
 		6F4DEFAE1CE8852300E464EB /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				6F4DEFAF1CE8852F00E464EB /* MathUtil.swift */,
+				6F4DEFAF1CE8852F00E464EB /* Math.swift */,
+				6F4DEFD21CEBA20A00E464EB /* Bezier.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 				6F567BBC1CB1932200222006 /* Timer.swift */,
 				6F567BBD1CB1932200222006 /* TransformTween.swift */,
 				6F4DEFCE1CEB84D200E464EB /* ColorTween.swift */,
+				6F4DEFD41CEBA27700E464EB /* BezierPathTween.swift */,
 				6F4DEFAE1CE8852300E464EB /* Util */,
 			);
 			path = Ubergang;
@@ -289,7 +295,7 @@
 				6F567BC01CB1932200222006 /* TweenOptions.swift in Sources */,
 				6F567BC41CB1932200222006 /* Engine.swift in Sources */,
 				6F4DEFCF1CEB84D200E464EB /* ColorTween.swift in Sources */,
-				6F4DEFB01CE8852F00E464EB /* MathUtil.swift in Sources */,
+				6F4DEFB01CE8852F00E464EB /* Math.swift in Sources */,
 				6F4DC1741CBA483800EF6B4D /* TweenDirection.swift in Sources */,
 				6F567BC11CB1932200222006 /* Cubic.swift in Sources */,
 				6F4DEFCD1CEA5B9900E464EB /* Sine.swift in Sources */,
@@ -302,6 +308,7 @@
 				6F4DC1721CBA481800EF6B4D /* WeaklyLoopable.swift in Sources */,
 				6F4DEFCC1CEA5B9900E464EB /* Quint.swift in Sources */,
 				6F567BBF1CB1932200222006 /* TweenMemoryReference.swift in Sources */,
+				6F4DEFD31CEBA20A00E464EB /* Bezier.swift in Sources */,
 				6F567BC31CB1932200222006 /* Elastic.swift in Sources */,
 				6F4DEFB21CE8CD3F00E464EB /* Linear.swift in Sources */,
 				6F567BC61CB1932200222006 /* UTween.swift in Sources */,
@@ -311,6 +318,7 @@
 				6F4DEFC61CEA5B9900E464EB /* Back.swift in Sources */,
 				6F4DEFC81CEA5B9900E464EB /* Circ.swift in Sources */,
 				6F8A22FE1CB4477D0035D78A /* Tweenable.swift in Sources */,
+				6F4DEFD51CEBA27700E464EB /* BezierPathTween.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
