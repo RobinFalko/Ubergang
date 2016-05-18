@@ -20,6 +20,23 @@ use_frameworks!
 pod 'Ubergang', '~> 0.2.0'
 ```
 
+## Tween Configuration
+
+`.options(.Repeat(n))`
+`.options(.Yoyo)`
+`.options(.Repeat(1), .Yoyo)`
+
+> Using `options` you can let the Tween repeat n (Int) times, let it yoyo or combine both options.
+- Repeat will restart the Tween n times where `repeatCycleChange` will be called with every cycle.
+- Yoyo will reverse the Tween after it reaches its end value.
+
+`.memoryReference(.Strong)` (default)
+`.memoryReference(.Weak)`
+
+> `memoryReference` determines how to handle the reference count for the tween. Ubergang will increase the reference count if the option is set to `.Strong` or won't increase it if it's set to `.Weak`. These two rules are valid for most cases:
+- The Tween is not stored in a field variable -> `.Strong`
+- The Tween is stored in a field variable -> `.Weak`
+
 ## Usage
 
 ### Start a simple numeric Tween (Double)
