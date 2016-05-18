@@ -95,6 +95,35 @@ func run() {
 > This Tween with id 'testView' tweens a transform over 2.5 secondsg. The resulting tranform will be assigned to the testView with every update 'welf.testView.transform = value'.
 
 
+
+### Start a Timeline containing three Tweens
+
+```swift
+var timeline: UTimeline = UTimeline(id: "timeline")
+
+func run() {
+  timeline.options(.Yoyo)
+  timeline.ease(Cubic.easeInOut)
+  timeline.memoryReference(.Weak)
+
+  timeline.append(UTweenBuilder
+    .to( 10, current: { 0 }, update: { value in print("0-10 value: \(value)") }, duration: 5, id: "intTween")
+  )
+  
+  timeline.append(UTweenBuilder
+    .to( 10.0, current: { 0.0 }, update: { value in print("0.0-10.0 value: \(value)") }, duration: 5, id: "floatTween1")
+  )
+  
+  timeline.insert(UTweenBuilder
+    .to( 0.0, current: { 10.0 }, update: { value in print("10.0-0.0 value: \(value)") }, duration: 5, id: "floatTween2"),
+    at: 2.5
+  )
+  
+  timeline.start()
+}
+```
+> This Timeline controls one Tween starting at time 0.0 seconds, one Tween starting at time 5.0 seconds and the last one starting at 2.5 seconds. All Tweens are controlled by the timeline with the given easing and options - In this case the tween option `.Yoyo` with easing `Cubic.easeInOut`
+
 ## Todos
 
 - Logging and log levels
