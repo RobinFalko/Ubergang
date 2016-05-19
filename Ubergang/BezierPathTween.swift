@@ -41,32 +41,41 @@ public class BezierPathTween: UTweenBase {
         }
     }
     
+    var previousPoint: CGPoint?
     func compute(value: Double) -> CGPoint {
         
         
         let currentValue = current()
         let path = currentValue.CGPath
         
-        let firstElement = path.getElement(0)
+        let currentSegmentIndex = Int(value * Double(currentValue.CGPath.getElements().count - 1))
         
-        let currentSegmentIndex = Int(value * Double(currentValue.CGPath.elementCount()))
-        let element = path.getSegment(currentSegmentIndex)
+        let element = path.getElement(currentSegmentIndex)
         
+        print("currentSegmentIndex: \(currentSegmentIndex)")
+        print("element.type: \(element.type.rawValue)")
         
         var mapped = Math.mapValueInRange(value,
-                                          fromLower: (Double(currentSegmentIndex)) / Double(path.getSegments().count), fromUpper: (Double(currentSegmentIndex + 1)) / Double(path.getSegments().count),
+                                          fromLower: (Double(currentSegmentIndex)) / Double(path.getSegments().count - 1), fromUpper: (Double(currentSegmentIndex + 1)) / Double(path.getSegments().count - 1),
                                           toLower: 0.0, toUpper: 1.0)
         mapped = Math.clamp(mapped, lower: 0.0, upper: 1.0)
         
+        print("mapped: \(mapped)")
+        
+        if element.type == .MoveToPoint {
+            previousPoint = element.points[0]
+        }
         
         if element.type == .AddCurveToPoint {
-            let p0 = firstElement.points[0]
+            let p0 = previousPoint!
             let p1 = element.points[0]
             let p2 = element.points[1]
             let p3 = element.points[2]
             
             let x = Bezier.interpolation(t: CGFloat(mapped), a: p0.x, b: p1.x, c: p2.x, d: p3.x)
             let y = Bezier.interpolation(t: CGFloat(mapped), a: p0.y, b: p1.y, c: p2.y, d: p3.y)
+            
+            previousPoint = p3
             
             return CGPoint(x: x, y: y)
         }
@@ -266,51 +275,77 @@ extension CGPath {
         CGPathApply(self, unsafeBody, callback)
     }
     
-    func getElements() -> [CGPathElement] {
-        var elements = [CGPathElement]()
+    func getElements() -> [(type: CGPathElementType, points: [CGPoint])] {
+        var result = [(type: CGPathElementType, points: [CGPoint])]()
+        var elementType: CGPathElementType!
+        var points = [CGPoint]()
         forEach { element in
             switch (element.type) {
             case CGPathElementType.MoveToPoint:
-                elements.append(element)
+                elementType = element.type
+                points.append(element.points[0])
+                result.append((elementType, points))
             case .AddLineToPoint:
-                elements.append(element)
+                elementType = element.type
+                points.append(element.points[0])
+                result.append((elementType, points))
             case .AddQuadCurveToPoint:
-                elements.append(element)
+                elementType = element.type
+                points.append(element.points[0])
+                points.append(element.points[1])
+                result.append((elementType, points))
             case .AddCurveToPoint:
-                elements.append(element)
+                elementType = element.type
+                points.append(element.points[0])
+                points.append(element.points[1])
+                points.append(element.points[2])
+                result.append((elementType, points))
             case .CloseSubpath:
+                elementType = element.type
+                result.append((elementType, [CGPoint]()))
                 print("close()")
             }
         }
         
-        return elements
+        return result
     }
 
-    func getSegments() -> [CGPathElement] {
-        var elements = [CGPathElement]()
+    func getSegments() -> [(type: CGPathElementType, points: [CGPoint])] {
+        var result = [(type: CGPathElementType, points: [CGPoint])]()
+        var elementType: CGPathElementType!
+        var points = [CGPoint]()
         forEach { element in
             switch (element.type) {
             case CGPathElementType.MoveToPoint:
                 break
             case .AddLineToPoint:
-                elements.append(element)
+                elementType = element.type
+                points.append(element.points[0])
+                result.append((elementType, points))
             case .AddQuadCurveToPoint:
-                elements.append(element)
+                elementType = element.type
+                points.append(element.points[0])
+                points.append(element.points[1])
+                result.append((elementType, points))
             case .AddCurveToPoint:
-                elements.append(element)
+                elementType = element.type
+                points.append(element.points[0])
+                points.append(element.points[1])
+                points.append(element.points[2])
+                result.append((elementType, points))
             case .CloseSubpath:
                 break
             }
         }
         
-        return elements
+        return result
     }
 
-    func getElement(index: Int) -> CGPathElement {
+    func getElement(index: Int) -> (type: CGPathElementType, points: [CGPoint]) {
         return getElements()[index]
     }
     
-    func getSegment(index: Int) -> CGPathElement {
+    func getSegment(index: Int) -> (type: CGPathElementType, points: [CGPoint]) {
         return getSegments()[index]
     }
     
