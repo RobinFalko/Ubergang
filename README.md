@@ -18,7 +18,7 @@ Ubergang is a low level tweening engine for iOS.
 ```ruby
 platform :ios, '8.2'
 use_frameworks!
-pod 'Ubergang', '~> 0.2.0'
+pod 'Ubergang', '~> 0.3.2'
 ```
 
 ## Tween Configuration
