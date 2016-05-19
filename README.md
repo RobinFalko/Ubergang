@@ -146,6 +146,29 @@ func run() {
 ```
 > This Timeline controls one Tween starting at time 0.0 seconds, one Tween starting at time 5.0 seconds and the last one starting at 2.5 seconds. All Tweens are controlled by the timeline with the given easing and options - In this case the tween option `.Yoyo` with easing `Cubic.easeInOut`
 
+
+
+
+### Tween along a UIBezierPath
+
+```swift
+var tween: BezierPathTween!
+
+func run() {
+  tween = UTweenBuilder
+	.along( path,
+		 update: { [unowned self] (value:CGPoint, progress: Double) in
+			//update
+		},
+		 duration: 5,
+		 id: "bezierTween")
+	.ease(Linear.ease)
+	.memoryReference(.Weak)
+}
+```
+
+
+
 ## Todos
 
 - Logging and log levels
