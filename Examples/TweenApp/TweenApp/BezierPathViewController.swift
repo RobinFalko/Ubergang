@@ -64,6 +64,7 @@ class BezierPathViewController: ExampleViewController {
         let shape = CAShapeLayer()
         shape.path = path.CGPath
         shape.strokeColor = UIColor.redColor().CGColor
+        shape.lineWidth = 12
         shape.fillColor = UIColor.clearColor().CGColor
         view.layer.addSublayer(shape)
     }
