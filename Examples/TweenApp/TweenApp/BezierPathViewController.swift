@@ -43,18 +43,20 @@ class BezierPathViewController: ExampleViewController {
         drawPath(path)
         
         tween = UTweenBuilder
-            .to( path,
-                 current: { path },
+            .along( path,
                  update: { [unowned self] (value:CGPoint, progress: Double) in
                     self.targetView.center = value
-                    self.tweenControls.progress(progress)
                 },
                  duration: 5,
                  id: "bezierTween")
-        tween.ease(Linear.ease)
-        tween.memoryReference(.Weak)
-        tween.complete { [unowned self] in
-            self.tweenControls.stop()
+            .ease(Linear.ease)
+            .options(.Repeat(1))
+            .memoryReference(.Weak)
+            .complete { [unowned self] in
+                self.tweenControls.stop()
+            }
+        tween.updateTotal { [unowned self] value in
+            self.tweenControls.progress(value)
         }
     }
     
@@ -72,7 +74,9 @@ class BezierPathViewController: ExampleViewController {
         let center = rect.minX + rect.width * 0.5
         let bottom = rect.maxY
         
-        path.moveToPoint(CGPoint(x: center, y: bottom))
+        let startPoint = CGPoint(x: center, y: bottom)
+        self.targetView.center = startPoint
+        path.moveToPoint(startPoint)
         
         var p1 = CGPoint(x: center, y: bottom - 60)
         var p2 = CGPoint(x: center - 160, y: bottom - 116)

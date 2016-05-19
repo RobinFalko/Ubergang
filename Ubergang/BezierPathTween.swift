@@ -44,10 +44,7 @@ public class BezierPathTween: UTweenBase {
     var previousElement: (index: Int, type: CGPathElementType, point:CGPoint)?
     func compute(value: Double) -> CGPoint {
         
-        
-        let currentValue = current()
-        let path = currentValue.CGPath
-        
+        let path = self.path.CGPath
         let currentSegmentIndex = Int(value * Double(path.getElements().count))
         
         let tmpElement = path.getElement(currentSegmentIndex)
@@ -108,79 +105,69 @@ public class BezierPathTween: UTweenBase {
         return element.points[0]
     }
     
-    
-    
-    
-    
-    
-    
-    public func to(to: UIBezierPath, current: () -> UIBezierPath, update: (CGPoint) -> Void) -> Self {
+    var path: UIBezierPath!
+    public func along(path: UIBezierPath, update: (CGPoint) -> Void) -> Self {
+        self.path = path
+        print("set path \(path)")
         
-        self.current(current)
-            .update(update)
+        self.update(update)
         
         return self
     }
     
-    public func to(to: UIBezierPath, current: () -> UIBezierPath, update: (CGPoint, Double) -> Void) -> Self {
+    public func along(path: UIBezierPath, update: (CGPoint, Double) -> Void) -> Self {
+        self.path = path
+        print("set path \(path)")
         
-        self.current(current)
-            .update(update)
+        self.update(update)
         
         return self
     }
     
-    public func to(to: UIBezierPath, current: () -> UIBezierPath, update: (CGPoint) -> Void, complete: () -> Void) -> Self {
+    public func along(path: UIBezierPath, update: (CGPoint) -> Void, complete: () -> Void) -> Self {
         
-        self.to(to, current: current, update: update)
+        self.along(path, update: update)
             .complete(complete)
         
         return self
     }
     
-    public func to(to: UIBezierPath, current: () -> UIBezierPath, update: (CGPoint, Double) -> Void, complete: () -> Void) -> Self {
+    public func along(path: UIBezierPath, update: (CGPoint, Double) -> Void, complete: () -> Void) -> Self {
         
-        self.to(to, current: current, update: update)
+        self.along(path, update: update)
             .complete(complete)
         
         return self
     }
     
-    public func to(to: UIBezierPath, current: () -> UIBezierPath, update: (CGPoint) -> Void, duration: Double) -> Self {
+    public func along(path: UIBezierPath, update: (CGPoint) -> Void, duration: Double) -> Self {
         
-        self.to(to, current: current, update: update)
+        self.along(path, update: update)
             .duration(duration)
         
         return self
     }
     
-    public func to(to: UIBezierPath, current: () -> UIBezierPath, update: (CGPoint, Double) -> Void, duration: Double) -> Self {
+    public func along(path: UIBezierPath, update: (CGPoint, Double) -> Void, duration: Double) -> Self {
         
-        self.to(to, current: current, update: update)
+        self.along(path, update: update)
             .duration(duration)
         
         return self
     }
     
-    public func to(to: UIBezierPath, current: () -> UIBezierPath, update: (CGPoint) -> Void, complete: () -> Void, duration: Double) -> Self {
+    public func along(path: UIBezierPath, update: (CGPoint) -> Void, complete: () -> Void, duration: Double) -> Self {
         
-        self.to(to, current: current, update: update, complete:  complete)
+        self.along(path, update: update, complete:  complete)
             .duration(duration)
         
         return self
     }
     
-    public func to(to: UIBezierPath, current: () -> UIBezierPath, update: (CGPoint, Double) -> Void, complete: () -> Void, duration: Double) -> Self {
+    public func along(path: UIBezierPath, update: (CGPoint, Double) -> Void, complete: () -> Void, duration: Double) -> Self {
         
-        self.to(to, current: current, update: update, complete:  complete)
+        self.along(path, update: update, complete:  complete)
             .duration(duration)
-        
-        return self
-    }
-    
-    
-    public func current(value: () -> UIBezierPath) -> Self {
-        current = value
         
         return self
     }
