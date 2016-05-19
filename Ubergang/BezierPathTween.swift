@@ -41,121 +41,71 @@ public class BezierPathTween: UTweenBase {
         }
     }
     
-    var previousPoint: CGPoint?
+    var previousElement: (index: Int, type: CGPathElementType, point:CGPoint)?
     func compute(value: Double) -> CGPoint {
         
         
         let currentValue = current()
         let path = currentValue.CGPath
         
-        let currentSegmentIndex = Int(value * Double(currentValue.CGPath.getElements().count - 1))
+        let currentSegmentIndex = Int(value * Double(path.getElements().count))
         
-        let element = path.getElement(currentSegmentIndex)
-        
-        print("currentSegmentIndex: \(currentSegmentIndex)")
-        print("element.type: \(element.type.rawValue)")
-        
-        var mapped = Math.mapValueInRange(value,
-                                          fromLower: (Double(currentSegmentIndex)) / Double(path.getSegments().count - 1), fromUpper: (Double(currentSegmentIndex + 1)) / Double(path.getSegments().count - 1),
-                                          toLower: 0.0, toUpper: 1.0)
-        mapped = Math.clamp(mapped, lower: 0.0, upper: 1.0)
-        
-        print("mapped: \(mapped)")
-        
-        if element.type == .MoveToPoint {
-            previousPoint = element.points[0]
+        let tmpElement = path.getElement(currentSegmentIndex)
+        guard let element = tmpElement else {
+            //what if the path closes? Rethink this issue
+            return path.getElement(currentSegmentIndex - 1)!.points.last!
         }
         
-        if element.type == .AddCurveToPoint {
-            let p0 = previousPoint!
-            let p1 = element.points[0]
-            let p2 = element.points[1]
-            let p3 = element.points[2]
+        let mapped = Math.mapValueInRange(value,
+                                          fromLower: (Double(currentSegmentIndex)) / Double(path.getElements().count), fromUpper: (Double(currentSegmentIndex + 1)) / Double(path.getElements().count),
+                                          toLower: 0.0, toUpper: 1.0)
+        
+        if element.type == .AddLineToPoint {
+            let p0 = element.points[0]
+            let p1 = element.points[1]
             
-            let x = Bezier.interpolation(t: CGFloat(mapped), a: p0.x, b: p1.x, c: p2.x, d: p3.x)
-            let y = Bezier.interpolation(t: CGFloat(mapped), a: p0.y, b: p1.y, c: p2.y, d: p3.y)
-            
-            previousPoint = p3
+            let p0Vector = GLKVector2Make(Float(p0.x), Float(p0.y))
+            let p1Vector = GLKVector2Make(Float(p1.x), Float(p1.y))
+
+            let diffVector = GLKVector2Subtract(p1Vector, p0Vector)
+            let resultVector = GLKVector2MultiplyScalar(diffVector, Float(mapped))
+
+            let x = p0.x + CGFloat(resultVector.x)
+            let y = p0.y + CGFloat(resultVector.y)
             
             return CGPoint(x: x, y: y)
         }
         
-        return CGPointZero
+        if element.type == .AddCurveToPoint {
+            let p0 = element.points[0]
+            let p1 = element.points[1]
+            let p2 = element.points[2]
+            let p3 = element.points[3]
+            
+            let x = Bezier.interpolation(t: CGFloat(mapped), a: p0.x, b: p1.x, c: p2.x, d: p3.x)
+            let y = Bezier.interpolation(t: CGFloat(mapped), a: p0.y, b: p1.y, c: p2.y, d: p3.y)
+            
+            return CGPoint(x: x, y: y)
+        }
         
-        
-        
-        
-//        var resultPoint: CGPoint = CGPointZero
-//        var p0: CGPoint?
-//        var index = 0
-//        var lastPoint: CGPoint = CGPointZero
-//        currentValue.CGPath.forEach { element in
+        //needs more love
+//        if element.type == .CloseSubpath {
+//            let p0 = path.getElement(0)!.points.first!
+//            let p1 = element.points[0]
 //            
-//            var mapped = Math.mapValueInRange(value,
-//                fromLower: (Double(index)) / Double(elementCount), fromUpper: (Double(index + 1)) / Double(elementCount),
-//                toLower: 0.0, toUpper: 1.0)
-//            mapped = Math.clamp(mapped, lower: 0.0, upper: 1.0)
+//            let p0Vector = GLKVector2Make(Float(p0.x), Float(p0.y))
+//            let p1Vector = GLKVector2Make(Float(p1.x), Float(p1.y))
 //            
+//            let diffVector = GLKVector2Subtract(p1Vector, p0Vector)
+//            let resultVector = GLKVector2MultiplyScalar(diffVector, Float(mapped))
 //            
+//            let x = p0.x + CGFloat(resultVector.x)
+//            let y = p0.y + CGFloat(resultVector.y)
 //            
-//            switch (element.type) {
-//            case CGPathElementType.MoveToPoint:
-//                let p1 = element.points[0]
-//                lastPoint = p1
-//                resultPoint = lastPoint
-//            case .AddLineToPoint:
-//                let p1 = element.points[0]
-//                
-//                if mapped > 0.0 && mapped < 1.0 {
-//                    if let p0 = p0 {
-//                        let p0Vector = GLKVector2Make(Float(p0.x), Float(p0.y))
-//                        let p1Vector = GLKVector2Make(Float(p1.x), Float(p1.y))
-//                        
-//                        let diffVector = GLKVector2Subtract(p0Vector, p1Vector)
-//                        let resultVector = GLKVector2MultiplyScalar(diffVector, Float(mapped))
-//                        
-//                        resultPoint.x = CGFloat(resultVector.x)
-//                        resultPoint.y = CGFloat(resultVector.y)
-//                    }
-//                    
-//                    print("AddLineToPoint: \(resultPoint)")
-//                }
-//                
-//                lastPoint = p1
-//            case .AddQuadCurveToPoint:
-//                let p1 = element.points[0]
-//                let p2 = element.points[1]
-//                lastPoint = p2
-//            case .AddCurveToPoint:
-//                let p1 = element.points[0]
-//                let p2 = element.points[1]
-//                let p3 = element.points[2]
-//                lastPoint = p3
-//                
-//                if mapped > 0.0 && mapped < 1.0 {
-//                    if let p0 = p0 {
-//                        let x = Bezier.interpolation(t: CGFloat(mapped), a: p0.x, b: p1.x, c: p2.x, d: p3.x)
-//                        let y = Bezier.interpolation(t: CGFloat(mapped), a: p0.y, b: p1.y, c: p2.y, d: p3.y)
-//                        resultPoint.x = x
-//                        resultPoint.y = y
-//                    }
-//                    print("AddCurveToPoint: \(resultPoint)")
-//                }
-//                index += 1
-//            case .CloseSubpath:
-//                print("close()")
-//            }
-//            
-//            if value >= 1.0 {
-//                resultPoint = lastPoint
-//            }
-//            
-//            
-//            p0 = lastPoint
+//            return CGPoint(x: x, y: y)
 //        }
-//        
-//        
-//        return resultPoint
+        
+        return element.points[0]
     }
     
     
@@ -278,75 +228,55 @@ extension CGPath {
     func getElements() -> [(type: CGPathElementType, points: [CGPoint])] {
         var result = [(type: CGPathElementType, points: [CGPoint])]()
         var elementType: CGPathElementType!
-        var points = [CGPoint]()
+        var points: [CGPoint]!
+        var previousLastPoint: CGPoint!
         forEach { element in
             switch (element.type) {
             case CGPathElementType.MoveToPoint:
-                elementType = element.type
-                points.append(element.points[0])
-                result.append((elementType, points))
+                previousLastPoint = element.points[0]
             case .AddLineToPoint:
+                points = [CGPoint]()
                 elementType = element.type
+                points.append(previousLastPoint)
                 points.append(element.points[0])
                 result.append((elementType, points))
+                
+                previousLastPoint = element.points[0]
             case .AddQuadCurveToPoint:
+                points = [CGPoint]()
                 elementType = element.type
+                points.append(previousLastPoint)
                 points.append(element.points[0])
                 points.append(element.points[1])
                 result.append((elementType, points))
+                
+                previousLastPoint = element.points[1]
             case .AddCurveToPoint:
+                points = [CGPoint]()
                 elementType = element.type
+                points.append(previousLastPoint)
                 points.append(element.points[0])
                 points.append(element.points[1])
                 points.append(element.points[2])
                 result.append((elementType, points))
+                
+                previousLastPoint = element.points[2]
             case .CloseSubpath:
                 elementType = element.type
-                result.append((elementType, [CGPoint]()))
-                print("close()")
+                points.append(previousLastPoint)
+                result.append((elementType, points))
             }
         }
         
         return result
     }
 
-    func getSegments() -> [(type: CGPathElementType, points: [CGPoint])] {
-        var result = [(type: CGPathElementType, points: [CGPoint])]()
-        var elementType: CGPathElementType!
-        var points = [CGPoint]()
-        forEach { element in
-            switch (element.type) {
-            case CGPathElementType.MoveToPoint:
-                break
-            case .AddLineToPoint:
-                elementType = element.type
-                points.append(element.points[0])
-                result.append((elementType, points))
-            case .AddQuadCurveToPoint:
-                elementType = element.type
-                points.append(element.points[0])
-                points.append(element.points[1])
-                result.append((elementType, points))
-            case .AddCurveToPoint:
-                elementType = element.type
-                points.append(element.points[0])
-                points.append(element.points[1])
-                points.append(element.points[2])
-                result.append((elementType, points))
-            case .CloseSubpath:
-                break
-            }
+    func getElement(index: Int) -> (type: CGPathElementType, points: [CGPoint])? {
+        let elements = getElements()
+        if index >= elements.count {
+            return nil
         }
-        
-        return result
-    }
-
-    func getElement(index: Int) -> (type: CGPathElementType, points: [CGPoint]) {
-        return getElements()[index]
-    }
-    
-    func getSegment(index: Int) -> (type: CGPathElementType, points: [CGPoint]) {
-        return getSegments()[index]
+        return elements[index]
     }
     
     func elementCount() -> Int {
