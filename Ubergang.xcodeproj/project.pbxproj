@@ -37,6 +37,7 @@
 		6F4DEFCF1CEB84D200E464EB /* ColorTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFCE1CEB84D200E464EB /* ColorTween.swift */; };
 		6F4DEFD31CEBA20A00E464EB /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFD21CEBA20A00E464EB /* Bezier.swift */; };
 		6F4DEFD51CEBA27700E464EB /* BezierPathTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFD41CEBA27700E464EB /* BezierPathTween.swift */; };
+		6F4DEFDA1CEE581C00E464EB /* CGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFD91CEE581C00E464EB /* CGPath.swift */; };
 		6F567BBF1CB1932200222006 /* TweenMemoryReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BAF1CB1932200222006 /* TweenMemoryReference.swift */; };
 		6F567BC01CB1932200222006 /* TweenOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB01CB1932200222006 /* TweenOptions.swift */; };
 		6F567BC11CB1932200222006 /* Cubic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB21CB1932200222006 /* Cubic.swift */; };
@@ -72,6 +73,7 @@
 		6F4DEFCE1CEB84D200E464EB /* ColorTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTween.swift; sourceTree = "<group>"; };
 		6F4DEFD21CEBA20A00E464EB /* Bezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bezier.swift; sourceTree = "<group>"; };
 		6F4DEFD41CEBA27700E464EB /* BezierPathTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathTween.swift; sourceTree = "<group>"; };
+		6F4DEFD91CEE581C00E464EB /* CGPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPath.swift; sourceTree = "<group>"; };
 		6F567BAF1CB1932200222006 /* TweenMemoryReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenMemoryReference.swift; sourceTree = "<group>"; };
 		6F567BB01CB1932200222006 /* TweenOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenOptions.swift; sourceTree = "<group>"; };
 		6F567BB21CB1932200222006 /* Cubic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cubic.swift; sourceTree = "<group>"; };
@@ -111,9 +113,18 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		6F4DEFD81CEE57FC00E464EB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6F4DEFD91CEE581C00E464EB /* CGPath.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		6F567BAD1CB1932200222006 /* Ubergang */ = {
 			isa = PBXGroup;
 			children = (
+				6F4DEFD81CEE57FC00E464EB /* Extension */,
 				6F567BAE1CB1932200222006 /* Data */,
 				6F567BB11CB1932200222006 /* Ease */,
 				6F567BB51CB1932200222006 /* Engine.swift */,
@@ -308,6 +319,7 @@
 				6F4DC1721CBA481800EF6B4D /* WeaklyLoopable.swift in Sources */,
 				6F4DEFCC1CEA5B9900E464EB /* Quint.swift in Sources */,
 				6F567BBF1CB1932200222006 /* TweenMemoryReference.swift in Sources */,
+				6F4DEFDA1CEE581C00E464EB /* CGPath.swift in Sources */,
 				6F4DEFD31CEBA20A00E464EB /* Bezier.swift in Sources */,
 				6F567BC31CB1932200222006 /* Elastic.swift in Sources */,
 				6F4DEFB21CE8CD3F00E464EB /* Linear.swift in Sources */,

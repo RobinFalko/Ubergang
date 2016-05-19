@@ -52,12 +52,12 @@ class BezierPathViewController: ExampleViewController {
             .ease(Linear.ease)
             .options(.Repeat(1))
             .memoryReference(.Weak)
+            .updateTotal { [unowned self] value in
+                self.tweenControls.progress(value)
+            }
             .complete { [unowned self] in
                 self.tweenControls.stop()
             }
-        tween.updateTotal { [unowned self] value in
-            self.tweenControls.progress(value)
-        }
     }
     
     func drawPath(path: UIBezierPath) {
