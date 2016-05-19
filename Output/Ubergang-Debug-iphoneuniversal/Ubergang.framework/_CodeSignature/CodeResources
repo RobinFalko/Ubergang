@@ -10,15 +10,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Ip/FoLmjnTlGsn2nbgN/F/uXe7U=
-		</data>
-		<key>Modules/Ubergang.swiftmodule/arm.swiftdoc</key>
-		<data>
-		b5klhU4qE/GU08+ei5Xx9dlsG5Q=
-		</data>
-		<key>Modules/Ubergang.swiftmodule/arm.swiftmodule</key>
-		<data>
-		WUiLx3eoWIBXrqHkvdq7vVeO1eU=
+		PYxEkfspYcVqqDFoxPDv+Jm2lyc=
 		</data>
 		<key>Modules/Ubergang.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -26,7 +18,7 @@
 		</data>
 		<key>Modules/Ubergang.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		ectIJzs9If7eZ71pxUogrdTNscw=
+		ANMJArSGMeG3V3QLU3sTAB6SntE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -46,28 +38,6 @@
 			40l/2EIfdYbBywgi6tTFHP9BFL1PeTw7B5F1yjsQMJs=
 			</data>
 		</dict>
-		<key>Modules/Ubergang.swiftmodule/arm.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			b5klhU4qE/GU08+ei5Xx9dlsG5Q=
-			</data>
-			<key>hash2</key>
-			<data>
-			cFZ0OG8L5EZ0azPp0J06+SpizfcYMTIrlOn01bcy1gc=
-			</data>
-		</dict>
-		<key>Modules/Ubergang.swiftmodule/arm.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			WUiLx3eoWIBXrqHkvdq7vVeO1eU=
-			</data>
-			<key>hash2</key>
-			<data>
-			sc3E5TeGaL9c9wRfAndrs3RtRi/7xSqsmpvtZfgvSgU=
-			</data>
-		</dict>
 		<key>Modules/Ubergang.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
@@ -83,11 +53,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ectIJzs9If7eZ71pxUogrdTNscw=
+			ANMJArSGMeG3V3QLU3sTAB6SntE=
 			</data>
 			<key>hash2</key>
 			<data>
-			b7/mLoklw6m7qd/y5uVBAAMSEcYJlrbU7kPh9TdfHK4=
+			RwQncNZkNuQXh2laO0+/iqNYf/WwoteUAyqBL2UAFqI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

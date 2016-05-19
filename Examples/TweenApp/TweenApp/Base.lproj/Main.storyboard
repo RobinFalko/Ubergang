@@ -290,20 +290,20 @@
                                             <segue destination="eMq-rA-bLv" kind="show" id="He4-Kj-anf"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dU6-63-lMo" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dU6-63-lMo" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="372" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dU6-63-lMo" id="b1u-PK-e88">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="1Bh-5F-6eE" userLabel="Icon">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="1Bh-5F-6eE" userLabel="Icon">
                                                     <rect key="frame" x="557" y="9" width="27" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="1Bh-5F-6eE" secondAttribute="height" multiplier="35:35" id="reY-k4-BWU"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gd9-M5-ZWf" userLabel="Title">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bezier Path" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gd9-M5-ZWf" userLabel="Title">
                                                     <rect key="frame" x="16" y="4" width="128" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="Htt-eF-ie1"/>
@@ -326,6 +326,7 @@
                                             <outlet property="iconView" destination="1Bh-5F-6eE" id="lw0-66-FSJ"/>
                                             <outlet property="iconViewConstraints" destination="DSW-Ix-Xea" id="hr4-PB-3d4"/>
                                             <outlet property="titleLabelConstraints" destination="dsE-m7-HYS" id="aqh-nE-n65"/>
+                                            <segue destination="dPP-kJ-jkT" kind="show" id="aks-iu-YzE"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="i9v-jc-3YR" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
@@ -1654,6 +1655,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DgG-iV-Bvw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="620" y="2746"/>
+        </scene>
+        <!--Bezier Path View Controller-->
+        <scene sceneID="luz-qj-WJs">
+            <objects>
+                <viewController id="dPP-kJ-jkT" customClass="BezierPathViewController" customModule="TweenApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nyb-sG-bcE"/>
+                        <viewControllerLayoutGuide type="bottom" id="YpT-gP-I4Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3ua-pI-apJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="06s-al-XNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="3437"/>
         </scene>
         <!--Constraint View Controller-->
         <scene sceneID="AVe-yZ-Cbe">
