@@ -26,7 +26,7 @@ pod 'Ubergang', '~> 0.3.2'
 ```swift
 .options(.Repeat(n))
 .options(.Yoyo)
-.options(.Repeat(1), .Yoyo)
+.options(.Repeat(n), .Yoyo)
 ```
 
 > Using `options` you can let the Tween repeat n (Int) times, let it yoyo or combine both options.
