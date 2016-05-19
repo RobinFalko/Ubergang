@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Ubergang'
-  s.version = '0.2.0'
+  s.version = '0.3.2'
   s.summary = 'A low level tweening engine.'
   s.homepage = 'https://github.com/RobinFalko/Ubergang'
   s.license = { type: 'Apache', file: 'LICENSE' }

@@ -1,10 +1,11 @@
-# Ubergang [ˈyːbɐɡaŋ] - Version 0.2.0
+# Ubergang [ˈyːbɐɡaŋ] - Version 0.3.2
 
 Ubergang is a low level tweening engine for iOS.
 
 ## Features
 
-- [x] Tween numeric values and CGAffineTransforms
+- [x] Tween numeric values, UIColors and CGAffineTransforms
+- [x] Tween along UIBezierPaths (Currently supporting paths containing 'moveToPoint(...)', 'addLineToPoint(...)' and 'addCurveToPoint(...)')
 - [x] Cubic, Elastic and Linear easings
 - [x] Generic tween setup
 - [x] Repeat and Yoyo tween options
