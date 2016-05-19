@@ -172,7 +172,7 @@ func run() {
 ## Todos
 
 - Logging and log levels
-- Color tweens
-- Additional examples
+- Tween along UIBezierPaths supporting 'addQuadCurveToPoint(...)'
+- Tween through points 
 
 Feedback is always appreciated
