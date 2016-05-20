@@ -1,6 +1,6 @@
 # Ubergang [ˈyːbɐɡaŋ] - Version 0.3.2
 
-Ubergang is a low level tweening engine for iOS.
+Ubergang is a tweening engine for iOS written in Swift.
 
 ## Features
 
