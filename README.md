@@ -1,4 +1,4 @@
-![alt tag](https://raw.githubusercontent.com/RobinFalko/Ubergang/master/Ubergang.png)
+![Ubergang - a tweening engine for iOS](https://raw.githubusercontent.com/RobinFalko/Ubergang/master/Ubergang.png)
 
 # Ubergang [ˈyːbɐɡaŋ] - Version 0.3.2
 
