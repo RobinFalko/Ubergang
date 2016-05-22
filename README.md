@@ -1,7 +1,5 @@
 ![Ubergang - a tweening engine for iOS](https://raw.githubusercontent.com/RobinFalko/Ubergang/master/Ubergang.png)
 
-# Ubergang [ˈyːbɐɡaŋ]
-
 Ubergang is a tweening engine for iOS written in Swift.
 
 [![CocoaPods Compatible](https://img.shields.io/badge/pod-0.3.2-blue.svg?style=flat-square)](https://img.shields.io/badge/pod-0.3.2-blue.svg?style=flat-square)
