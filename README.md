@@ -1,3 +1,5 @@
+![alt tag](https://raw.githubusercontent.com/RobinFalko/Ubergang/master/Ubergang.png)
+
 # Ubergang [ˈyːbɐɡaŋ] - Version 0.3.2
 
 Ubergang is a tweening engine for iOS written in Swift.
