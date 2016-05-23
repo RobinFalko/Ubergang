@@ -9,6 +9,8 @@
 import Foundation
 import GLKit
 
+//see https://en.wikipedia.org/wiki/B%C3%A9zier_curve
+
 class Bezier {
     static func linear(t _t: CGFloat, p0: CGPoint, p1: CGPoint) -> CGPoint {
         

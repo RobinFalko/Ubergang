@@ -66,4 +66,25 @@ public class UTweenBuilder {
         let tween = BezierPathTween(id: id)
         return tween.along( path, update: update, duration: duration )
     }
+    
+    
+    
+    
+    public class func along(points: [CGPoint], update: (value: CGPoint) -> Void, duration: Double, id: String, closed: Bool = false) -> BezierPathTween {
+        
+        let numbers = points.map { NSValue(CGPoint: $0) }
+        let path = UIBezierPath.interpolateCGPointsWithCatmullRom(numbers, closed: closed, alpha: 1.0)
+        
+        let tween = BezierPathTween(id: id)
+        return tween.along( path, update: update, duration: duration )
+    }
+    
+    public class func along(points: [CGPoint], update: (value: CGPoint, progress: Double) -> Void, duration: Double, id: String, closed: Bool = false) -> BezierPathTween {
+        
+        let numbers = points.map { NSValue(CGPoint: $0) }
+        let path = UIBezierPath.interpolateCGPointsWithCatmullRom(numbers, closed: closed, alpha: 1.0)
+        
+        let tween = BezierPathTween(id: id)
+        return tween.along( path, update: update, duration: duration )
+    }
 }

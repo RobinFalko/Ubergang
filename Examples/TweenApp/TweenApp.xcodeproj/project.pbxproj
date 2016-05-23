@@ -61,6 +61,7 @@
 		6F4DEFD01CEB875F00E464EB /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		6F4DEFD61CEBB12F00E464EB /* BezierPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathViewController.swift; sourceTree = "<group>"; };
 		6F4DEFDB1CF380D700E464EB /* CurveThroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveThroughViewController.swift; sourceTree = "<group>"; };
+		6F4DEFEB1CF3A20C00E464EB /* Ubergang-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Ubergang-Bridging-Header.h"; path = "TweenApp/Ubergang-Bridging-Header.h"; sourceTree = "<group>"; };
 		6F567BCD1CB1954300222006 /* Ubergang.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ubergang.framework; path = TweenApp/Ubergang.framework; sourceTree = "<group>"; };
 		6F8A232E1CB826FE0035D78A /* TitleIconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleIconTableViewCell.swift; sourceTree = "<group>"; };
 		6F8A23301CB839AC0035D78A /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 		6F97C9671C3F026F00E4DB73 = {
 			isa = PBXGroup;
 			children = (
+				6F4DEFEB1CF3A20C00E464EB /* Ubergang-Bridging-Header.h */,
 				6F567BCD1CB1954300222006 /* Ubergang.framework */,
 				6F97C9721C3F026F00E4DB73 /* TweenApp */,
 				6F97C9711C3F026F00E4DB73 /* Products */,
@@ -298,6 +300,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -337,6 +340,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

@@ -34,17 +34,21 @@ class CurveThroughViewController: ExampleViewController {
         
         let rectWidth = CGFloat(130)
         let centerX = (UIScreen.mainScreen().bounds.width - rectWidth) * 0.5
-        let path = raceTrack(CGRectMake(centerX, 100, rectWidth, 260))
+        let points = raceTrack(CGRectMake(centerX, 100, rectWidth, 260))
+        
+        let numbers = points.map { NSValue(CGPoint: $0) }
+        let path = UIBezierPath.interpolateCGPointsWithCatmullRom(numbers, closed: true, alpha: 1.0)
         
         drawPath(path)
         
         tween = UTweenBuilder
-            .along( path,
+            .along( points,
                  update: { [unowned self] (value:CGPoint, progress: Double) in
                     self.targetView.center = value
                 },
                  duration: 5,
-                 id: "bezierTween")
+                 id: "bezierTween",
+                 closed: true)
             .ease(Linear.ease)
             .options(.Repeat(1))
             .memoryReference(.Weak)
@@ -64,37 +68,16 @@ class CurveThroughViewController: ExampleViewController {
         view.layer.addSublayer(shape)
     }
     
-    func raceTrack(rect:CGRect) -> UIBezierPath {
-        let path = UIBezierPath()
+    func raceTrack(rect:CGRect) -> [CGPoint] {
         
-        let center = rect.minX + rect.width * 0.5
-        let bottom = rect.maxY
+        var points = [CGPoint]()
+        points.append(CGPoint(x: rect.minX, y: rect.minY))
+        points.append(CGPoint(x: rect.midX, y: rect.midY))
+        points.append(CGPoint(x: rect.minX, y: rect.maxY))
+        points.append(CGPoint(x: rect.maxX, y: rect.maxY))
+        points.append(CGPoint(x: rect.maxX, y: rect.minY))
         
-        let startPoint = CGPoint(x: center, y: bottom)
-        self.targetView.center = startPoint
-        path.moveToPoint(startPoint)
-        
-        var p1 = CGPoint(x: center, y: bottom - 60)
-        var p2 = CGPoint(x: center - 160, y: bottom - 116)
-        var p3 = CGPoint(x: center - 130, y: bottom - 200)
-        path.addCurveToPoint(p3, controlPoint1: p1, controlPoint2: p2)
-        
-        p1 = CGPoint(x: center - 100, y: bottom - 280)
-        p2 = CGPoint(x: center - 15, y: bottom - 255)
-        p3 = CGPoint(x: center, y: bottom - 225)
-        path.addCurveToPoint(p3, controlPoint1: p1, controlPoint2: p2)
-        
-        p1 = CGPoint(x: center + 15, y: bottom - 255)
-        p2 = CGPoint(x: center + 100, y: bottom - 280)
-        p3 = CGPoint(x: center + 130, y: bottom - 200)
-        path.addCurveToPoint(p3, controlPoint1: p1, controlPoint2: p2)
-            
-        p1 = CGPoint(x: center + 160, y: bottom - 116)
-        p2 = CGPoint(x: center, y: bottom - 60)
-        p3 = CGPoint(x: center, y: bottom)
-        path.addCurveToPoint(p3, controlPoint1: p1, controlPoint2: p2)
-        
-        return path
+        return points
     }
 }
 
