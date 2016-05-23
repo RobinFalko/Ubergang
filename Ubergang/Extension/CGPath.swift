@@ -23,11 +23,13 @@ extension CGPath {
         var result = [(type: CGPathElementType, points: [CGPoint])]()
         var elementType: CGPathElementType!
         var points: [CGPoint]!
+        var firstPoint: CGPoint!
         var previousLastPoint: CGPoint!
         forEach { element in
             switch (element.type) {
             case CGPathElementType.MoveToPoint:
-                previousLastPoint = element.points[0]
+                firstPoint = element.points[0]
+                previousLastPoint = firstPoint
             case .AddLineToPoint:
                 points = [CGPoint]()
                 elementType = element.type
@@ -56,8 +58,10 @@ extension CGPath {
                 
                 previousLastPoint = element.points[2]
             case .CloseSubpath:
+                points = [CGPoint]()
                 elementType = element.type
                 points.append(previousLastPoint)
+                points.append(firstPoint)
                 result.append((elementType, points))
             }
         }

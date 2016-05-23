@@ -41,7 +41,6 @@ public class BezierPathTween: UTweenBase {
         }
     }
     
-    var previousElement: (index: Int, type: CGPathElementType, point:CGPoint)?
     func compute(value: Double) -> CGPoint {
         
         let path = self.path.CGPath
@@ -57,52 +56,38 @@ public class BezierPathTween: UTweenBase {
                                           fromLower: (Double(currentSegmentIndex)) / Double(path.getElements().count), fromUpper: (Double(currentSegmentIndex + 1)) / Double(path.getElements().count),
                                           toLower: 0.0, toUpper: 1.0)
         
-        if element.type == .AddLineToPoint {
-            let p0 = element.points[0]
-            let p1 = element.points[1]
+        
+        switch element.type {
+        case .MoveToPoint:
+            return element.points[0]
+        case .AddLineToPoint:
+            let pr = Bezier.linear(t: CGFloat(mapped),
+                                   p0: element.points[0],
+                                   p1: element.points[1])
             
-            let p0Vector = GLKVector2Make(Float(p0.x), Float(p0.y))
-            let p1Vector = GLKVector2Make(Float(p1.x), Float(p1.y))
-
-            let diffVector = GLKVector2Subtract(p1Vector, p0Vector)
-            let resultVector = GLKVector2MultiplyScalar(diffVector, Float(mapped))
-
-            let x = p0.x + CGFloat(resultVector.x)
-            let y = p0.y + CGFloat(resultVector.y)
+            return CGPoint(x: pr.x, y: pr.y)
+        case .AddQuadCurveToPoint:
+            let pr = Bezier.quad(t: CGFloat(mapped),
+                                 p0: element.points[0],
+                                 p1: element.points[1],
+                                 p2: element.points[2])
             
-            return CGPoint(x: x, y: y)
+            return CGPoint(x: pr.x, y: pr.y)
+        case .AddCurveToPoint:
+            let pr = Bezier.cubic(t: CGFloat(mapped),
+                                  p0: element.points[0],
+                                  p1: element.points[1],
+                                  p2: element.points[2],
+                                  p3: element.points[3])
+            
+            return CGPoint(x: pr.x, y: pr.y)
+        case .CloseSubpath:
+            let pr = Bezier.linear(t: CGFloat(mapped),
+                                   p0: element.points[0],
+                                   p1: element.points[1])
+            
+            return CGPoint(x: pr.x, y: pr.y)
         }
-        
-        if element.type == .AddCurveToPoint {
-            let p0 = element.points[0]
-            let p1 = element.points[1]
-            let p2 = element.points[2]
-            let p3 = element.points[3]
-            
-            let x = Bezier.interpolation(t: CGFloat(mapped), a: p0.x, b: p1.x, c: p2.x, d: p3.x)
-            let y = Bezier.interpolation(t: CGFloat(mapped), a: p0.y, b: p1.y, c: p2.y, d: p3.y)
-            
-            return CGPoint(x: x, y: y)
-        }
-        
-        //needs more love
-//        if element.type == .CloseSubpath {
-//            let p0 = path.getElement(0)!.points.first!
-//            let p1 = element.points[0]
-//            
-//            let p0Vector = GLKVector2Make(Float(p0.x), Float(p0.y))
-//            let p1Vector = GLKVector2Make(Float(p1.x), Float(p1.y))
-//            
-//            let diffVector = GLKVector2Subtract(p1Vector, p0Vector)
-//            let resultVector = GLKVector2MultiplyScalar(diffVector, Float(mapped))
-//            
-//            let x = p0.x + CGFloat(resultVector.x)
-//            let y = p0.y + CGFloat(resultVector.y)
-//            
-//            return CGPoint(x: x, y: y)
-//        }
-        
-        return element.points[0]
     }
     
     var path: UIBezierPath!
