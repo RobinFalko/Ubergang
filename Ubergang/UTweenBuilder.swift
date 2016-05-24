@@ -2,7 +2,7 @@
 //  UTweenBuilder.swift
 //  Ubergang
 //
-//  Created by RF on 04/04/16.
+//  Created by Robin Frielingsdorf on 04/04/16.
 //  Copyright © 2016 Robin Falko. All rights reserved.
 //
 

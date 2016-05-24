@@ -2,7 +2,7 @@
 //  CGPath.swift
 //  Ubergang
 //
-//  Created by RF on 19/05/16.
+//  Created by Robin Frielingsdorf on 19/05/16.
 //  Copyright © 2016 Robin Falko. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  TweenOptions.swift
 //  Tween
 //
-//  Created by RF on 20/01/16.
+//  Created by Robin Frielingsdorf on 20/01/16.
 //  Copyright © 2016 Robin Falko. All rights reserved.
 //
 

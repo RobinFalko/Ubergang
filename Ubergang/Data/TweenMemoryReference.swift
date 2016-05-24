@@ -2,7 +2,7 @@
 //  TweenMemoryReference.swift
 //  Tween
 //
-//  Created by RF on 14/02/16.
+//  Created by Robin Frielingsdorf on 14/02/16.
 //  Copyright © 2016 Robin Falko. All rights reserved.
 //
 

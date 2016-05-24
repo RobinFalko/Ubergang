@@ -2,7 +2,7 @@
 //  TransformTween.swift
 //  Tween
 //
-//  Created by RF on 14/01/16.
+//  Created by Robin Frielingsdorf on 14/01/16.
 //  Copyright © 2016 Robin Falko. All rights reserved.
 //
 
