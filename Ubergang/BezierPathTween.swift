@@ -17,6 +17,7 @@ public class BezierPathTween: UTweenBase {
     var updateValueAndProgress: ((value: CGPoint, progress: Double) -> Void)!
     
     var pathInfo: ([Float], Float)?
+    var elements: [(type: CGPathElementType, points: [CGPoint])]!
     
     public convenience init() {
         let id = "\(#file)_\(random() * 1000)_update"
@@ -45,29 +46,27 @@ public class BezierPathTween: UTweenBase {
     
     func compute(value: Double) -> CGPoint {
         
-        let path = self.path.CGPath
-        let currentSegmentIndex = Int(value * Double(path.getElements().count))
-        
-        let tmpElement = path.getElement(currentSegmentIndex)
-        guard let element = tmpElement else {
-            //what if the path closes? Rethink this issue
-            return path.getElement(currentSegmentIndex - 1)!.points.last!
-        }
-        
-        //(Double(pathInfo!.0[currentSegmentIndex])) / Double(pathInfo!.1)
-        
-        
-        
+        var currentSegmentIndex = 0
+        var currentDistance: Double = 0
         var lower: Double = 0
-        for i in 0..<currentSegmentIndex {
-            lower += (Double(pathInfo!.0[i])) / Double(pathInfo!.1)
+        var upper: Double = 0
+        for i in 0..<elements.count {
+            currentDistance = value * Double(pathInfo!.1)
+            upper = (Double(pathInfo!.0[i]))
+            
+            if currentDistance <= lower + upper {
+                currentSegmentIndex = i
+                break
+            }
+            
+            lower += (Double(pathInfo!.0[i]))
         }
         
-        let upper = (Double(pathInfo!.0[currentSegmentIndex])) / Double(pathInfo!.1)
-        let mapped = Math.mapValueInRange(value,
+        let element = elements[currentSegmentIndex]
+        
+        let mapped = Math.mapValueInRange(currentDistance,
                                           fromLower: lower, fromUpper: lower + upper,
                                           toLower: 0.0, toUpper: 1.0)
-        
         
         switch element.type {
         case .MoveToPoint:
@@ -98,9 +97,10 @@ public class BezierPathTween: UTweenBase {
     public func along(path: UIBezierPath, update: (CGPoint) -> Void) -> Self {
         self.path = path
         
-        self.update(update)
+        elements = path.CGPath.getElements()
+        pathInfo = computeDistances(elements)
         
-        pathInfo = computeDistances(path.CGPath)
+        self.update(update)
         
         return self
     }
@@ -108,9 +108,10 @@ public class BezierPathTween: UTweenBase {
     public func along(path: UIBezierPath, update: (CGPoint, Double) -> Void) -> Self {
         self.path = path
         
-        self.update(update)
+        elements = path.CGPath.getElements()
+        pathInfo = computeDistances(elements)   
         
-        pathInfo = computeDistances(path.CGPath)
+        self.update(update)
         
         return self
     }
@@ -190,7 +191,7 @@ public class BezierPathTween: UTweenBase {
         return self
     }
     
-    func computeDistances(path: CGPath) -> (distanceElements: [Float], distanceSum: Float) {
+    func computeDistances(elements: [(type: CGPathElementType, points: [CGPoint])]) -> (distanceElements: [Float], distanceSum: Float) {
         var pr = CGPointZero
         var currentV = GLKVector2(v: (0, 0))
         var previousV = GLKVector2(v: (0, 0))
@@ -198,7 +199,6 @@ public class BezierPathTween: UTweenBase {
         var distanceElements = [Float]()
         
         let interval = 10000
-        let elements = path.getElements()
         for element in elements {
             var distanceElement: Float = 0
             
@@ -245,10 +245,7 @@ public class BezierPathTween: UTweenBase {
             distanceElements.append(distanceElement)
             
             distanceSum += distanceElement
-            print("distanceElement \(distanceElement)")
         }
-        
-        print("distanceSum \(distanceSum)")
         
         return (distanceElements, distanceSum)
     }

@@ -38,7 +38,8 @@ class BezierPathViewController: ExampleViewController {
         
         let rectWidth = CGFloat(130)
         let centerX = (UIScreen.mainScreen().bounds.width - rectWidth) * 0.5
-        let path = heartInRect(CGRectMake(centerX, 100, rectWidth, 260))
+//        let path = heartInRect(CGRectMake(centerX, 100, rectWidth, 260))
+        let path = randomPath()
         
         drawPath(path)
         
@@ -47,7 +48,7 @@ class BezierPathViewController: ExampleViewController {
                  update: { [unowned self] (value:CGPoint, progress: Double) in
                     self.targetView.center = value
                 },
-                 duration: 5,
+                 duration: 15,
                  id: "bezierTween")
             .ease(Linear.ease)
             .options(.Repeat(1))
@@ -64,7 +65,7 @@ class BezierPathViewController: ExampleViewController {
         let shape = CAShapeLayer()
         shape.path = path.CGPath
         shape.strokeColor = UIColor.redColor().CGColor
-        shape.lineWidth = 12
+//        shape.lineWidth = 12
         shape.fillColor = UIColor.clearColor().CGColor
         view.layer.addSublayer(shape)
     }
@@ -109,7 +110,7 @@ class BezierPathViewController: ExampleViewController {
         self.targetView.center = startPoint
         path.moveToPoint(startPoint)
         
-        for _ in 0...5 {
+        for _ in 0...3 {
             print("\(arc4random_uniform(2))")
             let rnd = arc4random_uniform(3)
             switch rnd {
