@@ -20,6 +20,7 @@
 		6F4DEFB81CEA19F400E464EB /* ReverseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFB71CEA19F400E464EB /* ReverseButton.swift */; };
 		6F4DEFD11CEB875F00E464EB /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFD01CEB875F00E464EB /* ColorViewController.swift */; };
 		6F4DEFD71CEBB12F00E464EB /* BezierPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFD61CEBB12F00E464EB /* BezierPathViewController.swift */; };
+		6F4DEFDC1CF380D700E464EB /* CurveThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFDB1CF380D700E464EB /* CurveThroughViewController.swift */; };
 		6F567BCE1CB1954300222006 /* Ubergang.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F567BCD1CB1954300222006 /* Ubergang.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6F8A232F1CB826FE0035D78A /* TitleIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A232E1CB826FE0035D78A /* TitleIconTableViewCell.swift */; };
 		6F8A23311CB839AC0035D78A /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A23301CB839AC0035D78A /* MainTableViewController.swift */; };
@@ -59,6 +60,8 @@
 		6F4DEFB71CEA19F400E464EB /* ReverseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseButton.swift; sourceTree = "<group>"; };
 		6F4DEFD01CEB875F00E464EB /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		6F4DEFD61CEBB12F00E464EB /* BezierPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathViewController.swift; sourceTree = "<group>"; };
+		6F4DEFDB1CF380D700E464EB /* CurveThroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveThroughViewController.swift; sourceTree = "<group>"; };
+		6F4DEFEB1CF3A20C00E464EB /* Ubergang-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Ubergang-Bridging-Header.h"; path = "TweenApp/Ubergang-Bridging-Header.h"; sourceTree = "<group>"; };
 		6F567BCD1CB1954300222006 /* Ubergang.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ubergang.framework; path = TweenApp/Ubergang.framework; sourceTree = "<group>"; };
 		6F8A232E1CB826FE0035D78A /* TitleIconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleIconTableViewCell.swift; sourceTree = "<group>"; };
 		6F8A23301CB839AC0035D78A /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 		6F97C9671C3F026F00E4DB73 = {
 			isa = PBXGroup;
 			children = (
+				6F4DEFEB1CF3A20C00E464EB /* Ubergang-Bridging-Header.h */,
 				6F567BCD1CB1954300222006 /* Ubergang.framework */,
 				6F97C9721C3F026F00E4DB73 /* TweenApp */,
 				6F97C9711C3F026F00E4DB73 /* Products */,
@@ -129,6 +133,7 @@
 				6F43AA6E1C70D2A900B75FF2 /* ConstraintViewController.swift */,
 				6F4DEFD01CEB875F00E464EB /* ColorViewController.swift */,
 				6F4DEFD61CEBB12F00E464EB /* BezierPathViewController.swift */,
+				6F4DEFDB1CF380D700E464EB /* CurveThroughViewController.swift */,
 				6F97C9771C3F026F00E4DB73 /* Main.storyboard */,
 				6F97C97A1C3F026F00E4DB73 /* Assets.xcassets */,
 				6F97C97C1C3F026F00E4DB73 /* LaunchScreen.storyboard */,
@@ -226,6 +231,7 @@
 				6F4DEF7D1CC1736C00E464EB /* TimelinesViewController.swift in Sources */,
 				6F4DEFB61CE9E8E400E464EB /* TweenControlButton.swift in Sources */,
 				444D769C1CEB2F4500889D16 /* TweenStatusView.swift in Sources */,
+				6F4DEFDC1CF380D700E464EB /* CurveThroughViewController.swift in Sources */,
 				6F97C9741C3F026F00E4DB73 /* AppDelegate.swift in Sources */,
 				6F8A23311CB839AC0035D78A /* MainTableViewController.swift in Sources */,
 			);
@@ -294,6 +300,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -333,6 +340,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

@@ -329,20 +329,20 @@
                                             <segue destination="dPP-kJ-jkT" kind="show" id="aks-iu-YzE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="i9v-jc-3YR" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="i9v-jc-3YR" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="416" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i9v-jc-3YR" id="W0H-LU-zBk">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="jwz-5q-ykN" userLabel="Icon">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="jwz-5q-ykN" userLabel="Icon">
                                                     <rect key="frame" x="557" y="9" width="27" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="jwz-5q-ykN" secondAttribute="height" multiplier="35:35" id="h4b-bB-Bpi"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtW-dJ-Vcm" userLabel="Title">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Curve Through" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtW-dJ-Vcm" userLabel="Title">
                                                     <rect key="frame" x="16" y="4" width="128" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="QfL-me-gYH"/>
@@ -365,6 +365,7 @@
                                             <outlet property="iconView" destination="jwz-5q-ykN" id="Us6-cN-Lnb"/>
                                             <outlet property="iconViewConstraints" destination="6Pq-kT-HQ0" id="ozi-ne-30C"/>
                                             <outlet property="titleLabelConstraints" destination="Mog-VT-TaR" id="79n-Pr-3gL"/>
+                                            <segue destination="qt8-mw-kWy" kind="show" id="lzl-XM-pLD"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8zJ-bV-SgV" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
@@ -1728,6 +1729,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NW-x7-QWO" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1423" y="297"/>
+        </scene>
+        <!--Curve Through View Controller-->
+        <scene sceneID="SpF-Nn-LfP">
+            <objects>
+                <viewController id="qt8-mw-kWy" customClass="CurveThroughViewController" customModule="TweenApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="guJ-0G-eYf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Axh-jp-O7A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vmi-dl-CTV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ljR-ft-WZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="4205"/>
         </scene>
     </scenes>
     <resources>

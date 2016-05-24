@@ -2,7 +2,7 @@
 //  UTweenBuilder.swift
 //  Ubergang
 //
-//  Created by RF on 04/04/16.
+//  Created by Robin Frielingsdorf on 04/04/16.
 //  Copyright © 2016 Robin Falko. All rights reserved.
 //
 
@@ -62,6 +62,27 @@ public class UTweenBuilder {
     }
     
     public class func along(path: UIBezierPath, update: (value: CGPoint, progress: Double) -> Void, duration: Double, id: String) -> BezierPathTween {
+        
+        let tween = BezierPathTween(id: id)
+        return tween.along( path, update: update, duration: duration )
+    }
+    
+    
+    
+    
+    public class func along(points: [CGPoint], update: (value: CGPoint) -> Void, duration: Double, id: String, closed: Bool = false) -> BezierPathTween {
+        
+        let numbers = points.map { NSValue(CGPoint: $0) }
+        let path = UIBezierPath.interpolateCGPointsWithCatmullRom(numbers, closed: closed, alpha: 1.0)
+        
+        let tween = BezierPathTween(id: id)
+        return tween.along( path, update: update, duration: duration )
+    }
+    
+    public class func along(points: [CGPoint], update: (value: CGPoint, progress: Double) -> Void, duration: Double, id: String, closed: Bool = false) -> BezierPathTween {
+        
+        let numbers = points.map { NSValue(CGPoint: $0) }
+        let path = UIBezierPath.interpolateCGPointsWithCatmullRom(numbers, closed: closed, alpha: 1.0)
         
         let tween = BezierPathTween(id: id)
         return tween.along( path, update: update, duration: duration )

@@ -2,7 +2,7 @@
 //  Math.swift
 //  Ubergang
 //
-//  Created by RF on 15/05/16.
+//  Created by Robin Frielingsdorf on 15/05/16.
 //  Copyright © 2016 Robin Falko. All rights reserved.
 //
 

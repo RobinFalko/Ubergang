@@ -39,6 +39,7 @@ class BezierPathViewController: ExampleViewController {
         let rectWidth = CGFloat(130)
         let centerX = (UIScreen.mainScreen().bounds.width - rectWidth) * 0.5
         let path = heartInRect(CGRectMake(centerX, 100, rectWidth, 260))
+//        let path = randomPath()
         
         drawPath(path)
         
@@ -47,7 +48,7 @@ class BezierPathViewController: ExampleViewController {
                  update: { [unowned self] (value:CGPoint, progress: Double) in
                     self.targetView.center = value
                 },
-                 duration: 5,
+                 duration: 15,
                  id: "bezierTween")
             .ease(Linear.ease)
             .options(.Repeat(1))
@@ -64,6 +65,7 @@ class BezierPathViewController: ExampleViewController {
         let shape = CAShapeLayer()
         shape.path = path.CGPath
         shape.strokeColor = UIColor.redColor().CGColor
+        shape.lineWidth = 5
         shape.fillColor = UIColor.clearColor().CGColor
         view.layer.addSublayer(shape)
     }
@@ -101,42 +103,50 @@ class BezierPathViewController: ExampleViewController {
         return path
     }
     
-//    func randomPath() -> UIBezierPath {
-//        let path = UIBezierPath()
-//        
-//        let startPoint = CGPoint(x: 30, y: 100)
-//        self.targetView.center = startPoint
-//        path.moveToPoint(startPoint)
-//        
-//        for _ in 0...10 {
-//            print("\(arc4random_uniform(2))")
-//            if arc4random_uniform(2) == 1 {
-//                path.addLineToPoint(getRndPointOnScreen())
-//            } else {
-//                let p1 = getRndPointOnScreen()
-//                let p2 = getRndPointOnScreen()
-//                let p3 = getRndPointOnScreen()
-//                path.addCurveToPoint(p3, controlPoint1: p1, controlPoint2: p2)
-//            }
-//        }
-//        
-//        let shape = CAShapeLayer()
-//        shape.path = path.CGPath
-//        shape.strokeColor = UIColor.redColor().CGColor
-//        shape.fillColor = UIColor.clearColor().CGColor
-//        view.layer.addSublayer(shape)
-//        
-//        return path
-//    }
+    func randomPath() -> UIBezierPath {
+        let path = UIBezierPath()
+        
+        let startPoint = CGPoint(x: 20, y: 100)
+        self.targetView.center = startPoint
+        path.moveToPoint(startPoint)
+        
+        for _ in 0...3 {
+            print("\(arc4random_uniform(2))")
+            let rnd = arc4random_uniform(3)
+            switch rnd {
+            case 0:
+                path.addLineToPoint(getRndPointOnScreen())
+            case 1:
+                let p1 = getRndPointOnScreen()
+                let p2 = getRndPointOnScreen()
+                path.addQuadCurveToPoint(p2, controlPoint: p1)
+            default:
+                let p1 = getRndPointOnScreen()
+                let p2 = getRndPointOnScreen()
+                let p3 = getRndPointOnScreen()
+                path.addCurveToPoint(p3, controlPoint1: p1, controlPoint2: p2)
+            }
+        }
+        
+        path.closePath()
+        
+        let shape = CAShapeLayer()
+        shape.path = path.CGPath
+        shape.strokeColor = UIColor.redColor().CGColor
+        shape.fillColor = UIColor.clearColor().CGColor
+        view.layer.addSublayer(shape)
+        
+        return path
+    }
     
     func getRndPointOnScreen() -> CGPoint {
-        let width = UInt32(UIScreen.mainScreen().bounds.width - 200)
+        let width = UInt32(UIScreen.mainScreen().bounds.width - 40)
         let height = UInt32(UIScreen.mainScreen().bounds.height - 200)
         
         let rndWidth = CGFloat(arc4random_uniform(width))
         let rndHeight = CGFloat(arc4random_uniform(height))
         
-        return CGPoint(x: rndWidth + 100, y: rndHeight + 100)
+        return CGPoint(x: rndWidth + 20, y: rndHeight + 100)
     }
 }
 

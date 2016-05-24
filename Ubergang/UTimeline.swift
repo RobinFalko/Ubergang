@@ -2,7 +2,7 @@
 //  UTimeline.swift
 //  Ubergang
 //
-//  Created by RF on 05/04/16.
+//  Created by Robin Frielingsdorf on 05/04/16.
 //  Copyright © 2016 Robin Falko. All rights reserved.
 //
 
