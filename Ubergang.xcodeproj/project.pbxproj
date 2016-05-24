@@ -50,7 +50,6 @@
 		6F567BC41CB1932200222006 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB51CB1932200222006 /* Engine.swift */; };
 		6F567BC51CB1932200222006 /* UTween.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F567BB61CB1932200222006 /* UTween.h */; };
 		6F567BC61CB1932200222006 /* UTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB71CB1932200222006 /* UTween.swift */; };
-		6F567BC71CB1932200222006 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F567BB81CB1932200222006 /* Info.plist */; };
 		6F567BC81CB1932200222006 /* NumericTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB91CB1932200222006 /* NumericTween.swift */; };
 		6F567BC91CB1932200222006 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BBB1CB1932200222006 /* Numeric.swift */; };
 		6F567BCA1CB1932200222006 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BBC1CB1932200222006 /* Timer.swift */; };
@@ -253,7 +252,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Robin Falko";
 				TargetAttributes = {
 					6F4DEFB91CEA597700E464EB = {
@@ -287,7 +286,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F567BC71CB1932200222006 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
