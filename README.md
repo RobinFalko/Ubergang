@@ -73,7 +73,7 @@ Ubergang is a tweening engine for iOS written in Swift.
             .ease(Elastic.easeOut)
             .memoryReference(.Weak)
             .start()
-}
+    }
 ```
 > This Tween with id 'intTween' goes from 0 to 10 over 5 seconds using an elastic easing. The current value will be printed with every update.
 .memoryReference(.Weak) will store this tween weakly, Ubergang won't increment the reference count. It's up to you to keep the Tween alive.
@@ -90,7 +90,7 @@ Ubergang is a tweening engine for iOS written in Swift.
             .options(.Repeat(5), .Yoyo)
             .memoryReference(.Weak)
             .start()
-}
+    }
 ```
 
 ### Start a weak numeric Tween (CGAffineTransform)
@@ -114,6 +114,7 @@ Ubergang is a tweening engine for iOS written in Swift.
                 id: "testView")
             .memoryReference(.Weak)
     	    .start()
+    }
 ```
 > This Tween with id 'testView' tweens a transform over 2.5 secondsg. The resulting tranform will be assigned to the testView with every update 'welf.testView.transform = value'.
 
