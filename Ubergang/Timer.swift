@@ -16,7 +16,7 @@ public class Timer {
     
     
     init() {
-        Engine.instance.register(update, forKey: "\(__FILE__)_update")
+        Engine.instance.register(update, forKey: "\(#file)_update")
     }
     
     
