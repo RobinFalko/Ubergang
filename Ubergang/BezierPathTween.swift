@@ -54,8 +54,12 @@ public class BezierPathTween: UTweenBase {
             return path.getElement(currentSegmentIndex - 1)!.points.last!
         }
         
+        //(Double(pathInfo!.0[currentSegmentIndex])) / Double(pathInfo!.1)
+        
+        let lower = (Double(currentSegmentIndex)) / Double(path.getElements().count)
+        let upper = (Double(currentSegmentIndex + 1)) / Double(path.getElements().count)
         let mapped = Math.mapValueInRange(value,
-                                          fromLower: (Double(currentSegmentIndex)) / Double(path.getElements().count), fromUpper: (Double(currentSegmentIndex + 1)) / Double(path.getElements().count),
+                                          fromLower: lower, fromUpper: upper,
                                           toLower: 0.0, toUpper: 1.0)
         
         
