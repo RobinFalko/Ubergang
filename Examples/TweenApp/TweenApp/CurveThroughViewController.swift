@@ -43,7 +43,7 @@ class CurveThroughViewController: ExampleViewController {
         
         tween = UTweenBuilder
             .along( points,
-                 update: { [unowned self] (value:CGPoint, progress: Double) in
+                 update: { [unowned self] (value:CGPoint) in
                     self.targetView.center = value
                 },
                  duration: 5,

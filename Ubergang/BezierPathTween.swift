@@ -16,6 +16,8 @@ public class BezierPathTween: UTweenBase {
     var updateValue: ((value: CGPoint) -> Void)!
     var updateValueAndProgress: ((value: CGPoint, progress: Double) -> Void)!
     
+    var pathInfo: ([Float], Float)?
+    
     public convenience init() {
         let id = "\(#file)_\(random() * 1000)_update"
         self.init(id: id)
@@ -61,50 +63,44 @@ public class BezierPathTween: UTweenBase {
         case .MoveToPoint:
             return element.points[0]
         case .AddLineToPoint:
-            let pr = Bezier.linear(t: CGFloat(mapped),
+            return Bezier.linear(t: CGFloat(mapped),
                                    p0: element.points[0],
                                    p1: element.points[1])
-            
-            return CGPoint(x: pr.x, y: pr.y)
         case .AddQuadCurveToPoint:
-            let pr = Bezier.quad(t: CGFloat(mapped),
+            return Bezier.quad(t: CGFloat(mapped),
                                  p0: element.points[0],
                                  p1: element.points[1],
                                  p2: element.points[2])
-            
-            return CGPoint(x: pr.x, y: pr.y)
         case .AddCurveToPoint:
-            let pr = Bezier.cubic(t: CGFloat(mapped),
+            return Bezier.cubic(t: CGFloat(mapped),
                                   p0: element.points[0],
                                   p1: element.points[1],
                                   p2: element.points[2],
                                   p3: element.points[3])
-            
-            return CGPoint(x: pr.x, y: pr.y)
         case .CloseSubpath:
-            let pr = Bezier.linear(t: CGFloat(mapped),
+            return Bezier.linear(t: CGFloat(mapped),
                                    p0: element.points[0],
                                    p1: element.points[1])
-            
-            return CGPoint(x: pr.x, y: pr.y)
         }
     }
     
     var path: UIBezierPath!
     public func along(path: UIBezierPath, update: (CGPoint) -> Void) -> Self {
         self.path = path
-        print("set path \(path)")
         
         self.update(update)
+        
+        pathInfo = computeDistances(path.CGPath)
         
         return self
     }
     
     public func along(path: UIBezierPath, update: (CGPoint, Double) -> Void) -> Self {
         self.path = path
-        print("set path \(path)")
         
         self.update(update)
+        
+        pathInfo = computeDistances(path.CGPath)
         
         return self
     }
@@ -182,5 +178,68 @@ public class BezierPathTween: UTweenBase {
     public func ease(ease: Easing) -> Self {
         self.ease = ease
         return self
+    }
+    
+    func computeDistances(path: CGPath) -> (distanceElements: [Float], distanceSum: Float) {
+        var pr = CGPointZero
+        var currentV = GLKVector2(v: (0, 0))
+        var previousV = GLKVector2(v: (0, 0))
+        var distanceSum: Float = 0
+        var distanceElements = [Float]()
+        
+        let interval = 10000
+        let elements = path.getElements()
+        for element in elements {
+            var distanceElement: Float = 0
+            
+            for i in 0..<interval {
+                let t = Float(i) / Float(interval)
+                
+                switch element.type {
+                case .MoveToPoint:
+                    let p = element.points[0]
+                    previousV = GLKVector2(v: (Float(p.x), Float(p.y)))
+                    
+                case .AddLineToPoint:
+                    pr = Bezier.linear(t: CGFloat(t),
+                                       p0: element.points[0],
+                                       p1: element.points[1])
+                case .AddQuadCurveToPoint:
+                    pr = Bezier.quad(t: CGFloat(t),
+                                     p0: element.points[0],
+                                     p1: element.points[1],
+                                     p2: element.points[2])
+                case .AddCurveToPoint:
+                    pr = Bezier.cubic(t: CGFloat(t),
+                                      p0: element.points[0],
+                                      p1: element.points[1],
+                                      p2: element.points[2],
+                                      p3: element.points[3])
+                case .CloseSubpath:
+                    pr = Bezier.linear(t: CGFloat(t),
+                                       p0: element.points[0],
+                                       p1: element.points[1])
+                }
+                
+                
+                if GLKVector2Length(previousV) == 0 {
+                    let p = element.points[0]
+                    previousV = GLKVector2(v: (Float(p.x), Float(p.y)))
+                }
+                
+                currentV = GLKVector2(v: (Float(pr.x), Float(pr.y)))
+                distanceElement += GLKVector2Distance(currentV, previousV)
+                previousV = currentV
+            }
+            
+            distanceElements.append(distanceElement)
+            
+            distanceSum += distanceElement
+            print("distanceElement \(distanceElement)")
+        }
+        
+        print("distanceSum \(distanceSum)")
+        
+        return (distanceElements, distanceSum)
     }
 }
