@@ -70,8 +70,11 @@ class CurveThroughViewController: ExampleViewController {
     
     func raceTrack(rect:CGRect) -> [CGPoint] {
         
+        let startPoint = CGPoint(x: rect.minX, y: rect.minY)
+        self.targetView.center = startPoint
+        
         var points = [CGPoint]()
-        points.append(CGPoint(x: rect.minX, y: rect.minY))
+        points.append(startPoint)
         points.append(CGPoint(x: rect.midX, y: rect.midY))
         points.append(CGPoint(x: rect.minX, y: rect.maxY))
         points.append(CGPoint(x: rect.maxX, y: rect.maxY))

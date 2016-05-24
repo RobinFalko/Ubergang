@@ -38,8 +38,8 @@ class BezierPathViewController: ExampleViewController {
         
         let rectWidth = CGFloat(130)
         let centerX = (UIScreen.mainScreen().bounds.width - rectWidth) * 0.5
-//        let path = heartInRect(CGRectMake(centerX, 100, rectWidth, 260))
-        let path = randomPath()
+        let path = heartInRect(CGRectMake(centerX, 100, rectWidth, 260))
+//        let path = randomPath()
         
         drawPath(path)
         
@@ -65,7 +65,7 @@ class BezierPathViewController: ExampleViewController {
         let shape = CAShapeLayer()
         shape.path = path.CGPath
         shape.strokeColor = UIColor.redColor().CGColor
-//        shape.lineWidth = 12
+        shape.lineWidth = 5
         shape.fillColor = UIColor.clearColor().CGColor
         view.layer.addSublayer(shape)
     }
