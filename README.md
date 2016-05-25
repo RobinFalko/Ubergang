@@ -23,7 +23,7 @@ Ubergang is a tweening engine for iOS written in Swift.
 
 ### [CocoaPods](http://cocoapods.org)
 ```ruby
-    platform :ios, '8.2'
+    platform :ios, '8.0'
     use_frameworks!
     pod 'Ubergang', '~> 0.5.0'
 ```
