@@ -10,18 +10,45 @@ import Foundation
 
 public class Quad: Ease {
     
+    /**
+     Quad ease in.
+     
+     - Parameter t: The value to be mapped going from 0 to `d`
+     - Parameter b: The mapped start value
+     - Parameter c: The mapped end value
+     - Parameter d: The end value
+     - Returns: The mapped result
+     */
     public class func easeIn(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         t/=d
         return c*(t)*t + b
     }
     
+    /**
+     Quad ease out.
+     
+     - Parameter t: The value to be mapped going from 0 to `d`
+     - Parameter b: The mapped start value
+     - Parameter c: The mapped end value
+     - Parameter d: The end value
+     - Returns: The mapped result
+     */
     public class func easeOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         t/=d
         return -c*(t)*(t-2) + b
     }
     
+    /**
+     Quad ease in out.
+     
+     - Parameter t: The value to be mapped going from 0 to `d`
+     - Parameter b: The mapped start value
+     - Parameter c: The mapped end value
+     - Parameter d: The end value
+     - Returns: The mapped result
+     */
     public class func easeInOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         t/=d/2

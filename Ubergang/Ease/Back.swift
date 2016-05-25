@@ -9,7 +9,15 @@
 import Foundation
 
 public class Back: Ease {
-    
+    /**
+     Back ease in.
+     
+     - Parameter t: The value to be mapped going from 0 to `d`
+     - Parameter b: The mapped start value
+     - Parameter c: The mapped end value
+     - Parameter d: The end value
+     - Returns: The mapped result
+     */
     public class func easeIn(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         let s = 1.70158
@@ -18,6 +26,15 @@ public class Back: Ease {
         return c*(postFix)*t*((s+1)*t - s) + b
     }
     
+    /**
+     Back ease out.
+     
+     - Parameter t: The value to be mapped going from 0 to `d`
+     - Parameter b: The mapped start value
+     - Parameter c: The mapped end value
+     - Parameter d: The end value
+     - Returns: The mapped result
+     */
     public class func easeOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         let s = 1.70158
@@ -25,6 +42,15 @@ public class Back: Ease {
         return c*(t*t*((s+1)*t + s) + 1) + b
     }
     
+    /**
+     Back ease in out.
+     
+     - Parameter t: The value to be mapped going from 0 to `d`
+     - Parameter b: The mapped start value
+     - Parameter c: The mapped end value
+     - Parameter d: The end value
+     - Returns: The mapped result
+     */
     public class func easeInOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         var s = 1.70158
