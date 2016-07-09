@@ -21,6 +21,7 @@
 		6F4DEFD11CEB875F00E464EB /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFD01CEB875F00E464EB /* ColorViewController.swift */; };
 		6F4DEFD71CEBB12F00E464EB /* BezierPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFD61CEBB12F00E464EB /* BezierPathViewController.swift */; };
 		6F4DEFDC1CF380D700E464EB /* CurveThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFDB1CF380D700E464EB /* CurveThroughViewController.swift */; };
+		6F4DEFEF1D0F49A600E464EB /* ShapesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFEE1D0F49A600E464EB /* ShapesViewController.swift */; };
 		6F567BCE1CB1954300222006 /* Ubergang.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F567BCD1CB1954300222006 /* Ubergang.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6F8A232F1CB826FE0035D78A /* TitleIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A232E1CB826FE0035D78A /* TitleIconTableViewCell.swift */; };
 		6F8A23311CB839AC0035D78A /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A23301CB839AC0035D78A /* MainTableViewController.swift */; };
@@ -62,6 +63,7 @@
 		6F4DEFD61CEBB12F00E464EB /* BezierPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathViewController.swift; sourceTree = "<group>"; };
 		6F4DEFDB1CF380D700E464EB /* CurveThroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveThroughViewController.swift; sourceTree = "<group>"; };
 		6F4DEFEB1CF3A20C00E464EB /* Ubergang-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Ubergang-Bridging-Header.h"; path = "TweenApp/Ubergang-Bridging-Header.h"; sourceTree = "<group>"; };
+		6F4DEFEE1D0F49A600E464EB /* ShapesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapesViewController.swift; sourceTree = "<group>"; };
 		6F567BCD1CB1954300222006 /* Ubergang.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ubergang.framework; path = TweenApp/Ubergang.framework; sourceTree = "<group>"; };
 		6F8A232E1CB826FE0035D78A /* TitleIconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleIconTableViewCell.swift; sourceTree = "<group>"; };
 		6F8A23301CB839AC0035D78A /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				6F4DEFD01CEB875F00E464EB /* ColorViewController.swift */,
 				6F4DEFD61CEBB12F00E464EB /* BezierPathViewController.swift */,
 				6F4DEFDB1CF380D700E464EB /* CurveThroughViewController.swift */,
+				6F4DEFEE1D0F49A600E464EB /* ShapesViewController.swift */,
 				6F97C9771C3F026F00E4DB73 /* Main.storyboard */,
 				6F97C97A1C3F026F00E4DB73 /* Assets.xcassets */,
 				6F97C97C1C3F026F00E4DB73 /* LaunchScreen.storyboard */,
@@ -226,6 +229,7 @@
 				6F4DEFB41CE9035600E464EB /* ExampleViewController.swift in Sources */,
 				6F8A232F1CB826FE0035D78A /* TitleIconTableViewCell.swift in Sources */,
 				6F43AA6F1C70D2AA00B75FF2 /* ConstraintViewController.swift in Sources */,
+				6F4DEFEF1D0F49A600E464EB /* ShapesViewController.swift in Sources */,
 				6F4DEFB81CEA19F400E464EB /* ReverseButton.swift in Sources */,
 				6F4DC16E1CB9D54800EF6B4D /* TweenControlsView.swift in Sources */,
 				6F4DEF7D1CC1736C00E464EB /* TimelinesViewController.swift in Sources */,

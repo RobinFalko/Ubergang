@@ -90,7 +90,7 @@ public class UTweenBase {
     }
     
     deinit {
-        print("deinit tween: \(id)")
+        XCGLogger.debug("deinit tween: \(id)")
     }
     
     private func registerLoop() {
@@ -146,7 +146,7 @@ public class UTweenBase {
     public func kill() {
         unregisterLoop()
         
-        print("kill: \(id)")
+        XCGLogger.verbose("kill: \(id)")
     }
     
     
@@ -205,11 +205,11 @@ extension UTweenBase: WeaklyLoopable {
 extension UTweenBase: Tweenable {
     public func start() -> Self {
         guard !isPlaying else {
-            print("tween: \(id) already playing")
+            XCGLogger.info("tween: \(id) already playing")
             return self
         }
         
-        print("start: \(id) with direction: \(direction)")
+        XCGLogger.debug("start: \(id) with direction: \(direction)")
         switch direction {
         case .Forward:
             progress = 0.0
@@ -230,7 +230,7 @@ extension UTweenBase: Tweenable {
     }
     
     public func stop() {
-        print("stop: \(id)")
+        XCGLogger.debug("stop: \(id)")
         unregisterLoop()
         
         switch direction {
@@ -246,12 +246,12 @@ extension UTweenBase: Tweenable {
     }
     
     public func pause() {
-        print("pause: \(id)")
+        XCGLogger.debug("pause: \(id)")
         unregisterLoop()
     }
     
     public func resume() {
-        print("resume: \(id)")
+        XCGLogger.debug("resume: \(id)")
         registerLoop()
     }
     

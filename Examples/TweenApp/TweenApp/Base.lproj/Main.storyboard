@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -368,20 +369,20 @@
                                             <segue destination="qt8-mw-kWy" kind="show" id="lzl-XM-pLD"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8zJ-bV-SgV" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8zJ-bV-SgV" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="460" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8zJ-bV-SgV" id="VLE-I7-Xq9">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7IT-iM-hMN" userLabel="Icon">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7IT-iM-hMN" userLabel="Icon">
                                                     <rect key="frame" x="557" y="9" width="27" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="7IT-iM-hMN" secondAttribute="height" multiplier="35:35" id="hZt-zJ-dwM"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5b-tl-PO3" userLabel="Title">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shapes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5b-tl-PO3" userLabel="Title">
                                                     <rect key="frame" x="16" y="4" width="128" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="jdH-Y7-hGV"/>
@@ -404,6 +405,7 @@
                                             <outlet property="iconView" destination="7IT-iM-hMN" id="Rab-GH-8GF"/>
                                             <outlet property="iconViewConstraints" destination="f5N-BW-HSC" id="gaE-5c-U9m"/>
                                             <outlet property="titleLabelConstraints" destination="JTQ-nU-KeH" id="r6h-Yp-QWO"/>
+                                            <segue destination="9Hw-OU-9Z2" kind="show" id="O4n-9n-cCL"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="foN-fe-xM3" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
@@ -1747,6 +1749,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljR-ft-WZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="620" y="4205"/>
+        </scene>
+        <!--Shapes View Controller-->
+        <scene sceneID="yEN-OQ-xqv">
+            <objects>
+                <viewController id="9Hw-OU-9Z2" customClass="ShapesViewController" customModule="TweenApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X2n-we-Bg1"/>
+                        <viewControllerLayoutGuide type="bottom" id="bbB-NX-sfk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q7K-Tj-PyM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jQO-0i-9dz">
+                                <rect key="frame" x="38" y="540" width="524" height="31"/>
+                                <connections>
+                                    <action selector="onValueChanged:" destination="9Hw-OU-9Z2" eventType="valueChanged" id="ogI-hD-7wC"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="jQO-0i-9dz" secondAttribute="trailing" constant="20" id="71C-O6-QiG"/>
+                            <constraint firstItem="jQO-0i-9dz" firstAttribute="leading" secondItem="q7K-Tj-PyM" secondAttribute="leadingMargin" constant="20" id="ius-ac-4UN"/>
+                            <constraint firstItem="bbB-NX-sfk" firstAttribute="top" secondItem="jQO-0i-9dz" secondAttribute="bottom" constant="30" id="qBC-kS-5Th"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fSX-LF-CNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="4941"/>
         </scene>
     </scenes>
     <resources>
