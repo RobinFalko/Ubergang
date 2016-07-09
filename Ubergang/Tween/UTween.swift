@@ -18,6 +18,16 @@ public class UTween<T>: UTweenBase {
     var updateValue: ((value: T) -> Void)!
     var updateValueAndProgress: ((value: T, progress: Double) -> Void)!
     
+    /**
+     Initialize a generic `UTween`.
+     
+     Tweens any value with type T from start to end.
+     
+     This object needs to know how to compute interpolations from start to end, that for 
+     `func compute(value: Double) -> T` must be overriden.
+     
+     - Parameter id: The unique id of the Tween
+     */
     public override init(id: String) {
         super.init(id: id)
     }

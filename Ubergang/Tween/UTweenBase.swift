@@ -52,6 +52,11 @@ public class UTweenBase {
         }
     }
     
+    /**
+     Get or set the total progress of the Tween or Timeline.
+     
+     The total progress will take any tween options into account.
+     */
     public var progressTotal: Double {
         set {
             
@@ -90,7 +95,7 @@ public class UTweenBase {
     }
     
     deinit {
-        print("deinit tween: \(id)")
+        XCGLogger.debug("deinit tween: \(id)")
     }
     
     private func registerLoop() {
@@ -140,49 +145,95 @@ public class UTweenBase {
         }
     }
     
+    /**
+     Kills the Tween or Timeline.
+     */
     //Declared in protocol Tweenable
     //Since this method can be overriden it's implemented with in the class instead of the extension
     //Declarations from extensions cannot be overridden yet
     public func kill() {
         unregisterLoop()
         
-        print("kill: \(id)")
+        XCGLogger.verbose("kill: \(id)")
     }
     
-    
-    
+    /**
+     Set the closure for updating the progress of the Tween or Timeline.
+     
+     - Parameter value: The closure to be called on update
+     - Returns: The current Tween or Timeline
+     */
     public func update(value: (progress: Double) -> Void) -> Self {
         updateProgress = value
         
         return self
     }
     
+    /**
+     Set the closure for updating the total progress of the Tween or Timeline.
+     
+     - Parameter value: The closure to be called on update
+     - Returns: The current Tween or Timeline
+     */
     public func updateTotal(value: (progressTotal: Double) -> Void) -> Self {
         updateProgressTotal = value
         
         return self
     }
     
+    /**
+     Set the closure for completing the Tween or Timeline.
+     
+     - Parameter value: The closure to be called on complete
+     - Returns: The current Tween or Timeline
+     */
     public func complete(value: () -> Void) -> Self {
         complete = value
         
         return self
     }
     
+    
+    /**
+     Set the closure for changing the repeat cycle of the Tween or Timeline.
+     
+     This event only occures if the tween option `Repeat` is set.
+     
+     - Parameter value: The closure to be called on changing the repeat cycle
+     - Returns: The current Tween or Timeline
+     */
     public func repeatCycleChange(value: (repeatCycle: Int) -> Void) -> Self {
         repeatCycleChange = value
         
         return self
     }
     
-    
+    /**
+     Set the memory reference type of the Tween or Timeline.
+     
+     memoryReference determines how to handle the reference count for the tween. Ubergang will increase the reference count if the option is set to .Strong or won’t increase it if it’s set to .Weak. 
+     
+     These two rules are valid for most cases:
+     - The Tween or Timeline is not stored in a field variable, use .Strong
+     - The Tween or Timeline is stored in a field variable, use .Weak
+     
+     - Parameter value: The memory reference type
+     - Returns: The current Tween or Timeline
+     */
     public func memoryReference(value: TweenMemoryReference) -> Self {
         memoryReference = value
         
         return self
     }
     
-    
+    /**
+     Set the `TweenOptions` for the Tween or Timeline.
+     
+     Using options you can let the Tween repeat n (Int) times, let it yoyo or combine both options.
+     
+     - Parameter value: All options seperated by ',' to be applied
+     - Returns: The current Tween or Timeline
+     */
     public func options(values: TweenOptions ...) -> Self {
         tweenOptions = values
         
@@ -203,13 +254,21 @@ extension UTweenBase: WeaklyLoopable {
 
 
 extension UTweenBase: Tweenable {
+    
+    /**
+     Start the Tween or Timeline.
+     
+     `Start` will reset the total progress when invoked - That means it will set the total progress to 0.0 in forward direction or to 1.0 in reverse direction. Starts a Tween only if it's not playing.
+     
+     - Returns: The current Tween or Timeline
+     */
     public func start() -> Self {
         guard !isPlaying else {
-            print("tween: \(id) already playing")
+            XCGLogger.info("tween: \(id) already playing")
             return self
         }
         
-        print("start: \(id) with direction: \(direction)")
+        XCGLogger.debug("start: \(id) with direction: \(direction)")
         switch direction {
         case .Forward:
             progress = 0.0
@@ -229,8 +288,13 @@ extension UTweenBase: Tweenable {
         return self
     }
     
+    /**
+     Stop the Tween or Timeline.
+     
+     `Stop` will set the total progress when invoked - That means it will set the total progress to 1.0 in forward direction or to 0.0 in reverse direction.
+     */
     public func stop() {
-        print("stop: \(id)")
+        XCGLogger.debug("stop: \(id)")
         unregisterLoop()
         
         switch direction {
@@ -245,16 +309,28 @@ extension UTweenBase: Tweenable {
         }
     }
     
+    /**
+     Pause the Tween or Timeline.
+     */
     public func pause() {
-        print("pause: \(id)")
+        XCGLogger.debug("pause: \(id)")
         unregisterLoop()
     }
     
+    /**
+     Resume the Tween or Timeline.
+     */
     public func resume() {
-        print("resume: \(id)")
+        XCGLogger.debug("resume: \(id)")
         registerLoop()
     }
     
+    /**
+     Change the direction of the Tween or Timeline.
+     
+     - Parameter direction: The play direction of the Tween or Timeline
+     - Returns: The current Tween or Timeline
+     */
     public func tweenDirection(direction: TweenDirection) -> Self {
         self.direction = direction
         

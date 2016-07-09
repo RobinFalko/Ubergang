@@ -10,6 +10,15 @@ import Foundation
 
 public class Elastic: Ease {
     
+    /**
+     Elastic ease in.
+     
+     - Parameter t: The value to be mapped going from 0 to `d`
+     - Parameter b: The mapped start value
+     - Parameter c: The mapped end value
+     - Parameter d: The end value
+     - Returns: The mapped result
+     */
     public class func easeIn(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         if t == 0 {
@@ -31,6 +40,15 @@ public class Elastic: Ease {
         return -(postFix * sin((t*d-s) * (2 * M_PI)/p )) + b
     }
     
+    /**
+     Elastic ease out.
+     
+     - Parameter t: The value to be mapped going from 0 to `d`
+     - Parameter b: The mapped start value
+     - Parameter c: The mapped end value
+     - Parameter d: The end value
+     - Returns: The mapped result
+     */
     public class func easeOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         if t == 0 {
@@ -49,6 +67,15 @@ public class Elastic: Ease {
         return (a * pow(2, -10 * t) * sin( (t*d-s) * (2*M_PI)/p ) + c + b)
     }
     
+    /**
+     Elastic ease in out.
+     
+     - Parameter t: The value to be mapped going from 0 to `d`
+     - Parameter b: The mapped start value
+     - Parameter c: The mapped end value
+     - Parameter d: The end value
+     - Returns: The mapped result
+     */
     public class func easeInOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         if t == 0 {
