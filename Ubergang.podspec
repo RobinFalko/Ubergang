@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Ubergang'
-  s.version = '0.5.0'
+  s.version = '0.5.1'
   s.summary = 'A tweening engine written in Swift.'
   s.homepage = 'https://github.com/RobinFalko/Ubergang'
   s.license = { type: 'Apache', file: 'LICENSE' }
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   
   s.requires_arc = true
   
-  s.platform = :ios, '9.3'
+  s.platform = :ios, '8.0'
   
   s.framework    = 'Ubergang'
 end

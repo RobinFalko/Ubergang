@@ -10,10 +10,28 @@ import Foundation
 
 public class Bounce: Ease {
     
+    /**
+     Bounce ease in.
+     
+     - Parameter t: The value to be mapped going from 0 to `d`
+     - Parameter b: The mapped start value
+     - Parameter c: The mapped end value
+     - Parameter d: The end value
+     - Returns: The mapped result
+     */
     public class func easeIn(t t: Double, b: Double, c: Double, d: Double) -> Double {
         return c - easeOut (t: d-t, b: 0, c: c, d: d) + b
     }
     
+    /**
+     Bounce ease out.
+     
+     - Parameter t: The value to be mapped going from 0 to `d`
+     - Parameter b: The mapped start value
+     - Parameter c: The mapped end value
+     - Parameter d: The end value
+     - Returns: The mapped result
+     */
     public class func easeOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         t/=d
@@ -34,6 +52,15 @@ public class Bounce: Ease {
         }
     }
     
+    /**
+     Bounce ease in out.
+     
+     - Parameter t: The value to be mapped going from 0 to `d`
+     - Parameter b: The mapped start value
+     - Parameter c: The mapped end value
+     - Parameter d: The end value
+     - Returns: The mapped result
+     */
     public class func easeInOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
         if (t < d/2) { return easeIn (t: t*2, b: 0, c: c, d: d) * 0.5 + b }
         else { return easeOut (t: t*2-d, b: 0, c: c, d: d) * 0.5 + c*0.5 + b }
