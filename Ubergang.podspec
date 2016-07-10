@@ -12,9 +12,10 @@ Pod::Spec.new do |s|
   
   s.requires_arc = true
   
+  s.ios.deployment_target = '8.0'
   s.platform = :ios, '8.0'
   
   s.framework    = 'Ubergang'
   
-  s.dependency 'XCGLogger'
+  s.dependency 'XCGLogger', '~> 3.3'
 end

@@ -95,7 +95,7 @@ public class UTweenBase {
     }
     
     deinit {
-        XCGLogger.debug("deinit tween: \(id)")
+        UTweenLogger.debug("deinit tween: \(id)")
     }
     
     private func registerLoop() {
@@ -154,7 +154,7 @@ public class UTweenBase {
     public func kill() {
         unregisterLoop()
         
-        XCGLogger.verbose("kill: \(id)")
+        UTweenLogger.verbose("kill: \(id)")
     }
     
     /**
@@ -264,11 +264,11 @@ extension UTweenBase: Tweenable {
      */
     public func start() -> Self {
         guard !isPlaying else {
-            XCGLogger.info("tween: \(id) already playing")
+            UTweenLogger.info("tween: \(id) already playing")
             return self
         }
         
-        XCGLogger.debug("start: \(id) with direction: \(direction)")
+        UTweenLogger.debug("start: \(id) with direction: \(direction)")
         switch direction {
         case .Forward:
             progress = 0.0
@@ -294,7 +294,7 @@ extension UTweenBase: Tweenable {
      `Stop` will set the total progress when invoked - That means it will set the total progress to 1.0 in forward direction or to 0.0 in reverse direction.
      */
     public func stop() {
-        XCGLogger.debug("stop: \(id)")
+        UTweenLogger.debug("stop: \(id)")
         unregisterLoop()
         
         switch direction {
@@ -313,7 +313,7 @@ extension UTweenBase: Tweenable {
      Pause the Tween or Timeline.
      */
     public func pause() {
-        XCGLogger.debug("pause: \(id)")
+        UTweenLogger.debug("pause: \(id)")
         unregisterLoop()
     }
     
@@ -321,7 +321,7 @@ extension UTweenBase: Tweenable {
      Resume the Tween or Timeline.
      */
     public func resume() {
-        XCGLogger.debug("resume: \(id)")
+        UTweenLogger.debug("resume: \(id)")
         registerLoop()
     }
     
