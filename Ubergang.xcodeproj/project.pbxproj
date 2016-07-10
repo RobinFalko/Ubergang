@@ -21,6 +21,17 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		6F3433B11D32A52100BC495B /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433A51D32A52100BC495B /* Engine.swift */; };
+		6F3433B21D32A52100BC495B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433A61D32A52100BC495B /* Timer.swift */; };
+		6F3433B31D32A52100BC495B /* UTweenLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433A71D32A52100BC495B /* UTweenLogger.swift */; };
+		6F3433B41D32A52100BC495B /* BezierPathTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433A91D32A52100BC495B /* BezierPathTween.swift */; };
+		6F3433B51D32A52100BC495B /* ColorTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433AA1D32A52100BC495B /* ColorTween.swift */; };
+		6F3433B61D32A52100BC495B /* NumericTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433AB1D32A52100BC495B /* NumericTween.swift */; };
+		6F3433B71D32A52100BC495B /* TransformTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433AC1D32A52100BC495B /* TransformTween.swift */; };
+		6F3433B81D32A52100BC495B /* UTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433AD1D32A52100BC495B /* UTimeline.swift */; };
+		6F3433B91D32A52100BC495B /* UTween.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3433AE1D32A52100BC495B /* UTween.h */; };
+		6F3433BA1D32A52100BC495B /* UTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433AF1D32A52100BC495B /* UTween.swift */; };
+		6F3433BB1D32A52100BC495B /* UTweenBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433B01D32A52100BC495B /* UTweenBase.swift */; };
 		6F4DC1721CBA481800EF6B4D /* WeaklyLoopable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DC1711CBA481800EF6B4D /* WeaklyLoopable.swift */; };
 		6F4DC1741CBA483800EF6B4D /* TweenDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DC1731CBA483800EF6B4D /* TweenDirection.swift */; };
 		6F4DEFB01CE8852F00E464EB /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFAF1CE8852F00E464EB /* Math.swift */; };
@@ -39,16 +50,6 @@
 		6F4DEFE01CF3964B00E464EB /* UIBezierPath+Interpolation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F4DEFDF1CF3964B00E464EB /* UIBezierPath+Interpolation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F4DEFE31CF396AE00E464EB /* CGPointExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F4DEFE11CF396AE00E464EB /* CGPointExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F4DEFE41CF396AE00E464EB /* CGPointExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFE21CF396AE00E464EB /* CGPointExtension.m */; };
-		6F4DF0011D31A47200E464EB /* BezierPathTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFF91D31A47200E464EB /* BezierPathTween.swift */; };
-		6F4DF0021D31A47200E464EB /* ColorTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFFA1D31A47200E464EB /* ColorTween.swift */; };
-		6F4DF0031D31A47200E464EB /* NumericTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFFB1D31A47200E464EB /* NumericTween.swift */; };
-		6F4DF0041D31A47200E464EB /* TransformTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFFC1D31A47200E464EB /* TransformTween.swift */; };
-		6F4DF0051D31A47200E464EB /* UTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFFD1D31A47200E464EB /* UTimeline.swift */; };
-		6F4DF0061D31A47200E464EB /* UTween.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F4DEFFE1D31A47200E464EB /* UTween.h */; };
-		6F4DF0071D31A47200E464EB /* UTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFFF1D31A47200E464EB /* UTween.swift */; };
-		6F4DF0081D31A47200E464EB /* UTweenBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DF0001D31A47200E464EB /* UTweenBase.swift */; };
-		6F4DF00C1D31A49900E464EB /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DF00A1D31A49900E464EB /* Engine.swift */; };
-		6F4DF00D1D31A49900E464EB /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DF00B1D31A49900E464EB /* Timer.swift */; };
 		6F567BBF1CB1932200222006 /* TweenMemoryReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BAF1CB1932200222006 /* TweenMemoryReference.swift */; };
 		6F567BC01CB1932200222006 /* TweenOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB01CB1932200222006 /* TweenOptions.swift */; };
 		6F567BC11CB1932200222006 /* Cubic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BB21CB1932200222006 /* Cubic.swift */; };
@@ -57,11 +58,20 @@
 		6F567BC91CB1932200222006 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BBB1CB1932200222006 /* Numeric.swift */; };
 		6F8A22DC1CB2DADC0035D78A /* UTweenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A22DB1CB2DADC0035D78A /* UTweenBuilder.swift */; };
 		6F8A22FE1CB4477D0035D78A /* Tweenable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A22FD1CB4477D0035D78A /* Tweenable.swift */; };
-		6FBA37691D329E2200255EF8 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FBA37681D329E2200255EF8 /* XCGLogger.framework */; };
-		6FF8106D1D31B04C00B33719 /* UTweenLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF8106C1D31B04C00B33719 /* UTweenLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F3433A51D32A52100BC495B /* Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		6F3433A61D32A52100BC495B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		6F3433A71D32A52100BC495B /* UTweenLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenLogger.swift; sourceTree = "<group>"; };
+		6F3433A91D32A52100BC495B /* BezierPathTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathTween.swift; sourceTree = "<group>"; };
+		6F3433AA1D32A52100BC495B /* ColorTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTween.swift; sourceTree = "<group>"; };
+		6F3433AB1D32A52100BC495B /* NumericTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTween.swift; sourceTree = "<group>"; };
+		6F3433AC1D32A52100BC495B /* TransformTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformTween.swift; sourceTree = "<group>"; };
+		6F3433AD1D32A52100BC495B /* UTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTimeline.swift; sourceTree = "<group>"; };
+		6F3433AE1D32A52100BC495B /* UTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTween.h; sourceTree = "<group>"; };
+		6F3433AF1D32A52100BC495B /* UTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTween.swift; sourceTree = "<group>"; };
+		6F3433B01D32A52100BC495B /* UTweenBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenBase.swift; sourceTree = "<group>"; };
 		6F4DC1711CBA481800EF6B4D /* WeaklyLoopable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaklyLoopable.swift; sourceTree = "<group>"; };
 		6F4DC1731CBA483800EF6B4D /* TweenDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenDirection.swift; sourceTree = "<group>"; };
 		6F4DEFAF1CE8852F00E464EB /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
@@ -80,16 +90,6 @@
 		6F4DEFDF1CF3964B00E464EB /* UIBezierPath+Interpolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Interpolation.h"; sourceTree = "<group>"; };
 		6F4DEFE11CF396AE00E464EB /* CGPointExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPointExtension.h; sourceTree = "<group>"; };
 		6F4DEFE21CF396AE00E464EB /* CGPointExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPointExtension.m; sourceTree = "<group>"; };
-		6F4DEFF91D31A47200E464EB /* BezierPathTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathTween.swift; sourceTree = "<group>"; };
-		6F4DEFFA1D31A47200E464EB /* ColorTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTween.swift; sourceTree = "<group>"; };
-		6F4DEFFB1D31A47200E464EB /* NumericTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTween.swift; sourceTree = "<group>"; };
-		6F4DEFFC1D31A47200E464EB /* TransformTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformTween.swift; sourceTree = "<group>"; };
-		6F4DEFFD1D31A47200E464EB /* UTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTimeline.swift; sourceTree = "<group>"; };
-		6F4DEFFE1D31A47200E464EB /* UTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTween.h; sourceTree = "<group>"; };
-		6F4DEFFF1D31A47200E464EB /* UTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTween.swift; sourceTree = "<group>"; };
-		6F4DF0001D31A47200E464EB /* UTweenBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenBase.swift; sourceTree = "<group>"; };
-		6F4DF00A1D31A49900E464EB /* Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
-		6F4DF00B1D31A49900E464EB /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		6F567BAF1CB1932200222006 /* TweenMemoryReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenMemoryReference.swift; sourceTree = "<group>"; };
 		6F567BB01CB1932200222006 /* TweenOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenOptions.swift; sourceTree = "<group>"; };
 		6F567BB21CB1932200222006 /* Cubic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cubic.swift; sourceTree = "<group>"; };
@@ -100,8 +100,6 @@
 		6F8A22DB1CB2DADC0035D78A /* UTweenBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenBuilder.swift; sourceTree = "<group>"; };
 		6F8A22FD1CB4477D0035D78A /* Tweenable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweenable.swift; sourceTree = "<group>"; };
 		6FAD4FDB1C9DAD9800291A9D /* Ubergang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ubergang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FBA37681D329E2200255EF8 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XCGLogger.framework; sourceTree = "<group>"; };
-		6FF8106C1D31B04C00B33719 /* UTweenLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenLogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,13 +107,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FBA37691D329E2200255EF8 /* XCGLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F3433A41D32A52100BC495B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6F3433A51D32A52100BC495B /* Engine.swift */,
+				6F3433A61D32A52100BC495B /* Timer.swift */,
+				6F3433A71D32A52100BC495B /* UTweenLogger.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		6F3433A81D32A52100BC495B /* Tween */ = {
+			isa = PBXGroup;
+			children = (
+				6F3433A91D32A52100BC495B /* BezierPathTween.swift */,
+				6F3433AA1D32A52100BC495B /* ColorTween.swift */,
+				6F3433AB1D32A52100BC495B /* NumericTween.swift */,
+				6F3433AC1D32A52100BC495B /* TransformTween.swift */,
+				6F3433AD1D32A52100BC495B /* UTimeline.swift */,
+				6F3433AE1D32A52100BC495B /* UTween.h */,
+				6F3433AF1D32A52100BC495B /* UTween.swift */,
+				6F3433B01D32A52100BC495B /* UTweenBase.swift */,
+			);
+			path = Tween;
+			sourceTree = "<group>";
+		};
 		6F4DEFAE1CE8852300E464EB /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,40 +159,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		6F4DEFF81D31A47200E464EB /* Tween */ = {
-			isa = PBXGroup;
-			children = (
-				6F4DEFF91D31A47200E464EB /* BezierPathTween.swift */,
-				6F4DEFFA1D31A47200E464EB /* ColorTween.swift */,
-				6F4DEFFB1D31A47200E464EB /* NumericTween.swift */,
-				6F4DEFFC1D31A47200E464EB /* TransformTween.swift */,
-				6F4DEFFD1D31A47200E464EB /* UTimeline.swift */,
-				6F4DEFFE1D31A47200E464EB /* UTween.h */,
-				6F4DEFFF1D31A47200E464EB /* UTween.swift */,
-				6F4DF0001D31A47200E464EB /* UTweenBase.swift */,
-			);
-			path = Tween;
-			sourceTree = "<group>";
-		};
-		6F4DF0091D31A49900E464EB /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				6F4DF00A1D31A49900E464EB /* Engine.swift */,
-				6F4DF00B1D31A49900E464EB /* Timer.swift */,
-				6FF8106C1D31B04C00B33719 /* UTweenLogger.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
 		6F567BAD1CB1932200222006 /* Ubergang */ = {
 			isa = PBXGroup;
 			children = (
-				6F4DF0091D31A49900E464EB /* Core */,
+				6F3433A41D32A52100BC495B /* Core */,
+				6F3433A81D32A52100BC495B /* Tween */,
 				6F4DEFD81CEE57FC00E464EB /* Extension */,
 				6F567BAE1CB1932200222006 /* Data */,
 				6F567BB11CB1932200222006 /* Ease */,
 				6F567BBA1CB1932200222006 /* Protocols */,
-				6F4DEFF81D31A47200E464EB /* Tween */,
 				6F8A22DB1CB2DADC0035D78A /* UTweenBuilder.swift */,
 				6F567BB81CB1932200222006 /* Info.plist */,
 				6F4DEFAE1CE8852300E464EB /* Util */,
@@ -220,7 +217,6 @@
 		6FAD4FD11C9DAD9800291A9D = {
 			isa = PBXGroup;
 			children = (
-				6FBA37671D329E1900255EF8 /* Frameworks */,
 				6F567BAD1CB1932200222006 /* Ubergang */,
 				6FAD4FDC1C9DAD9800291A9D /* Products */,
 			);
@@ -234,14 +230,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6FBA37671D329E1900255EF8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6FBA37681D329E2200255EF8 /* XCGLogger.framework */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -250,7 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F4DEFE31CF396AE00E464EB /* CGPointExtension.h in Headers */,
-				6F4DF0061D31A47200E464EB /* UTween.h in Headers */,
+				6F3433B91D32A52100BC495B /* UTween.h in Headers */,
 				6F4DEFE01CF3964B00E464EB /* UIBezierPath+Interpolation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,40 +331,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F4DF0051D31A47200E464EB /* UTimeline.swift in Sources */,
+				6F3433B51D32A52100BC495B /* ColorTween.swift in Sources */,
+				6F3433BA1D32A52100BC495B /* UTween.swift in Sources */,
 				6F4DEFC91CEA5B9900E464EB /* Expo.swift in Sources */,
-				6F4DF0011D31A47200E464EB /* BezierPathTween.swift in Sources */,
 				6F4DEFCA1CEA5B9900E464EB /* Quad.swift in Sources */,
 				6F567BC01CB1932200222006 /* TweenOptions.swift in Sources */,
-				6F4DF0021D31A47200E464EB /* ColorTween.swift in Sources */,
-				6F4DF00C1D31A49900E464EB /* Engine.swift in Sources */,
 				6F4DEFB01CE8852F00E464EB /* Math.swift in Sources */,
 				6F4DC1741CBA483800EF6B4D /* TweenDirection.swift in Sources */,
 				6F567BC11CB1932200222006 /* Cubic.swift in Sources */,
 				6F4DEFE41CF396AE00E464EB /* CGPointExtension.m in Sources */,
+				6F3433B31D32A52100BC495B /* UTweenLogger.swift in Sources */,
 				6F4DEFCD1CEA5B9900E464EB /* Sine.swift in Sources */,
 				6F8A22DC1CB2DADC0035D78A /* UTweenBuilder.swift in Sources */,
 				6F567BC91CB1932200222006 /* Numeric.swift in Sources */,
 				6F4DEFCB1CEA5B9900E464EB /* Quart.swift in Sources */,
+				6F3433B61D32A52100BC495B /* NumericTween.swift in Sources */,
 				6F4DC1721CBA481800EF6B4D /* WeaklyLoopable.swift in Sources */,
 				6F4DEFCC1CEA5B9900E464EB /* Quint.swift in Sources */,
 				6F567BBF1CB1932200222006 /* TweenMemoryReference.swift in Sources */,
+				6F3433BB1D32A52100BC495B /* UTweenBase.swift in Sources */,
+				6F3433B71D32A52100BC495B /* TransformTween.swift in Sources */,
 				6F4DEFDA1CEE581C00E464EB /* CGPath.swift in Sources */,
 				6F4DEFD31CEBA20A00E464EB /* Bezier.swift in Sources */,
-				6F4DF0041D31A47200E464EB /* TransformTween.swift in Sources */,
-				6F4DF00D1D31A49900E464EB /* Timer.swift in Sources */,
 				6F567BC31CB1932200222006 /* Elastic.swift in Sources */,
-				6F4DF0081D31A47200E464EB /* UTweenBase.swift in Sources */,
+				6F3433B21D32A52100BC495B /* Timer.swift in Sources */,
+				6F3433B81D32A52100BC495B /* UTimeline.swift in Sources */,
 				6F4DEFDE1CF3962F00E464EB /* UIBezierPath+Interpolation.m in Sources */,
 				6F4DEFB21CE8CD3F00E464EB /* Linear.swift in Sources */,
-				6F4DF0031D31A47200E464EB /* NumericTween.swift in Sources */,
 				6F567BC21CB1932200222006 /* Ease.swift in Sources */,
 				6F4DEFC71CEA5B9900E464EB /* Bounce.swift in Sources */,
 				6F4DEFC61CEA5B9900E464EB /* Back.swift in Sources */,
 				6F4DEFC81CEA5B9900E464EB /* Circ.swift in Sources */,
+				6F3433B41D32A52100BC495B /* BezierPathTween.swift in Sources */,
 				6F8A22FE1CB4477D0035D78A /* Tweenable.swift in Sources */,
-				6F4DF0071D31A47200E464EB /* UTween.swift in Sources */,
-				6FF8106D1D31B04C00B33719 /* UTweenLogger.swift in Sources */,
+				6F3433B11D32A52100BC495B /* Engine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,10 +491,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
 				INFOPLIST_FILE = Ubergang/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -525,10 +509,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
 				INFOPLIST_FILE = Ubergang/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
