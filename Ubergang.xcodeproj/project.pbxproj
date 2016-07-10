@@ -39,8 +39,6 @@
 		6F4DEFE01CF3964B00E464EB /* UIBezierPath+Interpolation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F4DEFDF1CF3964B00E464EB /* UIBezierPath+Interpolation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F4DEFE31CF396AE00E464EB /* CGPointExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F4DEFE11CF396AE00E464EB /* CGPointExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F4DEFE41CF396AE00E464EB /* CGPointExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFE21CF396AE00E464EB /* CGPointExtension.m */; };
-		6F4DEFF31D31914B00E464EB /* UTweenLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFF21D31914B00E464EB /* UTweenLogger.swift */; };
-		6F4DEFF71D319AEF00E464EB /* XCGLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFF41D3199BE00E464EB /* XCGLogger.swift */; };
 		6F4DF0011D31A47200E464EB /* BezierPathTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFF91D31A47200E464EB /* BezierPathTween.swift */; };
 		6F4DF0021D31A47200E464EB /* ColorTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFFA1D31A47200E464EB /* ColorTween.swift */; };
 		6F4DF0031D31A47200E464EB /* NumericTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4DEFFB1D31A47200E464EB /* NumericTween.swift */; };
@@ -59,9 +57,12 @@
 		6F567BC91CB1932200222006 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F567BBB1CB1932200222006 /* Numeric.swift */; };
 		6F8A22DC1CB2DADC0035D78A /* UTweenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A22DB1CB2DADC0035D78A /* UTweenBuilder.swift */; };
 		6F8A22FE1CB4477D0035D78A /* Tweenable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8A22FD1CB4477D0035D78A /* Tweenable.swift */; };
+		6FF8106D1D31B04C00B33719 /* UTweenLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF8106C1D31B04C00B33719 /* UTweenLogger.swift */; };
+		A2495A83BDC365496DAD3FD0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B093544D4DC246E17E85AC46 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26E9BD9A3685171DD094366E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6F4DC1711CBA481800EF6B4D /* WeaklyLoopable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaklyLoopable.swift; sourceTree = "<group>"; };
 		6F4DC1731CBA483800EF6B4D /* TweenDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenDirection.swift; sourceTree = "<group>"; };
 		6F4DEFAF1CE8852F00E464EB /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
@@ -80,8 +81,6 @@
 		6F4DEFDF1CF3964B00E464EB /* UIBezierPath+Interpolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Interpolation.h"; sourceTree = "<group>"; };
 		6F4DEFE11CF396AE00E464EB /* CGPointExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPointExtension.h; sourceTree = "<group>"; };
 		6F4DEFE21CF396AE00E464EB /* CGPointExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPointExtension.m; sourceTree = "<group>"; };
-		6F4DEFF21D31914B00E464EB /* UTweenLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenLogger.swift; sourceTree = "<group>"; };
-		6F4DEFF41D3199BE00E464EB /* XCGLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCGLogger.swift; sourceTree = "<group>"; };
 		6F4DEFF91D31A47200E464EB /* BezierPathTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathTween.swift; sourceTree = "<group>"; };
 		6F4DEFFA1D31A47200E464EB /* ColorTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTween.swift; sourceTree = "<group>"; };
 		6F4DEFFB1D31A47200E464EB /* NumericTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTween.swift; sourceTree = "<group>"; };
@@ -102,6 +101,9 @@
 		6F8A22DB1CB2DADC0035D78A /* UTweenBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenBuilder.swift; sourceTree = "<group>"; };
 		6F8A22FD1CB4477D0035D78A /* Tweenable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweenable.swift; sourceTree = "<group>"; };
 		6FAD4FDB1C9DAD9800291A9D /* Ubergang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ubergang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FF8106C1D31B04C00B33719 /* UTweenLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenLogger.swift; sourceTree = "<group>"; };
+		B093544D4DC246E17E85AC46 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D88EE0A1E52C51EE4A091883 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2495A83BDC365496DAD3FD0 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +159,7 @@
 			children = (
 				6F4DF00A1D31A49900E464EB /* Engine.swift */,
 				6F4DF00B1D31A49900E464EB /* Timer.swift */,
+				6FF8106C1D31B04C00B33719 /* UTweenLogger.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -211,7 +215,6 @@
 				6F567BBB1CB1932200222006 /* Numeric.swift */,
 				6F8A22FD1CB4477D0035D78A /* Tweenable.swift */,
 				6F4DC1711CBA481800EF6B4D /* WeaklyLoopable.swift */,
-				6F4DEFF21D31914B00E464EB /* UTweenLogger.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -219,9 +222,10 @@
 		6FAD4FD11C9DAD9800291A9D = {
 			isa = PBXGroup;
 			children = (
-				6F4DEFF41D3199BE00E464EB /* XCGLogger.swift */,
 				6F567BAD1CB1932200222006 /* Ubergang */,
 				6FAD4FDC1C9DAD9800291A9D /* Products */,
+				D04EBE79EEDCAE240A2DC5ED /* Pods */,
+				CCECB841D138A388A884F538 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,6 +235,23 @@
 				6FAD4FDB1C9DAD9800291A9D /* Ubergang.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CCECB841D138A388A884F538 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B093544D4DC246E17E85AC46 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D04EBE79EEDCAE240A2DC5ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26E9BD9A3685171DD094366E /* Pods.debug.xcconfig */,
+				D88EE0A1E52C51EE4A091883 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,10 +274,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6FAD4FE31C9DAD9800291A9D /* Build configuration list for PBXNativeTarget "Ubergang" */;
 			buildPhases = (
+				E6E96E47D79A8DD9D7F2E92B /* Check Pods Manifest.lock */,
 				6FAD4FD61C9DAD9800291A9D /* Sources */,
 				6FAD4FD71C9DAD9800291A9D /* Frameworks */,
 				6FAD4FD81C9DAD9800291A9D /* Headers */,
 				6FAD4FD91C9DAD9800291A9D /* Resources */,
+				F936DA46E6D8D7A0C612F570 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -327,6 +350,36 @@
 			shellPath = /bin/sh;
 			shellScript = "######################\n# Options\n######################\n\nREVEAL_ARCHIVE_IN_FINDER=false\n\nFRAMEWORK_NAME=\"${PROJECT_NAME}\"\n\nSIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_NAME}.framework\"\n\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_NAME}.framework\"\n\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\"\n\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${FRAMEWORK_NAME}.framework\"\n\n\n######################\n# Build Frameworks\n######################\n\nxcodebuild -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphonesimulator -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator 2>&1\n\nxcodebuild -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphoneos -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos 2>&1\n\n######################\n# Create directory for universal\n######################\n\nrm -rf \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${FRAMEWORK}\"\n\n\n######################\n# Copy files Framework\n######################\n\ncp -r \"${DEVICE_LIBRARY_PATH}/.\" \"${FRAMEWORK}\"\n\n\n######################\n# Make an universal binary\n######################\n\nlipo \"${SIMULATOR_LIBRARY_PATH}/${FRAMEWORK_NAME}\" \"${DEVICE_LIBRARY_PATH}/${FRAMEWORK_NAME}\" -create -output \"${FRAMEWORK}/${FRAMEWORK_NAME}\" | echo\n\n# For Swift framework, Swiftmodule needs to be copied in the universal framework\nif [ -d \"${SIMULATOR_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" ]; then\ncp -f ${SIMULATOR_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/* \"${FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" | echo\n                                                                      fi\n                                                                      \n                                                                      if [ -d \"${DEVICE_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" ]; then\n                                                                      cp -f ${DEVICE_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/* \"${FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" | echo\n                                                                      fi\n                                                                      \n                                                                      ######################\n                                                                      # On Release, copy the result to release directory\n                                                                      ######################\n                                                                      OUTPUT_DIR=\"${PROJECT_DIR}/Output/${FRAMEWORK_NAME}-${CONFIGURATION}-iphoneuniversal/\"\n                                                                      \n                                                                      rm -rf \"$OUTPUT_DIR\"\n                                                                      mkdir -p \"$OUTPUT_DIR\"\n                                                                      \n                                                                      cp -r \"${FRAMEWORK}\" \"$OUTPUT_DIR\"\n                                                                      \n                                                                      if [ ${REVEAL_ARCHIVE_IN_FINDER} = true ]; then\n                                                                      open \"${OUTPUT_DIR}/\"\n                                                                      fi";
 		};
+		E6E96E47D79A8DD9D7F2E92B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F936DA46E6D8D7A0C612F570 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -335,14 +388,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F4DF0051D31A47200E464EB /* UTimeline.swift in Sources */,
-				6F4DEFF71D319AEF00E464EB /* XCGLogger.swift in Sources */,
 				6F4DEFC91CEA5B9900E464EB /* Expo.swift in Sources */,
 				6F4DF0011D31A47200E464EB /* BezierPathTween.swift in Sources */,
 				6F4DEFCA1CEA5B9900E464EB /* Quad.swift in Sources */,
 				6F567BC01CB1932200222006 /* TweenOptions.swift in Sources */,
 				6F4DF0021D31A47200E464EB /* ColorTween.swift in Sources */,
 				6F4DF00C1D31A49900E464EB /* Engine.swift in Sources */,
-				6F4DEFF31D31914B00E464EB /* UTweenLogger.swift in Sources */,
 				6F4DEFB01CE8852F00E464EB /* Math.swift in Sources */,
 				6F4DC1741CBA483800EF6B4D /* TweenDirection.swift in Sources */,
 				6F567BC11CB1932200222006 /* Cubic.swift in Sources */,
@@ -369,6 +420,7 @@
 				6F4DEFC81CEA5B9900E464EB /* Circ.swift in Sources */,
 				6F8A22FE1CB4477D0035D78A /* Tweenable.swift in Sources */,
 				6F4DF0071D31A47200E464EB /* UTween.swift in Sources */,
+				6FF8106D1D31B04C00B33719 /* UTweenLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +541,7 @@
 		};
 		6FAD4FE41C9DAD9800291A9D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26E9BD9A3685171DD094366E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -507,6 +560,7 @@
 		};
 		6FAD4FE51C9DAD9800291A9D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D88EE0A1E52C51EE4A091883 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
