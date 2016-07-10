@@ -10,11 +10,11 @@ Pod::Spec.new do |s|
   				:tag => s.version.to_s }
   s.source_files = 'Ubergang/**/*.{h,swift}'
   
-  s.requires_arc = true
-  
   s.platform = :ios, '8.0'
+  s.ios.deployment_target = '8.0'
   
-  s.framework    = 'Ubergang'
+  s.framework  = "Foundation"
+  s.requires_arc = true
   
   s.dependency 'XCGLogger', '~> 3.3'
 end
