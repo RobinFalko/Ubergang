@@ -95,7 +95,7 @@ public class UTweenBase {
     }
     
     deinit {
-        UTweenLogger.debug("deinit tween: \(id)")
+        UTweenLogger.verbose("deinit tween: \(id)")
     }
     
     private func registerLoop() {
@@ -268,7 +268,7 @@ extension UTweenBase: Tweenable {
             return self
         }
         
-        UTweenLogger.debug("start: \(id) with direction: \(direction)")
+        UTweenLogger.info("start: \(id) with direction: \(direction)")
         switch direction {
         case .Forward:
             progress = 0.0
@@ -294,7 +294,7 @@ extension UTweenBase: Tweenable {
      `Stop` will set the total progress when invoked - That means it will set the total progress to 1.0 in forward direction or to 0.0 in reverse direction.
      */
     public func stop() {
-        UTweenLogger.debug("stop: \(id)")
+        UTweenLogger.info("stop: \(id)")
         unregisterLoop()
         
         switch direction {
@@ -313,7 +313,7 @@ extension UTweenBase: Tweenable {
      Pause the Tween or Timeline.
      */
     public func pause() {
-        UTweenLogger.debug("pause: \(id)")
+        UTweenLogger.info("pause: \(id)")
         unregisterLoop()
     }
     
@@ -321,7 +321,7 @@ extension UTweenBase: Tweenable {
      Resume the Tween or Timeline.
      */
     public func resume() {
-        UTweenLogger.debug("resume: \(id)")
+        UTweenLogger.info("resume: \(id)")
         registerLoop()
     }
     

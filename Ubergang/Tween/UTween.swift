@@ -85,7 +85,32 @@ extension UTween {
         return self
     }
     
+    public func to(to: T, @autoclosure(escaping) current: () -> T, update: (T) -> Void) -> Self {
+        
+        self.to = to
+        
+        self.current(current)
+            .update(update)
+        
+        from = current()
+        
+        return self
+    }
+    
     public func to(to: T, current: () -> T, update: (T, Double) -> Void) -> Self {
+        
+        self.to = to
+        
+        self.current(current)
+            .update(update)
+        
+        from = current()
+        
+        return self
+    }
+    
+    
+    public func to(to: T, @autoclosure(escaping) current: () -> T, update: (T, Double) -> Void) -> Self {
         
         self.to = to
         
@@ -105,7 +130,25 @@ extension UTween {
         return self
     }
     
+    
+    public func to(to: T, @autoclosure(escaping) current: () -> T, update: (T) -> Void, complete: () -> Void) -> Self {
+        
+        self.to(to, current: current, update: update)
+            .complete(complete)
+        
+        return self
+    }
+    
     public func to(to: T, current: () -> T, update: (T, Double) -> Void, complete: () -> Void) -> Self {
+        
+        self.to(to, current: current, update: update)
+            .complete(complete)
+        
+        return self
+    }
+    
+    
+    public func to(to: T, @autoclosure(escaping) current: () -> T, update: (T, Double) -> Void, complete: () -> Void) -> Self {
         
         self.to(to, current: current, update: update)
             .complete(complete)
@@ -121,6 +164,15 @@ extension UTween {
         return self
     }
     
+    
+    public func to(to: T, @autoclosure(escaping) current: () -> T, update: (T) -> Void, duration: Double) -> Self {
+        
+        self.to(to, current: current, update: update)
+            .duration(duration)
+        
+        return self
+    }
+    
     public func to(to: T, current: () -> T, update: (T, Double) -> Void, duration: Double) -> Self {
         
         self.to(to, current: current, update: update)
@@ -129,7 +181,25 @@ extension UTween {
         return self
     }
     
+    
+    public func to(to: T, @autoclosure(escaping) current: () -> T, update: (T, Double) -> Void, duration: Double) -> Self {
+        
+        self.to(to, current: current, update: update)
+            .duration(duration)
+        
+        return self
+    }
+    
     public func to(to: T, current: () -> T, update: (T) -> Void, complete: () -> Void, duration: Double) -> Self {
+        
+        self.to(to, current: current, update: update, complete:  complete)
+            .duration(duration)
+        
+        return self
+    }
+    
+    
+    public func to(to: T, @autoclosure(escaping) current: () -> T, update: (T) -> Void, complete: () -> Void, duration: Double) -> Self {
         
         self.to(to, current: current, update: update, complete:  complete)
             .duration(duration)
@@ -146,7 +216,22 @@ extension UTween {
     }
     
     
+    public func to(to: T, @autoclosure(escaping) current: () -> T, update: (T, Double) -> Void, complete: () -> Void, duration: Double) -> Self {
+        
+        self.to(to, current: current, update: update, complete:  complete)
+            .duration(duration)
+        
+        return self
+    }
+    
+    
     public func current(value: () -> T) -> Self {
+        current = value
+        
+        return self
+    }
+    
+    public func current(@autoclosure(escaping) value: () -> T) -> Self {
         current = value
         
         return self

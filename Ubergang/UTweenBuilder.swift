@@ -28,6 +28,12 @@ public class UTweenBuilder {
         return tween.to( to, current: current, update: update, duration: duration )
     }
     
+    public class func to<T: Numeric>(to: T, @autoclosure(escaping) current: () -> T, update: (value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
+        
+        let tween = NumericTween<T>(id: id)
+        return tween.to( to, current: current, update: update, duration: duration )
+    }
+    
     /**
      Build a `NumericTween`.
      
@@ -41,6 +47,12 @@ public class UTweenBuilder {
      - Returns: The built Tween
      */
     public class func to<T: Numeric>(to: T, current: () -> T, update: (value: T, progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
+        
+        let tween = NumericTween<T>(id: id)
+        return tween.to( to, current: current, update: update, duration: duration )
+    }
+    
+    public class func to<T: Numeric>(to: T, @autoclosure(escaping) current: () -> T, update: (value: T, progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, current: current, update: update, duration: duration )
@@ -68,6 +80,12 @@ public class UTweenBuilder {
         return tween.to( to, current: current, update: update, duration: duration )
     }
     
+    public class func to(to: CGAffineTransform, @autoclosure(escaping) current: () -> CGAffineTransform, update: (value: CGAffineTransform) -> Void, duration: Double, id: String) -> TransformTween {
+        
+        let tween = TransformTween(id: id)
+        return tween.to( to, current: current, update: update, duration: duration )
+    }
+    
     /**
      Build a `TransformTween`.
      
@@ -81,6 +99,12 @@ public class UTweenBuilder {
      - Returns: The built Tween
      */
     public class func to(to: CGAffineTransform, current: () -> CGAffineTransform, update: (value: CGAffineTransform, progress: Double) -> Void, duration: Double, id: String) -> TransformTween {
+        
+        let tween = TransformTween(id: id)
+        return tween.to( to, current: current, update: update, duration: duration )
+    }
+    
+    public class func to(to: CGAffineTransform, @autoclosure(escaping) current: () -> CGAffineTransform, update: (value: CGAffineTransform, progress: Double) -> Void, duration: Double, id: String) -> TransformTween {
         
         let tween = TransformTween(id: id)
         return tween.to( to, current: current, update: update, duration: duration )
@@ -108,6 +132,12 @@ public class UTweenBuilder {
         return tween.to( to, current: current, update: update, duration: duration )
     }
     
+    public class func to(to: UIColor, @autoclosure(escaping) current: () -> UIColor, update: (value: UIColor) -> Void, duration: Double, id: String) -> ColorTween {
+        
+        let tween = ColorTween(id: id)
+        return tween.to( to, current: current, update: update, duration: duration )
+    }
+    
     /**
      Build a 'ColorTween'.
      
@@ -121,6 +151,12 @@ public class UTweenBuilder {
      - Returns: The built Tween
      */
     public class func to(to: UIColor, current: () -> UIColor, update: (value: UIColor, progress: Double) -> Void, duration: Double, id: String) -> ColorTween {
+        
+        let tween = ColorTween(id: id)
+        return tween.to( to, current: current, update: update, duration: duration )
+    }
+    
+    public class func to(to: UIColor, @autoclosure(escaping) current: () -> UIColor, update: (value: UIColor, progress: Double) -> Void, duration: Double, id: String) -> ColorTween {
         
         let tween = ColorTween(id: id)
         return tween.to( to, current: current, update: update, duration: duration )
