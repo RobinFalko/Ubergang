@@ -28,7 +28,7 @@ class ColorViewController: ExampleViewController {
     }
     
     deinit {
-        print("deinit controller")
+        print("deinit \(self.dynamicType)")
     }
     
     func setupTween() {
@@ -39,7 +39,7 @@ class ColorViewController: ExampleViewController {
         
         tween = UTweenBuilder
             .to( colorTo,
-                 current: { colorFrom },
+                 current: colorFrom,
                  update: { [unowned self] (value:UIColor, progress: Double) in
                     self.targetView.backgroundColor = value
                     self.tweenControls.progress(progress)

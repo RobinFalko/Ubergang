@@ -24,7 +24,7 @@ class TransformViewController: ExampleViewController {
     }
     
     deinit {
-        print("deinit controller")
+        print("deinit \(self.dynamicType)")
     }
     
     func setupTween() {
@@ -34,8 +34,8 @@ class TransformViewController: ExampleViewController {
         to = CGAffineTransformRotate(to, CGFloat(M_PI_2))
         
         tween = UTweenBuilder
-            .to( to,
-                current: { [unowned self] in
+            .to(to,
+                 current: { [unowned self] in
                     self.testView.transform },
                 update: { [unowned self] (value, progress) in
                     self.testView.transform = value },

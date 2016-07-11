@@ -27,7 +27,7 @@ class ShapesViewController: ExampleViewController {
     }
     
     deinit {
-        print("deinit controller")
+        print("deinit \(self.dynamicType)")
     }
     
     let anim = CABasicAnimation()

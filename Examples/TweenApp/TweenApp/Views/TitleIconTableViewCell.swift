@@ -46,7 +46,7 @@ class TitleIconTableViewCell: UITableViewCell {
         let labelTween: NumericTween<CGFloat> =
             UTweenBuilder
                 .to( titleLabelConstraints.constant,
-                    current: { from },
+                    current: from,
                     update: { [unowned self] value in
                         self.titleLabelConstraints.constant = value
                     },
@@ -57,7 +57,7 @@ class TitleIconTableViewCell: UITableViewCell {
         let dotTween: NumericTween<CGFloat> =
             UTweenBuilder
                 .to( iconViewConstraints.constant,
-                    current: { from },
+                    current: from,
                     update: { [unowned self] value in
                         self.iconViewConstraints.constant = value },
                     duration: duration,

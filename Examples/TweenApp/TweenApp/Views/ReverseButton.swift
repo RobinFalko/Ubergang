@@ -34,7 +34,7 @@ class ReverseButtton: TweenControlButton {
         
         numericTween = UTweenBuilder
             .to( CGFloat(180.0 * degToRad),
-                 current: { 0.0 },
+                 current: 0.0,
                  update: { [unowned self] value in
                     self.imageView!.layer.transform = CATransform3DRotate(CATransform3DIdentity, value, 0.0, 1.0, 0.0)
                 },
