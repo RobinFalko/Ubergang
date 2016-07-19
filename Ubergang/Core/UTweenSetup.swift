@@ -11,11 +11,21 @@ import Foundation
 public class UTweenSetup {
     public static let instance = UTweenSetup()
     
-    var isLoggingEnabled = false
+    private var isLoggingEnabled = false
+    
+    internal lazy var logger: UTweenLoggable? = {
+        guard UTweenSetup.instance.isLoggingEnabled else { return nil }
+        return UTweenLogger()
+    }()
     
     private init() {}
     
     public func enableLogging(enabled: Bool) {
         isLoggingEnabled = enabled
+    }
+    
+    public func enableLogging(enabled: Bool, withLogger logger: UTweenLoggable) {
+        enableLogging(enabled)
+        self.logger = logger
     }
 }

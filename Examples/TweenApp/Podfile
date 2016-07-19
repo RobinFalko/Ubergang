@@ -7,5 +7,4 @@ pod 'Ubergang', :path => '~/Workspace/mobile/Ubergang'
 
 target 'TweenApp' do
 
-end
-
+end 

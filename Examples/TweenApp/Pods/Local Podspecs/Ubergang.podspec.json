@@ -1,6 +1,6 @@
 {
   "name": "Ubergang",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "summary": "A tweening engine written in Swift.",
   "homepage": "https://github.com/RobinFalko/Ubergang",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/RobinFalko/Ubergang.git",
-    "tag": "0.5.3"
+    "tag": "0.5.4"
   },
   "source_files": "Ubergang/**/*.{h,swift}",
   "platforms": {

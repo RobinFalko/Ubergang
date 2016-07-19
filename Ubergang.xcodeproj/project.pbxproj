@@ -22,9 +22,9 @@
 
 /* Begin PBXBuildFile section */
 		6F32B1D21D33FF1E00623CD5 /* UTweenSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32B1D11D33FF1E00623CD5 /* UTweenSetup.swift */; };
+		6F32B1FB1D3D54E900623CD5 /* UTweenLoggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32B1FA1D3D54E900623CD5 /* UTweenLoggable.swift */; };
 		6F3433B11D32A52100BC495B /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433A51D32A52100BC495B /* Engine.swift */; };
 		6F3433B21D32A52100BC495B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433A61D32A52100BC495B /* Timer.swift */; };
-		6F3433B31D32A52100BC495B /* UTweenLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433A71D32A52100BC495B /* UTweenLogger.swift */; };
 		6F3433B41D32A52100BC495B /* BezierPathTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433A91D32A52100BC495B /* BezierPathTween.swift */; };
 		6F3433B51D32A52100BC495B /* ColorTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433AA1D32A52100BC495B /* ColorTween.swift */; };
 		6F3433B61D32A52100BC495B /* NumericTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433AB1D32A52100BC495B /* NumericTween.swift */; };
@@ -63,9 +63,9 @@
 
 /* Begin PBXFileReference section */
 		6F32B1D11D33FF1E00623CD5 /* UTweenSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenSetup.swift; sourceTree = "<group>"; };
+		6F32B1FA1D3D54E900623CD5 /* UTweenLoggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenLoggable.swift; sourceTree = "<group>"; };
 		6F3433A51D32A52100BC495B /* Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		6F3433A61D32A52100BC495B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		6F3433A71D32A52100BC495B /* UTweenLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenLogger.swift; sourceTree = "<group>"; };
 		6F3433A91D32A52100BC495B /* BezierPathTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathTween.swift; sourceTree = "<group>"; };
 		6F3433AA1D32A52100BC495B /* ColorTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTween.swift; sourceTree = "<group>"; };
 		6F3433AB1D32A52100BC495B /* NumericTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTween.swift; sourceTree = "<group>"; };
@@ -120,7 +120,6 @@
 			children = (
 				6F3433A51D32A52100BC495B /* Engine.swift */,
 				6F3433A61D32A52100BC495B /* Timer.swift */,
-				6F3433A71D32A52100BC495B /* UTweenLogger.swift */,
 				6F32B1D11D33FF1E00623CD5 /* UTweenSetup.swift */,
 			);
 			path = Core;
@@ -213,6 +212,7 @@
 				6F567BBB1CB1932200222006 /* Numeric.swift */,
 				6F8A22FD1CB4477D0035D78A /* Tweenable.swift */,
 				6F4DC1711CBA481800EF6B4D /* WeaklyLoopable.swift */,
+				6F32B1FA1D3D54E900623CD5 /* UTweenLoggable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -343,7 +343,6 @@
 				6F4DC1741CBA483800EF6B4D /* TweenDirection.swift in Sources */,
 				6F567BC11CB1932200222006 /* Cubic.swift in Sources */,
 				6F4DEFE41CF396AE00E464EB /* CGPointExtension.m in Sources */,
-				6F3433B31D32A52100BC495B /* UTweenLogger.swift in Sources */,
 				6F4DEFCD1CEA5B9900E464EB /* Sine.swift in Sources */,
 				6F8A22DC1CB2DADC0035D78A /* UTweenBuilder.swift in Sources */,
 				6F567BC91CB1932200222006 /* Numeric.swift in Sources */,
@@ -354,6 +353,7 @@
 				6F567BBF1CB1932200222006 /* TweenMemoryReference.swift in Sources */,
 				6F3433BB1D32A52100BC495B /* UTweenBase.swift in Sources */,
 				6F32B1D21D33FF1E00623CD5 /* UTweenSetup.swift in Sources */,
+				6F32B1FB1D3D54E900623CD5 /* UTweenLoggable.swift in Sources */,
 				6F3433B71D32A52100BC495B /* TransformTween.swift in Sources */,
 				6F4DEFDA1CEE581C00E464EB /* CGPath.swift in Sources */,
 				6F4DEFD31CEBA20A00E464EB /* Bezier.swift in Sources */,

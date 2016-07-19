@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '03263A00284D78DFE653BE7D'
+               BlueprintIdentifier = 'D9ACC49061A9ACAE4F36EA6C'
                BlueprintName = 'Ubergang'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Ubergang.framework'>

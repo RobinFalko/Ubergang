@@ -9,14 +9,25 @@
 import Foundation
 
 public class Timer {
+    public static let instance = Timer()
+    
+    private let id = "\(#file)_update"
     
     public static var delta:NSTimeInterval = NSTimeInterval(0)
     public static var time:NSTimeInterval = NSTimeInterval(0)
-    var lastUpdateTime:NSTimeInterval = NSTimeInterval(0)
+    private var lastUpdateTime:NSTimeInterval = NSTimeInterval(0)
+    
+    private init() {}
+    
+    func start() {
+        self.lastUpdateTime = NSDate().timeIntervalSince1970
+        
+        Engine.instance.register(update, forKey: id)
+    }
     
     
-    init() {
-        Engine.instance.register(update, forKey: "\(#file)_update")
+    func stop() {
+        Engine.instance.unregister(id)
     }
     
     
