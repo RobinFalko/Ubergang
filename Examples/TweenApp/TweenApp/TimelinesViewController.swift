@@ -58,7 +58,7 @@ class TimelinesViewController: ExampleViewController {
         //closing arc
         let tween0 = UTweenBuilder
             .to( CGFloat(-0.1),
-                current: CGFloat(-360.0),
+                from: CGFloat(-360.0),
                 update: { [unowned self] (value: CGFloat, progress: Double) in
                     self.tweenStatusView0.progress = Float(progress)
                     self.progressBar.endAngle = value
@@ -73,7 +73,7 @@ class TimelinesViewController: ExampleViewController {
         
         let tween1 = UTweenBuilder
             .to( CGFloat(-0.1),
-                current: CGFloat(-360.0),
+                from: CGFloat(-360.0),
                 update: { [unowned self] (value: CGFloat, progress: Double) in
                     self.tweenStatusView1.progress = Float(progress)
                     self.progressBar.startAngle = value
@@ -108,7 +108,7 @@ class TimelinesViewController: ExampleViewController {
         //countdown
         timelineContainer.insert( UTweenBuilder
             .to( 0,
-                current: 10,
+                from: 10,
                 update: { [unowned self] (value: Int) in
                     self.numberLabel.text = String(value)
                 },

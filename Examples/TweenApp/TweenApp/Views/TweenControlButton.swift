@@ -48,7 +48,7 @@ class TweenControlButton: UIButton {
     func setupTween() {
         let tween = UTweenBuilder
             .to( 0.5,
-                 current: 1.0,
+                 from: 1.0,
                  update: { [unowned self] (value) in
                     self.alpha = value
                  },
@@ -59,7 +59,7 @@ class TweenControlButton: UIButton {
         let transform = CGAffineTransformMakeScale(0.9, 0.9)
         let transformTween = UTweenBuilder
             .to( transform,
-                 current: CGAffineTransformIdentity,
+                 from: CGAffineTransformIdentity,
                  update: { [unowned self] value in
                     self.transform = value
                 },
@@ -93,7 +93,7 @@ class TweenControlButton: UIButton {
         let transform = CGAffineTransformMakeScale(1.3, 1.3)
         let transformTween = UTweenBuilder
             .to( transform,
-                 current: CGAffineTransformMakeScale(1.0, 1.0),
+                 from: CGAffineTransformMakeScale(1.0, 1.0),
                  update: { (value, progress) in
                     imageView.alpha = 1 - CGFloat(progress)
                     imageView.transform = value

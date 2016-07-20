@@ -35,8 +35,7 @@ class TransformViewController: ExampleViewController {
         
         tween = UTweenBuilder
             .to(to,
-                 current: { [unowned self] in
-                    self.testView.transform },
+                 from: testView.transform,
                 update: { [unowned self] (value, progress) in
                     self.testView.transform = value },
                 duration: 4,

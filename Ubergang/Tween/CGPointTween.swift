@@ -1,5 +1,5 @@
 //
-//  NumericTween.swift
+//  CGPointTween.swift
 //  Ubergang
 //
 //  Created by Robin Frielingsdorf on 14/01/16.
@@ -8,7 +8,9 @@
 
 import Foundation
 
-public class NumericTween<T: Numeric>: UTween<T> {
+public class CGPointTween: UTween<CGPoint> {
+    
+    var currentValue = CGPoint()
     
     public convenience init() {
         let id = "\(#file)_\(random() * 1000)_update"
@@ -19,23 +21,15 @@ public class NumericTween<T: Numeric>: UTween<T> {
         super.init(id: id)
     }
     
-    override func compute(value: Double) -> T {
+    override func compute(value: Double) -> CGPoint {
         super.compute(value)
         
         let from = self.from()
         let to = self.to()
         
-        let distance = to - from
-        var parsedDistance: Double
-        if distance is Double {
-            parsedDistance = distance as! Double
-        }
-        else {
-            parsedDistance = Double(distance)!
-        }
+        currentValue.x = from.x + (to.x - from.x) * CGFloat(value)
+        currentValue.y = from.y + (to.y - from.y) * CGFloat(value)
         
-        let total = T( parsedDistance * value )
-        
-        return from + total
+        return currentValue
     }
 }

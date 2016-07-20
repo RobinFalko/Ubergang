@@ -10,7 +10,6 @@ import UIKit
 import Ubergang
 
 class ReverseButtton: TweenControlButton {
-    let degToRad = M_PI / 180.0
     
     var numericTween: NumericTween<CGFloat>!
     
@@ -32,9 +31,11 @@ class ReverseButtton: TweenControlButton {
     override func setupTween() {
         super.setupTween()
         
+        let degToRad = M_PI / 180.0
+        
         numericTween = UTweenBuilder
             .to( CGFloat(180.0 * degToRad),
-                 current: 0.0,
+                 from: 0.0,
                  update: { [unowned self] value in
                     self.imageView!.layer.transform = CATransform3DRotate(CATransform3DIdentity, value, 0.0, 1.0, 0.0)
                 },

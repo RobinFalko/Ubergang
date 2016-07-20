@@ -39,7 +39,7 @@ class ColorViewController: ExampleViewController {
         
         tween = UTweenBuilder
             .to( colorTo,
-                 current: colorFrom,
+                 from: colorFrom,
                  update: { [unowned self] (value:UIColor, progress: Double) in
                     self.targetView.backgroundColor = value
                     self.tweenControls.progress(progress)

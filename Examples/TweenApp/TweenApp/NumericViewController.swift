@@ -29,7 +29,7 @@ class NumericViewController: ExampleViewController {
     func setupTween() {
         tween = UTweenBuilder
             .to( 100,
-                 current: 0,
+                 from: 0,
                  update: { [unowned self] (value:Int, progress: Double) in
                     self.numberLabel.text = "\(value)"
                     self.tweenControls.progress(progress)

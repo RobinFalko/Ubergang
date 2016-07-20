@@ -408,20 +408,20 @@
                                             <segue destination="9Hw-OU-9Z2" kind="show" id="O4n-9n-cCL"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="foN-fe-xM3" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="foN-fe-xM3" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="504" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="foN-fe-xM3" id="5Va-Qn-DOw">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ksV-Kv-a5w" userLabel="Icon">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ksV-Kv-a5w" userLabel="Icon">
                                                     <rect key="frame" x="557" y="9" width="27" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ksV-Kv-a5w" secondAttribute="height" multiplier="35:35" id="Bst-GD-7Pk"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzb-lc-XBq" userLabel="Title">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dynamic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzb-lc-XBq" userLabel="Title">
                                                     <rect key="frame" x="16" y="4" width="128" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="2sd-Xe-lA0"/>
@@ -444,6 +444,7 @@
                                             <outlet property="iconView" destination="ksV-Kv-a5w" id="cbW-Og-oTs"/>
                                             <outlet property="iconViewConstraints" destination="zLl-Zr-Dol" id="Bqt-X7-c1J"/>
                                             <outlet property="titleLabelConstraints" destination="0yI-a7-RUY" id="wpF-oS-BaQ"/>
+                                            <segue destination="T7Q-bH-wTc" kind="show" id="mOB-lK-7K1"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ePQ-FZ-vCj" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
@@ -1780,6 +1781,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSX-LF-CNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="620" y="4941"/>
+        </scene>
+        <!--Dynamic View Controller-->
+        <scene sceneID="CT6-VD-aNI">
+            <objects>
+                <viewController id="T7Q-bH-wTc" customClass="DynamicViewController" customModule="TweenApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AVX-Rm-mIG"/>
+                        <viewControllerLayoutGuide type="bottom" id="saP-Ot-xXK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ahq-NI-CxM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Oiy-i4-pDx">
+                                <rect key="frame" x="50" y="168" width="50" height="50"/>
+                                <color key="tintColor" red="1" green="0.43366446130000003" blue="0.53044323910000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="UFr-Jq-r6C">
+                                <rect key="frame" x="190" y="168" width="50" height="50"/>
+                                <color key="tintColor" red="0.47298626090000001" green="1" blue="0.499257375" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="rml-wC-1Jd">
+                                <rect key="frame" x="122" y="202" width="50" height="50"/>
+                                <color key="tintColor" red="0.47298626090000001" green="1" blue="0.499257375" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="targetView" destination="rml-wC-1Jd" id="Ek9-Jy-VmR"/>
+                        <outletCollection property="views" destination="Oiy-i4-pDx" collectionClass="NSMutableArray" id="uV5-D0-PdV"/>
+                        <outletCollection property="views" destination="UFr-Jq-r6C" collectionClass="NSMutableArray" id="ymz-4T-759"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TEt-oL-LG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="5661"/>
         </scene>
     </scenes>
     <resources>

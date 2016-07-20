@@ -23,6 +23,7 @@
 /* Begin PBXBuildFile section */
 		6F32B1D21D33FF1E00623CD5 /* UTweenSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32B1D11D33FF1E00623CD5 /* UTweenSetup.swift */; };
 		6F32B1FB1D3D54E900623CD5 /* UTweenLoggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32B1FA1D3D54E900623CD5 /* UTweenLoggable.swift */; };
+		6F32B1FF1D3FE55900623CD5 /* CGPointTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32B1FE1D3FE55900623CD5 /* CGPointTween.swift */; };
 		6F3433B11D32A52100BC495B /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433A51D32A52100BC495B /* Engine.swift */; };
 		6F3433B21D32A52100BC495B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433A61D32A52100BC495B /* Timer.swift */; };
 		6F3433B41D32A52100BC495B /* BezierPathTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3433A91D32A52100BC495B /* BezierPathTween.swift */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		6F32B1D11D33FF1E00623CD5 /* UTweenSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenSetup.swift; sourceTree = "<group>"; };
 		6F32B1FA1D3D54E900623CD5 /* UTweenLoggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTweenLoggable.swift; sourceTree = "<group>"; };
+		6F32B1FE1D3FE55900623CD5 /* CGPointTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointTween.swift; sourceTree = "<group>"; };
 		6F3433A51D32A52100BC495B /* Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		6F3433A61D32A52100BC495B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		6F3433A91D32A52100BC495B /* BezierPathTween.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathTween.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		6F3433A81D32A52100BC495B /* Tween */ = {
 			isa = PBXGroup;
 			children = (
+				6F32B1FE1D3FE55900623CD5 /* CGPointTween.swift */,
 				6F3433A91D32A52100BC495B /* BezierPathTween.swift */,
 				6F3433AA1D32A52100BC495B /* ColorTween.swift */,
 				6F3433AB1D32A52100BC495B /* NumericTween.swift */,
@@ -337,6 +340,7 @@
 				6F3433B51D32A52100BC495B /* ColorTween.swift in Sources */,
 				6F3433BA1D32A52100BC495B /* UTween.swift in Sources */,
 				6F4DEFC91CEA5B9900E464EB /* Expo.swift in Sources */,
+				6F32B1FF1D3FE55900623CD5 /* CGPointTween.swift in Sources */,
 				6F4DEFCA1CEA5B9900E464EB /* Quad.swift in Sources */,
 				6F567BC01CB1932200222006 /* TweenOptions.swift in Sources */,
 				6F4DEFB01CE8852F00E464EB /* Math.swift in Sources */,
