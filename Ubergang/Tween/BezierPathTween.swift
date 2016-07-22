@@ -12,6 +12,8 @@ import GLKit
 
 public class BezierPathTween: UTweenBase {
     
+    var offset: Double?
+    
     var current: (() -> UIBezierPath)!
     var updateValue: ((value: CGPoint) -> Void)!
     var updateValueAndProgress: ((value: CGPoint, progress: Double) -> Void)!
@@ -34,8 +36,14 @@ public class BezierPathTween: UTweenBase {
             
             easeValue = ease(t: time, b: 0.0, c: 1.0, d: duration)
             
-            updateValue?( value: compute(easeValue) )
-            updateValueAndProgress?( value: compute(easeValue), progress: newValue )
+            if let offset = offset {
+                easeValue = fmod(easeValue + offset, 1.0)
+            }
+            
+            let computedValue = compute(easeValue)
+            
+            updateValue?( value: computedValue )
+            updateValueAndProgress?( value: computedValue, progress: newValue )
             
             super.progress = newValue
         }
@@ -45,7 +53,6 @@ public class BezierPathTween: UTweenBase {
     }
     
     func compute(value: Double) -> CGPoint {
-        
         var currentSegmentIndex = 0
         var currentDistance: Double = 0
         var lower: Double = 0
@@ -188,6 +195,11 @@ public class BezierPathTween: UTweenBase {
     
     public func ease(ease: Easing) -> Self {
         self.ease = ease
+        return self
+    }
+    
+    public func offset(value: Double) -> Self {
+        self.offset = value
         return self
     }
     

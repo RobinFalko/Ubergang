@@ -20,6 +20,8 @@ public class UTween<T>: UTweenBase {
     var updateValue: ((value: T) -> Void)!
     var updateValueAndProgress: ((value: T, progress: Double) -> Void)!
     
+    var offset: Double?
+    
     /**
      Initialize a generic `UTween`.
      
@@ -40,8 +42,14 @@ public class UTween<T>: UTweenBase {
             
             easeValue = ease(t: time, b: 0.0, c: 1.0, d: duration)
             
-            updateValue?( value: compute(easeValue) )
-            updateValueAndProgress?( value: compute(easeValue), progress: newValue )
+            if let offset = offset {
+                easeValue = fmod(easeValue + offset, 1.0)
+            }
+            
+            let computedValue = compute(easeValue)
+            
+            updateValue?( value: computedValue)
+            updateValueAndProgress?( value: computedValue, progress: newValue )
             
             super.progress = newValue
         }
@@ -425,6 +433,11 @@ extension UTween {
     
     public func ease(ease: Easing) -> Self {
         self.ease = ease
+        return self
+    }
+    
+    public func offset(value: Double) -> Self {
+        self.offset = value
         return self
     }
 }
