@@ -23,6 +23,10 @@ class ConstraintViewController: ExampleViewController {
     
     var timeline: UTimeline!
     
+    deinit {
+        print("deinit \(self.dynamicType)")
+    }
+    
     override func viewDidLoad() {
         defaultRedViewHeight = redViewHeight.constant
         defaultGrayViewWidth = grayViewWidth.constant

@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ~/Workspace/mobile/Ubergang
 
 SPEC CHECKSUMS:
-  Ubergang: ca9ff1575c1bfc24d168781c164d0c537e56e0ad
+  Ubergang: 53477b72ca6fb54559829d8fa3993d4a9db03e06
   XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
 
 COCOAPODS: 0.39.0

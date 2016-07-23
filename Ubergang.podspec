@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 
   s.source = { 	:git => 'https://github.com/RobinFalko/Ubergang.git', 
   				:tag => s.version.to_s }
-  s.source_files = 'Ubergang/**/*.{h,swift}'
+  s.source_files = 'Ubergang/**/*.{h,m,swift}'
   
   s.platform = :ios, '8.0'
   s.ios.deployment_target = '8.0'
