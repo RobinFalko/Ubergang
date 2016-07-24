@@ -23,7 +23,7 @@ class DynamicViewController: ExampleViewController {
     
     override func viewDidLoad() {
         
-        //creating the views will take some time
+        //creating that many bezier tweens will take some time
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
             
             self.activityIndicator.startAnimating()
@@ -67,7 +67,7 @@ class DynamicViewController: ExampleViewController {
         let totalDuration = 20.0
         
         var previousView: UIView?
-        let itemCount = 400
+        let itemCount = 200
         for i in 0..<itemCount {
             //a placeholder. Its position will be used as start or end value
             let placeholder = UIView()
@@ -87,7 +87,7 @@ class DynamicViewController: ExampleViewController {
                     id: "bezierTween \(i)")
                 .memoryReference(.Weak)
                 .offset(offset)
-            
+
             //add it to the timeline
             timeline.insert(bezierTween, at: 0)
             

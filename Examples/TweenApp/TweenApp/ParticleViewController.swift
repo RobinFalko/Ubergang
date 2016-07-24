@@ -62,7 +62,6 @@ class ParticleViewController: ExampleViewController {
         for _: UInt32 in 0..<numTweens {
             let view = UIView(frame: CGRect(x: 0, y: 0, width: 2, height: 2))
             view.backgroundColor = UIColor.blueColor()
-            self.view.sendSubviewToBack(view)
             self.view.addSubview(view)
             
             view.transform.tx = bounds.width * 0.5
