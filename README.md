@@ -20,6 +20,7 @@ Ubergang is a tweening engine for iOS written in Swift.
 - [x] Tween Timelines
 - [x] Bezier tween align to path
 - [x] Logging and log levels
+- [x] Example project
 
 ![Example - Timeline](https://raw.githubusercontent.com/RobinFalko/Ubergang/develop/Movies/exampleTimeline.gif) ![Example - Timeline](https://raw.githubusercontent.com/RobinFalko/Ubergang/develop/Movies/examplePath.gif)
 
@@ -214,7 +215,6 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
 	    .memoryReference(.Weak)
 	    .start()
     }    
-```
 ```
 
 
