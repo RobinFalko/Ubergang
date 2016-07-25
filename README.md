@@ -1,7 +1,7 @@
 ![Ubergang - a tweening engine for iOS](https://raw.githubusercontent.com/RobinFalko/Ubergang/master/Ubergang.png)
 
 [![Platform iOS](https://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat-square)](https://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat-square)
-[![CocoaPods Compatible](https://img.shields.io/badge/pod-0.5-blue.svg?style=flat-square)](https://img.shields.io/badge/pod-0.5-blue.svg?style=flat-square)
+[![CocoaPods Compatible](https://img.shields.io/badge/pod-0.5-blue.svg?style=flat-square)](https://img.shields.io/badge/pod-0.8-blue.svg?style=flat-square)
 [![License Apache2 iOS](https://img.shields.io/badge/lecense-Apache%202-blue.svg?style=flat-square)](https://img.shields.io/badge/lecense-Apache%202-blue.svg?style=flat-square)
 
 Ubergang is a tweening engine for iOS written in Swift.
@@ -18,6 +18,8 @@ Ubergang is a tweening engine for iOS written in Swift.
 - [x] Repeat and Yoyo tween options
 - [x] Memory management for strong and weak tween object references
 - [x] Tween Timelines
+- [x] Bezier tween align to path
+- [x] Logging and log levels
 
 ## Installation
 
@@ -25,8 +27,17 @@ Ubergang is a tweening engine for iOS written in Swift.
 ```ruby
     platform :ios, '8.0'
     use_frameworks!
-    pod 'Ubergang', '~> 0.5'
+    pod 'Ubergang', '~> 0.8.1'
 ```
+## Setup
+
+```swift
+    UTweenSetup.instance.enableLogging(true)
+    UTweenSetup.instance.enableLogging(true, withLogger: loggerProxy)
+```
+
+> Ubergang provides some logs for basic operations like start, stop, pause, ...
+There is a dependency to XCGLogger which is used by default, but you can pass any Logger you prefer by creating a custom logger proxy implementing `UTweenLoggable`.
 
 ## Tween Configuration
 
@@ -197,7 +208,6 @@ Ubergang is a tweening engine for iOS written in Swift.
 
 ## Todos
 
-- Logging and log levels
-- Bezier tween align to path
+- Thinking about new features
 
 Feedback is always appreciated
