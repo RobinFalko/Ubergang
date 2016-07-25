@@ -21,6 +21,8 @@ Ubergang is a tweening engine for iOS written in Swift.
 - [x] Bezier tween align to path
 - [x] Logging and log levels
 
+![Example - Timeline](https://raw.githubusercontent.com/RobinFalko/Ubergang/develop/Movies/exampleTimeline.gif)
+
 ## Installation
 
 ### [CocoaPods](http://cocoapods.org)
