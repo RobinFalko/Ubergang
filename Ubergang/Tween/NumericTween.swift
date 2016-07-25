@@ -22,6 +22,9 @@ public class NumericTween<T: Numeric>: UTween<T> {
     override func compute(value: Double) -> T {
         super.compute(value)
         
+        let from = self.from()
+        let to = self.to()
+        
         let distance = to - from
         var parsedDistance: Double
         if distance is Double {
@@ -33,9 +36,6 @@ public class NumericTween<T: Numeric>: UTween<T> {
         
         let total = T( parsedDistance * value )
         
-        var currentValue = current()
-        currentValue = from + total
-        
-        return currentValue
+        return from + total
     }
 }

@@ -9,6 +9,8 @@
 import Foundation
 
 public class UTweenBase {
+    private lazy var logger = UTweenSetup.instance.logger
+    
     private let _id: String
     
     public var id: String {
@@ -90,15 +92,15 @@ public class UTweenBase {
         _id = id
         
         tweenOptions = [.Repeat(initialRepeatCount)]
-        
-        _ = Timer()
     }
     
     deinit {
-        UTweenLogger.debug("deinit tween: \(id)")
+        logger?.verbose("deinit tween: \(id)")
     }
     
     private func registerLoop() {
+        Timer.instance.start()
+        
         switch memoryReference {
         case .Strong:
             Engine.instance.register(loop, forKey: id)
@@ -108,6 +110,8 @@ public class UTweenBase {
     }
     
     private func unregisterLoop() {
+        Timer.instance.stop()
+        
         Engine.instance.unregister(id)
     }
     
@@ -154,7 +158,7 @@ public class UTweenBase {
     public func kill() {
         unregisterLoop()
         
-        UTweenLogger.verbose("kill: \(id)")
+        logger?.verbose("kill: \(id)")
     }
     
     /**
@@ -264,11 +268,11 @@ extension UTweenBase: Tweenable {
      */
     public func start() -> Self {
         guard !isPlaying else {
-            UTweenLogger.info("tween: \(id) already playing")
+            logger?.info("tween: \(id) already playing")
             return self
         }
         
-        UTweenLogger.debug("start: \(id) with direction: \(direction)")
+        logger?.info("start: \(id) with direction: \(direction)")
         switch direction {
         case .Forward:
             progress = 0.0
@@ -294,7 +298,7 @@ extension UTweenBase: Tweenable {
      `Stop` will set the total progress when invoked - That means it will set the total progress to 1.0 in forward direction or to 0.0 in reverse direction.
      */
     public func stop() {
-        UTweenLogger.debug("stop: \(id)")
+        logger?.info("stop: \(id)")
         unregisterLoop()
         
         switch direction {
@@ -313,7 +317,7 @@ extension UTweenBase: Tweenable {
      Pause the Tween or Timeline.
      */
     public func pause() {
-        UTweenLogger.debug("pause: \(id)")
+        logger?.info("pause: \(id)")
         unregisterLoop()
     }
     
@@ -321,7 +325,7 @@ extension UTweenBase: Tweenable {
      Resume the Tween or Timeline.
      */
     public func resume() {
-        UTweenLogger.debug("resume: \(id)")
+        logger?.info("resume: \(id)")
         registerLoop()
     }
     

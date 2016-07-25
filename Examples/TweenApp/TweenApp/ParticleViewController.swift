@@ -27,7 +27,7 @@ class ParticleViewController: ExampleViewController {
     }
     
     deinit {
-        print("deinit controller")
+        print("deinit \(self.dynamicType)")
     }
     
     func setupTween() {
@@ -48,7 +48,7 @@ class ParticleViewController: ExampleViewController {
             to.ty = view.transform.ty + CGFloat(arc4random_uniform(ui)) * CGFloat(arc4random_uniform(2) == 0 ? -1 : 1)
             
             let tween = UTweenBuilder
-                .to( to, current: { view.transform }, update: { value in view.transform = value }, duration: 3, id: "id-\(i)")
+                .to( to, from: view.transform, update: { value in view.transform = value }, duration: 3, id: "id-\(i)")
                 .ease(Cubic.easeInOut)
                 .options(.Yoyo)
             timeline.insert(tween, at: 0)
@@ -62,7 +62,6 @@ class ParticleViewController: ExampleViewController {
         for _: UInt32 in 0..<numTweens {
             let view = UIView(frame: CGRect(x: 0, y: 0, width: 2, height: 2))
             view.backgroundColor = UIColor.blueColor()
-            self.view.sendSubviewToBack(view)
             self.view.addSubview(view)
             
             view.transform.tx = bounds.width * 0.5

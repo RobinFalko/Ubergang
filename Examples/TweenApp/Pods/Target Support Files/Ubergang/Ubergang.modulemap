@@ -1,0 +1,6 @@
+framework module Ubergang {
+  umbrella header "Ubergang-umbrella.h"
+
+  export *
+  module * { export * }
+}

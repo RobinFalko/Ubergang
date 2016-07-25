@@ -41,12 +41,13 @@ class TitleIconTableViewCell: UITableViewCell {
         timeline = UTimeline(id: "timeline \(arc4random())")
         
         let from = CGFloat(120)
+        var to = titleLabelConstraints.constant
         let duration = 0.4
         
         let labelTween: NumericTween<CGFloat> =
             UTweenBuilder
-                .to( titleLabelConstraints.constant,
-                    current: { from },
+                .to(to,
+                    from: from,
                     update: { [unowned self] value in
                         self.titleLabelConstraints.constant = value
                     },
@@ -54,10 +55,11 @@ class TitleIconTableViewCell: UITableViewCell {
                     id: "titleLabelTween")
                 .ease(Cubic.easeOut)
         
+        to = titleLabelConstraints.constant
         let dotTween: NumericTween<CGFloat> =
             UTweenBuilder
-                .to( iconViewConstraints.constant,
-                    current: { from },
+                .to(to,
+                    from: from,
                     update: { [unowned self] value in
                         self.iconViewConstraints.constant = value },
                     duration: duration,

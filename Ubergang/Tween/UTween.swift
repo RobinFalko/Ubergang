@@ -11,12 +11,16 @@ import UIKit
 
 public class UTween<T>: UTweenBase {
     
-    var from: T!
-    var to: T!
+    var start: T!
+    var end: T!
     
-    var current: (() -> T)!
+    var from: (() -> T)!
+    var to: (() -> T)!
+    
     var updateValue: ((value: T) -> Void)!
     var updateValueAndProgress: ((value: T, progress: Double) -> Void)!
+    
+    var offset: Double?
     
     /**
      Initialize a generic `UTween`.
@@ -38,8 +42,14 @@ public class UTween<T>: UTweenBase {
             
             easeValue = ease(t: time, b: 0.0, c: 1.0, d: duration)
             
-            updateValue?( value: compute(easeValue) )
-            updateValueAndProgress?( value: compute(easeValue), progress: newValue )
+            if let offset = offset {
+                easeValue = fmod(easeValue + offset, 1.0)
+            }
+            
+            let computedValue = compute(easeValue)
+            
+            updateValue?( value: computedValue)
+            updateValueAndProgress?( value: computedValue, progress: newValue )
             
             super.progress = newValue
         }
@@ -51,14 +61,14 @@ public class UTween<T>: UTweenBase {
     func compute(value: Double) -> T {
         //should be overriden
         
-        return current()
+        return from()
     }
     
     //override Tweenable methods
     override public func kill() {
         super.kill()
         
-        current = nil
+        from = nil
         updateValue = nil
         updateValueAndProgress = nil
         complete = nil
@@ -73,81 +83,328 @@ public class UTween<T>: UTweenBase {
 
 
 extension UTween {
-    public func to(to: T, current: () -> T, update: (T) -> Void) -> Self {
+    // -
+    public func to(to: () -> T, from: () -> T, update: (T) -> Void) -> Self {
         
-        self.to = to
-        
-        self.current(current)
+        self.to(to)
+            .from(from)
             .update(update)
         
-        from = current()
+        end = to()
+        start = from()
         
         return self
     }
     
-    public func to(to: T, current: () -> T, update: (T, Double) -> Void) -> Self {
+    public func to(to: T, from: () -> T, update: (T) -> Void) -> Self {
         
-        self.to = to
-        
-        self.current(current)
+        self.to(to)
+            .from(from)
             .update(update)
         
-        from = current()
+        end = to
+        start = from()
         
         return self
     }
     
-    public func to(to: T, current: () -> T, update: (T) -> Void, complete: () -> Void) -> Self {
+    public func to(to: () -> T, from: T, update: (T) -> Void) -> Self {
         
-        self.to(to, current: current, update: update)
+        self.to(to)
+            .from(from)
+            .update(update)
+        
+        end = to()
+        start = from
+        
+        return self
+    }
+    
+    public func to(to: T, from: T, update: (T) -> Void) -> Self {
+        
+        self.to(to)
+            .from(from)
+            .update(update)
+        
+        end = to
+        start = from
+        
+        return self
+    }
+    
+    // -
+    public func to(to: () -> T, from: () -> T, update: (T, Double) -> Void) -> Self {
+        
+        self.to(to)
+            .from(from)
+            .update(update)
+        
+        end = to()
+        start = from()
+        
+        return self
+    }
+    
+    public func to(to: T, from: () -> T, update: (T, Double) -> Void) -> Self {
+        
+        self.to(to)
+            .from(from)
+            .update(update)
+        
+        end = to
+        start = from()
+        
+        return self
+    }
+    
+    public func to(to: () -> T, from: T, update: (T, Double) -> Void) -> Self {
+        
+        self.to(to)
+            .from(from)
+            .update(update)
+        
+        end = to()
+        start = from
+        
+        return self
+    }
+    
+    public func to(to: T, from: T, update: (T, Double) -> Void) -> Self {
+        
+        self.to(to)
+            .from(from)
+            .update(update)
+        
+        end = to
+        start = from
+        
+        return self
+    }
+    
+    
+    // -
+    public func to(to: () -> T, from: () -> T, update: (T) -> Void, complete: () -> Void) -> Self {
+        
+        self.to(to, from: from, update: update)
             .complete(complete)
         
         return self
     }
     
-    public func to(to: T, current: () -> T, update: (T, Double) -> Void, complete: () -> Void) -> Self {
+    
+    public func to(to: T, from: () -> T, update: (T) -> Void, complete: () -> Void) -> Self {
         
-        self.to(to, current: current, update: update)
+        self.to(to, from: from, update: update)
             .complete(complete)
         
         return self
     }
     
-    public func to(to: T, current: () -> T, update: (T) -> Void, duration: Double) -> Self {
-        
-        self.to(to, current: current, update: update)
-            .duration(duration)
-        
-        return self
-    }
     
-    public func to(to: T, current: () -> T, update: (T, Double) -> Void, duration: Double) -> Self {
+    public func to(to: () -> T, from: T, update: (T) -> Void, complete: () -> Void) -> Self {
         
-        self.to(to, current: current, update: update)
-            .duration(duration)
-        
-        return self
-    }
-    
-    public func to(to: T, current: () -> T, update: (T) -> Void, complete: () -> Void, duration: Double) -> Self {
-        
-        self.to(to, current: current, update: update, complete:  complete)
-            .duration(duration)
-        
-        return self
-    }
-    
-    public func to(to: T, current: () -> T, update: (T, Double) -> Void, complete: () -> Void, duration: Double) -> Self {
-        
-        self.to(to, current: current, update: update, complete:  complete)
-            .duration(duration)
+        self.to(to, from: from, update: update)
+            .complete(complete)
         
         return self
     }
     
     
-    public func current(value: () -> T) -> Self {
-        current = value
+    public func to(to: T, from: T, update: (T) -> Void, complete: () -> Void) -> Self {
+        
+        self.to(to, from: from, update: update)
+            .complete(complete)
+        
+        return self
+    }
+    
+    // -
+    public func to(to: () -> T, from: () -> T, update: (T, Double) -> Void, complete: () -> Void) -> Self {
+        
+        self.to(to, from: from, update: update)
+            .complete(complete)
+        
+        return self
+    }
+    
+    public func to(to: T, from: () -> T, update: (T, Double) -> Void, complete: () -> Void) -> Self {
+        
+        self.to(to, from: from, update: update)
+            .complete(complete)
+        
+        return self
+    }
+    
+    public func to(to: () -> T, from: T, update: (T, Double) -> Void, complete: () -> Void) -> Self {
+        
+        self.to(to, from: from, update: update)
+            .complete(complete)
+        
+        return self
+    }
+    
+    public func to(to: T, from: T, update: (T, Double) -> Void, complete: () -> Void) -> Self {
+        
+        self.to(to, from: from, update: update)
+            .complete(complete)
+        
+        return self
+    }
+    
+    // -
+    public func to(to: () -> T, from: () -> T, update: (T) -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update)
+            .duration(duration)
+        
+        return self
+    }
+    
+    public func to(to: T, from: () -> T, update: (T) -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update)
+            .duration(duration)
+        
+        return self
+    }
+    
+    public func to(to: () -> T, from: T, update: (T) -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update)
+            .duration(duration)
+        
+        return self
+    }
+    
+    public func to(to: T, from: T, update: (T) -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update)
+            .duration(duration)
+        
+        return self
+    }
+    
+    // -
+    public func to(to: () -> T, from: () -> T, update: (T, Double) -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update)
+            .duration(duration)
+        
+        return self
+    }
+    
+    public func to(to: T, from: () -> T, update: (T, Double) -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update)
+            .duration(duration)
+        
+        return self
+    }
+    
+    public func to(to: () -> T, from: T, update: (T, Double) -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update)
+            .duration(duration)
+        
+        return self
+    }
+    
+    public func to(to: T, from: T, update: (T, Double) -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update)
+            .duration(duration)
+        
+        return self
+    }
+    
+    // -
+    public func to(to: () -> T, from: () -> T, update: (T) -> Void, complete: () -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update, complete:  complete)
+            .duration(duration)
+        
+        return self
+    }
+    
+    public func to(to: T, from: () -> T, update: (T) -> Void, complete: () -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update, complete:  complete)
+            .duration(duration)
+        
+        return self
+    }
+    
+    public func to(to: () -> T, from: T, update: (T) -> Void, complete: () -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update, complete:  complete)
+            .duration(duration)
+        
+        return self
+    }
+    
+    public func to(to: T, from: T, update: (T) -> Void, complete: () -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update, complete:  complete)
+            .duration(duration)
+        
+        return self
+    }
+    
+    // -
+    public func to(to: () -> T, from: () -> T, update: (T, Double) -> Void, complete: () -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update, complete:  complete)
+            .duration(duration)
+        
+        return self
+    }
+    
+    public func to(to: T, from: () -> T, update: (T, Double) -> Void, complete: () -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update, complete:  complete)
+            .duration(duration)
+        
+        return self
+    }
+    
+    public func to(to: () -> T, from: T, update: (T, Double) -> Void, complete: () -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update, complete:  complete)
+            .duration(duration)
+        
+        return self
+    }
+    
+    public func to(to: T, from: T, update: (T, Double) -> Void, complete: () -> Void, duration: Double) -> Self {
+        
+        self.to(to, from: from, update: update, complete:  complete)
+            .duration(duration)
+        
+        return self
+    }
+    
+    
+    // -
+    public func to(value: () -> T) -> Self {
+        to = value
+        
+        return self
+    }
+    
+    public func to(value: T) -> Self {
+        to = {value}
+        
+        return self
+    }
+    
+    public func from(value: () -> T) -> Self {
+        from = value
+        
+        return self
+    }
+    
+    public func from(value: T) -> Self {
+        from = {value}
         
         return self
     }
@@ -176,6 +433,11 @@ extension UTween {
     
     public func ease(ease: Easing) -> Self {
         self.ease = ease
+        return self
+    }
+    
+    public func offset(value: Double) -> Self {
+        self.offset = value
         return self
     }
 }

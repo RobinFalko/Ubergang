@@ -12,6 +12,8 @@ public class UTimeline: UTweenBase {
     var tweens: [UTweenBase] = []
     var startTimeForTweenId: [String : Double] = [:]
     
+    public var count: Int { return tweens.count }
+    
     public override init(id: String) {
         super.init(id: id)
     }

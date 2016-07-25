@@ -35,5 +35,7 @@ class ExampleViewController: UIViewController {
             tween.progressTotal = value
         }
         view.addSubview(tweenControls)
+        
+        tween.progressTotal = 0
     }
 }

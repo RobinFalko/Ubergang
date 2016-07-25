@@ -23,13 +23,13 @@ class NumericViewController: ExampleViewController {
     }
     
     deinit {
-        print("deinit controller")
+        print("deinit \(self.dynamicType)")
     }
     
     func setupTween() {
         tween = UTweenBuilder
             .to( 100,
-                 current: { 0 },
+                 from: 0,
                  update: { [unowned self] (value:Int, progress: Double) in
                     self.numberLabel.text = "\(value)"
                     self.tweenControls.progress(progress)

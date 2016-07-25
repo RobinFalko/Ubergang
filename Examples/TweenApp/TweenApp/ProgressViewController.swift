@@ -32,13 +32,13 @@ class ProgressViewController: ExampleViewController {
     }
     
     deinit {
-        print("deinit controller")
+        print("deinit \(self.dynamicType)")
     }
     
     func setupTween() {
         tween = UTweenBuilder
             .to( 10.0,
-                 current: { 0.0 },
+                 from: 0.0,
                  update: { [unowned self] (value, progress) in
                     self.progressBar.progress = Float(progress)
                     self.tweenLabel.text = "\(round(value * 10.0) / 10.0)"

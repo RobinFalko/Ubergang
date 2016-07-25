@@ -1,0 +1,17 @@
+PODS:
+  - Ubergang (0.5.4):
+    - XCGLogger (~> 3.3)
+  - XCGLogger (3.3)
+
+DEPENDENCIES:
+  - Ubergang (from `~/Workspace/mobile/Ubergang`)
+
+EXTERNAL SOURCES:
+  Ubergang:
+    :path: ~/Workspace/mobile/Ubergang
+
+SPEC CHECKSUMS:
+  Ubergang: 53477b72ca6fb54559829d8fa3993d4a9db03e06
+  XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
+
+COCOAPODS: 0.39.0

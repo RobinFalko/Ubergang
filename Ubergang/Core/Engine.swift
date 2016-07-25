@@ -12,6 +12,8 @@ import UIKit
 public class Engine: NSObject {
     public typealias Closure = () -> Void
     
+    private var displayLink: CADisplayLink?
+    
     var closures = [String : Closure]()
     
     var mapTable = NSMapTable(keyOptions: .StrongMemory, valueOptions: .WeakMemory)
@@ -23,9 +25,15 @@ public class Engine: NSObject {
     }()
     
     func start() {
-        let displayLink = CADisplayLink(target: self, selector: #selector(Engine.update))
-        displayLink.frameInterval = 1
-        displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
+        if displayLink == nil {
+            displayLink = CADisplayLink(target: self, selector: #selector(Engine.update))
+            displayLink!.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
+        }
+    }
+    
+    func stop() {
+        displayLink?.removeFromRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
+        displayLink = nil
     }
     
     func update() {
@@ -44,11 +52,15 @@ public class Engine: NSObject {
     
     func register(closure: Closure, forKey key: String) {
         closures[key] = closure
+        
+        start()
     }
     
     
     func register(loopable: WeaklyLoopable, forKey key: String) {
         mapTable.setObject(loopable as? AnyObject, forKey: key)
+        
+        start()
     }
     
     
@@ -56,6 +68,10 @@ public class Engine: NSObject {
         mapTable.removeObjectForKey(key)
         
         closures.removeValueForKey(key)
+        
+        if mapTable.count == 0 && closures.isEmpty {
+            stop()
+        }
     }
     
     

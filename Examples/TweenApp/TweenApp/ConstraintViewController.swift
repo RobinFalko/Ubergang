@@ -23,6 +23,10 @@ class ConstraintViewController: ExampleViewController {
     
     var timeline: UTimeline!
     
+    deinit {
+        print("deinit \(self.dynamicType)")
+    }
+    
     override func viewDidLoad() {
         defaultRedViewHeight = redViewHeight.constant
         defaultGrayViewWidth = grayViewWidth.constant
@@ -46,7 +50,7 @@ class ConstraintViewController: ExampleViewController {
         var from = defaultRedViewHeight
         let tween1 = NumericTween<CGFloat>(id: "testView1")
             .to( CGFloat(50.0),
-                current: { from },
+                from: from,
                 update: { [unowned self] (value:CGFloat) in
                     self.redViewHeight.constant = value },
                 duration: 1)
@@ -55,7 +59,7 @@ class ConstraintViewController: ExampleViewController {
         from = defaultGrayViewWidth
         let tween2 = NumericTween<CGFloat>(id: "testView2")
             .to( CGFloat(150.0),
-                current: { from },
+                from: from,
                 update: { [unowned self] (value:CGFloat) in
                     self.grayViewWidth.constant = value },
                 duration: 2)
@@ -64,7 +68,7 @@ class ConstraintViewController: ExampleViewController {
         from = defaultGreenViewBottom
         let tween3 = NumericTween<CGFloat>(id: "testView3")
             .to( CGFloat(100.0),
-                current: { from },
+                from: from,
                 update: { [unowned self] (value:CGFloat) in
                     self.greenViewBottom.constant = value },
                 duration: 3)

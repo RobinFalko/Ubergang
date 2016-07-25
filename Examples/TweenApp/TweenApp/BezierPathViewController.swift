@@ -31,7 +31,7 @@ class BezierPathViewController: ExampleViewController {
     }
     
     deinit {
-        print("deinit controller")
+        print("deinit \(self.dynamicType)")
     }
     
     func setupTween() {
@@ -45,7 +45,7 @@ class BezierPathViewController: ExampleViewController {
         
         tween = UTweenBuilder
             .along( path,
-                 update: { [unowned self] (value:CGPoint, progress: Double) in
+                update: { [unowned self] (value:CGPoint) in
                     self.targetView.center = value
                 },
                  duration: 15,

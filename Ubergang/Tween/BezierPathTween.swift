@@ -12,9 +12,12 @@ import GLKit
 
 public class BezierPathTween: UTweenBase {
     
+    var offset: Double?
+    
     var current: (() -> UIBezierPath)!
     var updateValue: ((value: CGPoint) -> Void)!
     var updateValueAndProgress: ((value: CGPoint, progress: Double) -> Void)!
+    var updateValueAndProgressAndOrientation: ((value: CGPoint, progress: Double, orientation: CGPoint) -> Void)!
     
     var pathInfo: ([Float], Float)?
     var elements: [(type: CGPathElementType, points: [CGPoint])]!
@@ -34,8 +37,17 @@ public class BezierPathTween: UTweenBase {
             
             easeValue = ease(t: time, b: 0.0, c: 1.0, d: duration)
             
-            updateValue?( value: compute(easeValue) )
-            updateValueAndProgress?( value: compute(easeValue), progress: newValue )
+            //if an offset is set, add it to the current ease value
+            if let offset = offset {
+                easeValue = fmod(easeValue + offset, 1.0)
+            }
+            
+            let computedValue = compute(easeValue)
+            
+            //call update closures if set
+            updateValue?( value: computedValue )
+            updateValueAndProgress?( value: computedValue, progress: newValue )
+            updateValueAndProgressAndOrientation?( value: computedValue, progress: newValue, orientation: orientation ?? CGPointZero  )
             
             super.progress = newValue
         }
@@ -44,8 +56,10 @@ public class BezierPathTween: UTweenBase {
         }
     }
     
+    var previousPoint: CGPoint?
+    var orientation: CGPoint?
+    
     func compute(value: Double) -> CGPoint {
-        
         var currentSegmentIndex = 0
         var currentDistance: Double = 0
         var lower: Double = 0
@@ -67,30 +81,45 @@ public class BezierPathTween: UTweenBase {
         let mapped = Math.mapValueInRange(currentDistance,
                                           fromLower: lower, fromUpper: lower + upper,
                                           toLower: 0.0, toUpper: 1.0)
+        var newPoint:CGPoint!
         
         switch element.type {
         case .MoveToPoint:
-            return element.points[0]
+            newPoint = element.points[0]
         case .AddLineToPoint:
-            return Bezier.linear(t: CGFloat(mapped),
+            newPoint = Bezier.linear(t: CGFloat(mapped),
                                    p0: element.points[0],
                                    p1: element.points[1])
         case .AddQuadCurveToPoint:
-            return Bezier.quad(t: CGFloat(mapped),
+            newPoint = Bezier.quad(t: CGFloat(mapped),
                                  p0: element.points[0],
                                  p1: element.points[1],
                                  p2: element.points[2])
         case .AddCurveToPoint:
-            return Bezier.cubic(t: CGFloat(mapped),
+            newPoint = Bezier.cubic(t: CGFloat(mapped),
                                   p0: element.points[0],
                                   p1: element.points[1],
                                   p2: element.points[2],
                                   p3: element.points[3])
         case .CloseSubpath:
-            return Bezier.linear(t: CGFloat(mapped),
+            newPoint = Bezier.linear(t: CGFloat(mapped),
                                    p0: element.points[0],
                                    p1: element.points[1])
         }
+        
+        //calculate the orientation vector from one vector to the other, 
+        //but only if these vectors are not equal
+        if let previousPoint = previousPoint where previousPoint != newPoint  {
+            let v0 = GLKVector2(v: (Float(newPoint.x), Float(newPoint.y)))
+            let v1 = GLKVector2(v: (Float(previousPoint.x), Float(previousPoint.y)))
+            var vDirection = GLKVector2Subtract(v0, v1)
+            vDirection = GLKVector2Normalize(vDirection)
+            orientation = CGPoint(x: CGFloat(vDirection.x), y: CGFloat(vDirection.y))
+        }
+        
+        previousPoint = newPoint
+        
+        return newPoint
     }
     
     var path: UIBezierPath!
@@ -116,6 +145,17 @@ public class BezierPathTween: UTweenBase {
         return self
     }
     
+    public func along(path: UIBezierPath, update: (CGPoint, Double, CGPoint) -> Void) -> Self {
+        self.path = path
+        
+        elements = path.CGPath.getElements()
+        pathInfo = computeDistances(elements)
+        
+        self.update(update)
+        
+        return self
+    }
+    
     public func along(path: UIBezierPath, update: (CGPoint) -> Void, complete: () -> Void) -> Self {
         
         self.along(path, update: update)
@@ -125,6 +165,14 @@ public class BezierPathTween: UTweenBase {
     }
     
     public func along(path: UIBezierPath, update: (CGPoint, Double) -> Void, complete: () -> Void) -> Self {
+        
+        self.along(path, update: update)
+            .complete(complete)
+        
+        return self
+    }
+    
+    public func along(path: UIBezierPath, update: (CGPoint, Double, CGPoint) -> Void, complete: () -> Void) -> Self {
         
         self.along(path, update: update)
             .complete(complete)
@@ -148,6 +196,14 @@ public class BezierPathTween: UTweenBase {
         return self
     }
     
+    public func along(path: UIBezierPath, update: (CGPoint, Double, CGPoint) -> Void, duration: Double) -> Self {
+        
+        self.along(path, update: update)
+            .duration(duration)
+        
+        return self
+    }
+    
     public func along(path: UIBezierPath, update: (CGPoint) -> Void, complete: () -> Void, duration: Double) -> Self {
         
         self.along(path, update: update, complete:  complete)
@@ -157,6 +213,14 @@ public class BezierPathTween: UTweenBase {
     }
     
     public func along(path: UIBezierPath, update: (CGPoint, Double) -> Void, complete: () -> Void, duration: Double) -> Self {
+        
+        self.along(path, update: update, complete:  complete)
+            .duration(duration)
+        
+        return self
+    }
+    
+    public func along(path: UIBezierPath, update: (CGPoint, Double, CGPoint) -> Void, complete: () -> Void, duration: Double) -> Self {
         
         self.along(path, update: update, complete:  complete)
             .duration(duration)
@@ -178,6 +242,13 @@ public class BezierPathTween: UTweenBase {
         return self
     }
     
+    
+    public func update(value: (CGPoint, Double, CGPoint) -> Void) -> Self {
+        updateValueAndProgressAndOrientation = value
+        
+        return self
+    }
+    
     public func duration(value: Double) -> Self {
         initialDuration = value
         duration = value
@@ -188,6 +259,11 @@ public class BezierPathTween: UTweenBase {
     
     public func ease(ease: Easing) -> Self {
         self.ease = ease
+        return self
+    }
+    
+    public func offset(value: Double) -> Self {
+        self.offset = value
         return self
     }
     
