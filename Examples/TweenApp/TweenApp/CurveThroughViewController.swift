@@ -17,7 +17,8 @@ class CurveThroughViewController: ExampleViewController {
     var tween: BezierPathTween!
     
     override func viewDidLoad() {
-        targetView = UIImageView(image: UIImage(named: "SliderThumb"))
+        targetView = UIImageView(image: UIImage(named: "PlayIcon")?.imageWithRenderingMode(.AlwaysTemplate))
+        targetView.tintColor = UIColor(red: 73 / 255, green: 205 / 255, blue: 6 / 255, alpha: 0.75)
         
         setupTween()
         
@@ -43,10 +44,14 @@ class CurveThroughViewController: ExampleViewController {
         
         tween = UTweenBuilder
             .along( points,
-                 update: { [unowned self] (value:CGPoint) in
+                 update: { [unowned self] (value:CGPoint, progress: Double, orientation: CGPoint) in
                     self.targetView.center = value
+                    
+                    let angle = fmod(atan2(orientation.y, orientation.x), 360)
+                    let transform = CGAffineTransformRotate(CGAffineTransformIdentity, angle)
+                    self.targetView.transform = transform
                 },
-                 duration: 5,
+                 duration: 10,
                  id: "bezierTween",
                  closed: true)
             .ease(Linear.ease)
