@@ -21,7 +21,7 @@ class BezierPathViewController: ExampleViewController {
     }
     
     override func viewDidLoad() {
-        targetView = UIImageView(image: UIImage(named: "SliderThumb"))
+        targetView = UIImageView(image: UIImage(named: "PlayIcon"))
         
         setupTween()
         
@@ -45,8 +45,12 @@ class BezierPathViewController: ExampleViewController {
         
         tween = UTweenBuilder
             .along( path,
-                 update: { [unowned self] (value:CGPoint, progress: Double) in
+                update: { [unowned self] (value:CGPoint, progress: Double, orientation: CGPoint) in
                     self.targetView.center = value
+                    
+                    let angle = fmod(atan2(orientation.y, orientation.x), 360)
+                    let transform = CGAffineTransformRotate(CGAffineTransformIdentity, angle)
+                    self.targetView.transform = transform
                 },
                  duration: 15,
                  id: "bezierTween")

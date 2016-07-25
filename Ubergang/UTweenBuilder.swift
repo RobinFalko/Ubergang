@@ -351,6 +351,23 @@ public class UTweenBuilder {
         return tween.along( path, update: update, duration: duration )
     }
     
+    /**
+     Build a 'BezierPathTween'.
+     
+     Tweens the value along a `UIBezierPath` from start to end.
+     
+     - Parameter path: The bezier path
+     - Parameter update: A closure containing the value, progress and orientation on update
+     - Parameter duration: The duration of the Tween
+     - Parameter id: The unique id of the Tween
+     - Returns: The built Tween
+     */
+    public class func along(path: UIBezierPath, update: (value: CGPoint, progress: Double, orientation: CGPoint) -> Void, duration: Double, id: String) -> BezierPathTween {
+        
+        let tween = BezierPathTween(id: id)
+        return tween.along( path, update: update, duration: duration )
+    }
+    
     
     
     
@@ -387,6 +404,26 @@ public class UTweenBuilder {
      - Returns: The built Tween
      */
     public class func along(points: [CGPoint], update: (value: CGPoint, progress: Double) -> Void, duration: Double, id: String, closed: Bool = false) -> BezierPathTween {
+        
+        let numbers = points.map { NSValue(CGPoint: $0) }
+        let path = UIBezierPath.interpolateCGPointsWithCatmullRom(numbers, closed: closed, alpha: 1.0)
+        
+        let tween = BezierPathTween(id: id)
+        return tween.along( path, update: update, duration: duration )
+    }
+    
+    /**
+     Build a 'BezierPathTween'.
+     
+     Tweens the value along a `UIBezierPath` from start to end. The path will go curve through the given points.
+     
+     - Parameter points: The points where the path will curve through
+     - Parameter update: A closure containing the value, progress and orientation on update
+     - Parameter duration: The duration of the Tween
+     - Parameter id: The unique id of the Tween
+     - Returns: The built Tween
+     */
+    public class func along(points: [CGPoint], update: (value: CGPoint, progress: Double, orientation: CGPoint) -> Void, duration: Double, id: String, closed: Bool = false) -> BezierPathTween {
         
         let numbers = points.map { NSValue(CGPoint: $0) }
         let path = UIBezierPath.interpolateCGPointsWithCatmullRom(numbers, closed: closed, alpha: 1.0)
