@@ -66,10 +66,19 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
 
 ```swift
     UTweenBuilder
-        .to( 10.0, current: { 0.0 }, update: { value in print("test double: \(value)") }, duration: 5, id: "doubleTween")
+        .to( 10.0, from: 0.0, update: { value in print("test double: \(value)") }, duration: 5, id: "doubleTween")
         .start()
 ```
 > This Tween with id 'doubleTween' goes from 0.0 to 10.0 over 5 seconds using a linear easing by default. The current value will be printed with every update.
+
+### 'to' and 'from' using closures
+
+```swift
+    UTweenBuilder
+        .to( { [unowned self] in return position1.x }, from: { [unowned self] in return position2.x }, update: { value in print("test double: \(value)") }, duration: 5, id: "doubleTween")
+        .start()
+```
+> Passing closures to 'to' and 'from' will always compute all results using the current values returned by the closures.
 
 
 
@@ -80,7 +89,7 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
 
     func run() {
         tween = UTweenBuilder
-            .to( 10, current: { 0 }, update: { value in print("test int: \(value)") }, duration: 5, id: "intTween")
+            .to( 10, from: 0, update: { value in print("test int: \(value)") }, duration: 5, id: "intTween")
             .ease(Elastic.easeOut)
             .memoryReference(.Weak)
             .start()
@@ -96,7 +105,7 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
 
     func run() {
         tween = UTweenBuilder
-            .to( 10, current: { 0 }, update: { value in print("test int: \(value)") }, duration: 5, id: "intTween")
+            .to( 10, from: 0, update: { value in print("test int: \(value)") }, duration: 5, id: "intTween")
             .ease(Elastic.easeOut)
             .options(.Repeat(5), .Yoyo)
             .memoryReference(.Weak)
@@ -117,7 +126,7 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
     
         tween = UTweenBuilder
             .to( to,
-                current: { [unowned self] in
+                from: { [unowned self] in
                     return self.testView.transform },
                 update: { [unowned self] value in
                     self.testView.transform = value },
@@ -142,15 +151,15 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
         timeline.memoryReference(.Weak)
 
         timeline.append(UTweenBuilder
-            .to( 10, current: { 0 }, update: { value in print("0-10 value: \(value)") }, duration: 5, id: "intTween")
+            .to( 10, from: 0, update: { value in print("0-10 value: \(value)") }, duration: 5, id: "intTween")
         )
   
         timeline.append(UTweenBuilder
-            .to( 10.0, current: { 0.0 }, update: { value in print("0.0-10.0 value: \(value)") }, duration: 5, id: "floatTween1")
+            .to( 10.0, from: 0.0, update: { value in print("0.0-10.0 value: \(value)") }, duration: 5, id: "floatTween1")
         )
   
         timeline.insert(UTweenBuilder
-            .to( 0.0, current: { 10.0 }, update: { value in print("10.0-0.0 value: \(value)") }, duration: 5, id: "floatTween2"), at: 2.5
+            .to( 0.0, from: 10.0, update: { value in print("10.0-0.0 value: \(value)") }, duration: 5, id: "floatTween2"), at: 2.5
         )
   
         timeline.start()
@@ -197,6 +206,36 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
                 update: { [unowned self] (value:CGPoint, progress: Double) in
 			    //update
 		    },
+            duration: 5,
+            id: "bezierTween")
+        .ease(Linear.ease)
+	    .memoryReference(.Weak)
+	    .start()
+    }    
+```
+```
+
+
+
+
+### Tween through points and use orientation to align the object on update
+
+```swift
+    var tween: BezierPathTween!
+
+    func run() {
+        let points = [CGPoint]()
+        points.append(...)
+
+        tween = UTweenBuilder
+            .along( points,
+                update: { [unowned self] (value:CGPoint, progress: Double, orientation: CGPoint) in
+                    self.targetView.center = value
+                    
+                    let angle = atan2(orientation.y, orientation.x)
+                    let transform = CGAffineTransformRotate(CGAffineTransformIdentity, angle)
+                    self.targetView.transform = transform
+                },
             duration: 5,
             id: "bezierTween")
         .ease(Linear.ease)
