@@ -2,7 +2,7 @@
 
 [![Platform iOS](https://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat-square)](https://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat-square)
 [![CocoaPods Compatible](https://img.shields.io/badge/pod-0.8-blue.svg?style=flat-square)](https://img.shields.io/badge/pod-0.8-blue.svg?style=flat-square)
-[![License Apache2 iOS](https://img.shields.io/badge/lecense-Apache%202-blue.svg?style=flat-square)](https://img.shields.io/badge/lecense-Apache%202-blue.svg?style=flat-square)
+[![License Apache2 iOS](https://img.shields.io/badge/license-Apache%202-blue.svg?style=flat-square)](https://img.shields.io/badge/license-Apache%202-blue.svg?style=flat-square)
 
 Ubergang is a tweening engine for iOS written in Swift.
 
