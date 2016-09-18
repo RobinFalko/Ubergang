@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 
-public class Engine: NSObject {
+open class Engine: NSObject {
     public typealias Closure = () -> Void
     
-    private var displayLink: CADisplayLink?
+    fileprivate var displayLink: CADisplayLink?
     
     var closures = [String : Closure]()
     
-    var mapTable = NSMapTable(keyOptions: .StrongMemory, valueOptions: .WeakMemory)
+    var mapTable = NSMapTable<AnyObject, AnyObject>(keyOptions: NSPointerFunctions.Options.strongMemory, valueOptions: NSPointerFunctions.Options.weakMemory)
     
-    public static var instance: Engine = {
+    open static var instance: Engine = {
         let engine = Engine()
         engine.start()
         return engine
@@ -27,18 +27,18 @@ public class Engine: NSObject {
     func start() {
         if displayLink == nil {
             displayLink = CADisplayLink(target: self, selector: #selector(Engine.update))
-            displayLink!.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
+            displayLink!.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
         }
     }
     
     func stop() {
-        displayLink?.removeFromRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
+        displayLink?.remove(from: RunLoop.current, forMode: RunLoopMode.commonModes)
         displayLink = nil
     }
     
     func update() {
         let enumerator = mapTable.objectEnumerator()
-        while let any: AnyObject = enumerator?.nextObject() {
+        while let any: AnyObject = enumerator?.nextObject() as AnyObject! {
             if let loopable = any as? WeaklyLoopable {
                 loopable.loopWeakly()
             }
@@ -50,24 +50,24 @@ public class Engine: NSObject {
     }
     
     
-    func register(closure: Closure, forKey key: String) {
+    func register(_ closure: @escaping Closure, forKey key: String) {
         closures[key] = closure
         
         start()
     }
     
     
-    func register(loopable: WeaklyLoopable, forKey key: String) {
-        mapTable.setObject(loopable as? AnyObject, forKey: key)
+    func register(_ loopable: WeaklyLoopable, forKey key: String) {
+        mapTable.setObject(loopable as AnyObject?, forKey: key as AnyObject?)
         
         start()
     }
     
     
-    func unregister(key: String) {
-        mapTable.removeObjectForKey(key)
+    func unregister(_ key: String) {
+        mapTable.removeObject(forKey: key as AnyObject?)
         
-        closures.removeValueForKey(key)
+        closures.removeValue(forKey: key)
         
         if mapTable.count == 0 && closures.isEmpty {
             stop()
@@ -75,7 +75,7 @@ public class Engine: NSObject {
     }
     
     
-    func contains(key: String) -> Bool {
-        return mapTable.objectForKey(key) != nil || closures[key] != nil
+    func contains(_ key: String) -> Bool {
+        return mapTable.object(forKey: key as AnyObject?) != nil || closures[key] != nil
     }
 }

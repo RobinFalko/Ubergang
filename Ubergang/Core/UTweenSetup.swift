@@ -8,23 +8,23 @@
 
 import Foundation
 
-public class UTweenSetup {
-    public static let instance = UTweenSetup()
+open class UTweenSetup {
+    open static let instance = UTweenSetup()
     
-    private var isLoggingEnabled = false
+    fileprivate var isLoggingEnabled = false
     
     internal lazy var logger: UTweenLoggable? = {
         guard UTweenSetup.instance.isLoggingEnabled else { return nil }
         return UTweenLogger()
     }()
     
-    private init() {}
+    fileprivate init() {}
     
-    public func enableLogging(enabled: Bool) {
+    open func enableLogging(_ enabled: Bool) {
         isLoggingEnabled = enabled
     }
     
-    public func enableLogging(enabled: Bool, withLogger logger: UTweenLoggable) {
+    open func enableLogging(_ enabled: Bool, withLogger logger: UTweenLoggable) {
         enableLogging(enabled)
         self.logger = logger
     }

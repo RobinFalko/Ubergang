@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Ubergang'
-  s.version = '0.8.1'
+  s.version = '0.9.0'
   s.summary = 'A tweening engine written in Swift.'
   s.homepage = 'https://github.com/RobinFalko/Ubergang'
   s.license = { type: 'Apache', file: 'LICENSE' }
@@ -15,6 +15,4 @@ Pod::Spec.new do |s|
   
   s.framework  = "Foundation"
   s.requires_arc = true
-  
-  s.dependency 'XCGLogger', '~> 3.3'
 end

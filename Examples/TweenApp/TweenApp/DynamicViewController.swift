@@ -24,14 +24,14 @@ class DynamicViewController: ExampleViewController {
     override func viewDidLoad() {
         
         //creating that many bezier tweens will take some time
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
             
             self.activityIndicator.startAnimating()
-            self.loadingLabel.hidden = false
+            self.loadingLabel.isHidden = false
             
             self.setupTween()
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 for particle in self.particles {
                     self.view.addSubview(particle)
                 }
@@ -39,24 +39,24 @@ class DynamicViewController: ExampleViewController {
                 self.addTweenControls(self.timeline)
                 
                 self.activityIndicator.stopAnimating()
-                self.loadingLabel.hidden = true
+                self.loadingLabel.isHidden = true
             }
         }
     }
     
     deinit {
-        print("deinit \(self.dynamicType)")
+        print("deinit \(type(of: self))")
     }
     
     func setupTween() {let rectWidth = CGFloat(200)
-        let centerX = (UIScreen.mainScreen().bounds.width - rectWidth) * 0.5
-        let path = rectInRect(CGRectMake(centerX, 200, rectWidth, rectWidth))
+        let centerX = (UIScreen.main.bounds.width - rectWidth) * 0.5
+        let path = rectInRect(CGRect(x: centerX, y: 200, width: rectWidth, height: rectWidth))
 //        let path = circleInRect(CGRectMake(centerX, 200, rectWidth, rectWidth)) //shape example
 //        let path = heartInRect(CGRectMake(centerX, 200, rectWidth, rectWidth)) //shape example
         drawPath(path)
         
         timeline = UTimeline(id: "timeline")
-            .memoryReference(.Weak)
+            .memoryReference(.weak)
             .updateTotal { [unowned self] progressTotal in
                 self.tweenControls.progress(progressTotal)
             }
@@ -85,7 +85,7 @@ class DynamicViewController: ExampleViewController {
                     },
                     duration: totalDuration,
                     id: "bezierTween \(i)")
-                .memoryReference(.Weak)
+                .memoryReference(.weak)
                 .offset(offset)
 
             //add it to the timeline
@@ -96,7 +96,7 @@ class DynamicViewController: ExampleViewController {
                 let innerTimeline = UTimeline(id: "innerTimeline \(i)")
                 
                 //create the dot
-                let targetView0 = createImageView(name: "Dot", color: UIColor.redColor())
+                let targetView0 = createImageView(name: "Dot", color: UIColor.red)
                 particles.append(targetView0)
                 
                 //an estimated offset
@@ -117,12 +117,12 @@ class DynamicViewController: ExampleViewController {
                          duration: duration,
                         id: "pointTween0 \(i)")
                     .ease(Cubic.easeOut)
-                    .options(.Yoyo, .Repeat(10))
+                    .options(.yoyo, .repeat(10))
                 
                 innerTimeline.insert(tween0, at: offset)
                 
                 //create another dot
-                let targetView1 = createImageView(name: "Dot", color: UIColor.purpleColor())
+                let targetView1 = createImageView(name: "Dot", color: UIColor.purple)
                 particles.append(targetView1)
                 
                 //the second tween of the inner timline
@@ -139,7 +139,7 @@ class DynamicViewController: ExampleViewController {
                         duration: duration,
                         id: "pointTween1 \(i)")
                     .ease(Cubic.easeOut)
-                    .options(.Yoyo, .Repeat(10))
+                    .options(.yoyo, .repeat(10))
                 
                 innerTimeline.insert(tween1, at: offset)
                 
@@ -155,74 +155,74 @@ class DynamicViewController: ExampleViewController {
         }
     }
     
-    func createImageView(name name: String, color: UIColor) -> UIImageView {
+    func createImageView(name: String, color: UIColor) -> UIImageView {
         let view = UIImageView(frame: CGRect(x: 0, y: 0, width: 5, height: 5))
-        view.image = UIImage(named: name)!.imageWithRenderingMode(.AlwaysTemplate)
+        view.image = UIImage(named: name)!.withRenderingMode(.alwaysTemplate)
         view.tintColor = color
         
         return view
     }
     
-    func drawPath(path: UIBezierPath) {
+    func drawPath(_ path: UIBezierPath) {
         let shape = CAShapeLayer()
-        shape.path = path.CGPath
-        shape.strokeColor = UIColor.blackColor().CGColor
+        shape.path = path.cgPath
+        shape.strokeColor = UIColor.black.cgColor
         shape.lineWidth = 0
-        shape.fillColor = UIColor.clearColor().CGColor
+        shape.fillColor = UIColor.clear.cgColor
         view.layer.addSublayer(shape)
     }
     
     //rect shape
-    func rectInRect(rect:CGRect) -> UIBezierPath {
+    func rectInRect(_ rect:CGRect) -> UIBezierPath {
         let path = UIBezierPath()
         
         let startPoint = CGPoint(x: rect.minX, y: rect.minY)
-        path.moveToPoint(startPoint)
-        path.addLineToPoint(CGPoint(x: rect.maxX, y: rect.minY))
-        path.addLineToPoint(CGPoint(x: rect.maxX, y: rect.maxY))
-        path.addLineToPoint(CGPoint(x: rect.minX, y: rect.maxY))
-        path.closePath()
+        path.move(to: startPoint)
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        path.close()
         
         return path
     }
     
     //heart shape
-    func heartInRect(rect:CGRect) -> UIBezierPath {
+    func heartInRect(_ rect:CGRect) -> UIBezierPath {
         let path = UIBezierPath()
         
         let center = rect.minX + rect.width * 0.5
         let bottom = rect.maxY
         
         let startPoint = CGPoint(x: center, y: bottom)
-        path.moveToPoint(startPoint)
+        path.move(to: startPoint)
         
         var p1 = CGPoint(x: center, y: bottom - 60)
         var p2 = CGPoint(x: center - 160, y: bottom - 116)
         var p3 = CGPoint(x: center - 130, y: bottom - 200)
-        path.addCurveToPoint(p3, controlPoint1: p1, controlPoint2: p2)
+        path.addCurve(to: p3, controlPoint1: p1, controlPoint2: p2)
         
         p1 = CGPoint(x: center - 100, y: bottom - 280)
         p2 = CGPoint(x: center - 15, y: bottom - 255)
         p3 = CGPoint(x: center, y: bottom - 225)
-        path.addCurveToPoint(p3, controlPoint1: p1, controlPoint2: p2)
+        path.addCurve(to: p3, controlPoint1: p1, controlPoint2: p2)
         
         p1 = CGPoint(x: center + 15, y: bottom - 255)
         p2 = CGPoint(x: center + 100, y: bottom - 280)
         p3 = CGPoint(x: center + 130, y: bottom - 200)
-        path.addCurveToPoint(p3, controlPoint1: p1, controlPoint2: p2)
+        path.addCurve(to: p3, controlPoint1: p1, controlPoint2: p2)
         
         p1 = CGPoint(x: center + 160, y: bottom - 116)
         p2 = CGPoint(x: center, y: bottom - 60)
         p3 = CGPoint(x: center, y: bottom)
-        path.addCurveToPoint(p3, controlPoint1: p1, controlPoint2: p2)
+        path.addCurve(to: p3, controlPoint1: p1, controlPoint2: p2)
         
         return path
     }
     
     //circle shape
-    func circleInRect(rect:CGRect) -> UIBezierPath {
+    func circleInRect(_ rect:CGRect) -> UIBezierPath {
         let radius = rect.width * 0.5
-        let path = UIBezierPath(arcCenter: CGPointMake(rect.minX + radius, rect.minY + radius),
+        let path = UIBezierPath(arcCenter: CGPoint(x: rect.minX + radius, y: rect.minY + radius),
                                 radius: radius,
                                 startAngle: 0 * degToRad,
                                 endAngle: 360 * degToRad,

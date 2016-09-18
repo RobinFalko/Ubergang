@@ -31,7 +31,7 @@ class TimelinesViewController: ExampleViewController {
     var labelTween: NumericTween<Int>?
     
     deinit {
-        print("deinit \(self.dynamicType)")
+        print("deinit \(type(of: self))")
     }
     
     override func viewDidLoad() {
@@ -43,7 +43,7 @@ class TimelinesViewController: ExampleViewController {
     func setupTween() {
         
         let timeline = UTimeline(id: "timeline")
-        timeline.options(.Repeat(9))
+        timeline.options(.repeat(9))
         timeline.repeatCycleChange { [unowned self] repeatCycle in
             self.tweenStatusView2.repeatCount = repeatCycle
         }
@@ -88,7 +88,7 @@ class TimelinesViewController: ExampleViewController {
         timeline.append(tween1)
         
         
-        timelineContainer = UTimeline(id: "timelineContainer").memoryReference(.Weak)
+        timelineContainer = UTimeline(id: "timelineContainer").memoryReference(.weak)
         timelineContainer.repeatCycleChange { [unowned self] repeatCycle in
             self.tweenStatusView3.repeatCount = repeatCycle
         }
@@ -115,7 +115,7 @@ class TimelinesViewController: ExampleViewController {
                 duration: 10.0,
                 id: "countTween")
             .ease(Linear.ease)
-            .memoryReference(.Weak), at: 0.0)
+            .memoryReference(.weak), at: 0.0)
         
         
         self.tweenStatusView0.title = "\(tween0.id)"

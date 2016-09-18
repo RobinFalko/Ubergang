@@ -32,7 +32,7 @@ class ProgressViewController: ExampleViewController {
     }
     
     deinit {
-        print("deinit \(self.dynamicType)")
+        print("deinit \(type(of: self))")
     }
     
     func setupTween() {
@@ -46,8 +46,8 @@ class ProgressViewController: ExampleViewController {
                  duration: 5,
                  id: "progressTween")
         tween.ease(Cubic.easeOut)
-        tween.options(.Repeat(1), .Yoyo)
-        tween.memoryReference(.Weak)
+        tween.options(.repeat(1), .yoyo)
+        tween.memoryReference(.weak)
         tween.updateTotal { [unowned self] (progressTotal) in
             self.tweenControls.progress(progressTotal)
             self.progressBarTotal.progress = Float(progressTotal)

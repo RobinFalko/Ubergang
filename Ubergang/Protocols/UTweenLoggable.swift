@@ -6,36 +6,34 @@
 //  Copyright © 2016 Robin Falko. All rights reserved.
 //
 
-import XCGLogger
-
 public protocol UTweenLoggable {
-    func verbose(msg: String, function: String, file: String, line: Int)
-    func debug(msg: String, function: String, file: String, line: Int)
-    func info(msg: String, function: String, file: String, line: Int)
-    func warning(msg: String, function: String, file: String, line: Int)
-    func error(msg: String, function: String, file: String, line: Int)
+    func verbose(_ msg: String, function: String, file: String, line: Int)
+    func debug(_ msg: String, function: String, file: String, line: Int)
+    func info(_ msg: String, function: String, file: String, line: Int)
+    func warning(_ msg: String, function: String, file: String, line: Int)
+    func error(_ msg: String, function: String, file: String, line: Int)
 }
 
 
 extension UTweenLoggable {
-    func verbose(msg: String, function: String = #function, file: String = #file, line: Int = #line) {
-        XCGLogger.verbose(msg)
+    func verbose(_ msg: String, function: String = #function, file: String = #file, line: Int = #line) {
+        print("[\(file) - \(function)->\(line)]:\(msg)")
     }
     
-    func debug(msg: String, function: String = #function, file: String = #file, line: Int = #line) {
-        XCGLogger.debug(msg)
+    func debug(_ msg: String, function: String = #function, file: String = #file, line: Int = #line) {
+        print("[\(file) - \(function)->\(line)]:\(msg)")
     }
     
-    func info(msg: String, function: String = #function, file: String = #file, line: Int = #line) {
-        XCGLogger.info(msg)
+    func info(_ msg: String, function: String = #function, file: String = #file, line: Int = #line) {
+        print("[\(file) - \(function)->\(line)]:\(msg)")
     }
     
-    func warning(msg: String, function: String = #function, file: String = #file, line: Int = #line) {
-        XCGLogger.warning(msg)
+    func warning(_ msg: String, function: String = #function, file: String = #file, line: Int = #line) {
+        print("[\(file) - \(function)->\(line)]:\(msg)")
     }
     
-    func error(msg: String, function: String = #function, file: String = #file, line: Int = #line) {
-        XCGLogger.error(msg)
+    func error(_ msg: String, function: String = #function, file: String = #file, line: Int = #line) {
+        print("[\(file) - \(function)->\(line)]:\(msg)")
     }
 }
 

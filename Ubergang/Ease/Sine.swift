@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Sine: Ease {
+open class Sine: Ease {
     
     /**
      Sine ease in.
@@ -19,7 +19,7 @@ public class Sine: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeIn(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeIn(t: Double, b: Double, c: Double, d: Double) -> Double {
         return -c * cos(t/d * (M_PI/2)) + c + b
     }
     
@@ -32,7 +32,7 @@ public class Sine: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeOut(t: Double, b: Double, c: Double, d: Double) -> Double {
         return c * sin(t/d * (M_PI/2)) + b
     }
     
@@ -45,7 +45,7 @@ public class Sine: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeInOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeInOut(t: Double, b: Double, c: Double, d: Double) -> Double {
         return -c/2 * (cos(M_PI*t/d) - 1) + b
     }
 }

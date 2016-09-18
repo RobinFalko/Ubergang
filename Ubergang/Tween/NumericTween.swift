@@ -8,10 +8,10 @@
 
 import Foundation
 
-public class NumericTween<T: Numeric>: UTween<T> {
+open class NumericTween<T: Numeric>: UTween<T> {
     
     public convenience init() {
-        let id = "\(#file)_\(random() * 1000)_update"
+        let id = "\(#file)_\(arc4random() * 1000)_update"
         self.init(id: id)
     }
     
@@ -19,7 +19,7 @@ public class NumericTween<T: Numeric>: UTween<T> {
         super.init(id: id)
     }
     
-    override func compute(value: Double) -> T {
+    override func compute(_ value: Double) -> T {
         super.compute(value)
         
         let from = self.from()

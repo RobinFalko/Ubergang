@@ -24,13 +24,13 @@ class AdditiveAnimationViewController: ExampleViewController {
         self.addTweenControls(tween)
         
         views.forEach {
-            $0.image = $0.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate);
+            $0.image = $0.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate);
             $0.translatesAutoresizingMaskIntoConstraints = true
         }
     }
     
     deinit {
-        print("deinit \(self.dynamicType)")
+        print("deinit \(type(of: self))")
     }
     
     func setupTween() {
@@ -56,29 +56,29 @@ class AdditiveAnimationViewController: ExampleViewController {
     }
     
     var selectedView: UIView?
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
-        let position = touch.locationInView(view)
+        let position = touch.location(in: view)
         
-        selectedView = view.hitTest(position, withEvent: nil)
+        selectedView = view.hitTest(position, with: nil)
         if selectedView == view {
            selectedView = nil
         }
         if selectedView != nil {
-            view.bringSubviewToFront(selectedView!)
+            view.bringSubview(toFront: selectedView!)
         }
     }
     
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
-        let position = touch.locationInView(view)
+        let position = touch.location(in: view)
         
         selectedView?.center.x = position.x
         selectedView?.center.y = position.y
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         selectedView = nil
     }
 }

@@ -28,7 +28,7 @@ class ColorViewController: ExampleViewController {
     }
     
     deinit {
-        print("deinit \(self.dynamicType)")
+        print("deinit \(type(of: self))")
     }
     
     func setupTween() {
@@ -47,7 +47,7 @@ class ColorViewController: ExampleViewController {
                  duration: 1,
                  id: "colorTween")
         tween.ease(Linear.ease)
-        tween.memoryReference(.Weak)
+        tween.memoryReference(.weak)
         tween.complete { [unowned self] in
             self.tweenControls.stop()
         }

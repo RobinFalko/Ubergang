@@ -8,19 +8,19 @@
 
 import Foundation
 
-public class Timer {
-    public static let instance = Timer()
+open class Timer {
+    open static let instance = Timer()
     
-    private let id = "\(#file)_update"
+    fileprivate let id = "\(#file)_update"
     
-    public static var delta:NSTimeInterval = NSTimeInterval(0)
-    public static var time:NSTimeInterval = NSTimeInterval(0)
-    private var lastUpdateTime:NSTimeInterval = NSTimeInterval(0)
+    open static var delta:TimeInterval = TimeInterval(0)
+    open static var time:TimeInterval = TimeInterval(0)
+    fileprivate var lastUpdateTime:TimeInterval = TimeInterval(0)
     
-    private init() {}
+    fileprivate init() {}
     
     func start() {
-        self.lastUpdateTime = NSDate().timeIntervalSince1970
+        self.lastUpdateTime = Date().timeIntervalSince1970
         
         Engine.instance.register(update, forKey: id)
     }
@@ -32,18 +32,18 @@ public class Timer {
     
     
     func update() {
-        tick(NSDate().timeIntervalSince1970)
+        tick(Date().timeIntervalSince1970)
     }
     
     
-    func tick(currentTime: NSTimeInterval) {
+    func tick(_ currentTime: TimeInterval) {
         if lastUpdateTime == 0.0 {
             Timer.delta = 0
         } else {
             Timer.delta = currentTime - self.lastUpdateTime
         }
         
-        self.lastUpdateTime = NSDate().timeIntervalSince1970
+        self.lastUpdateTime = Date().timeIntervalSince1970
         
         Timer.time += Timer.delta
     }

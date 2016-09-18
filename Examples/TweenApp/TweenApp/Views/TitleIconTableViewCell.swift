@@ -19,10 +19,10 @@ class TitleIconTableViewCell: UITableViewCell {
     var timeline: UTimeline!
     
     override func awakeFromNib() {
-        iconView.image = iconView.image?.imageWithRenderingMode(.AlwaysTemplate)
+        iconView.image = iconView.image?.withRenderingMode(.alwaysTemplate)
         
         var color: UIColor?
-        if userInteractionEnabled {
+        if isUserInteractionEnabled {
             color = UIColor(red: 77.0 / 255.0, green: 209.0 / 255.0, blue: 0.0, alpha: 0.75)
         } else {
             color = UIColor(red: 0.0, green: 148.0 / 255.0, blue: 209.0 / 255.0, alpha: 0.75)

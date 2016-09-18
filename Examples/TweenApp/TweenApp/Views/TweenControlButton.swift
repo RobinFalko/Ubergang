@@ -18,29 +18,29 @@ class TweenControlButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        addTarget(self, action: #selector(touchDown), forControlEvents: .TouchDown)
-        addTarget(self, action: #selector(touchUp), forControlEvents: .TouchDragExit)
-        addTarget(self, action: #selector(touchUp), forControlEvents: .TouchUpInside)
+        addTarget(self, action: #selector(touchDown), for: .touchDown)
+        addTarget(self, action: #selector(touchUp), for: .touchDragExit)
+        addTarget(self, action: #selector(touchUp), for: .touchUpInside)
         
         
-        var image = imageForState(.Normal)?.imageWithRenderingMode(.AlwaysTemplate)
-        setImage(image, forState: .Normal)
+        var image = self.image(for: UIControlState())?.withRenderingMode(.alwaysTemplate)
+        setImage(image, for: UIControlState())
         
-        image = imageForState(.Selected)?.imageWithRenderingMode(.AlwaysTemplate)
-        setImage(image, forState: .Selected)
+        image = self.image(for: .selected)?.withRenderingMode(.alwaysTemplate)
+        setImage(image, for: .selected)
         
         tintColor = tintNormal
         
         setupTween()
     }
     
-    override var selected: Bool {
+    override var isSelected: Bool {
         get {
-            return super.selected
+            return super.isSelected
         }
         set {
             tintColor = !newValue ? tintNormal : tintSelected
-            super.selected = newValue
+            super.isSelected = newValue
         }
     }
     
@@ -53,53 +53,53 @@ class TweenControlButton: UIButton {
                     self.alpha = value
                  },
                  duration: 0.2,
-                 id: "alpha_\(rand())")
+                 id: "alpha_\(arc4random())")
         tween.ease(Cubic.easeOut)
         
-        let transform = CGAffineTransformMakeScale(0.9, 0.9)
+        let transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         let transformTween = UTweenBuilder
             .to( transform,
-                 from: CGAffineTransformIdentity,
+                 from: CGAffineTransform.identity,
                  update: { [unowned self] value in
                     self.transform = value
                 },
                  duration: 0.2,
-                 id: "transform_\(rand())")
+                 id: "transform_\(arc4random())")
         
         transformTween.ease(Cubic.easeOut)
         
-        timeline = UTimeline(id: "timeline_\(rand())")
-        timeline.memoryReference(.Weak)
+        timeline = UTimeline(id: "timeline_\(arc4random())")
+        timeline.memoryReference(.weak)
         timeline.insert(tween, at: 0)
         timeline.insert(transformTween, at: 0)
     }
     
     func touchDown() {
-        timeline.tweenDirection(.Forward).start()
+        timeline.tweenDirection(.forward).start()
         
         tweenOutline()
     }
     
     func touchUp() {
-        timeline.tweenDirection(.Reverse).start()
+        timeline.tweenDirection(.reverse).start()
     }
     
     func tweenOutline() {
-        let imageView = UIImageView(image: UIImage(named: "CircleOutline")!.imageWithRenderingMode(.AlwaysTemplate))
+        let imageView = UIImageView(image: UIImage(named: "CircleOutline")!.withRenderingMode(.alwaysTemplate))
         imageView.tintColor = tintColor
         imageView.frame = frame
         superview!.addSubview(imageView)
         
-        let transform = CGAffineTransformMakeScale(1.3, 1.3)
+        let transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         let transformTween = UTweenBuilder
             .to( transform,
-                 from: CGAffineTransformMakeScale(1.0, 1.0),
+                 from: CGAffineTransform(scaleX: 1.0, y: 1.0),
                  update: { (value, progress) in
                     imageView.alpha = 1 - CGFloat(progress)
                     imageView.transform = value
                 },
                  duration: 0.5,
-                 id: "outline_\(rand())")
+                 id: "outline_\(arc4random())")
         
         transformTween.ease(Cubic.easeOut)
         transformTween.complete {

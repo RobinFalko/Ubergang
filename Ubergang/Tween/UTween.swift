@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class UTween<T>: UTweenBase {
+open class UTween<T>: UTweenBase {
     
     var start: T!
     var end: T!
@@ -17,8 +17,8 @@ public class UTween<T>: UTweenBase {
     var from: (() -> T)!
     var to: (() -> T)!
     
-    var updateValue: ((value: T) -> Void)!
-    var updateValueAndProgress: ((value: T, progress: Double) -> Void)!
+    var updateValue: ((_ value: T) -> Void)!
+    var updateValueAndProgress: ((_ value: T, _ progress: Double) -> Void)!
     
     var offset: Double?
     
@@ -36,11 +36,11 @@ public class UTween<T>: UTweenBase {
         super.init(id: id)
     }
     
-    override public var progress: Double {
+    override open var progress: Double {
         set {
             time = newValue * duration
             
-            easeValue = ease(t: time, b: 0.0, c: 1.0, d: duration)
+            easeValue = ease(time, 0.0, 1.0, duration)
             
             if let offset = offset {
                 easeValue = fmod(easeValue + offset, 1.0)
@@ -48,8 +48,8 @@ public class UTween<T>: UTweenBase {
             
             let computedValue = compute(easeValue)
             
-            updateValue?( value: computedValue)
-            updateValueAndProgress?( value: computedValue, progress: newValue )
+            updateValue?( computedValue)
+            updateValueAndProgress?( computedValue, newValue )
             
             super.progress = newValue
         }
@@ -58,14 +58,14 @@ public class UTween<T>: UTweenBase {
         }
     }
     
-    func compute(value: Double) -> T {
+    func compute(_ value: Double) -> T {
         //should be overriden
         
         return from()
     }
     
     //override Tweenable methods
-    override public func kill() {
+    override open func kill() {
         super.kill()
         
         from = nil
@@ -74,7 +74,7 @@ public class UTween<T>: UTweenBase {
         complete = nil
     }
     
-    override public func memoryReference(value: TweenMemoryReference) -> Self {
+    override open func memoryReference(_ value: TweenMemoryReference) -> Self {
         memoryReference = value
         
         return self
@@ -84,7 +84,7 @@ public class UTween<T>: UTweenBase {
 
 extension UTween {
     // -
-    public func to(to: () -> T, from: () -> T, update: (T) -> Void) -> Self {
+    public func to(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (T) -> Void) -> Self {
         
         self.to(to)
             .from(from)
@@ -96,7 +96,7 @@ extension UTween {
         return self
     }
     
-    public func to(to: T, from: () -> T, update: (T) -> Void) -> Self {
+    public func to(_ to: T, from: @escaping () -> T, update: @escaping (T) -> Void) -> Self {
         
         self.to(to)
             .from(from)
@@ -108,7 +108,7 @@ extension UTween {
         return self
     }
     
-    public func to(to: () -> T, from: T, update: (T) -> Void) -> Self {
+    public func to(_ to: @escaping () -> T, from: T, update: @escaping (T) -> Void) -> Self {
         
         self.to(to)
             .from(from)
@@ -120,7 +120,7 @@ extension UTween {
         return self
     }
     
-    public func to(to: T, from: T, update: (T) -> Void) -> Self {
+    public func to(_ to: T, from: T, update: @escaping (T) -> Void) -> Self {
         
         self.to(to)
             .from(from)
@@ -133,7 +133,7 @@ extension UTween {
     }
     
     // -
-    public func to(to: () -> T, from: () -> T, update: (T, Double) -> Void) -> Self {
+    public func to(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (T, Double) -> Void) -> Self {
         
         self.to(to)
             .from(from)
@@ -145,7 +145,7 @@ extension UTween {
         return self
     }
     
-    public func to(to: T, from: () -> T, update: (T, Double) -> Void) -> Self {
+    public func to(_ to: T, from: @escaping () -> T, update: @escaping (T, Double) -> Void) -> Self {
         
         self.to(to)
             .from(from)
@@ -157,7 +157,7 @@ extension UTween {
         return self
     }
     
-    public func to(to: () -> T, from: T, update: (T, Double) -> Void) -> Self {
+    public func to(_ to: @escaping () -> T, from: T, update: @escaping (T, Double) -> Void) -> Self {
         
         self.to(to)
             .from(from)
@@ -169,7 +169,7 @@ extension UTween {
         return self
     }
     
-    public func to(to: T, from: T, update: (T, Double) -> Void) -> Self {
+    public func to(_ to: T, from: T, update: @escaping (T, Double) -> Void) -> Self {
         
         self.to(to)
             .from(from)
@@ -183,7 +183,7 @@ extension UTween {
     
     
     // -
-    public func to(to: () -> T, from: () -> T, update: (T) -> Void, complete: () -> Void) -> Self {
+    public func to(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (T) -> Void, complete: @escaping () -> Void) -> Self {
         
         self.to(to, from: from, update: update)
             .complete(complete)
@@ -192,7 +192,7 @@ extension UTween {
     }
     
     
-    public func to(to: T, from: () -> T, update: (T) -> Void, complete: () -> Void) -> Self {
+    public func to(_ to: T, from: @escaping () -> T, update: @escaping (T) -> Void, complete: @escaping () -> Void) -> Self {
         
         self.to(to, from: from, update: update)
             .complete(complete)
@@ -201,7 +201,7 @@ extension UTween {
     }
     
     
-    public func to(to: () -> T, from: T, update: (T) -> Void, complete: () -> Void) -> Self {
+    public func to(_ to: @escaping () -> T, from: T, update: @escaping (T) -> Void, complete: @escaping () -> Void) -> Self {
         
         self.to(to, from: from, update: update)
             .complete(complete)
@@ -210,40 +210,7 @@ extension UTween {
     }
     
     
-    public func to(to: T, from: T, update: (T) -> Void, complete: () -> Void) -> Self {
-        
-        self.to(to, from: from, update: update)
-            .complete(complete)
-        
-        return self
-    }
-    
-    // -
-    public func to(to: () -> T, from: () -> T, update: (T, Double) -> Void, complete: () -> Void) -> Self {
-        
-        self.to(to, from: from, update: update)
-            .complete(complete)
-        
-        return self
-    }
-    
-    public func to(to: T, from: () -> T, update: (T, Double) -> Void, complete: () -> Void) -> Self {
-        
-        self.to(to, from: from, update: update)
-            .complete(complete)
-        
-        return self
-    }
-    
-    public func to(to: () -> T, from: T, update: (T, Double) -> Void, complete: () -> Void) -> Self {
-        
-        self.to(to, from: from, update: update)
-            .complete(complete)
-        
-        return self
-    }
-    
-    public func to(to: T, from: T, update: (T, Double) -> Void, complete: () -> Void) -> Self {
+    public func to(_ to: T, from: T, update: @escaping (T) -> Void, complete: @escaping () -> Void) -> Self {
         
         self.to(to, from: from, update: update)
             .complete(complete)
@@ -252,178 +219,179 @@ extension UTween {
     }
     
     // -
-    public func to(to: () -> T, from: () -> T, update: (T) -> Void, duration: Double) -> Self {
+    public func to(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (T, Double) -> Void, complete: @escaping () -> Void) -> Self {
         
         self.to(to, from: from, update: update)
-            .duration(duration)
+            .complete(complete)
         
         return self
     }
     
-    public func to(to: T, from: () -> T, update: (T) -> Void, duration: Double) -> Self {
+    public func to(_ to: T, from: @escaping () -> T, update: @escaping (T, Double) -> Void, complete: @escaping () -> Void) -> Self {
         
         self.to(to, from: from, update: update)
-            .duration(duration)
+            .complete(complete)
         
         return self
     }
     
-    public func to(to: () -> T, from: T, update: (T) -> Void, duration: Double) -> Self {
+    public func to(_ to: @escaping () -> T, from: T, update: @escaping (T, Double) -> Void, complete: @escaping () -> Void) -> Self {
         
         self.to(to, from: from, update: update)
-            .duration(duration)
+            .complete(complete)
         
         return self
     }
     
-    public func to(to: T, from: T, update: (T) -> Void, duration: Double) -> Self {
+    public func to(_ to: T, from: T, update: @escaping (T, Double) -> Void, complete: @escaping () -> Void) -> Self {
         
         self.to(to, from: from, update: update)
-            .duration(duration)
+            .complete(complete)
         
         return self
     }
     
     // -
-    public func to(to: () -> T, from: () -> T, update: (T, Double) -> Void, duration: Double) -> Self {
+    public func to(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (T) -> Void, duration: Double) -> Self {
         
-        self.to(to, from: from, update: update)
+        return self.to(to, from: from, update: update)
             .duration(duration)
-        
-        return self
     }
     
-    public func to(to: T, from: () -> T, update: (T, Double) -> Void, duration: Double) -> Self {
+    public func to(_ to: T, from: @escaping () -> T, update: @escaping (T) -> Void, duration: Double) -> Self {
         
-        self.to(to, from: from, update: update)
+        return self.to(to, from: from, update: update)
             .duration(duration)
-        
-        return self
     }
     
-    public func to(to: () -> T, from: T, update: (T, Double) -> Void, duration: Double) -> Self {
+    public func to(_ to: @escaping () -> T, from: T, update: @escaping (T) -> Void, duration: Double) -> Self {
         
-        self.to(to, from: from, update: update)
+        return self.to(to, from: from, update: update)
             .duration(duration)
-        
-        return self
     }
     
-    public func to(to: T, from: T, update: (T, Double) -> Void, duration: Double) -> Self {
+    public func to(_ to: T, from: T, update: @escaping (T) -> Void, duration: Double) -> Self {
         
-        self.to(to, from: from, update: update)
+        return self.to(to, from: from, update: update)
             .duration(duration)
-        
-        return self
     }
     
     // -
-    public func to(to: () -> T, from: () -> T, update: (T) -> Void, complete: () -> Void, duration: Double) -> Self {
+    public func to(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (T, Double) -> Void, duration: Double) -> Self {
         
-        self.to(to, from: from, update: update, complete:  complete)
+        return self.to(to, from: from, update: update)
             .duration(duration)
-        
-        return self
     }
     
-    public func to(to: T, from: () -> T, update: (T) -> Void, complete: () -> Void, duration: Double) -> Self {
+    public func to(_ to: T, from: @escaping () -> T, update: @escaping (T, Double) -> Void, duration: Double) -> Self {
         
-        self.to(to, from: from, update: update, complete:  complete)
+        return self.to(to, from: from, update: update)
             .duration(duration)
-        
-        return self
     }
     
-    public func to(to: () -> T, from: T, update: (T) -> Void, complete: () -> Void, duration: Double) -> Self {
+    public func to(_ to: @escaping () -> T, from: T, update: @escaping (T, Double) -> Void, duration: Double) -> Self {
         
-        self.to(to, from: from, update: update, complete:  complete)
+        return self.to(to, from: from, update: update)
             .duration(duration)
-        
-        return self
     }
     
-    public func to(to: T, from: T, update: (T) -> Void, complete: () -> Void, duration: Double) -> Self {
+    public func to(_ to: T, from: T, update: @escaping (T, Double) -> Void, duration: Double) -> Self {
         
-        self.to(to, from: from, update: update, complete:  complete)
+        return self.to(to, from: from, update: update)
             .duration(duration)
-        
-        return self
     }
     
     // -
-    public func to(to: () -> T, from: () -> T, update: (T, Double) -> Void, complete: () -> Void, duration: Double) -> Self {
+    public func to(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (T) -> Void, complete: @escaping () -> Void, duration: Double) -> Self {
         
-        self.to(to, from: from, update: update, complete:  complete)
+        return self.to(to, from: from, update: update, complete:  complete)
             .duration(duration)
-        
-        return self
     }
     
-    public func to(to: T, from: () -> T, update: (T, Double) -> Void, complete: () -> Void, duration: Double) -> Self {
+    public func to(_ to: T, from: @escaping () -> T, update: @escaping (T) -> Void, complete: @escaping () -> Void, duration: Double) -> Self {
         
-        self.to(to, from: from, update: update, complete:  complete)
+        return self.to(to, from: from, update: update, complete:  complete)
             .duration(duration)
-        
-        return self
     }
     
-    public func to(to: () -> T, from: T, update: (T, Double) -> Void, complete: () -> Void, duration: Double) -> Self {
+    public func to(_ to: @escaping () -> T, from: T, update: @escaping (T) -> Void, complete: @escaping () -> Void, duration: Double) -> Self {
         
-        self.to(to, from: from, update: update, complete:  complete)
+        return self.to(to, from: from, update: update, complete:  complete)
             .duration(duration)
-        
-        return self
     }
     
-    public func to(to: T, from: T, update: (T, Double) -> Void, complete: () -> Void, duration: Double) -> Self {
+    public func to(_ to: T, from: T, update: @escaping (T) -> Void, complete: @escaping () -> Void, duration: Double) -> Self {
         
-        self.to(to, from: from, update: update, complete:  complete)
+        return self.to(to, from: from, update: update, complete:  complete)
             .duration(duration)
+    }
+    
+    // -
+    public func to(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (T, Double) -> Void, complete: @escaping () -> Void, duration: Double) -> Self {
         
-        return self
+        return self.to(to, from: from, update: update, complete:  complete)
+            .duration(duration)
+    }
+    
+    public func to(_ to: T, from: @escaping () -> T, update: @escaping (T, Double) -> Void, complete: @escaping () -> Void, duration: Double) -> Self {
+        
+        return self.to(to, from: from, update: update, complete:  complete)
+            .duration(duration)
+    }
+    
+    public func to(_ to: @escaping () -> T, from: T, update: @escaping (T, Double) -> Void, complete: @escaping () -> Void, duration: Double) -> Self {
+        
+        return self.to(to, from: from, update: update, complete:  complete)
+            .duration(duration)
+    }
+    
+    public func to(_ to: T, from: T, update: @escaping (T, Double) -> Void, complete: @escaping () -> Void, duration: Double) -> Self {
+        
+        return self.to(to, from: from, update: update, complete:  complete)
+            .duration(duration)
     }
     
     
     // -
-    public func to(value: () -> T) -> Self {
+    public func to(_ value: @escaping () -> T) -> Self {
         to = value
         
         return self
     }
     
-    public func to(value: T) -> Self {
+    public func to(_ value: T) -> Self {
         to = {value}
         
         return self
     }
     
-    public func from(value: () -> T) -> Self {
+    public func from(_ value: @escaping () -> T) -> Self {
         from = value
         
         return self
     }
     
-    public func from(value: T) -> Self {
+    public func from(_ value: T) -> Self {
         from = {value}
         
         return self
     }
     
     
-    public func update(value: (T) -> Void) -> Self {
+    public func update(_ value: @escaping (T) -> Void) -> Self {
         updateValue = value
         
         return self
     }
     
     
-    public func update(value: (T, Double) -> Void) -> Self {
+    public func update(_ value: @escaping (T, Double) -> Void) -> Self {
         updateValueAndProgress = value
         
         return self
     }
     
-    public func duration(value: Double) -> Self {
+    public func duration(_ value: Double) -> Self {
         initialDuration = value
         duration = value
         durationTotal = value
@@ -431,12 +399,12 @@ extension UTween {
         return self
     }
     
-    public func ease(ease: Easing) -> Self {
+    public func ease(_ ease: @escaping Easing) -> Self {
         self.ease = ease
         return self
     }
     
-    public func offset(value: Double) -> Self {
+    public func offset(_ value: Double) -> Self {
         self.offset = value
         return self
     }

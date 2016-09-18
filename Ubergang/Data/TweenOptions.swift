@@ -8,17 +8,17 @@
 
 public func ==(a: TweenOptions, b: TweenOptions) -> Bool {
     switch (a, b) {
-    case (.Yoyo, .Yoyo): return true
-    case (.Repeat(let l), .Repeat(let r)) where l == r: return true
+    case (.yoyo, .yoyo): return true
+    case (.repeat(let l), .repeat(let r)) where l == r: return true
     default: return false
     }
 }
 
-internal extension SequenceType where Generator.Element == TweenOptions {
+internal extension Sequence where Iterator.Element == TweenOptions {
     func repeatCount() -> Int {
         var repeatCount = 0
         self.forEach {
-            if case .Repeat(let count) = $0 {
+            if case .repeat(let count) = $0 {
                 repeatCount = count
             }
         }
@@ -31,11 +31,11 @@ internal extension SequenceType where Generator.Element == TweenOptions {
     }
     
     func containsYoyo() -> Bool {
-        return self.contains(.Yoyo)
+        return self.contains(.yoyo)
     }
 }
 
 public enum TweenOptions: Equatable {
-    case Yoyo
-    case Repeat(Int)
+    case yoyo
+    case `repeat`(Int)
 }

@@ -24,14 +24,14 @@ class TransformViewController: ExampleViewController {
     }
     
     deinit {
-        print("deinit \(self.dynamicType)")
+        print("deinit \(type(of: self))")
     }
     
     func setupTween() {
-        testView.transform = CGAffineTransformIdentity
+        testView.transform = CGAffineTransform.identity
         
-        var to = CGAffineTransformMakeScale(2, 2)
-        to = CGAffineTransformRotate(to, CGFloat(M_PI_2))
+        var to = CGAffineTransform(scaleX: 2, y: 2)
+        to = to.rotated(by: CGFloat(M_PI_2))
         
         tween = UTweenBuilder
             .to(to,
@@ -41,7 +41,7 @@ class TransformViewController: ExampleViewController {
                 duration: 4,
                 id: "testViewTween")
             .ease(Elastic.easeOut)
-            .memoryReference(.Weak)
+            .memoryReference(.weak)
         
         tween.updateTotal { [unowned self] (progressTotal) in
             self.tweenControls.progress(progressTotal)

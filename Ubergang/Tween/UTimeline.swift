@@ -8,17 +8,17 @@
 
 import Foundation
 
-public class UTimeline: UTweenBase {
+open class UTimeline: UTweenBase {
     var tweens: [UTweenBase] = []
     var startTimeForTweenId: [String : Double] = [:]
     
-    public var count: Int { return tweens.count }
+    open var count: Int { return tweens.count }
     
     public override init(id: String) {
         super.init(id: id)
     }
     
-    public func append(tween: UTweenBase) {
+    open func append(_ tween: UTweenBase) {
         tween.computeConfigs()
         
         tweens.append(tween)
@@ -30,7 +30,7 @@ public class UTimeline: UTweenBase {
         computeConfigs()
     }
     
-    public func insert(tween: UTweenBase, at time: Double) {
+    open func insert(_ tween: UTweenBase, at time: Double) {
         tween.computeConfigs()
         
         tweens.append(tween)
@@ -46,7 +46,7 @@ public class UTimeline: UTweenBase {
         computeConfigs()
     }
     
-    override public var progress: Double {
+    override open var progress: Double {
         set {
             time = newValue * duration
             
@@ -55,7 +55,7 @@ public class UTimeline: UTweenBase {
                 let repeatCount = tweenOptions.repeatCount()
                 var cycles = Double(repeatCount + 1)
                 
-                if tweenOptions.contains(.Yoyo) && !tweenOptions.containsRepeat() {
+                if tweenOptions.contains(.yoyo) && !tweenOptions.containsRepeat() {
                     cycles *= 2.0
                 }
                 
@@ -77,7 +77,7 @@ public class UTimeline: UTweenBase {
     
     
     
-    override public func memoryReference(value: TweenMemoryReference) -> Self {
+    override open func memoryReference(_ value: TweenMemoryReference) -> Self {
         memoryReference = value
         
         return self

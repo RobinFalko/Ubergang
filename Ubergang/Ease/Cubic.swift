@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Cubic: Ease {
+open class Cubic: Ease {
     
     /**
      Cubic ease in.
@@ -19,7 +19,7 @@ public class Cubic: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeIn(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeIn(t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         t = t/d
         return c*t*t*t + b
@@ -34,7 +34,7 @@ public class Cubic: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeOut(t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         t = t/d-1
         return c*(t*t*t + 1) + b
@@ -49,7 +49,7 @@ public class Cubic: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeInOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeInOut(t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         t = t/(d/2)
         if t < 1 {

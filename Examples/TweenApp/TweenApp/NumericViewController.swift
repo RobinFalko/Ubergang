@@ -23,7 +23,7 @@ class NumericViewController: ExampleViewController {
     }
     
     deinit {
-        print("deinit \(self.dynamicType)")
+        print("deinit \(type(of: self))")
     }
     
     func setupTween() {

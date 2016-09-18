@@ -6,6 +6,6 @@
 //  Copyright © 2016 Robin Falko. All rights reserved.
 //
 
-public typealias Easing = (t: Double, b: Double, c: Double, d: Double) -> Double
+public typealias Easing = (_ t: Double, _ b: Double, _ c: Double, _ d: Double) -> Double
 
-public class Ease {}
+open class Ease {}

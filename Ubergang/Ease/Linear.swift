@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Linear: Ease {
+open class Linear: Ease {
     
     /**
      Linear ease.
@@ -19,7 +19,7 @@ public class Linear: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func ease(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func ease(t: Double, b: Double, c: Double, d: Double) -> Double {
         return c * t / d + b
     }
 }

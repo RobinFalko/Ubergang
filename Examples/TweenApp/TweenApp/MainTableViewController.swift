@@ -9,7 +9,7 @@
 import UIKit
 
 class MainTableViewController: UITableViewController {
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? TitleIconTableViewCell {
             cell.animateIn()
         }

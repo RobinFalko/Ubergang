@@ -13,17 +13,17 @@ class ReverseButtton: TweenControlButton {
     
     var numericTween: NumericTween<CGFloat>!
     
-    override var selected: Bool {
+    override var isSelected: Bool {
         get {
-            return super.selected
+            return super.isSelected
         }
         set {
             if newValue {
-                numericTween.tweenDirection(.Forward).start()
+                numericTween.tweenDirection(.forward).start()
             } else {
-                numericTween.tweenDirection(.Reverse).start()
+                numericTween.tweenDirection(.reverse).start()
             }
-            super.selected = newValue
+            super.isSelected = newValue
         }
     }
     
@@ -40,9 +40,9 @@ class ReverseButtton: TweenControlButton {
                     self.imageView!.layer.transform = CATransform3DRotate(CATransform3DIdentity, value, 0.0, 1.0, 0.0)
                 },
                  duration: 0.5,
-                 id: "transform_\(rand())")
+                 id: "transform_\(arc4random())")
         
         numericTween.ease(Cubic.easeInOut)
-        numericTween.memoryReference(.Weak)
+        numericTween.memoryReference(.weak)
     }
 }

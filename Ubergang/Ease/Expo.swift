@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Expo: Ease {
+open class Expo: Ease {
     
     /**
      Expo ease in.
@@ -19,7 +19,7 @@ public class Expo: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeIn(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeIn(t: Double, b: Double, c: Double, d: Double) -> Double {
         return (t==0) ? b : c * pow(2, 10 * (t/d - 1)) + b
     }
     
@@ -32,7 +32,7 @@ public class Expo: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeOut(t: Double, b: Double, c: Double, d: Double) -> Double {
         return (t==d) ? b+c : c * (-pow(2, -10 * t/d) + 1) + b
     }
     
@@ -45,7 +45,7 @@ public class Expo: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeInOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeInOut(t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         if (t==0) { return b }
         if (t==d) { return b+c }

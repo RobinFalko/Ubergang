@@ -8,12 +8,12 @@
 
 import Foundation
 
-public class CGPointTween: UTween<CGPoint> {
+open class CGPointTween: UTween<CGPoint> {
     
     var currentValue = CGPoint()
     
     public convenience init() {
-        let id = "\(#file)_\(random() * 1000)_update"
+        let id = "\(#file)_\(arc4random() * 1000)_update"
         self.init(id: id)
     }
     
@@ -21,7 +21,7 @@ public class CGPointTween: UTween<CGPoint> {
         super.init(id: id)
     }
     
-    override func compute(value: Double) -> CGPoint {
+    override func compute(_ value: Double) -> CGPoint {
         super.compute(value)
         
         let from = self.from()

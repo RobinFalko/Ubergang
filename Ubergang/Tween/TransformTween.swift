@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-public class TransformTween: UTween<CGAffineTransform> {
+open class TransformTween: UTween<CGAffineTransform> {
     
     public convenience init() {
-        let id = "\(#file)_\(random() * 1000)_update"
+        let id = "\(#file)_\(arc4random() * 1000)_update"
         self.init(id: id)
     }
     
@@ -20,13 +20,13 @@ public class TransformTween: UTween<CGAffineTransform> {
         super.init(id: id)
     }
     
-    override func compute(value: Double) -> CGAffineTransform {
+    override func compute(_ value: Double) -> CGAffineTransform {
         super.compute(value)
         
         let from = self.from()
         let to = self.to()
         
-        var currentValue = CGAffineTransformIdentity
+        var currentValue = CGAffineTransform.identity
         currentValue.tx = from.tx + (to.tx - from.tx) * CGFloat(value)
         currentValue.ty = from.ty + (to.ty - from.ty) * CGFloat(value)
         

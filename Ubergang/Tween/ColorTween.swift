@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-public class ColorTween: UTween<UIColor> {
+open class ColorTween: UTween<UIColor> {
     
     public convenience init() {
-        let id = "\(#file)_\(random() * 1000)_update"
+        let id = "\(#file)_\(arc4random() * 1000)_update"
         self.init(id: id)
     }
     
@@ -20,7 +20,7 @@ public class ColorTween: UTween<UIColor> {
         super.init(id: id)
     }
     
-    override func compute(value: Double) -> UIColor {
+    override func compute(_ value: Double) -> UIColor {
         super.compute(value)
         
         let from = self.from()

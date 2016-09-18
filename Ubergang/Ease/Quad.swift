@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Quad: Ease {
+open class Quad: Ease {
     
     /**
      Quad ease in.
@@ -19,7 +19,7 @@ public class Quad: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeIn(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeIn(t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         t/=d
         return c*(t)*t + b
@@ -34,7 +34,7 @@ public class Quad: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeOut(t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         t/=d
         return -c*(t)*(t-2) + b
@@ -49,7 +49,7 @@ public class Quad: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeInOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeInOut(t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         t/=d/2
         if ((t) < 1) { return ((c/2)*(t*t)) + b }

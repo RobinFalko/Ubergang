@@ -7,5 +7,5 @@
 //
 
 public enum TweenMemoryReference {
-    case Weak, Strong
+    case weak, strong
 }

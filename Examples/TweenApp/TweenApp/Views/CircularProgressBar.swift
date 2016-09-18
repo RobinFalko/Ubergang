@@ -49,20 +49,20 @@ class CircularProgressBar: UIView {
         
         update()
         
-        shapeLayer.strokeColor = UIColor.blackColor().CGColor
-        shapeLayer.fillColor = UIColor.clearColor().CGColor
+        shapeLayer.strokeColor = UIColor.black.cgColor
+        shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineWidth = 10.0
         
         self.layer.addSublayer(shapeLayer)
     }
     
     func update() {
-        shapeLayer.path = arcPath().CGPath
+        shapeLayer.path = arcPath().cgPath
     }
     
     func arcPath() -> UIBezierPath {
         let radius = frame.size.width * 0.5
-        let path = UIBezierPath(arcCenter: CGPointMake(radius, radius),
+        let path = UIBezierPath(arcCenter: CGPoint(x: radius, y: radius),
                                 radius: radius,
                                 startAngle: startAngle * degToRad,
                                 endAngle: endAngle * degToRad,

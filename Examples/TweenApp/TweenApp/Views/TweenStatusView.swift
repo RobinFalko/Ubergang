@@ -50,7 +50,7 @@ class TweenStatusView: UIView {
         setup()
     }
 
-    private func setup() {
+    fileprivate func setup() {
         
     }
 }

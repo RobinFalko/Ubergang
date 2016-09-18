@@ -11,13 +11,13 @@ import Ubergang
 
 class TweenControlsView: UIView {
     enum PlayState {
-        case Stopped
-        case Playing
-        case Pausing
+        case stopped
+        case playing
+        case pausing
     }
     
     class func instanceFromNib() -> TweenControlsView {
-        return UINib(nibName: "TweenControls", bundle: nil).instantiateWithOwner(self, options: nil)[0] as! TweenControlsView
+        return UINib(nibName: "TweenControls", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! TweenControlsView
     }
     @IBOutlet var playPauseButton: UIButton!
     
@@ -31,26 +31,26 @@ class TweenControlsView: UIView {
     var onStop: (() -> Void)?
     var onPause: (() -> Void)?
     var onResume: (() -> Void)?
-    var onDirection: ((direction: TweenDirection) -> Void)?
-    var onProgress: ((value: Double) -> Void)?
+    var onDirection: ((_ direction: TweenDirection) -> Void)?
+    var onProgress: ((_ value: Double) -> Void)?
     
-    var playState: PlayState = .Stopped
+    var playState: PlayState = .stopped
     
-    var currentDerection: TweenDirection = .Forward
+    var currentDerection: TweenDirection = .forward
     
     override func awakeFromNib() {
         setup()
     }
     
     func setup() {
-        playPauseButton.addTarget(self, action: #selector(TweenControlsView.playPauseResume), forControlEvents: .TouchUpInside)
-        stopButton.addTarget(self, action: #selector(TweenControlsView.stop), forControlEvents: .TouchUpInside)
-        directionButton.addTarget(self, action: #selector(TweenControlsView.toggleDirection), forControlEvents: .TouchUpInside)
+        playPauseButton.addTarget(self, action: #selector(TweenControlsView.playPauseResume), for: .touchUpInside)
+        stopButton.addTarget(self, action: #selector(TweenControlsView.stop), for: .touchUpInside)
+        directionButton.addTarget(self, action: #selector(TweenControlsView.toggleDirection), for: .touchUpInside)
         
-        progressSlider.addTarget(self, action: #selector(TweenControlsView.sliderValueChanged(_:)), forControlEvents: .ValueChanged)
+        progressSlider.addTarget(self, action: #selector(TweenControlsView.sliderValueChanged(_:)), for: .valueChanged)
         
-        progressSlider.setThumbImage(UIImage(named: "SliderThumb"), forState: .Normal)
-        progressSlider.setThumbImage(UIImage(named: "SliderThumb"), forState: .Highlighted)
+        progressSlider.setThumbImage(UIImage(named: "SliderThumb"), for: UIControlState())
+        progressSlider.setThumbImage(UIImage(named: "SliderThumb"), for: .highlighted)
         
         progress(0)
     }
@@ -65,32 +65,32 @@ class TweenControlsView: UIView {
         
         let views = ["v": self]
         
-        let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[v]-0-|", options: [], metrics: nil, views: views)
-        constraints.appendContentsOf(horizontalConstraints)
+        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[v]-0-|", options: [], metrics: nil, views: views)
+        constraints.append(contentsOf: horizontalConstraints)
         
-        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[v(64)]-16-|", options: [], metrics: nil, views: views)
-        constraints.appendContentsOf(verticalConstraints)
+        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[v(64)]-16-|", options: [], metrics: nil, views: views)
+        constraints.append(contentsOf: verticalConstraints)
         
-        NSLayoutConstraint.activateConstraints(constraints)
+        NSLayoutConstraint.activate(constraints)
     }
     
     func playPauseResume() {
         switch playState {
-        case .Stopped:
-            playState = .Playing
-            playPauseButton.selected = true
+        case .stopped:
+            playState = .playing
+            playPauseButton.isSelected = true
             
             onPlay?()
             break
-        case .Playing:
-            playState = .Pausing
-            playPauseButton.selected = false
+        case .playing:
+            playState = .pausing
+            playPauseButton.isSelected = false
             
             onPause?()
             break
-        case .Pausing:
-            playState = .Playing
-            playPauseButton.selected = true
+        case .pausing:
+            playState = .playing
+            playPauseButton.isSelected = true
             
             onResume?()
             break
@@ -98,8 +98,8 @@ class TweenControlsView: UIView {
     }
     
     func stop() {
-        playState = .Stopped
-        playPauseButton.selected = false
+        playState = .stopped
+        playPauseButton.isSelected = false
         
         onStop?()
     }
@@ -114,24 +114,24 @@ class TweenControlsView: UIView {
     
     func toggleDirection() {
         switch currentDerection {
-        case .Forward:
-            currentDerection = .Reverse
-            directionButton.selected = true
+        case .forward:
+            currentDerection = .reverse
+            directionButton.isSelected = true
             break
-        case .Reverse:
-            currentDerection = .Forward
-            directionButton.selected = false
+        case .reverse:
+            currentDerection = .forward
+            directionButton.isSelected = false
             break
         }
         
-        onDirection?(direction: currentDerection)
+        onDirection?(currentDerection)
     }
     
-    func sliderValueChanged(sender: UISlider?) {
-        onProgress?(value: Double(sender!.value))
+    func sliderValueChanged(_ sender: UISlider?) {
+        onProgress?(Double(sender!.value))
     }
     
-    func progress(value: Double) {
+    func progress(_ value: Double) {
         progressSlider.value = Float(value)
     }
 }

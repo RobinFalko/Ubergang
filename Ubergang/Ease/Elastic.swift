@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Elastic: Ease {
+open class Elastic: Ease {
     
     /**
      Elastic ease in.
@@ -19,7 +19,7 @@ public class Elastic: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeIn(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeIn(t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         if t == 0 {
             return b
@@ -49,7 +49,7 @@ public class Elastic: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeOut(t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         if t == 0 {
             return b
@@ -76,7 +76,7 @@ public class Elastic: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeInOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeInOut(t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         if t == 0 {
             return b

@@ -9,14 +9,14 @@
 import UIKit
 
 extension CGPath {
-    func forEach(@noescape body: @convention(block) (CGPathElement) -> Void) {
+    func forEach(_ body: @convention(block) (CGPathElement) -> Void) {
         typealias Body = @convention(block) (CGPathElement) -> Void
-        func callback(info: UnsafeMutablePointer<Void>, element: UnsafePointer<CGPathElement>) {
-            let body = unsafeBitCast(info, Body.self)
-            body(element.memory)
+        func callback(_ info: UnsafeMutableRawPointer, element: UnsafePointer<CGPathElement>) {
+            let body = unsafeBitCast(info, to: Body.self)
+            body(element.pointee)
         }
-        let unsafeBody = unsafeBitCast(body, UnsafeMutablePointer<Void>.self)
-        CGPathApply(self, unsafeBody, callback)
+        let unsafeBody = unsafeBitCast(body, to: UnsafeMutableRawPointer.self)
+        self.apply(info: unsafeBody, function: callback as! CGPathApplierFunction)
     }
     
     func getElements() -> [(type: CGPathElementType, points: [CGPoint])] {
@@ -27,10 +27,10 @@ extension CGPath {
         var previousLastPoint: CGPoint!
         forEach { element in
             switch (element.type) {
-            case CGPathElementType.MoveToPoint:
+            case CGPathElementType.moveToPoint:
                 firstPoint = element.points[0]
                 previousLastPoint = firstPoint
-            case .AddLineToPoint:
+            case .addLineToPoint:
                 points = [CGPoint]()
                 elementType = element.type
                 points.append(previousLastPoint)
@@ -38,7 +38,7 @@ extension CGPath {
                 result.append((elementType, points))
                 
                 previousLastPoint = element.points[0]
-            case .AddQuadCurveToPoint:
+            case .addQuadCurveToPoint:
                 points = [CGPoint]()
                 elementType = element.type
                 points.append(previousLastPoint)
@@ -47,7 +47,7 @@ extension CGPath {
                 result.append((elementType, points))
                 
                 previousLastPoint = element.points[1]
-            case .AddCurveToPoint:
+            case .addCurveToPoint:
                 points = [CGPoint]()
                 elementType = element.type
                 points.append(previousLastPoint)
@@ -57,7 +57,7 @@ extension CGPath {
                 result.append((elementType, points))
                 
                 previousLastPoint = element.points[2]
-            case .CloseSubpath:
+            case .closeSubpath:
                 points = [CGPoint]()
                 elementType = element.type
                 points.append(previousLastPoint)
@@ -69,7 +69,7 @@ extension CGPath {
         return result
     }
     
-    func getElement(index: Int) -> (type: CGPathElementType, points: [CGPoint])? {
+    func getElement(_ index: Int) -> (type: CGPathElementType, points: [CGPoint])? {
         let elements = getElements()
         if index >= elements.count {
             return nil
@@ -80,7 +80,7 @@ extension CGPath {
     func elementCount() -> Int {
         var count = 0
         self.forEach { element in
-            if element.type != .MoveToPoint && element.type != .CloseSubpath {
+            if element.type != .moveToPoint && element.type != .closeSubpath {
                 count += 1
             }
         }

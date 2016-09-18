@@ -17,7 +17,7 @@ class CurveThroughViewController: ExampleViewController {
     var tween: BezierPathTween!
     
     override func viewDidLoad() {
-        targetView = UIImageView(image: UIImage(named: "PlayIcon")?.imageWithRenderingMode(.AlwaysTemplate))
+        targetView = UIImageView(image: UIImage(named: "PlayIcon")?.withRenderingMode(.alwaysTemplate))
         targetView.tintColor = UIColor(red: 73 / 255, green: 205 / 255, blue: 6 / 255, alpha: 0.75)
         
         setupTween()
@@ -28,19 +28,19 @@ class CurveThroughViewController: ExampleViewController {
     }
     
     deinit {
-        print("deinit \(self.dynamicType)")
+        print("deinit \(type(of: self))")
     }
     
     func setupTween() {
         
         let rectWidth = CGFloat(130)
-        let centerX = (UIScreen.mainScreen().bounds.width - rectWidth) * 0.5
-        let points = raceTrack(CGRectMake(centerX, 100, rectWidth, 260))
+        let centerX = (UIScreen.main.bounds.width - rectWidth) * 0.5
+        let points = raceTrack(CGRect(x: centerX, y: 100, width: rectWidth, height: 260))
         
-        let numbers = points.map { NSValue(CGPoint: $0) }
-        let path = UIBezierPath.interpolateCGPointsWithCatmullRom(numbers, closed: true, alpha: 1.0)
+        let numbers = points.map { NSValue(cgPoint: $0) }
+        let path = UIBezierPath.interpolateCGPoints(withCatmullRom: numbers, closed: true, alpha: 1.0)
         
-        drawPath(path)
+        drawPath(path!)
         
         tween = UTweenBuilder
             .along( points,
@@ -48,15 +48,15 @@ class CurveThroughViewController: ExampleViewController {
                     self.targetView.center = value
                     
                     let angle = atan2(orientation.y, orientation.x)
-                    let transform = CGAffineTransformRotate(CGAffineTransformIdentity, angle)
+                    let transform = CGAffineTransform.identity.rotated(by: angle)
                     self.targetView.transform = transform
                 },
                  duration: 10,
                  id: "bezierTween",
                  closed: true)
             .ease(Linear.ease)
-            .options(.Repeat(1))
-            .memoryReference(.Weak)
+            .options(.repeat(1))
+            .memoryReference(.weak)
             .updateTotal { [unowned self] value in
                 self.tweenControls.progress(value)
             }
@@ -65,15 +65,15 @@ class CurveThroughViewController: ExampleViewController {
             }
     }
     
-    func drawPath(path: UIBezierPath) {
+    func drawPath(_ path: UIBezierPath) {
         let shape = CAShapeLayer()
-        shape.path = path.CGPath
-        shape.strokeColor = UIColor.redColor().CGColor
-        shape.fillColor = UIColor.clearColor().CGColor
+        shape.path = path.cgPath
+        shape.strokeColor = UIColor.red.cgColor
+        shape.fillColor = UIColor.clear.cgColor
         view.layer.addSublayer(shape)
     }
     
-    func raceTrack(rect:CGRect) -> [CGPoint] {
+    func raceTrack(_ rect:CGRect) -> [CGPoint] {
         
         let startPoint = CGPoint(x: rect.minX, y: rect.minY)
         self.targetView.center = startPoint

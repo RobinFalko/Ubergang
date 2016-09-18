@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class UTweenBuilder {
+open class UTweenBuilder {
     
     /**
      Build a `NumericTween`.
@@ -22,25 +22,25 @@ public class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    public class func to<T: Numeric>(to: () -> T, from: () -> T, update: (value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T: Numeric>(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (_ value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to<T: Numeric>(to: T, from: () -> T, update: (value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T: Numeric>(_ to: T, from: @escaping () -> T, update: @escaping (_ value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to<T: Numeric>(to: () -> T, from: T, update: (value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T: Numeric>(_ to: @escaping () -> T, from: T, update: @escaping (_ value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to<T: Numeric>(to: T, from: T, update: (value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T: Numeric>(_ to: T, from: T, update: @escaping (_ value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
@@ -58,25 +58,25 @@ public class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    public class func to<T: Numeric>(to: () -> T, from: () -> T, update: (value: T, progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T: Numeric>(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (_ value: T, _ progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to<T: Numeric>(to: T, from: () -> T, update: (value: T, progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T: Numeric>(_ to: T, from: @escaping () -> T, update: @escaping (_ value: T, _ progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to<T: Numeric>(to: () -> T, from: T, update: (value: T, progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T: Numeric>(_ to: @escaping () -> T, from: T, update: @escaping (_ value: T, _ progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to<T: Numeric>(to: T, from: T, update: (value: T, progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T: Numeric>(_ to: T, from: T, update: @escaping (_ value: T, _ progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
@@ -98,25 +98,25 @@ public class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    public class func to(to: () -> CGAffineTransform, from: () -> CGAffineTransform, update: (value: CGAffineTransform) -> Void, duration: Double, id: String) -> TransformTween {
+    open class func to(_ to: @escaping () -> CGAffineTransform, from: @escaping () -> CGAffineTransform, update: @escaping (_ value: CGAffineTransform) -> Void, duration: Double, id: String) -> TransformTween {
         
         let tween = TransformTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: CGAffineTransform, from: () -> CGAffineTransform, update: (value: CGAffineTransform) -> Void, duration: Double, id: String) -> TransformTween {
+    open class func to(_ to: CGAffineTransform, from: @escaping () -> CGAffineTransform, update: @escaping (_ value: CGAffineTransform) -> Void, duration: Double, id: String) -> TransformTween {
         
         let tween = TransformTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: () -> CGAffineTransform, from: CGAffineTransform, update: (value: CGAffineTransform) -> Void, duration: Double, id: String) -> TransformTween {
+    open class func to(_ to: @escaping () -> CGAffineTransform, from: CGAffineTransform, update: @escaping (_ value: CGAffineTransform) -> Void, duration: Double, id: String) -> TransformTween {
         
         let tween = TransformTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: CGAffineTransform, from: CGAffineTransform, update: (value: CGAffineTransform) -> Void, duration: Double, id: String) -> TransformTween {
+    open class func to(_ to: CGAffineTransform, from: CGAffineTransform, update: @escaping (_ value: CGAffineTransform) -> Void, duration: Double, id: String) -> TransformTween {
         
         let tween = TransformTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
@@ -134,25 +134,25 @@ public class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    public class func to(to: () -> CGAffineTransform, from: () -> CGAffineTransform, update: (value: CGAffineTransform, progress: Double) -> Void, duration: Double, id: String) -> TransformTween {
+    open class func to(_ to: @escaping () -> CGAffineTransform, from: @escaping () -> CGAffineTransform, update: @escaping (_ value: CGAffineTransform, _ progress: Double) -> Void, duration: Double, id: String) -> TransformTween {
         
         let tween = TransformTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: CGAffineTransform, from: () -> CGAffineTransform, update: (value: CGAffineTransform, progress: Double) -> Void, duration: Double, id: String) -> TransformTween {
+    open class func to(_ to: CGAffineTransform, from: @escaping () -> CGAffineTransform, update: @escaping (_ value: CGAffineTransform, _ progress: Double) -> Void, duration: Double, id: String) -> TransformTween {
         
         let tween = TransformTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: () -> CGAffineTransform, from: CGAffineTransform, update: (value: CGAffineTransform, progress: Double) -> Void, duration: Double, id: String) -> TransformTween {
+    open class func to(_ to: @escaping () -> CGAffineTransform, from: CGAffineTransform, update: @escaping (_ value: CGAffineTransform, _ progress: Double) -> Void, duration: Double, id: String) -> TransformTween {
         
         let tween = TransformTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: CGAffineTransform, from: CGAffineTransform, update: (value: CGAffineTransform, progress: Double) -> Void, duration: Double, id: String) -> TransformTween {
+    open class func to(_ to: CGAffineTransform, from: CGAffineTransform, update: @escaping (_ value: CGAffineTransform, _ progress: Double) -> Void, duration: Double, id: String) -> TransformTween {
         
         let tween = TransformTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
@@ -174,25 +174,25 @@ public class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    public class func to(to: () -> UIColor, from: () -> UIColor, update: (value: UIColor) -> Void, duration: Double, id: String) -> ColorTween {
+    open class func to(_ to: @escaping () -> UIColor, from: @escaping () -> UIColor, update: @escaping (_ value: UIColor) -> Void, duration: Double, id: String) -> ColorTween {
         
         let tween = ColorTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: UIColor, from: () -> UIColor, update: (value: UIColor) -> Void, duration: Double, id: String) -> ColorTween {
+    open class func to(_ to: UIColor, from: @escaping () -> UIColor, update: @escaping (_ value: UIColor) -> Void, duration: Double, id: String) -> ColorTween {
         
         let tween = ColorTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: () -> UIColor, from: UIColor, update: (value: UIColor) -> Void, duration: Double, id: String) -> ColorTween {
+    open class func to(_ to: @escaping () -> UIColor, from: UIColor, update: @escaping (_ value: UIColor) -> Void, duration: Double, id: String) -> ColorTween {
         
         let tween = ColorTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: UIColor, from: UIColor, update: (value: UIColor) -> Void, duration: Double, id: String) -> ColorTween {
+    open class func to(_ to: UIColor, from: UIColor, update: @escaping (_ value: UIColor) -> Void, duration: Double, id: String) -> ColorTween {
         
         let tween = ColorTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
@@ -211,25 +211,25 @@ public class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    public class func to(to: () -> UIColor, from: () -> UIColor, update: (value: UIColor, progress: Double) -> Void, duration: Double, id: String) -> ColorTween {
+    open class func to(_ to: @escaping () -> UIColor, from: @escaping () -> UIColor, update: @escaping (_ value: UIColor, _ progress: Double) -> Void, duration: Double, id: String) -> ColorTween {
         
         let tween = ColorTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: UIColor, from: () -> UIColor, update: (value: UIColor, progress: Double) -> Void, duration: Double, id: String) -> ColorTween {
+    open class func to(_ to: UIColor, from: @escaping () -> UIColor, update: @escaping (_ value: UIColor, _ progress: Double) -> Void, duration: Double, id: String) -> ColorTween {
         
         let tween = ColorTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: () -> UIColor, from: UIColor, update: (value: UIColor, progress: Double) -> Void, duration: Double, id: String) -> ColorTween {
+    open class func to(_ to: @escaping () -> UIColor, from: UIColor, update: @escaping (_ value: UIColor, _ progress: Double) -> Void, duration: Double, id: String) -> ColorTween {
         
         let tween = ColorTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: UIColor, from: UIColor, update: (value: UIColor, progress: Double) -> Void, duration: Double, id: String) -> ColorTween {
+    open class func to(_ to: UIColor, from: UIColor, update: @escaping (_ value: UIColor, _ progress: Double) -> Void, duration: Double, id: String) -> ColorTween {
         
         let tween = ColorTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
@@ -253,25 +253,25 @@ public class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    public class func to(to: () -> CGPoint, from: () -> CGPoint, update: (value: CGPoint) -> Void, duration: Double, id: String) -> CGPointTween {
+    open class func to(_ to: @escaping () -> CGPoint, from: @escaping () -> CGPoint, update: @escaping (_ value: CGPoint) -> Void, duration: Double, id: String) -> CGPointTween {
         
         let tween = CGPointTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: CGPoint, from: () -> CGPoint, update: (value: CGPoint) -> Void, duration: Double, id: String) -> CGPointTween {
+    open class func to(_ to: CGPoint, from: @escaping () -> CGPoint, update: @escaping (_ value: CGPoint) -> Void, duration: Double, id: String) -> CGPointTween {
         
         let tween = CGPointTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: () -> CGPoint, from: CGPoint, update: (value: CGPoint) -> Void, duration: Double, id: String) -> CGPointTween {
+    open class func to(_ to: @escaping () -> CGPoint, from: CGPoint, update: @escaping (_ value: CGPoint) -> Void, duration: Double, id: String) -> CGPointTween {
         
         let tween = CGPointTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: CGPoint, from: CGPoint, update: (value: CGPoint) -> Void, duration: Double, id: String) -> CGPointTween {
+    open class func to(_ to: CGPoint, from: CGPoint, update: @escaping (_ value: CGPoint) -> Void, duration: Double, id: String) -> CGPointTween {
         
         let tween = CGPointTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
@@ -289,25 +289,25 @@ public class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    public class func to(to: () -> CGPoint, from: () -> CGPoint, update: (value: CGPoint, progress: Double) -> Void, duration: Double, id: String) -> CGPointTween {
+    open class func to(_ to: @escaping () -> CGPoint, from: @escaping () -> CGPoint, update: @escaping (_ value: CGPoint, _ progress: Double) -> Void, duration: Double, id: String) -> CGPointTween {
         
         let tween = CGPointTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: CGPoint, from: () -> CGPoint, update: (value: CGPoint, progress: Double) -> Void, duration: Double, id: String) -> CGPointTween {
+    open class func to(_ to: CGPoint, from: @escaping () -> CGPoint, update: @escaping (_ value: CGPoint, _ progress: Double) -> Void, duration: Double, id: String) -> CGPointTween {
         
         let tween = CGPointTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: () -> CGPoint, from: CGPoint, update: (value: CGPoint, progress: Double) -> Void, duration: Double, id: String) -> CGPointTween {
+    open class func to(_ to: @escaping () -> CGPoint, from: CGPoint, update: @escaping (_ value: CGPoint, _ progress: Double) -> Void, duration: Double, id: String) -> CGPointTween {
         
         let tween = CGPointTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    public class func to(to: CGPoint, from: CGPoint, update: (value: CGPoint, progress: Double) -> Void, duration: Double, id: String) -> CGPointTween {
+    open class func to(_ to: CGPoint, from: CGPoint, update: @escaping (_ value: CGPoint, _ progress: Double) -> Void, duration: Double, id: String) -> CGPointTween {
         
         let tween = CGPointTween(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
@@ -328,7 +328,7 @@ public class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    public class func along(path: UIBezierPath, update: (value: CGPoint) -> Void, duration: Double, id: String) -> BezierPathTween {
+    open class func along(_ path: UIBezierPath, update: @escaping (_ value: CGPoint) -> Void, duration: Double, id: String) -> BezierPathTween {
         
         let tween = BezierPathTween(id: id)
         return tween.along( path, update: update, duration: duration )
@@ -345,7 +345,7 @@ public class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    public class func along(path: UIBezierPath, update: (value: CGPoint, progress: Double) -> Void, duration: Double, id: String) -> BezierPathTween {
+    open class func along(_ path: UIBezierPath, update: @escaping (_ value: CGPoint, _ progress: Double) -> Void, duration: Double, id: String) -> BezierPathTween {
         
         let tween = BezierPathTween(id: id)
         return tween.along( path, update: update, duration: duration )
@@ -362,7 +362,7 @@ public class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    public class func along(path: UIBezierPath, update: (value: CGPoint, progress: Double, orientation: CGPoint) -> Void, duration: Double, id: String) -> BezierPathTween {
+    open class func along(_ path: UIBezierPath, update: @escaping (_ value: CGPoint, _ progress: Double, _ orientation: CGPoint) -> Void, duration: Double, id: String) -> BezierPathTween {
         
         let tween = BezierPathTween(id: id)
         return tween.along( path, update: update, duration: duration )
@@ -383,10 +383,10 @@ public class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    public class func along(points: [CGPoint], update: (value: CGPoint) -> Void, duration: Double, id: String, closed: Bool = false) -> BezierPathTween {
+    open class func along(_ points: [CGPoint], update: @escaping (_ value: CGPoint) -> Void, duration: Double, id: String, closed: Bool = false) -> BezierPathTween {
         
-        let numbers = points.map { NSValue(CGPoint: $0) }
-        let path = UIBezierPath.interpolateCGPointsWithCatmullRom(numbers, closed: closed, alpha: 1.0)
+        let numbers = points.map { NSValue(cgPoint: $0) }
+        let path = UIBezierPath.interpolateCGPoints(withCatmullRom: numbers, closed: closed, alpha: 1.0)!
         
         let tween = BezierPathTween(id: id)
         return tween.along( path, update: update, duration: duration )
@@ -403,10 +403,10 @@ public class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    public class func along(points: [CGPoint], update: (value: CGPoint, progress: Double) -> Void, duration: Double, id: String, closed: Bool = false) -> BezierPathTween {
+    open class func along(_ points: [CGPoint], update: @escaping (_ value: CGPoint, _ progress: Double) -> Void, duration: Double, id: String, closed: Bool = false) -> BezierPathTween {
         
-        let numbers = points.map { NSValue(CGPoint: $0) }
-        let path = UIBezierPath.interpolateCGPointsWithCatmullRom(numbers, closed: closed, alpha: 1.0)
+        let numbers = points.map { NSValue(cgPoint: $0) }
+        let path = UIBezierPath.interpolateCGPoints(withCatmullRom: numbers, closed: closed, alpha: 1.0)!
         
         let tween = BezierPathTween(id: id)
         return tween.along( path, update: update, duration: duration )
@@ -423,10 +423,10 @@ public class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    public class func along(points: [CGPoint], update: (value: CGPoint, progress: Double, orientation: CGPoint) -> Void, duration: Double, id: String, closed: Bool = false) -> BezierPathTween {
+    open class func along(_ points: [CGPoint], update: @escaping (_ value: CGPoint, _ progress: Double, _ orientation: CGPoint) -> Void, duration: Double, id: String, closed: Bool = false) -> BezierPathTween {
         
-        let numbers = points.map { NSValue(CGPoint: $0) }
-        let path = UIBezierPath.interpolateCGPointsWithCatmullRom(numbers, closed: closed, alpha: 1.0)
+        let numbers = points.map { NSValue(cgPoint: $0) }
+        let path = UIBezierPath.interpolateCGPoints(withCatmullRom: numbers, closed: closed, alpha: 1.0)!
         
         let tween = BezierPathTween(id: id)
         return tween.along( path, update: update, duration: duration )

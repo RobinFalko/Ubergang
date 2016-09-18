@@ -24,7 +24,7 @@ class ConstraintViewController: ExampleViewController {
     var timeline: UTimeline!
     
     deinit {
-        print("deinit \(self.dynamicType)")
+        print("deinit \(type(of: self))")
     }
     
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class ConstraintViewController: ExampleViewController {
     
     func setupTween() {
         timeline = UTimeline(id: "particleTimeline")
-        timeline.memoryReference(.Weak)
+        timeline.memoryReference(.weak)
         timeline.updateTotal { [unowned self] (progressTotal) in
             self.tweenControls.progress(progressTotal)
         }
@@ -50,7 +50,7 @@ class ConstraintViewController: ExampleViewController {
         var from = defaultRedViewHeight
         let tween1 = NumericTween<CGFloat>(id: "testView1")
             .to( CGFloat(50.0),
-                from: from,
+                from: from!,
                 update: { [unowned self] (value:CGFloat) in
                     self.redViewHeight.constant = value },
                 duration: 1)
@@ -59,7 +59,7 @@ class ConstraintViewController: ExampleViewController {
         from = defaultGrayViewWidth
         let tween2 = NumericTween<CGFloat>(id: "testView2")
             .to( CGFloat(150.0),
-                from: from,
+                from: from!,
                 update: { [unowned self] (value:CGFloat) in
                     self.grayViewWidth.constant = value },
                 duration: 2)
@@ -68,11 +68,11 @@ class ConstraintViewController: ExampleViewController {
         from = defaultGreenViewBottom
         let tween3 = NumericTween<CGFloat>(id: "testView3")
             .to( CGFloat(100.0),
-                from: from,
+                from: from!,
                 update: { [unowned self] (value:CGFloat) in
                     self.greenViewBottom.constant = value },
                 duration: 3)
-            .options(.Repeat(1), .Yoyo)
+            .options(.repeat(1), .yoyo)
             .ease(Expo.easeInOut)
         
         timeline.append(tween1)

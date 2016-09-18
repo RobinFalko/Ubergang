@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Back: Ease {
+open class Back: Ease {
     /**
      Back ease in.
      
@@ -18,7 +18,7 @@ public class Back: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeIn(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeIn(t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         let s = 1.70158
         t/=d
@@ -35,11 +35,12 @@ public class Back: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeOut(t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         let s = 1.70158
         t=t/d-1
-        return c*(t*t*((s+1)*t + s) + 1) + b
+        let f = (s+1)*t + s
+        return c*(t*t*f + 1) + b
     }
     
     /**
@@ -51,7 +52,7 @@ public class Back: Ease {
      - Parameter d: The end value
      - Returns: The mapped result
      */
-    public class func easeInOut(t t: Double, b: Double, c: Double, d: Double) -> Double {
+    open class func easeInOut(t: Double, b: Double, c: Double, d: Double) -> Double {
         var t = t
         var s = 1.70158
         t/=d/2
@@ -59,6 +60,7 @@ public class Back: Ease {
         t-=2
         let postFix = t
         s*=(1.525)
-        return c/2*((postFix)*t*(((s)+1)*t + s) + 2) + b
+        let f = (s+1)*t + s
+        return c/2*(postFix*t*f + 2) + b
     }
 }

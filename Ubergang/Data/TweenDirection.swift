@@ -7,5 +7,5 @@
 //
 
 public enum TweenDirection {
-    case Forward, Reverse
+    case forward, reverse
 }
