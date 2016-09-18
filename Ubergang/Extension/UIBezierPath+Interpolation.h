@@ -5,6 +5,7 @@
 //  Created by John Fisher on 4/26/14.
 //  Copyright (c) 2014 John Fisher. All rights reserved.
 //
+//  Source: https://github.com/jnfisher/ios-curve-interpolation
 
 #import <UIKit/UIKit.h>
 

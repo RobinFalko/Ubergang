@@ -27,20 +27,17 @@ class NumericViewController: ExampleViewController {
     }
     
     func setupTween() {
-        tween = UTweenBuilder
+        tween = NumericTween<Int>(id: "tween")
             .to( 100,
                  from: 0,
                  update: { [unowned self] (value:Int, progress: Double) in
                     self.numberLabel.text = "\(value)"
                     self.tweenControls.progress(progress)
                 },
-                 duration: 5,
-                 id: "tween")
-        tween.ease(Linear.ease)
-        tween.memoryReference(.Weak)
-        tween.complete { [unowned self] in
-            self.tweenControls.stop()
-        }
+                 duration: 5)
+            .complete { [unowned self] in
+                self.tweenControls.stop()
+            }
     }
 }
 

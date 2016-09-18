@@ -47,7 +47,7 @@ class CurveThroughViewController: ExampleViewController {
                  update: { [unowned self] (value:CGPoint, progress: Double, orientation: CGPoint) in
                     self.targetView.center = value
                     
-                    let angle = fmod(atan2(orientation.y, orientation.x), 360)
+                    let angle = atan2(orientation.y, orientation.x)
                     let transform = CGAffineTransformRotate(CGAffineTransformIdentity, angle)
                     self.targetView.transform = transform
                 },
