@@ -23,7 +23,7 @@ open class BezierPathTween: UTweenBase {
     var elements: [(type: CGPathElementType, points: [CGPoint])]!
     
     public convenience init() {
-        let id = "\(#file)_\(arc4random() * 1000)_update"
+        let id = "\(#file)_\(arc4random())_update"
         self.init(id: id)
     }
     

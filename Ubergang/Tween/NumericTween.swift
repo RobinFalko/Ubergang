@@ -11,7 +11,7 @@ import Foundation
 open class NumericTween<T: Numeric>: UTween<T> {
     
     public convenience init() {
-        let id = "\(#file)_\(arc4random() * 1000)_update"
+        let id = "\(#file)_\(arc4random())_update"
         self.init(id: id)
     }
     
