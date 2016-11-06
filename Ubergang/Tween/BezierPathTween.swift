@@ -129,7 +129,7 @@ open class BezierPathTween: UTweenBase {
         elements = path.cgPath.getElements()
         pathInfo = computeDistances(elements)
         
-        self.update(update)
+        _ = self.update(update)
         
         return self
     }
@@ -140,7 +140,7 @@ open class BezierPathTween: UTweenBase {
         elements = path.cgPath.getElements()
         pathInfo = computeDistances(elements)   
         
-        self.update(update)
+        _ = self.update(update)
         
         return self
     }
@@ -151,14 +151,14 @@ open class BezierPathTween: UTweenBase {
         elements = path.cgPath.getElements()
         pathInfo = computeDistances(elements)
         
-        self.update(update)
+        _ = self.update(update)
         
         return self
     }
     
     open func along(_ path: UIBezierPath, update: @escaping (CGPoint) -> Void, complete: @escaping () -> Void) -> Self {
         
-        self.along(path, update: update)
+        _ = self.along(path, update: update)
             .complete(complete)
         
         return self
@@ -166,7 +166,7 @@ open class BezierPathTween: UTweenBase {
     
     open func along(_ path: UIBezierPath, update: @escaping (CGPoint, Double) -> Void, complete: @escaping () -> Void) -> Self {
         
-        self.along(path, update: update)
+        _ = self.along(path, update: update)
             .complete(complete)
         
         return self
@@ -174,7 +174,7 @@ open class BezierPathTween: UTweenBase {
     
     open func along(_ path: UIBezierPath, update: @escaping (CGPoint, Double, CGPoint) -> Void, complete: @escaping () -> Void) -> Self {
         
-        self.along(path, update: update)
+        _ = self.along(path, update: update)
             .complete(complete)
         
         return self
@@ -182,7 +182,7 @@ open class BezierPathTween: UTweenBase {
     
     open func along(_ path: UIBezierPath, update: @escaping (CGPoint) -> Void, duration: Double) -> Self {
         
-        self.along(path, update: update)
+        _ = self.along(path, update: update)
             .duration(duration)
         
         return self
@@ -190,7 +190,7 @@ open class BezierPathTween: UTweenBase {
     
     open func along(_ path: UIBezierPath, update: @escaping (CGPoint, Double) -> Void, duration: Double) -> Self {
         
-        self.along(path, update: update)
+        _ = self.along(path, update: update)
             .duration(duration)
         
         return self
@@ -198,7 +198,7 @@ open class BezierPathTween: UTweenBase {
     
     open func along(_ path: UIBezierPath, update: @escaping (CGPoint, Double, CGPoint) -> Void, duration: Double) -> Self {
         
-        self.along(path, update: update)
+        _ = self.along(path, update: update)
             .duration(duration)
         
         return self
@@ -206,7 +206,7 @@ open class BezierPathTween: UTweenBase {
     
     open func along(_ path: UIBezierPath, update: @escaping (CGPoint) -> Void, complete: @escaping () -> Void, duration: Double) -> Self {
         
-        self.along(path, update: update, complete:  complete)
+        _ = self.along(path, update: update, complete:  complete)
             .duration(duration)
         
         return self
@@ -214,7 +214,7 @@ open class BezierPathTween: UTweenBase {
     
     open func along(_ path: UIBezierPath, update: @escaping (CGPoint, Double) -> Void, complete: @escaping () -> Void, duration: Double) -> Self {
         
-        self.along(path, update: update, complete:  complete)
+        _ = self.along(path, update: update, complete:  complete)
             .duration(duration)
         
         return self
@@ -222,7 +222,7 @@ open class BezierPathTween: UTweenBase {
     
     open func along(_ path: UIBezierPath, update: @escaping (CGPoint, Double, CGPoint) -> Void, complete: @escaping () -> Void, duration: Double) -> Self {
         
-        self.along(path, update: update, complete:  complete)
+        _ = self.along(path, update: update, complete:  complete)
             .duration(duration)
         
         return self

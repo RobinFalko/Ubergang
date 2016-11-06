@@ -1,7 +1,7 @@
 ![Ubergang - a tweening engine for iOS](https://raw.githubusercontent.com/RobinFalko/Ubergang/master/Ubergang.png)
 
 [![Platform iOS](https://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat-square)](https://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat-square)
-[![CocoaPods Compatible](https://img.shields.io/badge/pod-0.8-blue.svg?style=flat-square)](https://img.shields.io/badge/pod-0.8-blue.svg?style=flat-square)
+[![CocoaPods Compatible](https://img.shields.io/badge/pod-0.8-blue.svg?style=flat-square)](https://img.shields.io/badge/pod-0.9-blue.svg?style=flat-square)
 [![License Apache2 iOS](https://img.shields.io/badge/license-Apache%202-blue.svg?style=flat-square)](https://img.shields.io/badge/license-Apache%202-blue.svg?style=flat-square)
 
 Ubergang is a tweening engine for iOS written in Swift.
@@ -41,7 +41,7 @@ Ubergang is a tweening engine for iOS written in Swift.
 ```ruby
     platform :ios, '8.0'
     use_frameworks!
-    pod 'Ubergang', '~> 0.8.1'
+    pod 'Ubergang', '~> 0.9.2'
 ```
 ## Setup
 

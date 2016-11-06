@@ -43,10 +43,10 @@ class TransformViewController: ExampleViewController {
             .ease(Elastic.easeOut)
             .memoryReference(.weak)
         
-        tween.updateTotal { [unowned self] (progressTotal) in
+        _ = tween.updateTotal { [unowned self] (progressTotal) in
             self.tweenControls.progress(progressTotal)
         }
-        tween.complete { [unowned self] in
+        _ = tween.complete { [unowned self] in
             self.tweenControls.stop()
         }
     }

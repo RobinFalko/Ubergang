@@ -43,14 +43,14 @@ class TimelinesViewController: ExampleViewController {
     func setupTween() {
         
         let timeline = UTimeline(id: "timeline")
-        timeline.options(.repeat(9))
-        timeline.repeatCycleChange { [unowned self] repeatCycle in
+        _ = timeline.options(.repeat(9))
+        _ = timeline.repeatCycleChange { [unowned self] repeatCycle in
             self.tweenStatusView2.repeatCount = repeatCycle
         }
-        timeline.update { [unowned self] progress in
+        _ = timeline.update { [unowned self] progress in
             self.tweenStatusView2.progress = Float(progress)
         }
-        timeline.updateTotal { [unowned self] progressTotal in
+        _ = timeline.updateTotal { [unowned self] progressTotal in
             self.tweenStatusView2.progressTotal = Float(progressTotal)
             self.tweenControls.progress(progressTotal)
         }
@@ -66,7 +66,7 @@ class TimelinesViewController: ExampleViewController {
                 duration: 5,
                 id: "arcIncreaseTween")
             .ease(Cubic.easeInOut)
-        tween0.updateTotal { [unowned self] progress in
+        _ = tween0.updateTotal { [unowned self] progress in
             self.tweenStatusView0.progressTotal = Float(progress)
         }
         timeline.append(tween0)
@@ -81,7 +81,7 @@ class TimelinesViewController: ExampleViewController {
                 duration: 5,
                 id: "arcDecreaseTween")
             .ease(Cubic.easeInOut)
-        tween1.updateTotal { [unowned self] progress in
+        _ = tween1.updateTotal { [unowned self] progress in
             self.tweenStatusView1.progressTotal = Float(progress)
         }
         //opening arc
@@ -89,16 +89,16 @@ class TimelinesViewController: ExampleViewController {
         
         
         timelineContainer = UTimeline(id: "timelineContainer").memoryReference(.weak)
-        timelineContainer.repeatCycleChange { [unowned self] repeatCycle in
+        _ = timelineContainer.repeatCycleChange { [unowned self] repeatCycle in
             self.tweenStatusView3.repeatCount = repeatCycle
         }
-        timelineContainer.update { [unowned self] progress in
+        _ = timelineContainer.update { [unowned self] progress in
             self.tweenStatusView3.progress = Float(progress)
         }
-        timelineContainer.updateTotal { [unowned self] progressTotal in
+        _ = timelineContainer.updateTotal { [unowned self] progressTotal in
             self.tweenStatusView3.progressTotal = Float(progressTotal)
         }
-        timelineContainer.complete { [unowned self] in
+        _ = timelineContainer.complete { [unowned self] in
             self.tweenControls.stop()
         }
         

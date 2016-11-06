@@ -45,17 +45,17 @@ class ProgressViewController: ExampleViewController {
                 },
                  duration: 5,
                  id: "progressTween")
-        tween.ease(Cubic.easeOut)
-        tween.options(.repeat(1), .yoyo)
-        tween.memoryReference(.weak)
-        tween.updateTotal { [unowned self] (progressTotal) in
+        _ = tween.ease(Cubic.easeOut)
+        _ = tween.options(.repeat(1), .yoyo)
+        _ = tween.memoryReference(.weak)
+        _ = tween.updateTotal { [unowned self] (progressTotal) in
             self.tweenControls.progress(progressTotal)
             self.progressBarTotal.progress = Float(progressTotal)
         }
-        tween.repeatCycleChange { [unowned self] cycle in
+        _ = tween.repeatCycleChange { [unowned self] cycle in
             self.repeatCycleLabel.text = "\(cycle)"
         }
-        tween.complete { [unowned self] in
+        _ = tween.complete { [unowned self] in
             self.tweenControls.stop()
         }
     }

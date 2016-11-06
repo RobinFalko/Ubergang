@@ -39,11 +39,11 @@ class ConstraintViewController: ExampleViewController {
     
     func setupTween() {
         timeline = UTimeline(id: "particleTimeline")
-        timeline.memoryReference(.weak)
-        timeline.updateTotal { [unowned self] (progressTotal) in
+        _ = timeline.memoryReference(.weak)
+        _ = timeline.updateTotal { [unowned self] (progressTotal) in
             self.tweenControls.progress(progressTotal)
         }
-        timeline.complete { [unowned self] in
+        _ = timeline.complete { [unowned self] in
             self.tweenControls.stop()
         }
         

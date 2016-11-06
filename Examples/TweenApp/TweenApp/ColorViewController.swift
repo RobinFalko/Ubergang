@@ -46,9 +46,9 @@ class ColorViewController: ExampleViewController {
                 },
                  duration: 1,
                  id: "colorTween")
-        tween.ease(Linear.ease)
-        tween.memoryReference(.weak)
-        tween.complete { [unowned self] in
+        _ = tween.ease(Linear.ease)
+        _ = tween.memoryReference(.weak)
+        _ = tween.complete { [unowned self] in
             self.tweenControls.stop()
         }
     }

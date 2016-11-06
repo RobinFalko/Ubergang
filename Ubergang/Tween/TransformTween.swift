@@ -21,7 +21,7 @@ open class TransformTween: UTween<CGAffineTransform> {
     }
     
     override func compute(_ value: Double) -> CGAffineTransform {
-        super.compute(value)
+        _ = super.compute(value)
         
         let from = self.from()
         let to = self.to()

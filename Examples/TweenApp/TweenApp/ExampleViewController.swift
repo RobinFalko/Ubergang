@@ -17,7 +17,7 @@ class ExampleViewController: UIViewController {
         tweenControls = TweenControlsView.instanceFromNib()
         tweenControls.progress(0.0)
         tweenControls.onPlay = {
-            tween.start()
+            _ = tween.start()
         }
         tweenControls.onStop = {
             tween.stop()
@@ -29,7 +29,7 @@ class ExampleViewController: UIViewController {
             tween.resume()
         }
         tweenControls.onDirection = { value in
-            tween.tweenDirection(value)
+            _ = tween.tweenDirection(value)
         }
         tweenControls.onProgress = { value in
             tween.progressTotal = value

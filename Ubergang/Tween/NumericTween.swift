@@ -20,7 +20,7 @@ open class NumericTween<T: Numeric>: UTween<T> {
     }
     
     override func compute(_ value: Double) -> T {
-        super.compute(value)
+        _ = super.compute(value)
         
         let from = self.from()
         let to = self.to()

@@ -32,10 +32,10 @@ class ParticleViewController: ExampleViewController {
     
     func setupTween() {
         timeline = UTimeline(id: "particleTimeline")
-        timeline.updateTotal { [unowned self] (progressTotal) in
+        _ = timeline.updateTotal { [unowned self] (progressTotal) in
             self.tweenControls.progress(progressTotal)
         }
-        timeline.complete { [unowned self] in
+        _ = timeline.complete { [unowned self] in
             self.tweenControls.stop()
         }
         
@@ -52,7 +52,7 @@ class ParticleViewController: ExampleViewController {
                 .ease(Cubic.easeInOut)
                 .options(.yoyo)
             timeline.insert(tween, at: 0)
-            timeline.memoryReference(.weak)
+            _ = timeline.memoryReference(.weak)
         }
     }
     
