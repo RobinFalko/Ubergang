@@ -19,9 +19,9 @@ class ReverseButtton: TweenControlButton {
         }
         set {
             if newValue {
-                numericTween.tweenDirection(.forward).start()
+                _ = numericTween.tweenDirection(.forward).start()
             } else {
-                numericTween.tweenDirection(.reverse).start()
+                _ = numericTween.tweenDirection(.reverse).start()
             }
             super.isSelected = newValue
         }
@@ -42,7 +42,7 @@ class ReverseButtton: TweenControlButton {
                  duration: 0.5,
                  id: "transform_\(arc4random())")
         
-        numericTween.ease(Cubic.easeInOut)
-        numericTween.memoryReference(.weak)
+        _ = numericTween.ease(Cubic.easeInOut)
+        _ = numericTween.memoryReference(.weak)
     }
 }

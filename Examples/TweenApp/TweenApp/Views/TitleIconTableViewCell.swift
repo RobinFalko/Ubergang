@@ -34,7 +34,7 @@ class TitleIconTableViewCell: UITableViewCell {
     
     
     func animateIn() {
-        timeline.start()
+        _ = timeline.start()
     }
     
     func setup() {

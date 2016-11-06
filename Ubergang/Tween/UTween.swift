@@ -86,7 +86,7 @@ extension UTween {
     // -
     public func to(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (T) -> Void) -> Self {
         
-        self.to(to)
+        _ = self.to(to)
             .from(from)
             .update(update)
         
@@ -98,7 +98,7 @@ extension UTween {
     
     public func to(_ to: T, from: @escaping () -> T, update: @escaping (T) -> Void) -> Self {
         
-        self.to(to)
+        _ = self.to(to)
             .from(from)
             .update(update)
         
@@ -110,7 +110,7 @@ extension UTween {
     
     public func to(_ to: @escaping () -> T, from: T, update: @escaping (T) -> Void) -> Self {
         
-        self.to(to)
+        _ = self.to(to)
             .from(from)
             .update(update)
         
@@ -122,7 +122,7 @@ extension UTween {
     
     public func to(_ to: T, from: T, update: @escaping (T) -> Void) -> Self {
         
-        self.to(to)
+        _ = self.to(to)
             .from(from)
             .update(update)
         
@@ -135,7 +135,7 @@ extension UTween {
     // -
     public func to(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (T, Double) -> Void) -> Self {
         
-        self.to(to)
+        _ = self.to(to)
             .from(from)
             .update(update)
         
@@ -147,7 +147,7 @@ extension UTween {
     
     public func to(_ to: T, from: @escaping () -> T, update: @escaping (T, Double) -> Void) -> Self {
         
-        self.to(to)
+        _ = self.to(to)
             .from(from)
             .update(update)
         
@@ -159,7 +159,7 @@ extension UTween {
     
     public func to(_ to: @escaping () -> T, from: T, update: @escaping (T, Double) -> Void) -> Self {
         
-        self.to(to)
+        _ = self.to(to)
             .from(from)
             .update(update)
         
@@ -171,7 +171,7 @@ extension UTween {
     
     public func to(_ to: T, from: T, update: @escaping (T, Double) -> Void) -> Self {
         
-        self.to(to)
+        _ = self.to(to)
             .from(from)
             .update(update)
         
@@ -185,7 +185,7 @@ extension UTween {
     // -
     public func to(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (T) -> Void, complete: @escaping () -> Void) -> Self {
         
-        self.to(to, from: from, update: update)
+        _ = self.to(to, from: from, update: update)
             .complete(complete)
         
         return self
@@ -194,7 +194,7 @@ extension UTween {
     
     public func to(_ to: T, from: @escaping () -> T, update: @escaping (T) -> Void, complete: @escaping () -> Void) -> Self {
         
-        self.to(to, from: from, update: update)
+        _ = self.to(to, from: from, update: update)
             .complete(complete)
         
         return self
@@ -203,7 +203,7 @@ extension UTween {
     
     public func to(_ to: @escaping () -> T, from: T, update: @escaping (T) -> Void, complete: @escaping () -> Void) -> Self {
         
-        self.to(to, from: from, update: update)
+        _ = self.to(to, from: from, update: update)
             .complete(complete)
         
         return self
@@ -212,7 +212,7 @@ extension UTween {
     
     public func to(_ to: T, from: T, update: @escaping (T) -> Void, complete: @escaping () -> Void) -> Self {
         
-        self.to(to, from: from, update: update)
+        _ = self.to(to, from: from, update: update)
             .complete(complete)
         
         return self
@@ -221,7 +221,7 @@ extension UTween {
     // -
     public func to(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (T, Double) -> Void, complete: @escaping () -> Void) -> Self {
         
-        self.to(to, from: from, update: update)
+        _ = self.to(to, from: from, update: update)
             .complete(complete)
         
         return self
@@ -229,7 +229,7 @@ extension UTween {
     
     public func to(_ to: T, from: @escaping () -> T, update: @escaping (T, Double) -> Void, complete: @escaping () -> Void) -> Self {
         
-        self.to(to, from: from, update: update)
+        _ = self.to(to, from: from, update: update)
             .complete(complete)
         
         return self
@@ -237,7 +237,7 @@ extension UTween {
     
     public func to(_ to: @escaping () -> T, from: T, update: @escaping (T, Double) -> Void, complete: @escaping () -> Void) -> Self {
         
-        self.to(to, from: from, update: update)
+        _ = self.to(to, from: from, update: update)
             .complete(complete)
         
         return self
@@ -245,7 +245,7 @@ extension UTween {
     
     public func to(_ to: T, from: T, update: @escaping (T, Double) -> Void, complete: @escaping () -> Void) -> Self {
         
-        self.to(to, from: from, update: update)
+        _ = self.to(to, from: from, update: update)
             .complete(complete)
         
         return self

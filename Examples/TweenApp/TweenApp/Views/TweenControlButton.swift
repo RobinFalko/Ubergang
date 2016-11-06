@@ -54,7 +54,7 @@ class TweenControlButton: UIButton {
                  },
                  duration: 0.2,
                  id: "alpha_\(arc4random())")
-        tween.ease(Cubic.easeOut)
+        _ = tween.ease(Cubic.easeOut)
         
         let transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         let transformTween = UTweenBuilder
@@ -66,22 +66,22 @@ class TweenControlButton: UIButton {
                  duration: 0.2,
                  id: "transform_\(arc4random())")
         
-        transformTween.ease(Cubic.easeOut)
+        _ = transformTween.ease(Cubic.easeOut)
         
         timeline = UTimeline(id: "timeline_\(arc4random())")
-        timeline.memoryReference(.weak)
+        _ = timeline.memoryReference(.weak)
         timeline.insert(tween, at: 0)
         timeline.insert(transformTween, at: 0)
     }
     
     func touchDown() {
-        timeline.tweenDirection(.forward).start()
+        _ = timeline.tweenDirection(.forward).start()
         
         tweenOutline()
     }
     
     func touchUp() {
-        timeline.tweenDirection(.reverse).start()
+        _ = timeline.tweenDirection(.reverse).start()
     }
     
     func tweenOutline() {
@@ -101,10 +101,10 @@ class TweenControlButton: UIButton {
                  duration: 0.5,
                  id: "outline_\(arc4random())")
         
-        transformTween.ease(Cubic.easeOut)
-        transformTween.complete {
+        _ = transformTween.ease(Cubic.easeOut)
+        _ = transformTween.complete {
             imageView.removeFromSuperview()
         }
-        transformTween.start()
+        _ = transformTween.start()
     }
 }

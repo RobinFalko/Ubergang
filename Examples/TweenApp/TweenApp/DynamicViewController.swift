@@ -24,7 +24,7 @@ class DynamicViewController: ExampleViewController {
     override func viewDidLoad() {
         
         //creating that many bezier tweens will take some time
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
+        DispatchQueue.global(qos: .default).async {
             
             self.activityIndicator.startAnimating()
             self.loadingLabel.isHidden = false

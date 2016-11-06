@@ -14,10 +14,10 @@ public protocol Numeric {
     init(_ value: Double)
     init(_ value: Float)
     
-    func + (lhs: Self, rhs: Self) -> Self
-    func - (lhs: Self, rhs: Self) -> Self
-    func * (lhs: Self, rhs: Self) -> Self
-    func / (lhs: Self, rhs: Self) -> Self
+    static func + (lhs: Self, rhs: Self) -> Self
+    static func - (lhs: Self, rhs: Self) -> Self
+    static func * (lhs: Self, rhs: Self) -> Self
+    static func / (lhs: Self, rhs: Self) -> Self
 }
 
 extension Double : Numeric {

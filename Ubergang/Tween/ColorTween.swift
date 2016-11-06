@@ -21,7 +21,7 @@ open class ColorTween: UTween<UIColor> {
     }
     
     override func compute(_ value: Double) -> UIColor {
-        super.compute(value)
+        _ = super.compute(value)
         
         let from = self.from()
         let to = self.to()

@@ -22,7 +22,7 @@ open class CGPointTween: UTween<CGPoint> {
     }
     
     override func compute(_ value: Double) -> CGPoint {
-        super.compute(value)
+        _ = super.compute(value)
         
         let from = self.from()
         let to = self.to()
