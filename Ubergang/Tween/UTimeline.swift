@@ -52,7 +52,7 @@ open class UTimeline: UTweenBase {
             
             for tween in tweens {
                 
-                let repeatCount = tweenOptions.repeatCount()
+                let repeatCount = tweenOptions.repeatCount()    
                 var cycles = Double(repeatCount + 1)
                 
                 if tweenOptions.contains(.yoyo) && !tweenOptions.containsRepeat() {
@@ -65,7 +65,9 @@ open class UTimeline: UTweenBase {
                                              fromLower: startTime, fromUpper: startTime + tween.durationTotal / cycles,
                                              toLower: 0.0, toUpper: 1.0)
                 
-                tween.progressTotal = Math.clamp(mapped, lower: 0.0, upper: 1.0)
+                let value = tween.direction == .forward ? mapped : 1 - mapped
+                
+                tween.progressTotal = Math.clamp(value, lower: 0.0, upper: 1.0)
             }
             
             super.progress = newValue
