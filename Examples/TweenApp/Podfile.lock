@@ -1,16 +1,16 @@
 PODS:
-  - Ubergang (0.9.2)
+  - Ubergang (0.9.3)
 
 DEPENDENCIES:
-  - Ubergang (from `/Users/Fuzz/Workspace/mobile/Ubergang`)
+  - Ubergang (from `~/Workspace/mobile/Ubergang`)
 
 EXTERNAL SOURCES:
   Ubergang:
-    :path: /Users/Fuzz/Workspace/mobile/Ubergang
+    :path: ~/Workspace/mobile/Ubergang
 
 SPEC CHECKSUMS:
-  Ubergang: 425713183e1563439052499180ba91ed2f95a7ee
+  Ubergang: 71981a79f31a11e5929000ac5ade3e017ba1de2c
 
-PODFILE CHECKSUM: 06b3c9f2e93dc5aded14f680e47208dfd96e7532
+PODFILE CHECKSUM: a4813e0571cecefc85da44ac907f3671cb5a750d
 
 COCOAPODS: 1.1.1
