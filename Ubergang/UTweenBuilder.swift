@@ -22,25 +22,25 @@ open class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    open class func to<T: Numeric>(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (_ value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T>(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (_ value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    open class func to<T: Numeric>(_ to: T, from: @escaping () -> T, update: @escaping (_ value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T>(_ to: T, from: @escaping () -> T, update: @escaping (_ value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    open class func to<T: Numeric>(_ to: @escaping () -> T, from: T, update: @escaping (_ value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T>(_ to: @escaping () -> T, from: T, update: @escaping (_ value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    open class func to<T: Numeric>(_ to: T, from: T, update: @escaping (_ value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T>(_ to: T, from: T, update: @escaping (_ value: T) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
@@ -58,25 +58,25 @@ open class UTweenBuilder {
      - Parameter id: The unique id of the Tween
      - Returns: The built Tween
      */
-    open class func to<T: Numeric>(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (_ value: T, _ progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T>(_ to: @escaping () -> T, from: @escaping () -> T, update: @escaping (_ value: T, _ progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    open class func to<T: Numeric>(_ to: T, from: @escaping () -> T, update: @escaping (_ value: T, _ progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T>(_ to: T, from: @escaping () -> T, update: @escaping (_ value: T, _ progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    open class func to<T: Numeric>(_ to: @escaping () -> T, from: T, update: @escaping (_ value: T, _ progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T>(_ to: @escaping () -> T, from: T, update: @escaping (_ value: T, _ progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )
     }
     
-    open class func to<T: Numeric>(_ to: T, from: T, update: @escaping (_ value: T, _ progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
+    open class func to<T>(_ to: T, from: T, update: @escaping (_ value: T, _ progress: Double) -> Void, duration: Double, id: String) -> NumericTween<T> {
         
         let tween = NumericTween<T>(id: id)
         return tween.to( to, from: from, update: update, duration: duration )

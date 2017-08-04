@@ -31,7 +31,7 @@ class TransformViewController: ExampleViewController {
         testView.transform = CGAffineTransform.identity
         
         var to = CGAffineTransform(scaleX: 2, y: 2)
-        to = to.rotated(by: CGFloat(M_PI_2))
+        to = to.rotated(by: CGFloat(Double.pi / 2))
         
         tween = UTweenBuilder
             .to(to,

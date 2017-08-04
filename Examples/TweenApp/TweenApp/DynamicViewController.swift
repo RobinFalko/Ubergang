@@ -11,7 +11,7 @@ import Foundation
 import Ubergang
 
 class DynamicViewController: ExampleViewController {
-    let degToRad = CGFloat(M_PI / 180.0)
+    let degToRad = CGFloat(.pi / 180.0)
     
     var particles = [UIImageView]()
     

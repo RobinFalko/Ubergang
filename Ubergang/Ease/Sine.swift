@@ -20,7 +20,7 @@ open class Sine: Ease {
      - Returns: The mapped result
      */
     open class func easeIn(t: Double, b: Double, c: Double, d: Double) -> Double {
-        return -c * cos(t/d * (M_PI/2)) + c + b
+        return -c * cos(t/d * (.pi/2)) + c + b
     }
     
     /**
@@ -33,7 +33,7 @@ open class Sine: Ease {
      - Returns: The mapped result
      */
     open class func easeOut(t: Double, b: Double, c: Double, d: Double) -> Double {
-        return c * sin(t/d * (M_PI/2)) + b
+        return c * sin(t/d * (.pi/2)) + b
     }
     
     /**
@@ -46,6 +46,6 @@ open class Sine: Ease {
      - Returns: The mapped result
      */
     open class func easeInOut(t: Double, b: Double, c: Double, d: Double) -> Double {
-        return -c/2 * (cos(M_PI*t/d) - 1) + b
+        return -c/2 * (cos(.pi*t/d) - 1) + b
     }
 }

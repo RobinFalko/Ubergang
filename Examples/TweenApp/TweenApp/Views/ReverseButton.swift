@@ -31,7 +31,7 @@ class ReverseButtton: TweenControlButton {
     override func setupTween() {
         super.setupTween()
         
-        let degToRad = M_PI / 180.0
+        let degToRad = .pi / 180.0
         
         numericTween = UTweenBuilder
             .to( CGFloat(180.0 * degToRad),
