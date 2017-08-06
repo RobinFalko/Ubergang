@@ -12,15 +12,6 @@ open class CGPointTween: UTween<CGPoint> {
     
     var currentValue = CGPoint()
     
-    public convenience init() {
-        let id = "\(#file)_\(arc4random())_update"
-        self.init(id: id)
-    }
-    
-    public override init(id: String) {
-        super.init(id: id)
-    }
-    
     override func compute(_ value: Double) -> CGPoint {
         _ = super.compute(value)
         

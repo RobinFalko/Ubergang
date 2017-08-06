@@ -14,25 +14,15 @@ class CurveThroughViewController: ExampleViewController {
     
     var targetView: UIImageView!
     
-    var tween: BezierPathTween!
-    
-    override func viewDidLoad() {
+    override func loadView() {
+        super.loadView()
+        
         targetView = UIImageView(image: UIImage(named: "PlayIcon")?.withRenderingMode(.alwaysTemplate))
         targetView.tintColor = UIColor(red: 73 / 255, green: 205 / 255, blue: 6 / 255, alpha: 0.75)
-        
-        setupTween()
-        
         view.addSubview(targetView)
-        
-        addTweenControls(tween)
     }
     
-    deinit {
-        print("deinit \(type(of: self))")
-    }
-    
-    func setupTween() {
-        
+    override func setupTween() -> UTweenBase {
         let rectWidth = CGFloat(130)
         let centerX = (UIScreen.main.bounds.width - rectWidth) * 0.5
         let points = raceTrack(CGRect(x: centerX, y: 100, width: rectWidth, height: 260))
@@ -42,21 +32,18 @@ class CurveThroughViewController: ExampleViewController {
         
         drawPath(path!)
         
-        tween = UTweenBuilder
-            .along( points,
-                 update: { [unowned self] (value:CGPoint, progress: Double, orientation: CGPoint) in
-                    self.targetView.center = value
-                    
-                    let angle = atan2(orientation.y, orientation.x)
-                    let transform = CGAffineTransform.identity.rotated(by: angle)
-                    self.targetView.transform = transform
-                },
-                 duration: 10,
-                 id: "bezierTween",
-                 closed: true)
+        return BezierPathTween(id: "bezierTween")
+            .along(points, closed: true)
+            .update { [unowned self] (value:CGPoint, progress: Double, orientation: CGPoint) in
+                self.targetView.center = value
+                
+                let angle = atan2(orientation.y, orientation.x)
+                let transform = CGAffineTransform.identity.rotated(by: angle)
+                self.targetView.transform = transform
+            }
+            .duration(10)
             .ease(Linear.ease)
             .options(.repeat(1))
-            .memoryReference(.weak)
             .updateTotal { [unowned self] value in
                 self.tweenControls.progress(value)
             }

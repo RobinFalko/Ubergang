@@ -20,8 +20,7 @@ class AdditiveAnimationViewController: ExampleViewController {
     var tween: CGPointTween!
     
     override func viewDidLoad() {
-        self.setupTween()
-        self.addTweenControls(tween)
+        super.viewDidLoad()
         
         views.forEach {
             $0.image = $0.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate);
@@ -29,30 +28,24 @@ class AdditiveAnimationViewController: ExampleViewController {
         }
     }
     
-    deinit {
-        print("deinit \(type(of: self))")
-    }
-    
-    func setupTween() {
-        tween = UTweenBuilder
-            .to({ [unowned self] in
-                    self.views[1].center
-                },
-                from: { [unowned self] in
-                    self.views[0].center
-                },
-                update: { [unowned self] (value:CGPoint, progress: Double) in
-                    self.targetView.center = value
-                },
-                duration: 5,
-                id: "pointTween")
-            .ease(Cubic.easeOut)
+    override func setupTween() -> UTweenBase {
+        return CGPointTween(id: "pointTween")
+            .from({ [unowned self] in
+                self.views[0].center
+            }, to:{ [unowned self] in
+                self.views[1].center
+            })
+            .update { [unowned self] (value:CGPoint, progress: Double) in
+                self.targetView.center = value
+            }
             .updateTotal { [unowned self] progressTotal in
                 self.tweenControls.progress(progressTotal)
             }
             .complete { [unowned self] in
                 self.tweenControls.stop()
-        }
+            }
+            .duration(5)
+            .ease(Cubic.easeOut)
     }
     
     var selectedView: UIView?

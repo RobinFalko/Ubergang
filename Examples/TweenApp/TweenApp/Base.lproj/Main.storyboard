@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yMr-WN-dTC">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yMr-WN-dTC">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,13 +22,14 @@
                             <tableViewSection id="buy-39-Ula">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9TG-lJ-9rl" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9TG-lJ-9rl" id="jQh-yD-m3n">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numeric" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3V-Jj-NAU" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="RfH-OE-54F"/>
                                                     </constraints>
@@ -34,6 +38,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="VSO-Yn-TEk" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="VSO-Yn-TEk" secondAttribute="height" multiplier="35:35" id="sYg-Yf-kua"/>
                                                     </constraints>
@@ -56,18 +61,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sa5-8l-yRU" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="108" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sa5-8l-yRU" id="NYa-Gn-btE">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xXf-bG-Su7" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="xXf-bG-Su7" secondAttribute="height" multiplier="35:35" id="s61-aB-NwX"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q76-4A-8AU" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="xvg-d6-icE"/>
                                                     </constraints>
@@ -93,18 +100,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2cy-mk-qUP" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="152" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2cy-mk-qUP" id="tfd-jy-Czu">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nig-VI-KZK" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="nig-VI-KZK" secondAttribute="height" multiplier="35:35" id="dwb-8z-1xo"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transform" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gI0-g3-27s" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="6fW-4m-UYY"/>
                                                     </constraints>
@@ -130,18 +139,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="N01-LJ-12U" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="196" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N01-LJ-12U" id="MqB-PF-pG0">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="1lE-1B-ae8" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="1lE-1B-ae8" secondAttribute="height" multiplier="35:35" id="dlO-L5-UbH"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Constraints" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJz-mU-pBX" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="mse-hM-IRF"/>
                                                     </constraints>
@@ -167,18 +178,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uaM-pz-pBW" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="240" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="176" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uaM-pz-pBW" id="kXy-Ci-lho">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uGS-L6-ZAr" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="uGS-L6-ZAr" secondAttribute="height" multiplier="35:35" id="9eH-ED-h1h"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timelines" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwd-3f-9NP" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="tGU-X3-mzO"/>
                                                     </constraints>
@@ -204,18 +217,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rYb-oc-q7q" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="284" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="220" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rYb-oc-q7q" id="zou-56-yLq">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7XP-LX-UCT" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="7XP-LX-UCT" secondAttribute="height" multiplier="35:35" id="fdB-ml-cQ5"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Particle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN2-SQ-Ifw" userLabel="Title">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insert Timelines" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN2-SQ-Ifw" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="pZ7-9E-pZr"/>
                                                     </constraints>
@@ -237,22 +252,63 @@
                                             <outlet property="iconView" destination="7XP-LX-UCT" id="EkF-9n-lEa"/>
                                             <outlet property="iconViewConstraints" destination="RtI-hv-UMw" id="XWK-Bu-48L"/>
                                             <outlet property="titleLabelConstraints" destination="qqG-qi-nAy" id="mVg-YF-7aT"/>
-                                            <segue destination="FW0-jg-8e8" kind="show" id="O4l-Cu-ZVA"/>
+                                            <segue destination="SfR-z7-Zhq" kind="show" id="Atl-3c-7DC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KuC-rg-K9o" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="264" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KuC-rg-K9o" id="HPQ-tZ-2UC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="HWz-uD-IKp" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="HWz-uD-IKp" secondAttribute="height" multiplier="35:35" id="15G-pp-kCk"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Particle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGy-JC-Uin" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="128" id="9uH-Pv-yrY"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="HWz-uD-IKp" secondAttribute="bottom" constant="8" id="058-Oj-K2d"/>
+                                                <constraint firstItem="vGy-JC-Uin" firstAttribute="top" secondItem="HPQ-tZ-2UC" secondAttribute="top" constant="4" id="3zI-jI-EjD"/>
+                                                <constraint firstAttribute="trailing" secondItem="HWz-uD-IKp" secondAttribute="trailing" constant="16" id="JXG-Np-zKJ"/>
+                                                <constraint firstItem="HWz-uD-IKp" firstAttribute="top" secondItem="HPQ-tZ-2UC" secondAttribute="top" constant="8" id="WcF-Ze-Rad"/>
+                                                <constraint firstItem="vGy-JC-Uin" firstAttribute="leading" secondItem="HPQ-tZ-2UC" secondAttribute="leading" constant="16" id="YqE-S1-4sD"/>
+                                                <constraint firstAttribute="bottom" secondItem="vGy-JC-Uin" secondAttribute="bottom" constant="4" id="xrb-Sg-12W"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="iconView" destination="HWz-uD-IKp" id="moM-b6-GD9"/>
+                                            <outlet property="iconViewConstraints" destination="JXG-Np-zKJ" id="e4a-8g-Xke"/>
+                                            <outlet property="titleLabelConstraints" destination="YqE-S1-4sD" id="Zvf-BL-egR"/>
+                                            <segue destination="FW0-jg-8e8" kind="show" id="D8C-n9-m5R"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uuE-ph-x8W" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="328" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="308" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uuE-ph-x8W" id="Yhz-LK-c4m">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="kvW-aU-R2E" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="kvW-aU-R2E" secondAttribute="height" multiplier="35:35" id="RBZ-Lb-APL"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wy-bQ-8cy" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="vll-e5-MI8"/>
                                                     </constraints>
@@ -278,18 +334,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dU6-63-lMo" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="372" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="352" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dU6-63-lMo" id="b1u-PK-e88">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="1Bh-5F-6eE" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="1Bh-5F-6eE" secondAttribute="height" multiplier="35:35" id="reY-k4-BWU"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bezier Path" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gd9-M5-ZWf" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="Htt-eF-ie1"/>
                                                     </constraints>
@@ -315,18 +373,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="i9v-jc-3YR" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="416" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="396" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i9v-jc-3YR" id="W0H-LU-zBk">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="jwz-5q-ykN" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="jwz-5q-ykN" secondAttribute="height" multiplier="35:35" id="h4b-bB-Bpi"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Curve Through" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtW-dJ-Vcm" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="QfL-me-gYH"/>
                                                     </constraints>
@@ -352,18 +412,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="foN-fe-xM3" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="460" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="440" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="foN-fe-xM3" id="5Va-Qn-DOw">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ksV-Kv-a5w" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ksV-Kv-a5w" secondAttribute="height" multiplier="35:35" id="Bst-GD-7Pk"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dynamic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzb-lc-XBq" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="2sd-Xe-lA0"/>
                                                     </constraints>
@@ -389,18 +451,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ePQ-FZ-vCj" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="504" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="484" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ePQ-FZ-vCj" id="fd5-f8-JAp">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cCG-si-HUH" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="cCG-si-HUH" secondAttribute="height" multiplier="35:35" id="FtL-OE-Sjg"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additive Animation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlL-2d-YTj" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="lSJ-Gs-rHi"/>
                                                     </constraints>
@@ -426,18 +490,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HN0-ZH-7lU" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="548" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="528" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HN0-ZH-7lU" id="GEw-z1-QId">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9TC-0g-dDm" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="9TC-0g-dDm" secondAttribute="height" multiplier="35:35" id="qdy-lA-nYf"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Anq-54-cG0" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="qkn-Xc-cPb"/>
                                                     </constraints>
@@ -462,18 +528,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9A8-be-ztq" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="592" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="572" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9A8-be-ztq" id="JIk-jD-7ss">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="E7M-YJ-OwB" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="E7M-YJ-OwB" secondAttribute="height" multiplier="35:35" id="W4x-KB-chA"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psO-80-BL1" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="1Bb-Vq-2e7"/>
                                                     </constraints>
@@ -498,18 +566,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6nR-FA-c3w" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="636" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="616" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6nR-FA-c3w" id="MpS-QO-9d6">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="TXS-Ry-Tkx" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="TXS-Ry-Tkx" secondAttribute="height" multiplier="35:35" id="6Vf-lm-eXw"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfc-Dg-YvW" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="mvm-KM-RzS"/>
                                                     </constraints>
@@ -534,18 +604,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="30B-Me-ROF" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="680" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="660" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="30B-Me-ROF" id="vk7-Su-oEH">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="8CF-AP-HDt" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="8CF-AP-HDt" secondAttribute="height" multiplier="35:35" id="8MK-iN-ir1"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKV-ce-Qye" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="vZS-Li-FgE"/>
                                                     </constraints>
@@ -570,18 +642,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ges-BT-9Ux" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="724" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="704" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ges-BT-9Ux" id="2dv-qt-sN4">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vvT-OG-Y7s" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="vvT-OG-Y7s" secondAttribute="height" multiplier="35:35" id="Qmn-zp-g6J"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDD-Q2-sgK" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="7CJ-Vs-tTX"/>
                                                     </constraints>
@@ -606,18 +680,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WQu-Ap-Zqr" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="768" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="748" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WQu-Ap-Zqr" id="eSs-Zc-iWm">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="qPd-pI-teh" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="qPd-pI-teh" secondAttribute="height" multiplier="35:35" id="zwU-va-ZFM"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3E-8g-ULC" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="HQB-CO-DOg"/>
                                                     </constraints>
@@ -642,18 +718,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="F49-UN-xXv" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="812" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="792" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F49-UN-xXv" id="A39-Pl-rLT">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Jh5-yW-o7B" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Jh5-yW-o7B" secondAttribute="height" multiplier="35:35" id="swC-h2-hx2"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXa-e2-IE8" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="wwJ-E5-UEO"/>
                                                     </constraints>
@@ -678,18 +756,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zLj-Nn-70v" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="856" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="836" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zLj-Nn-70v" id="vR1-W1-Ybz">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="OZp-WX-uaQ" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="OZp-WX-uaQ" secondAttribute="height" multiplier="35:35" id="8tm-jY-tCk"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JtX-ch-Ib7" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="Rim-NI-RF7"/>
                                                     </constraints>
@@ -714,18 +794,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OCU-Em-TNO" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="900" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="880" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OCU-Em-TNO" id="jgz-Dg-spa">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="f0K-Ml-Nk9" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="f0K-Ml-Nk9" secondAttribute="height" multiplier="35:35" id="0hC-rv-5RV"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Af5-qK-mLD" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="U0P-7d-beV"/>
                                                     </constraints>
@@ -750,18 +832,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Xau-T9-doQ" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="944" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="924" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xau-T9-doQ" id="ZB9-fn-NKC">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="BOB-QB-Wrc" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="BOB-QB-Wrc" secondAttribute="height" multiplier="35:35" id="8ok-ws-L8Q"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04M-wC-73r" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="zUd-dc-w7w"/>
                                                     </constraints>
@@ -786,18 +870,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="csj-4i-iPW" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="988" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="968" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="csj-4i-iPW" id="kvi-vg-NHi">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RzJ-kP-ooE" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="RzJ-kP-ooE" secondAttribute="height" multiplier="35:35" id="0ZN-hx-k0p"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyg-53-nJc" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="RJT-vj-swB"/>
                                                     </constraints>
@@ -822,18 +908,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SpZ-pp-GWc" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1032" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="1012" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SpZ-pp-GWc" id="oWo-iW-2sd">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="SoA-sK-XX9" userLabel="Icon">
+                                                    <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="SoA-sK-XX9" secondAttribute="height" multiplier="35:35" id="cyW-5K-tY9"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZJ-ej-Uxd" userLabel="Title">
+                                                    <rect key="frame" x="16" y="4" width="128" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="Zc0-h6-KDf"/>
                                                     </constraints>
@@ -900,6 +988,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fG6-Pq-wbo">
+                                <rect key="frame" x="117.5" y="263.5" width="140" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="Gpz-5L-wbF"/>
                                     <constraint firstAttribute="height" constant="140" id="wmI-ER-lCb"/>
@@ -936,6 +1025,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LD-oc-eKu">
+                                <rect key="frame" x="164" y="114" width="47" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="zuc-5L-Vdu"/>
                                 </constraints>
@@ -944,6 +1034,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIG-yr-0bk">
+                                <rect key="frame" x="40" y="346" width="150" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="pMJ-qt-8ny"/>
                                 </constraints>
@@ -952,6 +1043,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat cycle:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHz-Op-2vM" userLabel="Repeat">
+                                <rect key="frame" x="198" y="346" width="65.5" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="8lZ-7s-vFj"/>
                                 </constraints>
@@ -960,12 +1052,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KmD-W2-ZO8">
+                                <rect key="frame" x="40" y="359" width="150" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="Mnn-5c-Qgy"/>
                                     <constraint firstAttribute="width" constant="150" id="doC-zV-0sT"/>
                                 </constraints>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ud-wx-vng">
+                                <rect key="frame" x="40" y="368" width="69.5" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="cwn-TB-LaN"/>
                                 </constraints>
@@ -974,12 +1068,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jxx-22-dmE">
+                                <rect key="frame" x="40" y="381" width="150" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="ZgR-hu-M2f"/>
                                     <constraint firstAttribute="width" constant="150" id="sYM-nr-a4v"/>
                                 </constraints>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSS-xF-HGU" userLabel="Repeat count">
+                                <rect key="frame" x="268.5" y="346" width="6.5" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="sMV-zR-VAp"/>
                                 </constraints>
@@ -1031,6 +1127,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="maW-5A-qag">
+                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
                                 <color key="backgroundColor" red="1" green="0.43366446127503555" blue="0.53044323907149049" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="C8c-cv-LiD"/>
@@ -1083,6 +1180,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iU1-0E-0sH">
+                                <rect key="frame" x="117.5" y="313.5" width="140" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="Els-kA-WRO"/>
                                     <constraint firstAttribute="width" constant="140" id="bGd-9B-Ns1"/>
@@ -1092,14 +1190,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iO6-Jv-W2R" customClass="CircularProgressBar" customModule="TweenApp" customModuleProvider="target">
+                                <rect key="frame" x="127.5" y="323.5" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="72y-pQ-Ytn"/>
                                     <constraint firstAttribute="width" secondItem="iO6-Jv-W2R" secondAttribute="height" multiplier="1:1" id="kmC-A8-4bH"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUJ-6V-eOL" userLabel="StatusT0" customClass="TweenStatusView" customModule="TweenApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="170" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJW-B4-UdQ" userLabel="Repeat count">
+                                        <rect key="frame" x="78.5" y="28" width="6.5" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="p2n-vF-3Cu"/>
                                         </constraints>
@@ -1108,12 +1209,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OuT-Zf-ZyZ">
+                                        <rect key="frame" x="8" y="61" width="150" height="2"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="fUU-Fj-WWU"/>
                                             <constraint firstAttribute="width" constant="150" id="l81-xW-4en"/>
                                         </constraints>
                                     </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pD6-9V-35x">
+                                        <rect key="frame" x="8" y="70" width="69.5" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="7Lk-vW-dXH"/>
                                         </constraints>
@@ -1122,12 +1225,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6rs-WW-k2T">
+                                        <rect key="frame" x="8" y="83" width="150" height="2"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="9kV-mD-8EW"/>
                                             <constraint firstAttribute="height" constant="2" id="E98-E6-jhP"/>
                                         </constraints>
                                     </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgv-SJ-VWz">
+                                        <rect key="frame" x="8" y="48" width="150" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="SkR-1P-DIa"/>
                                         </constraints>
@@ -1136,6 +1241,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat cycle:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeR-q9-WkJ" userLabel="Repeat">
+                                        <rect key="frame" x="8" y="28" width="65.5" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="Ws0-rl-L5K"/>
                                         </constraints>
@@ -1144,6 +1250,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLb-Vw-u3e" userLabel="Repeat">
+                                        <rect key="frame" x="8" y="8" width="154" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="H9O-ne-QJ3"/>
                                         </constraints>
@@ -1178,9 +1285,9 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="4ys-Px-Bcs"/>
                                         <exclude reference="Bg6-tt-2st"/>
                                         <exclude reference="qkn-gf-bgq"/>
-                                        <exclude reference="4ys-Px-Bcs"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -1191,8 +1298,10 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIe-GI-13n" userLabel="StatusT1" customClass="TweenStatusView" customModule="TweenApp" customModuleProvider="target">
+                                <rect key="frame" x="205" y="64" width="170" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff0-J4-Ebv" userLabel="Repeat count">
+                                        <rect key="frame" x="78.5" y="28" width="6.5" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="GJV-pg-aOK"/>
                                         </constraints>
@@ -1201,12 +1310,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mpo-Ai-xaR">
+                                        <rect key="frame" x="8" y="61" width="150" height="2"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="9sW-BO-o9S"/>
                                             <constraint firstAttribute="height" constant="2" id="CAc-UI-rZO"/>
                                         </constraints>
                                     </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oA4-al-wYF">
+                                        <rect key="frame" x="8" y="70" width="69.5" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="BP8-hK-xC7"/>
                                         </constraints>
@@ -1215,12 +1326,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6PQ-85-TTM">
+                                        <rect key="frame" x="8" y="83" width="150" height="2"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="bmF-K5-vPh"/>
                                             <constraint firstAttribute="height" constant="2" id="hBu-cS-9W6"/>
                                         </constraints>
                                     </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgh-66-GJG">
+                                        <rect key="frame" x="8" y="48" width="150" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="Uxw-np-EQK"/>
                                         </constraints>
@@ -1229,6 +1342,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat cycle:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXT-QC-ew5" userLabel="Repeat">
+                                        <rect key="frame" x="8" y="28" width="65.5" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="cpX-7o-YdR"/>
                                         </constraints>
@@ -1237,6 +1351,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBK-9k-qAB" userLabel="Repeat">
+                                        <rect key="frame" x="8" y="8" width="233" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="2jF-oX-pCz"/>
                                         </constraints>
@@ -1271,9 +1386,9 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="BUT-Ul-Zve"/>
                                         <exclude reference="Vn1-MS-ohA"/>
                                         <exclude reference="Xi9-Y8-kYS"/>
-                                        <exclude reference="BUT-Ul-Zve"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -1284,8 +1399,10 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c05-sl-sVR" userLabel="StatusT2" customClass="TweenStatusView" customModule="TweenApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="174" width="170" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkf-vc-s93" userLabel="Repeat count">
+                                        <rect key="frame" x="78.5" y="28" width="6.5" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="g95-nh-WSh"/>
                                         </constraints>
@@ -1294,12 +1411,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YDt-Bm-N7d">
+                                        <rect key="frame" x="8" y="61" width="150" height="2"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="05J-j5-e77"/>
                                             <constraint firstAttribute="height" constant="2" id="YGj-mX-D7L"/>
                                         </constraints>
                                     </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhV-gX-sKi">
+                                        <rect key="frame" x="8" y="70" width="69.5" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="L8l-yE-mO9"/>
                                         </constraints>
@@ -1308,12 +1427,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fyh-Vy-0wh">
+                                        <rect key="frame" x="8" y="83" width="150" height="2"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="Pzw-jr-Tdp"/>
                                             <constraint firstAttribute="height" constant="2" id="xBs-R6-u6U"/>
                                         </constraints>
                                     </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-gL-Dru">
+                                        <rect key="frame" x="8" y="48" width="150" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="OuV-Vs-7pd"/>
                                         </constraints>
@@ -1322,6 +1443,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat cycle:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ip-3L-usg" userLabel="Repeat">
+                                        <rect key="frame" x="8" y="28" width="65.5" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="ztu-N7-NTv"/>
                                         </constraints>
@@ -1330,6 +1452,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNx-yV-GxL" userLabel="Repeat">
+                                        <rect key="frame" x="8" y="8" width="233" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="sxL-gI-tvO"/>
                                         </constraints>
@@ -1377,8 +1500,10 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4v-l5-9JM" userLabel="StatusT3" customClass="TweenStatusView" customModule="TweenApp" customModuleProvider="target">
+                                <rect key="frame" x="205" y="174" width="170" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd5-k8-9dK" userLabel="Repeat count">
+                                        <rect key="frame" x="78.5" y="28" width="6.5" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="fQl-5n-ieC"/>
                                         </constraints>
@@ -1387,12 +1512,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u4h-QL-yUx">
+                                        <rect key="frame" x="8" y="61" width="150" height="2"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="69l-zL-Lne"/>
                                             <constraint firstAttribute="height" constant="2" id="ePW-K7-uiM"/>
                                         </constraints>
                                     </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHr-ud-oY2">
+                                        <rect key="frame" x="8" y="70" width="69.5" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="4Eb-jN-e7H"/>
                                         </constraints>
@@ -1401,12 +1528,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9pq-NQ-Xbc">
+                                        <rect key="frame" x="8" y="83" width="150" height="2"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="4uO-1P-1Nk"/>
                                             <constraint firstAttribute="height" constant="2" id="wPW-sO-jna"/>
                                         </constraints>
                                     </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eL5-ih-hRq">
+                                        <rect key="frame" x="8" y="48" width="150" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="LkP-71-n3h"/>
                                         </constraints>
@@ -1415,6 +1544,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat cycle:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KN-Cm-G2u" userLabel="Repeat">
+                                        <rect key="frame" x="8" y="28" width="65.5" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="6fW-Iy-SS5"/>
                                         </constraints>
@@ -1423,6 +1553,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SB-l2-9Cj" userLabel="Repeat">
+                                        <rect key="frame" x="8" y="8" width="233" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="UEX-tM-B9p"/>
                                         </constraints>
@@ -1500,6 +1631,42 @@
             </objects>
             <point key="canvasLocation" x="619" y="1966"/>
         </scene>
+        <!--Insert Timeline View Controller-->
+        <scene sceneID="c0x-Xq-Iwq">
+            <objects>
+                <viewController id="SfR-z7-Zhq" customClass="InsertTimelineViewController" customModule="TweenApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="seb-LO-LEt"/>
+                        <viewControllerLayoutGuide type="bottom" id="g4S-aB-QEW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nta-hf-ZJs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhU-fQ-g0T">
+                                <rect key="frame" x="137" y="283.5" width="100" height="100"/>
+                                <color key="backgroundColor" red="1" green="0.43366446130000003" blue="0.53044323910000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="XY3-zQ-1i4"/>
+                                    <constraint firstAttribute="width" secondItem="YhU-fQ-g0T" secondAttribute="height" multiplier="1:1" id="lB1-qd-Euj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YhU-fQ-g0T" firstAttribute="centerX" secondItem="Nta-hf-ZJs" secondAttribute="centerX" id="N9m-5s-d5R"/>
+                            <constraint firstItem="YhU-fQ-g0T" firstAttribute="width" secondItem="YhU-fQ-g0T" secondAttribute="height" multiplier="1:1" id="Vsd-1k-zx8"/>
+                            <constraint firstItem="YhU-fQ-g0T" firstAttribute="centerY" secondItem="Nta-hf-ZJs" secondAttribute="centerY" id="eE2-wJ-brT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="viewCenterY" destination="eE2-wJ-brT" id="CaZ-DH-j4H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CEN-LZ-Ukm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="2681"/>
+        </scene>
         <!--Color View Controller-->
         <scene sceneID="FKt-m4-Enl">
             <objects>
@@ -1513,6 +1680,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NpX-6y-1uw">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -1530,7 +1698,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DgG-iV-Bvw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="2746"/>
+            <point key="canvasLocation" x="615" y="3362"/>
         </scene>
         <!--Bezier Path View Controller-->
         <scene sceneID="luz-qj-WJs">
@@ -1548,7 +1716,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06s-al-XNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="3437"/>
+            <point key="canvasLocation" x="620" y="4140"/>
         </scene>
         <!--Constraint View Controller-->
         <scene sceneID="AVe-yZ-Cbe">
@@ -1563,9 +1731,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVW-Ng-BMb">
+                                <rect key="frame" x="30" y="390" width="315" height="157"/>
                                 <color key="backgroundColor" red="0.47298626090000001" green="1" blue="0.499257375" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pr2-D4-T3A">
+                                <rect key="frame" x="67.5" y="244" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Pr2-D4-T3A" secondAttribute="height" multiplier="15:8" id="2XD-N1-eap"/>
@@ -1573,6 +1743,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mWp-Rv-bHD">
+                                <rect key="frame" x="72.5" y="87" width="230" height="128"/>
                                 <color key="backgroundColor" red="1" green="0.43366446130000003" blue="0.53044323910000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="230" id="Dem-GH-pC0"/>
@@ -1618,7 +1789,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljR-ft-WZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="4205"/>
+            <point key="canvasLocation" x="615" y="4898"/>
         </scene>
         <!--Dynamic View Controller-->
         <scene sceneID="CT6-VD-aNI">
@@ -1633,12 +1804,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aeE-Z3-pzK">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Fdn-Ns-9aZ"/>
                                     <constraint firstAttribute="width" constant="20" id="Z5C-fl-HaS"/>
                                 </constraints>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creating bezier tweens" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3IH-QW-cfq">
+                                <rect key="frame" x="99.5" y="351.5" width="176.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1659,7 +1832,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEt-oL-LG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="4956"/>
+            <point key="canvasLocation" x="615" y="5726"/>
         </scene>
         <!--Additive Animation View Controller-->
         <scene sceneID="0nn-IW-cTl">
@@ -1674,17 +1847,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="VMQ-HT-yQI">
-                                <frame key="frameInset" minX="50" minY="168" width="50" height="50"/>
+                                <rect key="frame" x="50" y="168" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.80392156859999997" green="0.0" blue="0.052602031319999999" alpha="0.74938038789999994" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7iE-YP-l3Z">
-                                <frame key="frameInset" minX="190" minY="168" width="50" height="50"/>
+                                <rect key="frame" x="190" y="168" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.28627450980000002" green="0.80392156859999997" blue="0.023529411760000001" alpha="0.74938038789999994" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="k45-gn-msR">
-                                <frame key="frameInset" minX="131" minY="248" width="50" height="50"/>
+                                <rect key="frame" x="131" y="248" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.0" green="0.58039215690000001" blue="0.81960784310000001" alpha="0.74520474140000004" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
@@ -1700,7 +1873,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17y-Bq-iTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="5711"/>
+            <point key="canvasLocation" x="615" y="6482"/>
         </scene>
     </scenes>
     <resources>

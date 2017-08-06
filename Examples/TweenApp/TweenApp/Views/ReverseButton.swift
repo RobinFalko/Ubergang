@@ -33,16 +33,13 @@ class ReverseButtton: TweenControlButton {
         
         let degToRad = .pi / 180.0
         
-        numericTween = UTweenBuilder
-            .to( CGFloat(180.0 * degToRad),
-                 from: 0.0,
-                 update: { [unowned self] value in
+        numericTween = NumericTween(id: "transform_\(arc4random())")
+            .from(0, to: CGFloat(180 * degToRad))
+            .update { [unowned self] value in
                     self.imageView!.layer.transform = CATransform3DRotate(CATransform3DIdentity, value, 0.0, 1.0, 0.0)
-                },
-                 duration: 0.5,
-                 id: "transform_\(arc4random())")
-        
-        _ = numericTween.ease(Cubic.easeInOut)
-        _ = numericTween.memoryReference(.weak)
+                }
+            .duration(0.5)
+            .ease(Cubic.easeInOut)
+            .reference(.weak)
     }
 }

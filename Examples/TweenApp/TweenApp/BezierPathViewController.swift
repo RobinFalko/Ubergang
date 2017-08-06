@@ -14,28 +14,18 @@ class BezierPathViewController: ExampleViewController {
     
     var targetView: UIImageView!
     
-    var tween: BezierPathTween!
-    
     var random: CGFloat {
         return CGFloat(Double(arc4random_uniform(255)) / 255.0)
     }
     
-    override func viewDidLoad() {
+    override func loadView() {
+        super.loadView()
+        
         targetView = UIImageView(image: UIImage(named: "SliderThumb"))
-        
-        setupTween()
-        
         view.addSubview(targetView)
-        
-        addTweenControls(tween)
     }
     
-    deinit {
-        print("deinit \(type(of: self))")
-    }
-    
-    func setupTween() {
-        
+    override func setupTween() -> UTweenBase {
         let rectWidth = CGFloat(130)
         let centerX = (UIScreen.main.bounds.width - rectWidth) * 0.5
         let path = heartInRect(CGRect(x: centerX, y: 100, width: rectWidth, height: 260))
@@ -43,16 +33,14 @@ class BezierPathViewController: ExampleViewController {
         
         drawPath(path)
         
-        tween = UTweenBuilder
-            .along( path,
-                update: { [unowned self] (value:CGPoint) in
-                    self.targetView.center = value
-                },
-                 duration: 15,
-                 id: "bezierTween")
+        return BezierPathTween(id: "bezierTween")
+            .along(path)
+            .update { [unowned self] in
+                self.targetView.center = $0
+            }
+            .duration(15)
             .ease(Linear.ease)
             .options(.repeat(1))
-            .memoryReference(.weak)
             .updateTotal { [unowned self] value in
                 self.tweenControls.progress(value)
             }

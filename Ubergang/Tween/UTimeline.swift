@@ -14,6 +14,29 @@ open class UTimeline: UTweenBase {
     
     open var count: Int { return tweens.count }
     
+    /**
+     Initialize a generic `UTween` with a random id.
+     
+     Tweens any value with type T from start to end.
+     
+     This object needs to know how to compute interpolations from start to end, that for
+     `func compute(value: Double) -> T` must be overriden.
+     */
+    public convenience init() {
+        let id = "\(#file)_\(arc4random())_update"
+        self.init(id: id)
+    }
+    
+    /**
+     Initialize a generic `UTween`.
+     
+     Tweens any value with type T from start to end.
+     
+     This object needs to know how to compute interpolations from start to end, that for
+     `func compute(value: Double) -> T` must be overriden.
+     
+     - Parameter id: The unique id of the Tween
+     */
     public override init(id: String) {
         super.init(id: id)
     }
@@ -78,9 +101,9 @@ open class UTimeline: UTweenBase {
     }
     
     
-    
-    override open func memoryReference(_ value: TweenMemoryReference) -> Self {
-        memoryReference = value
+    @discardableResult
+    override open func reference(_ value: TweenMemoryReference) -> Self {
+        reference = value
         
         return self
     }

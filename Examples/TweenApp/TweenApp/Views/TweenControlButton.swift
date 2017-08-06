@@ -46,30 +46,26 @@ class TweenControlButton: UIButton {
     
     
     func setupTween() {
-        let tween = UTweenBuilder
-            .to( 0.5,
-                 from: 1.0,
-                 update: { [unowned self] (value) in
+        let tween = NumericTween(id: "alpha_\(arc4random())")
+            .from(1.0, to: 0.5)
+            .update { [unowned self] (value) in
                     self.alpha = value
-                 },
-                 duration: 0.2,
-                 id: "alpha_\(arc4random())")
-        _ = tween.ease(Cubic.easeOut)
+                 }
+            .duration(0.2)
+            .ease(Cubic.easeOut)
         
         let transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        let transformTween = UTweenBuilder
-            .to( transform,
-                 from: CGAffineTransform.identity,
-                 update: { [unowned self] value in
-                    self.transform = value
-                },
-                 duration: 0.2,
-                 id: "transform_\(arc4random())")
+        let transformTween = TransformTween(id: "transform_\(arc4random())")
+            .from(CGAffineTransform.identity, to: transform)
+            .update { [unowned self] value in
+                self.transform = value
+            }
+            .duration(0.2)
         
         _ = transformTween.ease(Cubic.easeOut)
         
         timeline = UTimeline(id: "timeline_\(arc4random())")
-        _ = timeline.memoryReference(.weak)
+        _ = timeline.reference(.weak)
         timeline.insert(tween, at: 0)
         timeline.insert(transformTween, at: 0)
     }
@@ -91,20 +87,17 @@ class TweenControlButton: UIButton {
         superview!.addSubview(imageView)
         
         let transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        let transformTween = UTweenBuilder
-            .to( transform,
-                 from: CGAffineTransform(scaleX: 1.0, y: 1.0),
-                 update: { (value, progress) in
-                    imageView.alpha = 1 - CGFloat(progress)
-                    imageView.transform = value
-                },
-                 duration: 0.5,
-                 id: "outline_\(arc4random())")
-        
-        _ = transformTween.ease(Cubic.easeOut)
-        _ = transformTween.complete {
-            imageView.removeFromSuperview()
-        }
-        _ = transformTween.start()
+        TransformTween(id: "outline_\(arc4random())")
+            .from(CGAffineTransform(scaleX: 1.0, y: 1.0), to: transform)
+            .update { (value, progress) in
+                imageView.alpha = 1 - CGFloat(progress)
+                imageView.transform = value
+            }
+            .duration(0.5)
+            .ease(Cubic.easeOut)
+            .complete {
+                imageView.removeFromSuperview()
+            }
+            .start()
     }
 }

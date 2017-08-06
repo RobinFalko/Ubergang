@@ -10,34 +10,18 @@ import UIKit
 import Ubergang
 
 class NumericViewController: ExampleViewController {
-    
     @IBOutlet var numberLabel: UILabel!
     
-    var tween: NumericTween<Int>!
-    
-    override func viewDidLoad() {
-        
-        setupTween()
-        
-        addTweenControls(tween)
-    }
-    
-    deinit {
-        print("deinit \(type(of: self))")
-    }
-    
-    func setupTween() {
-        tween = NumericTween<Int>(id: "tween")
-            .to( 100,
-                 from: 0,
-                 update: { [unowned self] (value:Int, progress: Double) in
-                    self.numberLabel.text = "\(value)"
-                    self.tweenControls.progress(progress)
-                },
-                 duration: 5)
+    override func setupTween() -> UTweenBase {
+        return 0.tween(to:100)
+            .id("numericTween")
+            .update { [unowned self] (value:Int, progress: Double) in
+                self.numberLabel.text = "\(value)"
+                self.tweenControls.progress(progress)
+            }
             .complete { [unowned self] in
                 self.tweenControls.stop()
-            }
+        }
     }
 }
 

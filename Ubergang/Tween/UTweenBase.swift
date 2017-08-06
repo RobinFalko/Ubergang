@@ -11,11 +11,7 @@ import Foundation
 open class UTweenBase {
     fileprivate lazy var logger = UTweenSetup.instance.logger
     
-    fileprivate let _id: String
-    
-    open var id: String {
-        return _id
-    }
+    private(set) open var id: String
     
     var updateProgress: ((_ progress: Double) -> Void)?
     var updateProgressTotal: ((_ progressTotal: Double) -> Void)?
@@ -24,8 +20,9 @@ open class UTweenBase {
     
     var tweenOptions: [TweenOptions]!
     
-    open var duration = 0.0
-    var durationTotal = 0.0
+    var initialDuration: Double = 0.5
+    open var duration = 0.5
+    var durationTotal = 0.5
     
     var ease: Easing = Linear.ease
     var easeValue = 0.0
@@ -35,11 +32,10 @@ open class UTweenBase {
     var time = 0.0
     var timeTotal = 0.0
     
-    var memoryReference: TweenMemoryReference = .strong
+    var reference: TweenMemoryReference = .strong
     
     var direction: TweenDirection = .forward
     
-    var initialDuration: Double = 0
     var initialRepeatCount: Int = 0
     var currentRepeatCycle: Int = 0
     
@@ -89,7 +85,7 @@ open class UTweenBase {
     }
     
     init(id: String) {
-        _id = id
+        self.id = id
         
         tweenOptions = [.repeat(initialRepeatCount)]
     }
@@ -101,7 +97,7 @@ open class UTweenBase {
     fileprivate func registerLoop() {
         Timer.instance.start()
         
-        switch memoryReference {
+        switch reference {
         case .strong:
             Engine.instance.register(loop, forKey: id)
         case .weak:
@@ -159,6 +155,34 @@ open class UTweenBase {
         unregisterLoop()
         
         logger?.verbose("kill: \(id)")
+    }
+    
+    /**
+     Set the ID of the Tween or Timeline.
+     
+     - Parameter value: The ID
+     - Returns: The current Tween or Timeline
+     */
+    @discardableResult
+    public func id(_ id: String) -> Self {
+        self.id = id
+        
+        return self
+    }
+    
+    /**
+     Set the duration of the Tween or Timeline.
+     
+     - Parameter value: The duration
+     - Returns: The current Tween or Timeline
+     */
+    @discardableResult
+    public func duration(_ value: Double) -> Self {
+        initialDuration = value
+        duration = value
+        durationTotal = value
+        
+        return self
     }
     
     /**
@@ -224,8 +248,8 @@ open class UTweenBase {
      - Parameter value: The memory reference type
      - Returns: The current Tween or Timeline
      */
-    open func memoryReference(_ value: TweenMemoryReference) -> Self {
-        memoryReference = value
+    open func reference(_ value: TweenMemoryReference) -> Self {
+        reference = value
         
         return self
     }
@@ -266,6 +290,7 @@ extension UTweenBase: Tweenable {
      
      - Returns: The current Tween or Timeline
      */
+    @discardableResult
     public func start() -> Self {
         guard !isPlaying else {
             logger?.info("tween: \(id) already playing")
