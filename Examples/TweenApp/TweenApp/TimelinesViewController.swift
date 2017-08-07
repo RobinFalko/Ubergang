@@ -34,12 +34,12 @@ class TimelinesViewController: ExampleViewController {
         //closing arc
         let tween0 = NumericTween(id: "arcIncreaseTween")
             .from(-360.0, to: -0.1)
+            .duration(5)
+            .ease(Cubic.easeInOut)
             .update { [unowned self] (value: CGFloat, progress: Double) in
                 self.tweenStatusView0.progress = Float(progress)
                 self.progressBar.endAngle = value
             }
-            .duration(5)
-            .ease(Cubic.easeInOut)
             .updateTotal { [unowned self] progress in
                 self.tweenStatusView0.progressTotal = Float(progress)
             }
@@ -47,12 +47,12 @@ class TimelinesViewController: ExampleViewController {
         
         let tween1 = NumericTween(id: "arcDecreaseTween")
             .from(-360, to: -0.1)
+            .duration(5)
+            .ease(Cubic.easeInOut)
             .update { [unowned self] (value: CGFloat, progress: Double) in
                 self.tweenStatusView1.progress = Float(progress)
                 self.progressBar.startAngle = value
             }
-            .duration(5)
-            .ease(Cubic.easeInOut)
             .updateTotal { [unowned self] progress in
                 self.tweenStatusView1.progressTotal = Float(progress)
             }

@@ -14,7 +14,6 @@ class NumericViewController: ExampleViewController {
     
     override func setupTween() -> UTweenBase {
         return 0.tween(to:100)
-            .id("numericTween")
             .update { [unowned self] (value:Int, progress: Double) in
                 self.numberLabel.text = "\(value)"
                 self.tweenControls.progress(progress)

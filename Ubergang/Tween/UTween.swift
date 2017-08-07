@@ -14,8 +14,8 @@ open class UTween<T>: UTweenBase {
     var start: T!
     var end: T!
     
-    var from: (() -> T)!
-    var to: (() -> T)!
+    internal var fromC: (() -> T)!
+    internal var toC: (() -> T)!
     
     var updateValue: ((_ value: T) -> Void)!
     var updateValueAndProgress: ((_ value: T, _ progress: Double) -> Void)!
@@ -74,14 +74,14 @@ open class UTween<T>: UTweenBase {
     func compute(_ value: Double) -> T {
         //should be overriden
         
-        return from()
+        return fromC()
     }
     
     //override Tweenable methods
     override open func kill() {
         super.kill()
         
-        from = nil
+        fromC = nil
         updateValue = nil
         updateValueAndProgress = nil
         complete = nil
@@ -98,31 +98,30 @@ open class UTween<T>: UTweenBase {
 
 extension UTween {
     // -
-    @discardableResult
     public func from(_ from: T, to: T) -> Self {
-        self.from = {from}
-        self.to = {to}
+        self.fromC = {from}
+        self.toC = {to}
         
         return self.duration(duration)
     }
     
     public func from(_ from: @escaping () -> T, to: @escaping () -> T) -> Self {
-        self.from = from
-        self.to = to
+        self.fromC = from
+        self.toC = to
         
         return self.duration(duration)
     }
     
     public func from(_ from: @escaping () -> T, to: T) -> Self {
-        self.from = from
-        self.to = {to}
+        self.fromC = from
+        self.toC = {to}
         
         return self.duration(duration)
     }
     
     public func from(_ from: T, to: @escaping () -> T) -> Self {
-        self.from = {from}
-        self.to = to
+        self.fromC = {from}
+        self.toC = to
         
         return self.duration(duration)
     }

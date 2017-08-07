@@ -360,7 +360,8 @@ extension UTweenBase: Tweenable {
      - Parameter direction: The play direction of the Tween or Timeline
      - Returns: The current Tween or Timeline
      */
-    public func tweenDirection(_ direction: TweenDirection) -> Self {
+    @discardableResult
+    public func direction(_ direction: TweenDirection) -> Self {
         self.direction = direction
         
         return self

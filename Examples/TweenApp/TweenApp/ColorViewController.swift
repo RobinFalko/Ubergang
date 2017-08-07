@@ -24,14 +24,12 @@ class ColorViewController: ExampleViewController {
         
         self.targetView.backgroundColor = colorFrom
         
-        return ColorTween(id: "colorTween")
-            .from(colorFrom, to: colorTo)
+        return colorFrom.tween(to: colorTo)
+            .duration(1)
             .update { [unowned self] (value:UIColor, progress: Double) in
                     self.targetView.backgroundColor = value
                     self.tweenControls.progress(progress)
                 }
-             .duration(1)
-            .ease(Linear.ease)
             .complete { [unowned self] in
                 self.tweenControls.stop()
             }

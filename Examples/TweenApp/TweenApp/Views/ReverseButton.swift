@@ -19,9 +19,9 @@ class ReverseButtton: TweenControlButton {
         }
         set {
             if newValue {
-                _ = numericTween.tweenDirection(.forward).start()
+                numericTween.direction(.forward).start()
             } else {
-                _ = numericTween.tweenDirection(.reverse).start()
+                numericTween.direction(.reverse).start()
             }
             super.isSelected = newValue
         }

@@ -18,16 +18,16 @@ class ProgressViewController: ExampleViewController {
     var direction = false
     
     override func setupTween() -> UTweenBase {
-        return NumericTween(id: "progressTween")
-            .from(0.0, to: 10)
-            .update { [unowned self] (value, progress) in
-                    self.progressBar.progress = Float(progress)
-                    self.tweenLabel.text = "\(round(value * 10.0) / 10.0)"
-                }
+        return 0.0.tween(to: 10)
+            .id("progressTween")
             .duration(5)
             .ease(Cubic.easeOut)
             .options(.repeat(1), .yoyo)
             .reference(.weak)
+            .update { [unowned self] (value, progress) in
+                self.progressBar.progress = Float(progress)
+                self.tweenLabel.text = "\(round(value * 10.0) / 10.0)"
+            }
             .updateTotal { [unowned self] (progressTotal) in
                 self.tweenControls.progress(progressTotal)
                 self.progressBarTotal.progress = Float(progressTotal)

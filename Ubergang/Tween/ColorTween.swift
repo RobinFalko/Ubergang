@@ -13,8 +13,8 @@ open class ColorTween: UTween<UIColor> {
     override func compute(_ value: Double) -> UIColor {
         _ = super.compute(value)
         
-        let from = self.from()
-        let to = self.to()
+        let from = self.fromC()
+        let to = self.toC()
         
         var rFrom: CGFloat = 0
         var gFrom: CGFloat = 0

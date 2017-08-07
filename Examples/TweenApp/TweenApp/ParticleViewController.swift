@@ -53,12 +53,12 @@ class ParticleViewController: ExampleViewController {
             to.tx = view.transform.tx + CGFloat(arc4random_uniform(ui)) * CGFloat(arc4random_uniform(2) == 0 ? -1 : 1)
             to.ty = view.transform.ty + CGFloat(arc4random_uniform(ui)) * CGFloat(arc4random_uniform(2) == 0 ? -1 : 1)
             
-            let tween = TransformTween(id: "id-\(i)")
-                .from(view.transform, to: to)
-                .update { value in view.transform = value }
+            let tween = view.transform.tween(to: to)
+                .id("id-\(i)")
                 .duration(3)
                 .ease(Cubic.easeInOut)
                 .options(.yoyo)
+                .update { value in view.transform = value }
             timeline.insert(tween, at: 0)
         }
         

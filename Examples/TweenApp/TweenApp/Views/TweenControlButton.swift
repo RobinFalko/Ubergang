@@ -71,13 +71,13 @@ class TweenControlButton: UIButton {
     }
     
     func touchDown() {
-        _ = timeline.tweenDirection(.forward).start()
+        timeline.direction(.forward).start()
         
         tweenOutline()
     }
     
     func touchUp() {
-        _ = timeline.tweenDirection(.reverse).start()
+        timeline.direction(.reverse).start()
     }
     
     func tweenOutline() {

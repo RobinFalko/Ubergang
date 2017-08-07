@@ -15,8 +15,8 @@ open class CGPointTween: UTween<CGPoint> {
     override func compute(_ value: Double) -> CGPoint {
         _ = super.compute(value)
         
-        let from = self.from()
-        let to = self.to()
+        let from = self.fromC()
+        let to = self.toC()
         
         currentValue.x = from.x + (to.x - from.x) * CGFloat(value)
         currentValue.y = from.y + (to.y - from.y) * CGFloat(value)

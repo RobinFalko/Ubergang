@@ -44,7 +44,7 @@ class ExampleViewController: UIViewController {
             tween.resume()
         }
         tweenControls.onDirection = { value in
-            tween.tweenDirection(value)
+            tween.direction(value)
         }
         tweenControls.onProgress = { value in
             tween.progressTotal = value

@@ -13,8 +13,8 @@ open class TransformTween: UTween<CGAffineTransform> {
     override func compute(_ value: Double) -> CGAffineTransform {
         _ = super.compute(value)
         
-        let from = self.from()
-        let to = self.to()
+        let from = self.fromC()
+        let to = self.toC()
         
         var currentValue = CGAffineTransform.identity
         currentValue.tx = from.tx + (to.tx - from.tx) * CGFloat(value)
