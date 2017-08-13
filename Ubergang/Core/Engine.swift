@@ -36,7 +36,7 @@ open class Engine: NSObject {
         displayLink = nil
     }
     
-    func update() {
+    @objc func update() {
         let enumerator = mapTable.objectEnumerator()
         while let any: AnyObject = enumerator?.nextObject() as AnyObject! {
             if let loopable = any as? WeaklyLoopable {

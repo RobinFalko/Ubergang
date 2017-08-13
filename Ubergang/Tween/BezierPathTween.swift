@@ -22,11 +22,29 @@ open class BezierPathTween: UTweenBase {
     var pathInfo: ([Float], Float)?
     var elements: [(type: CGPathElementType, points: [CGPoint])]!
     
+    /**
+     Initialize a generic `UTween` with a random id.
+     
+     Tweens any value with type T from start to end.
+     
+     This object needs to know how to compute interpolations from start to end, that for
+     `func compute(value: Double) -> T` must be overriden.
+     */
     public convenience init() {
         let id = "\(#file)_\(arc4random())_update"
         self.init(id: id)
     }
     
+    /**
+     Initialize a generic `UTween`.
+     
+     Tweens any value with type T from start to end.
+     
+     This object needs to know how to compute interpolations from start to end, that for
+     `func compute(value: Double) -> T` must be overriden.
+     
+     - Parameter id: The unique id of the Tween
+     */
     public override init(id: String) {
         super.init(id: id)
     }
@@ -123,111 +141,47 @@ open class BezierPathTween: UTweenBase {
     }
     
     var path: UIBezierPath!
-    open func along(_ path: UIBezierPath, update: @escaping (CGPoint) -> Void) -> Self {
+    
+    /**
+     Build a 'BezierPathTween'.
+     
+     Tweens the value along a `UIBezierPath` from start to end.
+     
+     - Parameter path: The bezier path
+     - Parameter update: A closure containing the value on update
+     - Parameter duration: The duration of the Tween
+     - Parameter id: The unique id of the Tween
+     - Returns: The built Tween
+     */
+    open func along(_ path: UIBezierPath) -> Self {
         self.path = path
         
         elements = path.cgPath.getElements()
         pathInfo = computeDistances(elements)
         
-        _ = self.update(update)
-        
         return self
     }
     
-    open func along(_ path: UIBezierPath, update: @escaping (CGPoint, Double) -> Void) -> Self {
-        self.path = path
-        
-        elements = path.cgPath.getElements()
-        pathInfo = computeDistances(elements)   
-        
-        _ = self.update(update)
-        
-        return self
-    }
-    
-    open func along(_ path: UIBezierPath, update: @escaping (CGPoint, Double, CGPoint) -> Void) -> Self {
-        self.path = path
+    /**
+     Build a 'BezierPathTween'.
+     
+     Tweens the value along a `UIBezierPath` from start to end. The path will go curve through the given points.
+     
+     - Parameter points: The points where the path will curve through
+     - Parameter update: A closure containing the value on update
+     - Parameter duration: The duration of the Tween
+     - Parameter id: The unique id of the Tween
+     - Returns: The built Tween
+     */
+    open func along(_ points: [CGPoint], closed: Bool = false) -> Self {
+        let numbers = points.map { NSValue(cgPoint: $0) }
+        self.path = UIBezierPath.interpolateCGPoints(withCatmullRom: numbers, closed: closed, alpha: 1.0)!
         
         elements = path.cgPath.getElements()
         pathInfo = computeDistances(elements)
         
-        _ = self.update(update)
-        
         return self
     }
-    
-    open func along(_ path: UIBezierPath, update: @escaping (CGPoint) -> Void, complete: @escaping () -> Void) -> Self {
-        
-        _ = self.along(path, update: update)
-            .complete(complete)
-        
-        return self
-    }
-    
-    open func along(_ path: UIBezierPath, update: @escaping (CGPoint, Double) -> Void, complete: @escaping () -> Void) -> Self {
-        
-        _ = self.along(path, update: update)
-            .complete(complete)
-        
-        return self
-    }
-    
-    open func along(_ path: UIBezierPath, update: @escaping (CGPoint, Double, CGPoint) -> Void, complete: @escaping () -> Void) -> Self {
-        
-        _ = self.along(path, update: update)
-            .complete(complete)
-        
-        return self
-    }
-    
-    open func along(_ path: UIBezierPath, update: @escaping (CGPoint) -> Void, duration: Double) -> Self {
-        
-        _ = self.along(path, update: update)
-            .duration(duration)
-        
-        return self
-    }
-    
-    open func along(_ path: UIBezierPath, update: @escaping (CGPoint, Double) -> Void, duration: Double) -> Self {
-        
-        _ = self.along(path, update: update)
-            .duration(duration)
-        
-        return self
-    }
-    
-    open func along(_ path: UIBezierPath, update: @escaping (CGPoint, Double, CGPoint) -> Void, duration: Double) -> Self {
-        
-        _ = self.along(path, update: update)
-            .duration(duration)
-        
-        return self
-    }
-    
-    open func along(_ path: UIBezierPath, update: @escaping (CGPoint) -> Void, complete: @escaping () -> Void, duration: Double) -> Self {
-        
-        _ = self.along(path, update: update, complete:  complete)
-            .duration(duration)
-        
-        return self
-    }
-    
-    open func along(_ path: UIBezierPath, update: @escaping (CGPoint, Double) -> Void, complete: @escaping () -> Void, duration: Double) -> Self {
-        
-        _ = self.along(path, update: update, complete:  complete)
-            .duration(duration)
-        
-        return self
-    }
-    
-    open func along(_ path: UIBezierPath, update: @escaping (CGPoint, Double, CGPoint) -> Void, complete: @escaping () -> Void, duration: Double) -> Self {
-        
-        _ = self.along(path, update: update, complete:  complete)
-            .duration(duration)
-        
-        return self
-    }
-    
     
     open func update(_ value: @escaping (CGPoint) -> Void) -> Self {
         updateValue = value
@@ -245,14 +199,6 @@ open class BezierPathTween: UTweenBase {
     
     open func update(_ value: @escaping (CGPoint, Double, CGPoint) -> Void) -> Self {
         updateValueAndProgressAndOrientation = value
-        
-        return self
-    }
-    
-    open func duration(_ value: Double) -> Self {
-        initialDuration = value
-        duration = value
-        durationTotal = value
         
         return self
     }

@@ -21,6 +21,6 @@ class Math {
     }
     
     class func zigZag(_ x: Double) -> Double {
-        return 1 / M_PI * asin(cos(M_PI * (x + 1))) + 0.5
+        return 1 / .pi * asin(cos(Double.pi * (x + 1))) + 0.5
     }
 }

@@ -9,21 +9,11 @@
 import Foundation
 
 open class NumericTween<T: Numeric>: UTween<T> {
-    
-    public convenience init() {
-        let id = "\(#file)_\(arc4random())_update"
-        self.init(id: id)
-    }
-    
-    public override init(id: String) {
-        super.init(id: id)
-    }
-    
     override func compute(_ value: Double) -> T {
         _ = super.compute(value)
         
-        let from = self.from()
-        let to = self.to()
+        let from = self.fromC()
+        let to = self.toC()
         
         let distance = to - from
         var parsedDistance: Double

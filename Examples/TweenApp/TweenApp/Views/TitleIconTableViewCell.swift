@@ -44,27 +44,22 @@ class TitleIconTableViewCell: UITableViewCell {
         var to = titleLabelConstraints.constant
         let duration = 0.4
         
-        let labelTween: NumericTween<CGFloat> =
-            UTweenBuilder
-                .to(to,
-                    from: from,
-                    update: { [unowned self] value in
-                        self.titleLabelConstraints.constant = value
-                    },
-                    duration: duration,
-                    id: "titleLabelTween")
-                .ease(Cubic.easeOut)
+        let labelTween = NumericTween<CGFloat>(id: "titleLabelTween")
+            .from(from, to: to)
+            .update { [unowned self] value in
+                    self.titleLabelConstraints.constant = value
+                }
+            .duration(duration)
+            .ease(Cubic.easeOut)
         
         to = titleLabelConstraints.constant
-        let dotTween: NumericTween<CGFloat> =
-            UTweenBuilder
-                .to(to,
-                    from: from,
-                    update: { [unowned self] value in
-                        self.iconViewConstraints.constant = value },
-                    duration: duration,
-                    id: "iconViewTween")
-                .ease(Cubic.easeOut)
+        let dotTween = NumericTween<CGFloat>(id: "iconViewTween")
+            .from(from, to: to)
+            .update { [unowned self] value in
+                    self.iconViewConstraints.constant = value
+            }
+            .duration(duration)
+            .ease(Cubic.easeOut)
         
         timeline.insert(labelTween, at: 0)
         timeline.insert(dotTween, at: 0)
