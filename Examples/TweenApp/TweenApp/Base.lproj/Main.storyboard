@@ -1660,6 +1660,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="viewCenterX" destination="N9m-5s-d5R" id="1dF-d2-69p"/>
                         <outlet property="viewCenterY" destination="eE2-wJ-brT" id="CaZ-DH-j4H"/>
                     </connections>
                 </viewController>

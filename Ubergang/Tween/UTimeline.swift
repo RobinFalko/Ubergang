@@ -60,14 +60,6 @@ open class UTimeline: UTweenBase {
         
         startTimeForTweenId[tween.id] = time
         duration = max(duration, time + tween.durationTotal)
-        
-//        duration += max(duration, time)
-//        for tween in tweens {
-////            duration = max(duration, time + tween.durationTotal)
-//
-//            duration += tween.durationTotal
-//        }
-//
         initialDuration = duration
         
         tweens.sort(by: {
