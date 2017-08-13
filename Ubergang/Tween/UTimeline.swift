@@ -15,12 +15,9 @@ open class UTimeline: UTweenBase {
     open var count: Int { return tweens.count }
     
     /**
-     Initialize a generic `UTween` with a random id.
+     Initialize a `UTimeline` with a random id.
      
-     Tweens any value with type T from start to end.
-     
-     This object needs to know how to compute interpolations from start to end, that for
-     `func compute(value: Double) -> T` must be overriden.
+     Tweens all containing elements from start to end.
      */
     public convenience init() {
         let id = "\(#file)_\(arc4random())_update"
@@ -28,29 +25,32 @@ open class UTimeline: UTweenBase {
     }
     
     /**
-     Initialize a generic `UTween`.
+     Initialize a `UTimeline`.
      
-     Tweens any value with type T from start to end.
-     
-     This object needs to know how to compute interpolations from start to end, that for
-     `func compute(value: Double) -> T` must be overriden.
+     Tweens all containing elements from start to end.
      
      - Parameter id: The unique id of the Tween
      */
     public override init(id: String) {
         super.init(id: id)
+        
+        initialDuration = 0
+        duration = 0
+        durationTotal = 0
     }
     
     open func append(_ tween: UTweenBase) {
-        tween.computeConfigs()
+//        tween.computeConfigs()
+//
+//        tweens.append(tween)
+//
+//        startTimeForTweenId[tween.id] = initialDuration
+//
+//        initialDuration += tween.durationTotal
+//
+//        computeConfigs()
         
-        tweens.append(tween)
-        
-        startTimeForTweenId[tween.id] = initialDuration
-        
-        initialDuration += tween.durationTotal
-        
-        computeConfigs()
+        insert(tween, at: durationTotal)
     }
     
     open func insert(_ tween: UTweenBase, at time: Double) {
@@ -59,13 +59,20 @@ open class UTimeline: UTweenBase {
         tweens.append(tween)
         
         startTimeForTweenId[tween.id] = time
+        duration = max(duration, time + tween.durationTotal)
         
-        for tween in tweens {
-            duration = max(duration, time + tween.durationTotal)
-        }
-        
+//        duration += max(duration, time)
+//        for tween in tweens {
+////            duration = max(duration, time + tween.durationTotal)
+//
+//            duration += tween.durationTotal
+//        }
+//
         initialDuration = duration
         
+        tweens.sort(by: {
+            startTimeForTweenId[$0.id] ?? 0 < startTimeForTweenId[$1.id] ?? 0
+        })
         computeConfigs()
     }
     
@@ -73,8 +80,7 @@ open class UTimeline: UTweenBase {
         set {
             time = newValue * duration
             
-            for tween in tweens {
-                
+            for (i, tween) in tweens.enumerated() {
                 let repeatCount = tweenOptions.repeatCount()    
                 var cycles = Double(repeatCount + 1)
                 
@@ -90,7 +96,10 @@ open class UTimeline: UTweenBase {
                 
                 let value = tween.direction == .forward ? mapped : 1 - mapped
                 
-                tween.progressTotal = Math.clamp(value, lower: 0.0, upper: 1.0)
+                let clamped = Math.clamp(value, lower: 0.0, upper: 1.0)
+                if i == 0 || clamped > 0 {
+                    tween.progressTotal = clamped
+                }
             }
             
             super.progress = newValue

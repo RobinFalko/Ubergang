@@ -1285,9 +1285,9 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="4ys-Px-Bcs"/>
                                         <exclude reference="Bg6-tt-2st"/>
                                         <exclude reference="qkn-gf-bgq"/>
+                                        <exclude reference="4ys-Px-Bcs"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -1386,9 +1386,9 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="BUT-Ul-Zve"/>
                                         <exclude reference="Vn1-MS-ohA"/>
                                         <exclude reference="Xi9-Y8-kYS"/>
+                                        <exclude reference="BUT-Ul-Zve"/>
                                     </mask>
                                 </variation>
                                 <connections>

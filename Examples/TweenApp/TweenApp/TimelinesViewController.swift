@@ -79,15 +79,14 @@ class TimelinesViewController: ExampleViewController {
         timelineContainer.insert(timeline, at: 0)
         
         //countdown
-        timelineContainer.insert( NumericTween(id: "countTween")
-            .from(10, to: 0)
-            .update { [unowned self] (value: Int) in
-                self.numberLabel.text = String(value)
-            }
+        timelineContainer.insert( 10.tween(to: 0)
+            .id("countTween")
             .duration(10)
             .ease(Linear.ease)
-            .reference(.weak), at: 0)
-        
+            .reference(.weak)
+            .update { [unowned self] (value: Int) in
+                self.numberLabel.text = String(value)
+            }, at: 0)
         
         self.tweenStatusView0.title = "\(tween0.id)"
         self.tweenStatusView1.title = "\(tween1.id)"

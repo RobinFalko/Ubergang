@@ -15,9 +15,23 @@ class InsertTimelineViewController: ExampleViewController {
     
     override func setupTween() -> UTweenBase {
         let timeline = UTimeline()
-        timeline.append(NumericTween().from(0, to: 100).update({ [unowned self] in
+            .update { [unowned self] in
+                self.tweenControls.progress($0)
+            }
+            .complete { [unowned self] in
+                self.tweenControls.stop()
+            }
+        
+        timeline.append(CGFloat(-150).tween(to: 150)
+            .ease(Linear.ease)
+            .duration(2)
+            .update({ [unowned self] (value: CGFloat) in
+                self.viewCenterY.constant = value
+            }))
+        
+        timeline.insert(CGFloat(150).tween(to: 0).update({ [unowned self] in
             self.viewCenterY.constant = $0
-        }))
+        }), at: 4)
         
         return timeline
     }
