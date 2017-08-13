@@ -70,13 +70,13 @@ class TweenControlButton: UIButton {
         timeline.insert(transformTween, at: 0)
     }
     
-    func touchDown() {
+    @objc func touchDown() {
         timeline.direction(.forward).start()
         
         tweenOutline()
     }
     
-    func touchUp() {
+    @objc func touchUp() {
         timeline.direction(.reverse).start()
     }
     

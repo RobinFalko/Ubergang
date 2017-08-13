@@ -16,6 +16,7 @@ class InsertTimelineViewController: ExampleViewController {
     
     override func setupTween() -> UTweenBase {
         let timeline = UTimeline()
+            .reference(.weak)
             .options(.repeat(1))
             .updateTotal { [unowned self] in
                 self.tweenControls.progress($0)
