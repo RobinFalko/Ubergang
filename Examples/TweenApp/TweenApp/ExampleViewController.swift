@@ -13,11 +13,26 @@ class ExampleViewController: UIViewController {
     
     var tweenControls: TweenControlsView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        addTweenControls(setupTween())
+    }
+    
+    deinit {
+        print("deinit \(type(of: self))")
+    }
+    
+    func setupTween() -> UTweenBase {
+        //override
+        return UTween<Void>()
+    }
+    
     func addTweenControls(_ tween: UTweenBase) {
         tweenControls = TweenControlsView.instanceFromNib()
         tweenControls.progress(0.0)
         tweenControls.onPlay = {
-            _ = tween.start()
+            tween.start()
         }
         tweenControls.onStop = {
             tween.stop()
@@ -29,7 +44,7 @@ class ExampleViewController: UIViewController {
             tween.resume()
         }
         tweenControls.onDirection = { value in
-            _ = tween.tweenDirection(value)
+            tween.direction(value)
         }
         tweenControls.onProgress = { value in
             tween.progressTotal = value

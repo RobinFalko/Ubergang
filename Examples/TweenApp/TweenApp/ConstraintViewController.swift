@@ -10,74 +10,58 @@ import UIKit
 import Ubergang
 
 class ConstraintViewController: ExampleViewController {
-    
     @IBOutlet var redViewHeight: NSLayoutConstraint!
-    
     @IBOutlet var grayViewWidth: NSLayoutConstraint!
-    
     @IBOutlet var greenViewBottom: NSLayoutConstraint!
     
     var defaultRedViewHeight: CGFloat!
     var defaultGrayViewWidth: CGFloat!
     var defaultGreenViewBottom: CGFloat!
     
-    var timeline: UTimeline!
-    
-    deinit {
-        print("deinit \(type(of: self))")
-    }
-    
-    override func viewDidLoad() {
+    override func loadView() {
+        super.loadView()
+        
         defaultRedViewHeight = redViewHeight.constant
         defaultGrayViewWidth = grayViewWidth.constant
         defaultGreenViewBottom = greenViewBottom.constant
-        
-        setupTween()
-        
-        addTweenControls(timeline)
     }
     
-    func setupTween() {
-        timeline = UTimeline(id: "particleTimeline")
-        _ = timeline.memoryReference(.weak)
-        _ = timeline.updateTotal { [unowned self] (progressTotal) in
-            self.tweenControls.progress(progressTotal)
-        }
-        _ = timeline.complete { [unowned self] in
-            self.tweenControls.stop()
-        }
+    override func setupTween() -> UTweenBase {
+        let timeline = UTimeline()
+            .reference(.weak)
+            .updateTotal { [unowned self] (progressTotal) in
+                self.tweenControls.progress(progressTotal)
+            }
+            .complete { [unowned self] in
+                self.tweenControls.stop()
+            }
         
-        var from = defaultRedViewHeight
-        let tween1 = NumericTween<CGFloat>(id: "testView1")
-            .to( CGFloat(50.0),
-                from: from!,
-                update: { [unowned self] (value:CGFloat) in
-                    self.redViewHeight.constant = value },
-                duration: 1)
+        let tween1 = defaultRedViewHeight!.tween(to: 50)
+            .update { [unowned self] in
+                self.redViewHeight.constant = $0
+            }
+            .duration(1)
             .ease(Quint.easeInOut)
         
-        from = defaultGrayViewWidth
-        let tween2 = NumericTween<CGFloat>(id: "testView2")
-            .to( CGFloat(150.0),
-                from: from!,
-                update: { [unowned self] (value:CGFloat) in
-                    self.grayViewWidth.constant = value },
-                duration: 2)
+        let tween2 = defaultGrayViewWidth!.tween(to: 150)
+            .update { [unowned self] in
+                self.grayViewWidth.constant = $0
+            }
+            .duration(2)
             .ease(Bounce.easeOut)
         
-        from = defaultGreenViewBottom
-        let tween3 = NumericTween<CGFloat>(id: "testView3")
-            .to( CGFloat(100.0),
-                from: from!,
-                update: { [unowned self] (value:CGFloat) in
-                    self.greenViewBottom.constant = value },
-                duration: 3)
+        let tween3 = defaultGreenViewBottom!.tween(to: 100)
+            .update { [unowned self] in
+                self.greenViewBottom.constant = $0
+            }
+            .duration(3)
             .options(.repeat(1), .yoyo)
             .ease(Expo.easeInOut)
         
         timeline.append(tween1)
         timeline.append(tween2)
         timeline.append(tween3)
+        
+        return timeline
     }
 }
-

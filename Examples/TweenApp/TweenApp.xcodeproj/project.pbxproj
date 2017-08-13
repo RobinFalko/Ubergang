@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		444D769C1CEB2F4500889D16 /* TweenStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D769B1CEB2F4500889D16 /* TweenStatusView.swift */; };
+		6F1BA2161F35F01600219225 /* InsertTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1BA2151F35F01600219225 /* InsertTimelineViewController.swift */; };
 		6F32B1FD1D3FC9A500623CD5 /* DynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32B1FC1D3FC9A500623CD5 /* DynamicViewController.swift */; };
 		6F32B2011D4297C300623CD5 /* AdditiveAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32B2001D4297C300623CD5 /* AdditiveAnimationViewController.swift */; };
 		6F43AA651C49858E00B75FF2 /* NumericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F43AA641C49858E00B75FF2 /* NumericViewController.swift */; };
@@ -51,6 +52,7 @@
 		0037DFFD7A644BC917AFE5C0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		444D769B1CEB2F4500889D16 /* TweenStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweenStatusView.swift; sourceTree = "<group>"; };
 		5519B3CABCCC1F3A968C3217 /* Pods_TweenApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweenApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F1BA2151F35F01600219225 /* InsertTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertTimelineViewController.swift; sourceTree = "<group>"; };
 		6F32B1FC1D3FC9A500623CD5 /* DynamicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicViewController.swift; sourceTree = "<group>"; };
 		6F32B2001D4297C300623CD5 /* AdditiveAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditiveAnimationViewController.swift; sourceTree = "<group>"; };
 		6F43AA641C49858E00B75FF2 /* NumericViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				6F4DEFAC1CE7693F00E464EB /* ProgressViewController.swift */,
 				6F97C9751C3F026F00E4DB73 /* TransformViewController.swift */,
 				6F4DEF7C1CC1736C00E464EB /* TimelinesViewController.swift */,
+				6F1BA2151F35F01600219225 /* InsertTimelineViewController.swift */,
 				6F43AA661C49931200B75FF2 /* ParticleViewController.swift */,
 				6F43AA6E1C70D2A900B75FF2 /* ConstraintViewController.swift */,
 				6F4DEFD01CEB875F00E464EB /* ColorViewController.swift */,
@@ -201,7 +204,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Robin Falko";
 				TargetAttributes = {
 					6F97C96F1C3F026F00E4DB73 = {
@@ -271,7 +274,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		66C68A2BDE9B5490F126963B /* [CP] Copy Pods Resources */ = {
@@ -306,6 +309,7 @@
 				6F4DEFB41CE9035600E464EB /* ExampleViewController.swift in Sources */,
 				6F8A232F1CB826FE0035D78A /* TitleIconTableViewCell.swift in Sources */,
 				6F43AA6F1C70D2AA00B75FF2 /* ConstraintViewController.swift in Sources */,
+				6F1BA2161F35F01600219225 /* InsertTimelineViewController.swift in Sources */,
 				6F32B1FD1D3FC9A500623CD5 /* DynamicViewController.swift in Sources */,
 				6F4DEFB81CEA19F400E464EB /* ReverseButton.swift in Sources */,
 				6F4DC16E1CB9D54800EF6B4D /* TweenControlsView.swift in Sources */,
@@ -349,14 +353,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -385,6 +395,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -397,14 +408,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -426,6 +443,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -435,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A10BC62B2450FDB73A81729C /* Pods-TweenApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -443,7 +462,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.robinfalko.mobile.TweenApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -451,6 +469,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A2607820073304762AA5FE37 /* Pods-TweenApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -459,7 +478,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.robinfalko.mobile.TweenApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

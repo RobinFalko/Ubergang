@@ -9,7 +9,7 @@
 import UIKit
 
 class CircularProgressBar: UIView {
-    let degToRad = CGFloat(M_PI / 180.0)
+    let degToRad = CGFloat(.pi / 180.0)
     
     var shapeLayer:CAShapeLayer!
     

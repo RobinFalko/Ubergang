@@ -11,14 +11,12 @@ import Foundation
 import Ubergang
 
 class DynamicViewController: ExampleViewController {
-    let degToRad = CGFloat(M_PI / 180.0)
-    
+    let degToRad = CGFloat(.pi / 180.0)
     var particles = [UIImageView]()
     
     var timeline: UTimeline!
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    
     @IBOutlet var loadingLabel: UILabel!
     
     override func viewDidLoad() {
@@ -29,7 +27,7 @@ class DynamicViewController: ExampleViewController {
             self.activityIndicator.startAnimating()
             self.loadingLabel.isHidden = false
             
-            self.setupTween()
+//            self.setupTween()
             
             DispatchQueue.main.async {
                 for particle in self.particles {
@@ -44,10 +42,6 @@ class DynamicViewController: ExampleViewController {
         }
     }
     
-    deinit {
-        print("deinit \(type(of: self))")
-    }
-    
     func setupTween() {let rectWidth = CGFloat(200)
         let centerX = (UIScreen.main.bounds.width - rectWidth) * 0.5
         let path = rectInRect(CGRect(x: centerX, y: 200, width: rectWidth, height: rectWidth))
@@ -56,7 +50,7 @@ class DynamicViewController: ExampleViewController {
         drawPath(path)
         
         timeline = UTimeline(id: "timeline")
-            .memoryReference(.weak)
+            .reference(.weak)
             .updateTotal { [unowned self] progressTotal in
                 self.tweenControls.progress(progressTotal)
             }
@@ -78,14 +72,13 @@ class DynamicViewController: ExampleViewController {
             let offset = Double(Int(i / 2)) / Double(itemCount) + offsetInterval
             
             //create the bezier tween
-            let bezierTween = UTweenBuilder
-                .along( path,
-                    update: { (value:CGPoint, progress: Double) in
-                        placeholder.center = value
-                    },
-                    duration: totalDuration,
-                    id: "bezierTween \(i)")
-                .memoryReference(.weak)
+            let bezierTween = BezierPathTween(id: "bezierTween \(i)")
+                .along(path)
+                .update {
+                    placeholder.center = $0
+                }
+                .duration(totalDuration)
+                .reference(.weak)
                 .offset(offset)
 
             //add it to the timeline
@@ -104,18 +97,16 @@ class DynamicViewController: ExampleViewController {
                 let duration = totalDuration
                 
                 //the first tween of the inner timline
-                let tween0 = UTweenBuilder
-                    .to({
-                            placeholder.center
-                        },
-                        from: {
-                            pView.center
-                        },
-                        update: { (value:CGPoint, progress: Double) in
-                            targetView0.center = value
-                        },
-                         duration: duration,
-                        id: "pointTween0 \(i)")
+                let tween0 = CGPointTween(id: "pointTween0 \(i)")
+                    .from({
+                        pView.center
+                    }, to: {
+                        placeholder.center
+                    })
+                    .update { (value:CGPoint, progress: Double) in
+                        targetView0.center = value
+                    }
+                    .duration(duration)
                     .ease(Cubic.easeOut)
                     .options(.yoyo, .repeat(10))
                 
@@ -126,18 +117,16 @@ class DynamicViewController: ExampleViewController {
                 particles.append(targetView1)
                 
                 //the second tween of the inner timline
-                let tween1 = UTweenBuilder
-                    .to({
-                            pView.center
-                        },
-                        from: {
-                            placeholder.center
-                        },
-                        update: { (value:CGPoint, progress: Double) in
-                            targetView1.center = value
-                        },
-                        duration: duration,
-                        id: "pointTween1 \(i)")
+                let tween1 = CGPointTween(id: "pointTween1 \(i)")
+                    .from({
+                        placeholder.center
+                    }, to: {
+                        pView.center
+                    })
+                    .update { (value:CGPoint, progress: Double) in
+                        targetView1.center = value
+                    }
+                    .duration(duration)
                     .ease(Cubic.easeOut)
                     .options(.yoyo, .repeat(10))
                 

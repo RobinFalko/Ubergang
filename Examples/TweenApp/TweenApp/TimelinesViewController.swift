@@ -10,118 +10,90 @@ import UIKit
 import Ubergang
 
 class TimelinesViewController: ExampleViewController {
-    
     @IBOutlet weak var tweenStatusView0: TweenStatusView!
-    
     @IBOutlet weak var tweenStatusView1: TweenStatusView!
-    
     @IBOutlet weak var tweenStatusView2: TweenStatusView!
-    
     @IBOutlet weak var tweenStatusView3: TweenStatusView!
-    
-    
     @IBOutlet var numberLabel: UILabel!
-    
     @IBOutlet var progressBar: CircularProgressBar!
     
-    
-    
-    var timelineContainer: UTimeline!
-    
-    var labelTween: NumericTween<Int>?
-    
-    deinit {
-        print("deinit \(type(of: self))")
-    }
-    
-    override func viewDidLoad() {
-        setupTween()
-        
-        addTweenControls(timelineContainer)
-    }
-    
-    func setupTween() {
-        
+    override func setupTween() -> UTweenBase {
         let timeline = UTimeline(id: "timeline")
-        _ = timeline.options(.repeat(9))
-        _ = timeline.repeatCycleChange { [unowned self] repeatCycle in
-            self.tweenStatusView2.repeatCount = repeatCycle
-        }
-        _ = timeline.update { [unowned self] progress in
-            self.tweenStatusView2.progress = Float(progress)
-        }
-        _ = timeline.updateTotal { [unowned self] progressTotal in
-            self.tweenStatusView2.progressTotal = Float(progressTotal)
-            self.tweenControls.progress(progressTotal)
-        }
+            .options(.repeat(9))
+            .repeatCycleChange { [unowned self] repeatCycle in
+                self.tweenStatusView2.repeatCount = repeatCycle
+            }
+            .update { [unowned self] progress in
+                self.tweenStatusView2.progress = Float(progress)
+            }
+            .updateTotal { [unowned self] progressTotal in
+                self.tweenStatusView2.progressTotal = Float(progressTotal)
+                self.tweenControls.progress(progressTotal)
+            }
         
         //closing arc
-        let tween0 = UTweenBuilder
-            .to( CGFloat(-0.1),
-                from: CGFloat(-360.0),
-                update: { [unowned self] (value: CGFloat, progress: Double) in
-                    self.tweenStatusView0.progress = Float(progress)
-                    self.progressBar.endAngle = value
-                },
-                duration: 5,
-                id: "arcIncreaseTween")
+        let tween0 = NumericTween(id: "arcIncreaseTween")
+            .from(-360.0, to: -0.1)
+            .duration(5)
             .ease(Cubic.easeInOut)
-        _ = tween0.updateTotal { [unowned self] progress in
-            self.tweenStatusView0.progressTotal = Float(progress)
-        }
+            .update { [unowned self] (value: CGFloat, progress: Double) in
+                self.tweenStatusView0.progress = Float(progress)
+                self.progressBar.endAngle = value
+            }
+            .updateTotal { [unowned self] progress in
+                self.tweenStatusView0.progressTotal = Float(progress)
+            }
         timeline.append(tween0)
         
-        let tween1 = UTweenBuilder
-            .to( CGFloat(-0.1),
-                from: CGFloat(-360.0),
-                update: { [unowned self] (value: CGFloat, progress: Double) in
-                    self.tweenStatusView1.progress = Float(progress)
-                    self.progressBar.startAngle = value
-                },
-                duration: 5,
-                id: "arcDecreaseTween")
+        let tween1 = NumericTween(id: "arcDecreaseTween")
+            .from(-360, to: -0.1)
+            .duration(5)
             .ease(Cubic.easeInOut)
-        _ = tween1.updateTotal { [unowned self] progress in
-            self.tweenStatusView1.progressTotal = Float(progress)
-        }
+            .update { [unowned self] (value: CGFloat, progress: Double) in
+                self.tweenStatusView1.progress = Float(progress)
+                self.progressBar.startAngle = value
+            }
+            .updateTotal { [unowned self] progress in
+                self.tweenStatusView1.progressTotal = Float(progress)
+            }
         //opening arc
         timeline.append(tween1)
         
         
-        timelineContainer = UTimeline(id: "timelineContainer").memoryReference(.weak)
-        _ = timelineContainer.repeatCycleChange { [unowned self] repeatCycle in
-            self.tweenStatusView3.repeatCount = repeatCycle
-        }
-        _ = timelineContainer.update { [unowned self] progress in
-            self.tweenStatusView3.progress = Float(progress)
-        }
-        _ = timelineContainer.updateTotal { [unowned self] progressTotal in
-            self.tweenStatusView3.progressTotal = Float(progressTotal)
-        }
-        _ = timelineContainer.complete { [unowned self] in
-            self.tweenControls.stop()
-        }
+        let timelineContainer = UTimeline(id: "timelineContainer")
+            .reference(.weak)
+            .repeatCycleChange { [unowned self] repeatCycle in
+                self.tweenStatusView3.repeatCount = repeatCycle
+            }
+            .update { [unowned self] progress in
+                self.tweenStatusView3.progress = Float(progress)
+            }
+            .updateTotal { [unowned self] progressTotal in
+                self.tweenStatusView3.progressTotal = Float(progressTotal)
+            }
+            .complete { [unowned self] in
+                self.tweenControls.stop()
+            }
         
         //timeline arcs
         timelineContainer.insert(timeline, at: 0)
         
         //countdown
-        timelineContainer.insert( UTweenBuilder
-            .to( 0,
-                from: 10,
-                update: { [unowned self] (value: Int) in
-                    self.numberLabel.text = String(value)
-                },
-                duration: 10.0,
-                id: "countTween")
+        timelineContainer.insert( 10.tween(to: 0)
+            .id("countTween")
+            .duration(10)
             .ease(Linear.ease)
-            .memoryReference(.weak), at: 0.0)
-        
+            .reference(.weak)
+            .update { [unowned self] (value: Int) in
+                self.numberLabel.text = String(value)
+            }, at: 0)
         
         self.tweenStatusView0.title = "\(tween0.id)"
         self.tweenStatusView1.title = "\(tween1.id)"
         self.tweenStatusView2.title = "\(timeline.id)"
         self.tweenStatusView3.title = "\(timelineContainer.id)"
+        
+        return timelineContainer
     }
 }
 

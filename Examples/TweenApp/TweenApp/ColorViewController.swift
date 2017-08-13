@@ -14,43 +14,25 @@ class ColorViewController: ExampleViewController {
     
     @IBOutlet var targetView: UIView!
     
-    var tween: ColorTween!
-    
     var random: CGFloat {
         return CGFloat(Double(arc4random_uniform(255)) / 255.0)
     }
     
-    override func viewDidLoad() {
-        
-        setupTween()
-        
-        addTweenControls(tween)
-    }
-    
-    deinit {
-        print("deinit \(type(of: self))")
-    }
-    
-    func setupTween() {
+    override func setupTween() -> UTweenBase {
         let colorTo = UIColor(red: random, green: random, blue: random, alpha: 1.0)
         let colorFrom = UIColor(red: random, green: random, blue: random, alpha: 1.0)
         
         self.targetView.backgroundColor = colorFrom
         
-        tween = UTweenBuilder
-            .to( colorTo,
-                 from: colorFrom,
-                 update: { [unowned self] (value:UIColor, progress: Double) in
+        return colorFrom.tween(to: colorTo)
+            .duration(1)
+            .update { [unowned self] (value:UIColor, progress: Double) in
                     self.targetView.backgroundColor = value
                     self.tweenControls.progress(progress)
-                },
-                 duration: 1,
-                 id: "colorTween")
-        _ = tween.ease(Linear.ease)
-        _ = tween.memoryReference(.weak)
-        _ = tween.complete { [unowned self] in
-            self.tweenControls.stop()
-        }
+                }
+            .complete { [unowned self] in
+                self.tweenControls.stop()
+            }
     }
 }
 

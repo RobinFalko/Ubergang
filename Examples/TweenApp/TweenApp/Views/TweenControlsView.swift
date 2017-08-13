@@ -74,7 +74,7 @@ class TweenControlsView: UIView {
         NSLayoutConstraint.activate(constraints)
     }
     
-    func playPauseResume() {
+    @objc func playPauseResume() {
         switch playState {
         case .stopped:
             playState = .playing
@@ -97,7 +97,7 @@ class TweenControlsView: UIView {
         }
     }
     
-    func stop() {
+    @objc func stop() {
         playState = .stopped
         playPauseButton.isSelected = false
         
@@ -112,7 +112,7 @@ class TweenControlsView: UIView {
         onResume?()
     }
     
-    func toggleDirection() {
+    @objc func toggleDirection() {
         switch currentDerection {
         case .forward:
             currentDerection = .reverse
@@ -127,7 +127,7 @@ class TweenControlsView: UIView {
         onDirection?(currentDerection)
     }
     
-    func sliderValueChanged(_ sender: UISlider?) {
+    @objc func sliderValueChanged(_ sender: UISlider?) {
         onProgress?(Double(sender!.value))
     }
     
