@@ -247,7 +247,7 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
 ```
 
 
-## Changelog
+## Changelog Verion 1.0
 
 - Swift 4 migration
 - Change tween creation pattern (UTweenBuilder removed - Instead instantiate the tween object directly or use the appropriate extension like `0.tween(to: 10)`)
