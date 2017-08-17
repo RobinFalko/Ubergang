@@ -81,7 +81,7 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
 ```swift
     NumericTween(id: "doubleTween")
             .from({ [unowned self] in return self.position2.x }, to: { [unowned self] in return self.position1.x })
-            .update({ value in print("update: \(value)") })
+            .update({ value, progress in print("update: \(value), progress: \(progress) ") })
             .duration(5)
             .start()
 ```
@@ -190,7 +190,7 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
             .update({ [unowned self] (value: CGPoint, progress: Double) in
                 //update
             })
-	    	.start()
+            .start()
     }
 ```
 
@@ -214,7 +214,7 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
             .update({ [unowned self] (value: CGPoint, progress: Double) in
                 //update
             })
-	    	.start()
+            .start()
     }    
 ```
 
@@ -235,14 +235,14 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
             .duration(5)
             .ease(Linear.ease)
             .reference(.weak)
-			.update({ [unowned self] (value:CGPoint, progress: Double, orientation: CGPoint) in
-				self.targetView.center = value
-				
-				let angle = atan2(orientation.y, orientation.x)
-				let transform = CGAffineTransformRotate(CGAffineTransformIdentity, angle)
-				self.targetView.transform = transform
-			})
-	    	.start()
+            .update({ [unowned self] (value:CGPoint, progress: Double, orientation: CGPoint) in
+                self.targetView.center = value
+
+                let angle = atan2(orientation.y, orientation.x)
+                let transform = CGAffineTransformRotate(CGAffineTransformIdentity, angle)
+                self.targetView.transform = transform
+            })
+            .start()
     }      
 ```
 
