@@ -191,6 +191,7 @@ open class UTweenBase {
      - Parameter value: The closure to be called on update
      - Returns: The current Tween or Timeline
      */
+    @discardableResult
     open func update(_ value: @escaping (_ progress: Double) -> Void) -> Self {
         updateProgress = value
         
@@ -203,6 +204,7 @@ open class UTweenBase {
      - Parameter value: The closure to be called on update
      - Returns: The current Tween or Timeline
      */
+    @discardableResult
     open func updateTotal(_ value: @escaping (_ progressTotal: Double) -> Void) -> Self {
         updateProgressTotal = value
         
@@ -215,6 +217,7 @@ open class UTweenBase {
      - Parameter value: The closure to be called on complete
      - Returns: The current Tween or Timeline
      */
+    @discardableResult
     open func complete(_ value: @escaping () -> Void) -> Self {
         complete = value
         
@@ -230,6 +233,7 @@ open class UTweenBase {
      - Parameter value: The closure to be called on changing the repeat cycle
      - Returns: The current Tween or Timeline
      */
+    @discardableResult
     open func repeatCycleChange(_ value: @escaping (_ repeatCycle: Int) -> Void) -> Self {
         repeatCycleChange = value
         
@@ -248,6 +252,7 @@ open class UTweenBase {
      - Parameter value: The memory reference type
      - Returns: The current Tween or Timeline
      */
+    @discardableResult
     open func reference(_ value: TweenMemoryReference) -> Self {
         reference = value
         
@@ -262,6 +267,7 @@ open class UTweenBase {
      - Parameter value: All options seperated by ',' to be applied
      - Returns: The current Tween or Timeline
      */
+    @discardableResult
     open func options(_ values: TweenOptions ...) -> Self {
         tweenOptions = values
         
