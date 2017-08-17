@@ -49,9 +49,9 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
 ## Tween Configuration
 
 ```swift
-    .options(.Repeat(n))
-    .options(.Yoyo)
-    .options(.Repeat(n), .Yoyo)
+    .options(.repeat(n))
+    .options(.yoyo)
+    .options(.repeat(n), .Yoyo)
 ```
 
 > Using `options` you can let the Tween repeat n (Int) times, let it yoyo or combine both options.
@@ -59,8 +59,8 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
 - Yoyo will reverse the Tween after it reaches the end value.
 
 ```swift
-    .memoryReference(.Strong)` //(default)
-    .memoryReference(.Weak)
+    .memoryReference(.strong)` //(default)
+    .memoryReference(.weak)
 ```
 
 > `memoryReference` determines how to handle the reference count for the tween. Ubergang will increase the reference count if the option is set to `.Strong` or won't increase it if it's set to `.Weak`. These two rules are valid for most cases:
@@ -72,18 +72,18 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
 ### Start a simple numeric Tween (Double)
 
 ```swift
-    UTweenBuilder
-        .to( 10.0, from: 0.0, update: { value in print("test double: \(value)") }, duration: 5, id: "doubleTween")
-        .start()
+    0.tween(to:10).update({ (value:Int) in print("\(value)") }).start()
 ```
-> This Tween with id 'doubleTween' goes from 0.0 to 10.0 over 5 seconds using a linear easing by default. The current value will be printed with every update.
+> This Tween goes from 0 to 10 over 0.5 by default seconds using a linear easing by default. The current value will be printed with every update.
 
 ### 'to' and 'from' using closures
 
 ```swift
-    UTweenBuilder
-        .to( { [unowned self] in return position1.x }, from: { [unowned self] in return position2.x }, update: { value in print("test double: \(value)") }, duration: 5, id: "doubleTween")
-        .start()
+    NumericTween(id: "doubleTween")
+            .from({ [unowned self] in return self.position2.x }, to: { [unowned self] in return self.position1.x })
+            .update({ value in print("update: \(value)") })
+            .duration(5)
+            .start()
 ```
 > Passing closures to 'to' and 'from' will always compute all results using the current values returned by the closures.
 
@@ -95,15 +95,17 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
     var tween: NumericTween<Int>?
 
     func run() {
-        tween = UTweenBuilder
-            .to( 10, from: 0, update: { value in print("test int: \(value)") }, duration: 5, id: "intTween")
+        tween = 0.tween(to: 10)
+            .id("intTween")
+            .duration(5)
+            .update({ value in print("update: \(value)") })
             .ease(Elastic.easeOut)
-            .memoryReference(.Weak)
+            .reference(.weak)
             .start()
     }
 ```
 > This Tween with id 'intTween' goes from 0 to 10 over 5 seconds using an elastic easing. The current value will be printed with every update.
-.memoryReference(.Weak) will store this tween weakly, Ubergang won't increment the reference count. It's up to you to keep the Tween alive.
+.reference(.weak) will store this tween weakly, Ubergang won't increment the reference count. It's up to you to keep the Tween alive.
 
 ### Start a numeric Tween repeating 5 times with yoyo
 
@@ -111,11 +113,14 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
     var tween: NumericTween<Int>?
 
     func run() {
-        tween = UTweenBuilder
-            .to( 10, from: 0, update: { value in print("test int: \(value)") }, duration: 5, id: "intTween")
+    
+        tween = 0.tween(to: 10)
+            .id("intTween")
+            .duration(5)
+            .update({ value in print("update: \(value)") })
             .ease(Elastic.easeOut)
-            .options(.Repeat(5), .Yoyo)
-            .memoryReference(.Weak)
+            .reference(.weak)
+            .options(.repeat(5), .yoyo)
             .start()
     }
 ```
@@ -131,19 +136,15 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
         var to = testView.transform
         to.ty = 200.0
     
-        tween = UTweenBuilder
-            .to( to,
-                from: { [unowned self] in
-                    return self.testView.transform },
-                update: { [unowned self] value in
-                    self.testView.transform = value },
-                duration: 2.5,
-                id: "testView")
-            .memoryReference(.Weak)
+        tween = testView.transform.tween(to: transform)
+            .id("testView")
+            .duration(2.5)
+            .reference(.weak)
+            .update({ [unowned self] value in self.testView.transform = value })
     	    .start()
     }
 ```
-> This Tween with id 'testView' tweens a transform over 2.5 secondsg. The resulting tranform will be assigned to the testView with every update 'welf.testView.transform = value'.
+> This Tween with id 'testView' tweens a transform over 2.5 seconds. The resulting tranform will be assigned to the testView with every update 'welf.testView.transform = value'.
 
 
 
@@ -153,26 +154,24 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
     var timeline: UTimeline = UTimeline(id: "timeline")
 
     func run() {
-        timeline.options(.Yoyo)
-        timeline.ease(Cubic.easeInOut)
-        timeline.memoryReference(.Weak)
-
-        timeline.append(UTweenBuilder
-            .to( 10, from: 0, update: { value in print("0-10 value: \(value)") }, duration: 5, id: "intTween")
+        timeline.options(.yoyo).reference(.weak)
+        
+        timeline.append(
+            0.tween(to: 10).id("intTween").duration(5).update({ value, _ in print("0-10 value: \(value)") })
         )
-  
-        timeline.append(UTweenBuilder
-            .to( 10.0, from: 0.0, update: { value in print("0.0-10.0 value: \(value)") }, duration: 5, id: "floatTween1")
+        
+        timeline.append(
+            0.0.tween(to: 10.0).id("floatTween1").duration(5).update({ value, _ in print("0.0-10.0 value: \(value)") })
         )
-  
-        timeline.insert(UTweenBuilder
-            .to( 0.0, from: 10.0, update: { value in print("10.0-0.0 value: \(value)") }, duration: 5, id: "floatTween2"), at: 2.5
+        
+        timeline.insert(
+            10.0.tween(to: 0.0).id("floatTween2").duration(5).update({ value, _ in print("10.0-0.0 value: \(value)") }), at: 2.5
         )
   
         timeline.start()
     }
 ```
-> This Timeline controls one Tween starting at time 0.0 seconds, one Tween starting at time 5.0 seconds and the last one starting at 2.5 seconds. All Tweens are controlled by the timeline with the given easing and options - In this case the tween option `.Yoyo` with easing `Cubic.easeInOut`
+> This Timeline controls one Tween starting at time 0.0 seconds, one Tween starting at time 5.0 seconds and the last one starting at 2.5 seconds. All Tweens are controlled by the timeline with the given options - In this case the tween option `.yoyo`
 
 
 
@@ -183,16 +182,15 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
     var tween: BezierPathTween!
 
     func run() {
-    tween = UTweenBuilder
-        .along( path,
-            update: { [unowned self] (value:CGPoint, progress: Double) in
-			    //update
-		    },
-		     duration: 5,
-		     id: "bezierTween")
-	    .ease(Linear.ease)
-	    .memoryReference(.Weak)
-	    .start()
+    tween = BezierPathTween().along(path)
+            .id("bezierTween")
+            .duration(5)
+            .ease(Linear.ease)
+            .reference(.weak)
+            .update({ [unowned self] (value: CGPoint, progress: Double) in
+                //update
+            })
+	    	.start()
     }
 ```
 
@@ -208,16 +206,15 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
         let points = [CGPoint]()
         points.append(...)
 
-        tween = UTweenBuilder
-            .along( points,
-                update: { [unowned self] (value:CGPoint, progress: Double) in
-			    //update
-		    },
-            duration: 5,
-            id: "bezierTween")
-        .ease(Linear.ease)
-	    .memoryReference(.Weak)
-	    .start()
+        tween = BezierPathTween().along(points)
+            .id("bezierTween")
+            .duration(5)
+            .ease(Linear.ease)
+            .reference(.weak)
+            .update({ [unowned self] (value: CGPoint, progress: Double) in
+                //update
+            })
+	    	.start()
     }    
 ```
 
@@ -233,26 +230,28 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
         let points = [CGPoint]()
         points.append(...)
 
-        tween = UTweenBuilder
-            .along( points,
-                update: { [unowned self] (value:CGPoint, progress: Double, orientation: CGPoint) in
-                    self.targetView.center = value
-                    
-                    let angle = atan2(orientation.y, orientation.x)
-                    let transform = CGAffineTransformRotate(CGAffineTransformIdentity, angle)
-                    self.targetView.transform = transform
-                },
-            duration: 5,
-            id: "bezierTween")
-        .ease(Linear.ease)
-	    .memoryReference(.Weak)
-	    .start()
-    }    
+        tween = BezierPathTween().along(points)
+            .id("bezierTween")
+            .duration(5)
+            .ease(Linear.ease)
+            .reference(.weak)
+			.update({ [unowned self] (value:CGPoint, progress: Double, orientation: CGPoint) in
+				self.targetView.center = value
+				
+				let angle = atan2(orientation.y, orientation.x)
+				let transform = CGAffineTransformRotate(CGAffineTransformIdentity, angle)
+				self.targetView.transform = transform
+			})
+	    	.start()
+    }      
 ```
 
 
-## Todos
+## Changelog
 
-- Thinking about new features
+- Swift 4 migration
+- Change tween creation pattern (UTweenBuilder removed - Instead instantiate the tween object directly or use the appropriate extension like `0.tween(to: 10)`)
+- Add @discardableResult to specific methods
+- Fix issue where timelines didn't work if there was a delay between tweens
 
 Feedback is always appreciated
