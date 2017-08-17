@@ -59,13 +59,13 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
 - Yoyo will reverse the Tween after it reaches the end value.
 
 ```swift
-    .memoryReference(.strong)` //(default)
-    .memoryReference(.weak)
+    .reference(.strong)` //(default)
+    .reference(.weak)
 ```
 
-> `memoryReference` determines how to handle the reference count for the tween. Ubergang will increase the reference count if the option is set to `.Strong` or won't increase it if it's set to `.Weak`. These two rules are valid for most cases:
-- The Tween is not stored in a field variable -> `.Strong`
-- The Tween is stored in a field variable -> `.Weak`
+> `reference` determines how to handle the reference count for the tween. Ubergang will increase the retain count if the option is set to `.strong` or won't increase it if it's set to `.weak`. These two rules are valid for most cases:
+- The Tween is not stored in a field variable -> `.strong`
+- The Tween is stored in a field variable -> `.weak`
 
 ## Usage
 
