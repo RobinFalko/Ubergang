@@ -112,19 +112,22 @@ open class UTweenBase {
     }
     
     func loop() {
-        progressTotal += Timer.delta / durationTotal * Double(direction == .forward ? 1 : -1)
+        var newProgress = progressTotal + Timer.delta / durationTotal * Double(direction == .forward ? 1 : -1)
+        newProgress = Math.clamp(newProgress, lower: 0.0, upper: 1.0)
+        
+        progressTotal = newProgress
         
         checkForStop()
     }
     
     func checkForStop() {
-        if progressTotal > 1.0 {
+        if progressTotal >= 1.0 {
             progressTotal = 1.0
             stop()
             complete?()
         }
         
-        if progressTotal < 0.0 {
+        if progressTotal <= 0.0 {
             progressTotal = 0.0
             stop()
             complete?()
