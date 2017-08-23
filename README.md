@@ -51,7 +51,7 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
 ```swift
     .options(.repeat(n))
     .options(.yoyo)
-    .options(.repeat(n), .Yoyo)
+    .options(.repeat(n), .yoyo)
 ```
 
 > Using `options` you can let the Tween repeat n (Int) times, let it yoyo or combine both options.

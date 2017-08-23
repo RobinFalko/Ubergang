@@ -333,14 +333,14 @@
                                             <segue destination="eMq-rA-bLv" kind="show" id="He4-Kj-anf"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dU6-63-lMo" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dU6-63-lMo" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="352" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dU6-63-lMo" id="b1u-PK-e88">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="1Bh-5F-6eE" userLabel="Icon">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="1Bh-5F-6eE" userLabel="Icon">
                                                     <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="1Bh-5F-6eE" secondAttribute="height" multiplier="35:35" id="reY-k4-BWU"/>
@@ -372,14 +372,14 @@
                                             <segue destination="dPP-kJ-jkT" kind="show" id="aks-iu-YzE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="i9v-jc-3YR" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="i9v-jc-3YR" customClass="TitleIconTableViewCell" customModule="TweenApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="396" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i9v-jc-3YR" id="W0H-LU-zBk">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="jwz-5q-ykN" userLabel="Icon">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="jwz-5q-ykN" userLabel="Icon">
                                                     <rect key="frame" x="331.5" y="8" width="27.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="jwz-5q-ykN" secondAttribute="height" multiplier="35:35" id="h4b-bB-Bpi"/>
