@@ -37,7 +37,7 @@ open class Elastic: Ease {
         
         let postFix = a * pow(2.0, 10.0 * t) // this is a fix, again, with post-increment operators
         
-        return -(postFix * sin((t*d-s) * (2 * M_PI)/p )) + b
+        return -(postFix * sin((t*d-s) * (2 * .pi)/p )) + b
     }
     
     /**
@@ -64,7 +64,7 @@ open class Elastic: Ease {
         let a = c
         let s = p / 4
         
-        return (a * pow(2, -10 * t) * sin( (t*d-s) * (2*M_PI)/p ) + c + b)
+        return (a * pow(2, -10 * t) * sin( (t*d-s) * (2 * .pi)/p ) + c + b)
     }
     
     /**
@@ -95,10 +95,10 @@ open class Elastic: Ease {
         
         if (t < 1) {
             let postFix = a * pow(2.0, 10.0 * t) // postIncrement is evil
-            return -0.5 * (postFix * sin((t*d-s) * (2*M_PI)/p)) + b
+            return -0.5 * (postFix * sin((t*d-s) * (2 * .pi)/p)) + b
         }
         
         let postFix = a * pow(2.0, -10.0 * t) // postIncrement is evil
-        return postFix * sin((t*d-s) * (2*M_PI) / p) * 0.5 + c + b
+        return postFix * sin((t*d-s) * (2 * .pi) / p) * 0.5 + c + b
     }
 }

@@ -11,11 +11,7 @@ import Foundation
 open class UTweenBase {
     fileprivate lazy var logger = UTweenSetup.instance.logger
     
-    fileprivate let _id: String
-    
-    open var id: String {
-        return _id
-    }
+    private(set) open var id: String
     
     var updateProgress: ((_ progress: Double) -> Void)?
     var updateProgressTotal: ((_ progressTotal: Double) -> Void)?
@@ -24,8 +20,9 @@ open class UTweenBase {
     
     var tweenOptions: [TweenOptions]!
     
-    open var duration = 0.0
-    var durationTotal = 0.0
+    var initialDuration: Double = 0.5
+    open var duration = 0.5
+    var durationTotal = 0.5
     
     var ease: Easing = Linear.ease
     var easeValue = 0.0
@@ -35,11 +32,10 @@ open class UTweenBase {
     var time = 0.0
     var timeTotal = 0.0
     
-    var memoryReference: TweenMemoryReference = .strong
+    var reference: TweenMemoryReference = .strong
     
     var direction: TweenDirection = .forward
     
-    var initialDuration: Double = 0
     var initialRepeatCount: Int = 0
     var currentRepeatCycle: Int = 0
     
@@ -89,7 +85,7 @@ open class UTweenBase {
     }
     
     init(id: String) {
-        _id = id
+        self.id = id
         
         tweenOptions = [.repeat(initialRepeatCount)]
     }
@@ -101,7 +97,7 @@ open class UTweenBase {
     fileprivate func registerLoop() {
         Timer.instance.start()
         
-        switch memoryReference {
+        switch reference {
         case .strong:
             Engine.instance.register(loop, forKey: id)
         case .weak:
@@ -116,19 +112,22 @@ open class UTweenBase {
     }
     
     func loop() {
-        progressTotal += Timer.delta / durationTotal * Double(direction == .forward ? 1 : -1)
+        var newProgress = progressTotal + Timer.delta / durationTotal * Double(direction == .forward ? 1 : -1)
+        newProgress = Math.clamp(newProgress, lower: 0.0, upper: 1.0)
+        
+        progressTotal = newProgress
         
         checkForStop()
     }
     
     func checkForStop() {
-        if progressTotal > 1.0 {
+        if progressTotal >= 1.0 {
             progressTotal = 1.0
             stop()
             complete?()
         }
         
-        if progressTotal < 0.0 {
+        if progressTotal <= 0.0 {
             progressTotal = 0.0
             stop()
             complete?()
@@ -162,11 +161,40 @@ open class UTweenBase {
     }
     
     /**
+     Set the ID of the Tween or Timeline.
+     
+     - Parameter value: The ID
+     - Returns: The current Tween or Timeline
+     */
+    @discardableResult
+    public func id(_ id: String) -> Self {
+        self.id = id
+        
+        return self
+    }
+    
+    /**
+     Set the duration of the Tween or Timeline.
+     
+     - Parameter value: The duration
+     - Returns: The current Tween or Timeline
+     */
+    @discardableResult
+    public func duration(_ value: Double) -> Self {
+        initialDuration = value
+        duration = value
+        durationTotal = value
+        
+        return self
+    }
+    
+    /**
      Set the closure for updating the progress of the Tween or Timeline.
      
      - Parameter value: The closure to be called on update
      - Returns: The current Tween or Timeline
      */
+    @discardableResult
     open func update(_ value: @escaping (_ progress: Double) -> Void) -> Self {
         updateProgress = value
         
@@ -179,6 +207,7 @@ open class UTweenBase {
      - Parameter value: The closure to be called on update
      - Returns: The current Tween or Timeline
      */
+    @discardableResult
     open func updateTotal(_ value: @escaping (_ progressTotal: Double) -> Void) -> Self {
         updateProgressTotal = value
         
@@ -191,6 +220,7 @@ open class UTweenBase {
      - Parameter value: The closure to be called on complete
      - Returns: The current Tween or Timeline
      */
+    @discardableResult
     open func complete(_ value: @escaping () -> Void) -> Self {
         complete = value
         
@@ -206,6 +236,7 @@ open class UTweenBase {
      - Parameter value: The closure to be called on changing the repeat cycle
      - Returns: The current Tween or Timeline
      */
+    @discardableResult
     open func repeatCycleChange(_ value: @escaping (_ repeatCycle: Int) -> Void) -> Self {
         repeatCycleChange = value
         
@@ -224,8 +255,9 @@ open class UTweenBase {
      - Parameter value: The memory reference type
      - Returns: The current Tween or Timeline
      */
-    open func memoryReference(_ value: TweenMemoryReference) -> Self {
-        memoryReference = value
+    @discardableResult
+    open func reference(_ value: TweenMemoryReference) -> Self {
+        reference = value
         
         return self
     }
@@ -238,6 +270,7 @@ open class UTweenBase {
      - Parameter value: All options seperated by ',' to be applied
      - Returns: The current Tween or Timeline
      */
+    @discardableResult
     open func options(_ values: TweenOptions ...) -> Self {
         tweenOptions = values
         
@@ -266,6 +299,7 @@ extension UTweenBase: Tweenable {
      
      - Returns: The current Tween or Timeline
      */
+    @discardableResult
     public func start() -> Self {
         guard !isPlaying else {
             logger?.info("tween: \(id) already playing")
@@ -335,7 +369,8 @@ extension UTweenBase: Tweenable {
      - Parameter direction: The play direction of the Tween or Timeline
      - Returns: The current Tween or Timeline
      */
-    public func tweenDirection(_ direction: TweenDirection) -> Self {
+    @discardableResult
+    public func direction(_ direction: TweenDirection) -> Self {
         self.direction = direction
         
         return self
