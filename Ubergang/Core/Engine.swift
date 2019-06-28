@@ -18,7 +18,7 @@ open class Engine: NSObject {
     
     var mapTable = NSMapTable<AnyObject, AnyObject>(keyOptions: NSPointerFunctions.Options.strongMemory, valueOptions: NSPointerFunctions.Options.weakMemory)
     
-    open static var instance: Engine = {
+    public static var instance: Engine = {
         let engine = Engine()
         engine.start()
         return engine
@@ -27,18 +27,18 @@ open class Engine: NSObject {
     func start() {
         if displayLink == nil {
             displayLink = CADisplayLink(target: self, selector: #selector(Engine.update))
-            displayLink!.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
+            displayLink!.add(to: .current, forMode: .common)
         }
     }
     
     func stop() {
-        displayLink?.remove(from: RunLoop.current, forMode: RunLoopMode.commonModes)
+        displayLink?.remove(from: .current, forMode: .common)
         displayLink = nil
     }
     
     @objc func update() {
         let enumerator = mapTable.objectEnumerator()
-        while let any: AnyObject = enumerator?.nextObject() as AnyObject! {
+        while let any: AnyObject = enumerator?.nextObject() as AnyObject? {
             if let loopable = any as? WeaklyLoopable {
                 loopable.loopWeakly()
             }

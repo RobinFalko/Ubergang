@@ -14,20 +14,43 @@ open class UTimeline: UTweenBase {
     
     open var count: Int { return tweens.count }
     
+    /**
+     Initialize a `UTimeline` with a random id.
+     
+     Tweens all containing elements from start to end.
+     */
+    public convenience init() {
+        let id = "\(#file)_\(arc4random())_update"
+        self.init(id: id)
+    }
+    
+    /**
+     Initialize a `UTimeline`.
+     
+     Tweens all containing elements from start to end.
+     
+     - Parameter id: The unique id of the Tween
+     */
     public override init(id: String) {
         super.init(id: id)
+        
+        initialDuration = 0
+        duration = 0
+        durationTotal = 0
     }
     
     open func append(_ tween: UTweenBase) {
-        tween.computeConfigs()
+//        tween.computeConfigs()
+//
+//        tweens.append(tween)
+//
+//        startTimeForTweenId[tween.id] = initialDuration
+//
+//        initialDuration += tween.durationTotal
+//
+//        computeConfigs()
         
-        tweens.append(tween)
-        
-        startTimeForTweenId[tween.id] = initialDuration
-        
-        initialDuration += tween.durationTotal
-        
-        computeConfigs()
+        insert(tween, at: durationTotal)
     }
     
     open func insert(_ tween: UTweenBase, at time: Double) {
@@ -36,13 +59,12 @@ open class UTimeline: UTweenBase {
         tweens.append(tween)
         
         startTimeForTweenId[tween.id] = time
-        
-        for tween in tweens {
-            duration = max(duration, time + tween.durationTotal)
-        }
-        
+        duration = max(duration, time + tween.durationTotal)
         initialDuration = duration
         
+        tweens.sort(by: {
+            startTimeForTweenId[$0.id] ?? 0 < startTimeForTweenId[$1.id] ?? 0
+        })
         computeConfigs()
     }
     
@@ -50,9 +72,8 @@ open class UTimeline: UTweenBase {
         set {
             time = newValue * duration
             
-            for tween in tweens {
-                
-                let repeatCount = tweenOptions.repeatCount()
+            for (i, tween) in tweens.enumerated() {
+                let repeatCount = tweenOptions.repeatCount()    
                 var cycles = Double(repeatCount + 1)
                 
                 if tweenOptions.contains(.yoyo) && !tweenOptions.containsRepeat() {
@@ -65,7 +86,12 @@ open class UTimeline: UTweenBase {
                                              fromLower: startTime, fromUpper: startTime + tween.durationTotal / cycles,
                                              toLower: 0.0, toUpper: 1.0)
                 
-                tween.progressTotal = Math.clamp(mapped, lower: 0.0, upper: 1.0)
+                let value = tween.direction == .forward ? mapped : 1 - mapped
+                
+                let clamped = Math.clamp(value, lower: 0.0, upper: 1.0)
+                if i == 0 || clamped > 0 {
+                    tween.progressTotal = clamped
+                }
             }
             
             super.progress = newValue
@@ -76,9 +102,9 @@ open class UTimeline: UTweenBase {
     }
     
     
-    
-    override open func memoryReference(_ value: TweenMemoryReference) -> Self {
-        memoryReference = value
+    @discardableResult
+    override open func reference(_ value: TweenMemoryReference) -> Self {
+        reference = value
         
         return self
     }

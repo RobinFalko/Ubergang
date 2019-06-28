@@ -9,7 +9,7 @@
 import Foundation
 
 open class UTweenSetup {
-    open static let instance = UTweenSetup()
+    public static let instance = UTweenSetup()
     
     fileprivate var isLoggingEnabled = false
     
