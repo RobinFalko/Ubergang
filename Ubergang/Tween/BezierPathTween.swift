@@ -123,6 +123,8 @@ open class BezierPathTween: UTweenBase {
             newPoint = Bezier.linear(t: CGFloat(mapped),
                                    p0: element.points[0],
                                    p1: element.points[1])
+        @unknown default:
+            break
         }
         
         //calculate the orientation vector from one vector to the other, 
@@ -251,6 +253,8 @@ open class BezierPathTween: UTweenBase {
                     pr = Bezier.linear(t: CGFloat(t),
                                        p0: element.points[0],
                                        p1: element.points[1])
+                @unknown default:
+                    break
                 }
                 
                 
