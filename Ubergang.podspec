@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Ubergang/**/*.{h,m,swift}'
   s.module_name      = 'Ubergang'
   
+  s.swift_version = '5.0'
   s.platform = :ios, '8.0'
   s.ios.deployment_target = '8.0'
 end

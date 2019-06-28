@@ -63,6 +63,8 @@ extension CGPath {
                 points.append(previousLastPoint)
                 points.append(firstPoint)
                 result.append((elementType, points))
+            @unknown default:
+                break
             }
         }
         
