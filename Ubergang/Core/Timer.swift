@@ -9,12 +9,12 @@
 import Foundation
 
 open class Timer {
-    open static let instance = Timer()
+    public static let instance = Timer()
     
     fileprivate let id = "\(#file)_update"
     
-    open static var delta:TimeInterval = TimeInterval(0)
-    open static var time:TimeInterval = TimeInterval(0)
+    public static var delta:TimeInterval = TimeInterval(0)
+    public static var time:TimeInterval = TimeInterval(0)
     fileprivate var lastUpdateTime:TimeInterval = TimeInterval(0)
     
     fileprivate init() {}
