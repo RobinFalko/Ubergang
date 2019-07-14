@@ -24,7 +24,8 @@ open class UTweenBase {
     open var duration = 0.5
     var durationTotal = 0.5
     
-    var ease: Easing = Linear.ease
+    var ease: Ease = .linear
+    var currentEase: Ease!
     var easeValue = 0.0
     
     var absolute = false
@@ -301,21 +302,22 @@ extension UTweenBase: Tweenable {
      */
     @discardableResult
     public func start() -> Self {
-        guard !isPlaying else {
-            logger?.info("tween: \(id) already playing")
-            return self
+        if isPlaying {
+            logger?.warning("tween: \(id) already playing")
+        } else {
+            logger?.info("start: \(id) with direction: \(direction)")
         }
         
-        logger?.info("start: \(id) with direction: \(direction)")
         switch direction {
         case .forward:
             progress = 0.0
             progressTotal = 0.0
-            break
         case .reverse:
             progress = 1.0
             progressTotal = 1.0
-            break
+        case .backward:
+            progress = 1.0
+            progressTotal = 1.0
         }
         
         computeConfigs()
@@ -339,11 +341,12 @@ extension UTweenBase: Tweenable {
         case .forward:
             progress = 1.0
             progressTotal = 1.0
-            break
         case .reverse:
             progress = 0.0
             progressTotal = 0.0
-            break
+        case .backward:
+            progress = 0.0
+            progressTotal = 0.0
         }
     }
     

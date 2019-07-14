@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Sine: Ease {
+open class Sine: Easing, CurveEasing {
     
     /**
      Sine ease in.
