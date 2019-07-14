@@ -105,9 +105,7 @@ open class UTimeline: UTweenBase {
                 let value = tween.direction == .forward ? mapped : 1 - mapped
                 
                 let clamped = Math.clamp(value, lower: 0.0, upper: 1.0)
-                if i == 0 || clamped > 0 {
-                    tween.progressTotal = clamped
-                }
+                tween.progressTotal = clamped
             }
             
             super.progress = newValue
