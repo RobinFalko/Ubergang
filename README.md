@@ -99,7 +99,7 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
             .id("intTween")
             .duration(5)
             .update({ value in print("update: \(value)") })
-            .ease(Elastic.easeOut)
+            .ease(.elastic(.out))
             .reference(.weak)
             .start()
     }
@@ -118,7 +118,7 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
             .id("intTween")
             .duration(5)
             .update({ value in print("update: \(value)") })
-            .ease(Elastic.easeOut)
+            .ease(.elastic(.out))
             .reference(.weak)
             .options(.repeat(5), .yoyo)
             .start()
@@ -185,7 +185,7 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
     tween = BezierPathTween().along(path)
             .id("bezierTween")
             .duration(5)
-            .ease(Linear.ease)
+            .ease(.linear)
             .reference(.weak)
             .update({ [unowned self] (value: CGPoint, progress: Double) in
                 //update
@@ -209,7 +209,7 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
         tween = BezierPathTween().along(points)
             .id("bezierTween")
             .duration(5)
-            .ease(Linear.ease)
+            .ease(.linear)
             .reference(.weak)
             .update({ [unowned self] (value: CGPoint, progress: Double) in
                 //update
@@ -233,7 +233,7 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
         tween = BezierPathTween().along(points)
             .id("bezierTween")
             .duration(5)
-            .ease(Linear.ease)
+            .ease(.linear)
             .reference(.weak)
             .update({ [unowned self] (value:CGPoint, progress: Double, orientation: CGPoint) in
                 self.targetView.center = value
@@ -245,6 +245,45 @@ There is a dependency to XCGLogger which is used by default, but you can pass an
             .start()
     }      
 ```
+
+
+## Changelog Verion 1.2.0
+
+- The Ease type changed to an Enum instead of passing the function type directly e.g. 
+```swift
+	.ease(Linear.ease) becomes .ease(.linear)
+	.ease(Elastic.easeOut) becomes .ease(.elastic(.out))
+```
+- When starting a tween which is already playing, it will now only log a warning via the logger proxy instead of guarding a restart
+- The new tween direction 'backward' will inverse easings and tween start times within a timeline
+
+```swift
+/*
+    forward -->
+t0: |-----------------------|
+t1:     |----------------------|
+t2: |--------|
+*/
+
+/*
+                     <-- reverse
+t0: |-----------------------|
+t1:     |----------------------|
+t2: |--------|
+*/
+
+/*
+                    <-- backward
+t0:    |-----------------------|
+t1: |----------------------|
+t2:                   |--------|
+*/
+```
+
+
+## Changelog Verion 1.1.0
+
+- Swift 5 migration
 
 
 ## Changelog Verion 1.0
