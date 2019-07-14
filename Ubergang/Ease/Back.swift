@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Back: Ease {
+open class Back: Easing, CurveEasing {
     /**
      Back ease in.
      

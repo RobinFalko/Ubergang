@@ -50,7 +50,7 @@ class TitleIconTableViewCell: UITableViewCell {
                     self.titleLabelConstraints.constant = value
                 }
             .duration(duration)
-            .ease(Cubic.easeOut)
+            .ease(.cubic(.out))
         
         to = titleLabelConstraints.constant
         let dotTween = NumericTween<CGFloat>(id: "iconViewTween")
@@ -59,7 +59,7 @@ class TitleIconTableViewCell: UITableViewCell {
                     self.iconViewConstraints.constant = value
             }
             .duration(duration)
-            .ease(Cubic.easeOut)
+            .ease(.cubic(.out))
         
         timeline.insert(labelTween, at: 0)
         timeline.insert(dotTween, at: 0)

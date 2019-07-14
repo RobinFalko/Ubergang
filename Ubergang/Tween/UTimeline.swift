@@ -39,6 +39,18 @@ open class UTimeline: UTweenBase {
         durationTotal = 0
     }
     
+    override func computeConfigs() {
+        super.computeConfigs()
+        
+        for tween in tweens {
+            switch direction {
+            case .forward: tween.currentEase = tween.ease
+            case .reverse: tween.currentEase = tween.ease
+            case .backward: tween.currentEase = tween.ease.opposite
+            }
+        }
+    }
+    
     open func append(_ tween: UTweenBase) {
 //        tween.computeConfigs()
 //
@@ -80,7 +92,11 @@ open class UTimeline: UTweenBase {
                     cycles *= 2.0
                 }
                 
-                let startTime = startTimeForTweenId[tween.id]! / cycles
+                var startTime = startTimeForTweenId[tween.id]! / cycles
+                
+                if direction == .backward {
+                    startTime = durationTotal - tween.durationTotal - startTime
+                }
                 
                 let mapped = Math.mapValueInRange(time,
                                              fromLower: startTime, fromUpper: startTime + tween.durationTotal / cycles,
@@ -89,9 +105,7 @@ open class UTimeline: UTweenBase {
                 let value = tween.direction == .forward ? mapped : 1 - mapped
                 
                 let clamped = Math.clamp(value, lower: 0.0, upper: 1.0)
-                if i == 0 || clamped > 0 {
-                    tween.progressTotal = clamped
-                }
+                tween.progressTotal = clamped
             }
             
             super.progress = newValue

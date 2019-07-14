@@ -34,21 +34,21 @@ class CurveThroughViewController: ExampleViewController {
         
         return BezierPathTween(id: "bezierTween")
             .along(points, closed: true)
-            .update { [unowned self] (value:CGPoint, progress: Double, orientation: CGPoint) in
-                self.targetView.center = value
+            .update { [weak self] (value:CGPoint, progress: Double, orientation: CGPoint) in
+                self?.targetView.center = value
                 
                 let angle = atan2(orientation.y, orientation.x)
                 let transform = CGAffineTransform.identity.rotated(by: angle)
-                self.targetView.transform = transform
+                self?.targetView.transform = transform
             }
             .duration(10)
-            .ease(Linear.ease)
+            .ease(.linear)
             .options(.repeat(1))
-            .updateTotal { [unowned self] value in
-                self.tweenControls.progress(value)
+            .updateTotal { [weak self] value in
+                self?.tweenControls.progress(value)
             }
-            .complete { [unowned self] in
-                self.tweenControls.stop()
+            .complete { [weak self] in
+                self?.tweenControls.stop()
             }
     }
     

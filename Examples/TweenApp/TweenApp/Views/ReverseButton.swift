@@ -39,7 +39,7 @@ class ReverseButtton: TweenControlButton {
                     self.imageView!.layer.transform = CATransform3DRotate(CATransform3DIdentity, value, 0.0, 1.0, 0.0)
                 }
             .duration(0.5)
-            .ease(Cubic.easeInOut)
+            .ease(.cubic(.inOut))
             .reference(.weak)
     }
 }

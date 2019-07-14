@@ -35,7 +35,7 @@ class TimelinesViewController: ExampleViewController {
         let tween0 = NumericTween(id: "arcIncreaseTween")
             .from(-360.0, to: -0.1)
             .duration(5)
-            .ease(Cubic.easeInOut)
+            .ease(.cubic(.inOut))
             .update { [unowned self] (value: CGFloat, progress: Double) in
                 self.tweenStatusView0.progress = Float(progress)
                 self.progressBar.endAngle = value
@@ -48,7 +48,7 @@ class TimelinesViewController: ExampleViewController {
         let tween1 = NumericTween(id: "arcDecreaseTween")
             .from(-360, to: -0.1)
             .duration(5)
-            .ease(Cubic.easeInOut)
+            .ease(.cubic(.inOut))
             .update { [unowned self] (value: CGFloat, progress: Double) in
                 self.tweenStatusView1.progress = Float(progress)
                 self.progressBar.startAngle = value
@@ -82,7 +82,7 @@ class TimelinesViewController: ExampleViewController {
         timelineContainer.insert( 10.tween(to: 0)
             .id("countTween")
             .duration(10)
-            .ease(Linear.ease)
+            .ease(.linear)
             .reference(.weak)
             .update { [unowned self] (value: Int) in
                 self.numberLabel.text = String(value)

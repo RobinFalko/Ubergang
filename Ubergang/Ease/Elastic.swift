@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Elastic: Ease {
+open class Elastic: Easing, CurveEasing {
     
     /**
      Elastic ease in.

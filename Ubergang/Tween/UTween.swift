@@ -53,7 +53,7 @@ open class UTween<T>: UTweenBase {
         set {
             time = newValue * duration
             
-            easeValue = ease(time, 0.0, 1.0, duration)
+            easeValue = currentEase.function(time, 0.0, 1.0, duration)
             
             if let offset = offset {
                 easeValue = fmod(easeValue + offset, 1.0)
@@ -143,8 +143,9 @@ extension UTween {
     }
     
     @discardableResult
-    public func ease(_ ease: @escaping Easing) -> Self {
+    public func ease(_ ease: Ease) -> Self {
         self.ease = ease
+        self.currentEase = ease
         return self
     }
     

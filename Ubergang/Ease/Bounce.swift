@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Bounce: Ease {
+open class Bounce: Easing, CurveEasing {
     
     /**
      Bounce ease in.

@@ -23,8 +23,8 @@ class TweenControlButton: UIButton {
         addTarget(self, action: #selector(touchUp), for: .touchUpInside)
         
         
-        var image = self.image(for: UIControlState())?.withRenderingMode(.alwaysTemplate)
-        setImage(image, for: UIControlState())
+        var image = self.image(for: UIControl.State())?.withRenderingMode(.alwaysTemplate)
+        setImage(image, for: UIControl.State())
         
         image = self.image(for: .selected)?.withRenderingMode(.alwaysTemplate)
         setImage(image, for: .selected)
@@ -52,7 +52,7 @@ class TweenControlButton: UIButton {
                     self.alpha = value
                  }
             .duration(0.2)
-            .ease(Cubic.easeOut)
+            .ease(.cubic(.out))
         
         let transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         let transformTween = TransformTween(id: "transform_\(arc4random())")
@@ -62,7 +62,7 @@ class TweenControlButton: UIButton {
             }
             .duration(0.2)
         
-        _ = transformTween.ease(Cubic.easeOut)
+        _ = transformTween.ease(.cubic(.out))
         
         timeline = UTimeline(id: "timeline_\(arc4random())")
         _ = timeline.reference(.weak)
@@ -94,7 +94,7 @@ class TweenControlButton: UIButton {
                 imageView.transform = value
             }
             .duration(0.5)
-            .ease(Cubic.easeOut)
+            .ease(.cubic(.out))
             .complete {
                 imageView.removeFromSuperview()
             }

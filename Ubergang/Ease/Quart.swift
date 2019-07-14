@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Quart: Ease {
+open class Quart: Easing, CurveEasing {
     
     /**
      Quart ease in.

@@ -21,7 +21,7 @@ class ProgressViewController: ExampleViewController {
         return 0.0.tween(to: 10)
             .id("progressTween")
             .duration(5)
-            .ease(Cubic.easeOut)
+            .ease(.cubic(.out))
             .options(.repeat(1), .yoyo)
             .reference(.weak)
             .update { [unowned self] (value, progress) in

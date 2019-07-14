@@ -56,7 +56,7 @@ class ParticleViewController: ExampleViewController {
             let tween = view.transform.tween(to: to)
                 .id("id-\(i)")
                 .duration(3)
-                .ease(Cubic.easeInOut)
+                .ease(.cubic(.inOut))
                 .options(.yoyo)
                 .update { value in view.transform = value }
             timeline.insert(tween, at: 0)

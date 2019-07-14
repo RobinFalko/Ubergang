@@ -23,7 +23,7 @@ class AdditiveAnimationViewController: ExampleViewController {
         super.viewDidLoad()
         
         views.forEach {
-            $0.image = $0.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate);
+            $0.image = $0.image!.withRenderingMode(UIImage.RenderingMode.alwaysTemplate);
             $0.translatesAutoresizingMaskIntoConstraints = true
         }
     }
@@ -45,7 +45,7 @@ class AdditiveAnimationViewController: ExampleViewController {
                 self.tweenControls.stop()
             }
             .duration(5)
-            .ease(Cubic.easeOut)
+            .ease(.cubic(.out))
     }
     
     var selectedView: UIView?
@@ -58,7 +58,7 @@ class AdditiveAnimationViewController: ExampleViewController {
            selectedView = nil
         }
         if selectedView != nil {
-            view.bringSubview(toFront: selectedView!)
+            view.bringSubviewToFront(selectedView!)
         }
     }
     

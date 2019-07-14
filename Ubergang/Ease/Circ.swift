@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Circ: Ease {
+open class Circ: Easing, CurveEasing {
     
     /**
      Circ ease in.
