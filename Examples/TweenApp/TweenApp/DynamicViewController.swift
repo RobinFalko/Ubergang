@@ -107,7 +107,7 @@ class DynamicViewController: ExampleViewController {
                         targetView0.center = value
                     }
                     .duration(duration)
-                    .ease(Cubic.easeOut)
+                    .ease(.cubic(.out))
                     .options(.yoyo, .repeat(10))
                 
                 innerTimeline.insert(tween0, at: offset)
@@ -127,7 +127,7 @@ class DynamicViewController: ExampleViewController {
                         targetView1.center = value
                     }
                     .duration(duration)
-                    .ease(Cubic.easeOut)
+                    .ease(.cubic(.out))
                     .options(.yoyo, .repeat(10))
                 
                 innerTimeline.insert(tween1, at: offset)

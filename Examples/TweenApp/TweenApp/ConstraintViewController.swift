@@ -41,14 +41,14 @@ class ConstraintViewController: ExampleViewController {
                 self.redViewHeight.constant = $0
             }
             .duration(1)
-            .ease(Quint.easeInOut)
+            .ease(.quint(.inOut))
         
         let tween2 = defaultGrayViewWidth!.tween(to: 150)
             .update { [unowned self] in
                 self.grayViewWidth.constant = $0
             }
             .duration(2)
-            .ease(Bounce.easeOut)
+            .ease(.bounce(.out))
         
         let tween3 = defaultGreenViewBottom!.tween(to: 100)
             .update { [unowned self] in
@@ -56,7 +56,7 @@ class ConstraintViewController: ExampleViewController {
             }
             .duration(3)
             .options(.repeat(1), .yoyo)
-            .ease(Expo.easeInOut)
+            .ease(.expo(.inOut))
         
         timeline.append(tween1)
         timeline.append(tween2)

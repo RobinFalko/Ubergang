@@ -1,9 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,7 +17,7 @@
             <subviews>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2fd-l4-4ya">
                     <rect key="frame" x="108" y="17" width="428" height="31"/>
-                    <color key="thumbTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="thumbTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </slider>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKF-1J-4pl" customClass="TweenControlButton" customModule="TweenApp" customModuleProvider="target">
                     <rect key="frame" x="8" y="10" width="44" height="44"/>
@@ -22,16 +25,16 @@
                         <constraint firstAttribute="width" secondItem="EKF-1J-4pl" secondAttribute="height" multiplier="1:1" id="7JW-F6-5tZ"/>
                         <constraint firstAttribute="width" constant="44" id="uuR-tb-OPq"/>
                     </constraints>
-                    <color key="tintColor" red="1" green="0.43366446130000003" blue="0.53044323910000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="1" green="0.43366446130000003" blue="0.53044323910000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                     <state key="normal" title="Play" image="PlayIcon"/>
                     <state key="selected" image="PauseIcon"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="tintNormal">
-                            <color key="value" red="0.30196078431372547" green="0.81960784313725488" blue="0.0" alpha="0.74534498043531427" colorSpace="calibratedRGB"/>
+                            <color key="value" red="0.30196078431372547" green="0.81960784313725488" blue="0.0" alpha="0.74534498043531427" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="tintSelected">
-                            <color key="value" red="0.0" green="0.58039215686274503" blue="0.81960784313725488" alpha="0.74750664893617025" colorSpace="calibratedRGB"/>
+                            <color key="value" red="0.0" green="0.58039215686274503" blue="0.81960784313725488" alpha="0.74750664893617025" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
@@ -41,12 +44,12 @@
                         <constraint firstAttribute="width" constant="44" id="Myf-Pa-jMF"/>
                         <constraint firstAttribute="width" secondItem="HIH-sb-zxJ" secondAttribute="height" multiplier="1:1" id="idS-ZK-NKw"/>
                     </constraints>
-                    <color key="tintColor" red="1" green="0.43366446130000003" blue="0.53044323910000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="1" green="0.43366446130000003" blue="0.53044323910000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                     <state key="normal" title="Stop" image="StopIcon"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="tintNormal">
-                            <color key="value" red="0.0" green="0.58039215686274503" blue="0.81960784313725488" alpha="0.75" colorSpace="calibratedRGB"/>
+                            <color key="value" red="0.0" green="0.58039215686274503" blue="0.81960784313725488" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
@@ -56,19 +59,12 @@
                         <constraint firstAttribute="width" constant="44" id="5d7-cT-bs1"/>
                         <constraint firstAttribute="width" secondItem="ADR-e7-XGA" secondAttribute="height" multiplier="1:1" id="IB7-GW-WEm"/>
                     </constraints>
+                    <color key="tintColor" red="0.0" green="0.58039215690000001" blue="0.81960784310000001" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                     <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                     <state key="normal" image="ReverseIcon"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="tintNormal">
-                            <color key="value" red="0.0" green="0.58039215686274503" blue="0.81960784313725488" alpha="0.75" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="tintSelected">
-                            <color key="value" red="0.0" green="0.58039215686274503" blue="0.81960784313725488" alpha="0.75" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ADR-e7-XGA" secondAttribute="trailing" constant="8" id="1Po-Dc-tVH"/>
                 <constraint firstItem="EKF-1J-4pl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="1bl-RG-8cA"/>

@@ -7,384 +7,407 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		001F78356C75BD7760668D88DA3D4F58 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F51101420054FA91721E09FB08A471B /* Math.swift */; };
-		02AA18730F3A0AB0B56BAFC8A41E23CA /* CGPointExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D3B68C92D81939BD500E9324A2A6AE /* CGPointExtension.m */; };
-		04FFA8BDC982588437C59713ED1386DA /* Bounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360273A5935E4E043A093691BA17B316 /* Bounce.swift */; };
-		0CCA21932DC889F81B26C9765BD58696 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700F1C90AD46CB01B29041A51194C309 /* Engine.swift */; };
-		127E917DC0791EBD7DE5B96156573D62 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB129C8A94570F8B06280862A8C5AC2A /* Numeric.swift */; };
-		12AF8F935A800E1644A47DA519E9E6E6 /* Linear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D33D9D1E8BC520560E272256D7A438E /* Linear.swift */; };
-		1AA3E56FAFB88AA5B2493865D270B3E8 /* Ubergang-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3E11E0E656D5A99E194AA3F1E8F23D /* Ubergang-dummy.m */; };
-		1DA8CC2AEA4F6578198019B0568D4524 /* UTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213178F31964909F768EC58B757FFD95 /* UTimeline.swift */; };
-		21D620CEC845FF35F87F076D66662E77 /* Ubergang-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 21C11B23E6322939D1A00D9D56295E43 /* Ubergang-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		244CFFC7A7497DD10814FB8CE712F587 /* TweenDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E805A09AB1AF81263288E77E7E24A /* TweenDirection.swift */; };
-		24D9D706976AEF1D8DE5C9B019367A31 /* TweenOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB009722C037FB7DF3E1488884452CA0 /* TweenOptions.swift */; };
-		24EE58446DC7588F6698C8E06883EEEE /* UTween.h in Headers */ = {isa = PBXBuildFile; fileRef = 13418CF0711112A97F6F2DF73BD28E91 /* UTween.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		27AAB8E8DA67E56C58AB450ACD89C3AA /* UTweenSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83479615FD3AD2C94FA427F5F441AD37 /* UTweenSetup.swift */; };
-		389171866DB3178D258095F3FD85CCD2 /* Tweenable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281236EE6C0DEE172C09C8B3EFC05C24 /* Tweenable.swift */; };
-		398C329AEC37FA3A3A492D6E5B2E0B65 /* Quint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ED6A2A93975F4BC85A78F240B0433F /* Quint.swift */; };
-		3DC00A4178C1EE1A6BA42DC6C2337A1E /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39637FF7F3FB153C54102304DC64A100 /* Bezier.swift */; };
-		4864B1A7A61AE1B09A8B5BFF69AA13BB /* ColorTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7EE0E94EF82D1F5F7F2C04D8245BDF /* ColorTween.swift */; };
-		4ACB1AA6D0900584C831FEF272CB7221 /* CGPointExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 768151351B408139F24EDF1609D5349B /* CGPointExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		50819AB6EF9DDE6E9E143BB6B6889783 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C888861B3EC0D1D3A2042E377BCF1822 /* Timer.swift */; };
-		534A6EBA99879CDE079113940518881E /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672B90CE16739766B15C7C76C9D9CCFB /* Quad.swift */; };
-		5492CA13D27C21A000C1B26EAF3B2F47 /* Back.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8857C61CC6DCB544496D9C73ED6D08 /* Back.swift */; };
-		5C472E4A361CF9629E92FCF4D95CE016 /* TypeTweenable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB5BD15437F6A8E90AE1C6AAD7474D /* TypeTweenable.swift */; };
-		6A32B78712DC0756C7EA7F74B3C66292 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		6C1A9AC8FC04D7120A85E0951055079F /* Cubic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8645551D0421FC23EEDF66F13905C8B /* Cubic.swift */; };
-		78E12F714CB9E9B0AE0EFD7AC7C672EE /* UTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE998D423FACAA1A02321A05976686 /* UTween.swift */; };
-		7A5673313140794B28B344F5A405E254 /* BezierPathTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054930CF8719A68BC94F359AB10EC21E /* BezierPathTween.swift */; };
-		7E64EA8D654761A728BDD0622B774776 /* CGPointTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E78AB3DB33C2A06FF2AF433FD8A58D8 /* CGPointTween.swift */; };
-		80C5AAB8F0A51C147DBCF131DD9B7289 /* Pods-TweenApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EF52B3669473B03CE95B1FD92746D2F6 /* Pods-TweenApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8BE1DBC7519E57AD561CCD0453BD7745 /* Ease.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD006FAD8E72EDFD9BFF4C2B73144658 /* Ease.swift */; };
-		8E8C91BBE6AB911BE566738808E9CCEF /* UIBezierPath+Interpolation.m in Sources */ = {isa = PBXBuildFile; fileRef = F615E8B66F78DE6C512E2B9D5013A70C /* UIBezierPath+Interpolation.m */; };
-		8FEEA89A90BF23250A42D097F03FCD91 /* WeaklyLoopable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F67553012D514753158B5ED67F4DD1 /* WeaklyLoopable.swift */; };
-		9D615998528D37362AA3C766914F5E24 /* Circ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9FC4ABF19FC62B60B7937B8D3151A8 /* Circ.swift */; };
-		9F1F713DE11BD935D191548AF869A4C8 /* UTweenLoggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6A7828BE6CA73CEF351F07667E33ED /* UTweenLoggable.swift */; };
-		A177F062A6B6083BB01324935C5769DE /* Sine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408B104E98BB75A000AD777263340B3 /* Sine.swift */; };
-		A2B4C9882BB706F36F51F3750ADB364A /* TweenMemoryReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF25132A2B859F2EC27E0F3973AD32 /* TweenMemoryReference.swift */; };
-		AA7342CE30F6A3AE6C77694EB317FDAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		AAA2B51793FB6595B1B0E36C0DD0BDA5 /* UIBezierPath+Interpolation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F1EA083DEEADF4D3E7078C8DDE3E2B9 /* UIBezierPath+Interpolation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AEDBCA252F68AD7566122F799DB41342 /* Expo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676AB97B34442AEFD916B09819F73C7 /* Expo.swift */; };
-		BF7628F7A9528C8384D1A7508B51D3E5 /* CGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270DDACA471F517D7A3DE21B5B8D2DA6 /* CGPath.swift */; };
-		C91AEE8E0809AB9D64D8AC0B4F12EB48 /* NumericTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5BFFE86484DC38F65BB2ED7108BFA7 /* NumericTween.swift */; };
-		CB78FEC6BD3A47948C6B94C87F997044 /* TransformTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FDABE778AA541CD56203DD463435F /* TransformTween.swift */; };
-		CE4A5B1821323A79061617E11077D7A0 /* UTweenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C65BED07AB52D46E2C2167A806D3E75 /* UTweenBuilder.swift */; };
-		F0531824C3A4573B396D3A98548B5534 /* Pods-TweenApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A54B7C2E5FBA7CB1B6F545F87FE447 /* Pods-TweenApp-dummy.m */; };
-		F47DE6EFF7DF45C4999B671A5BB6B728 /* UTweenBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDB1C3E0CA24272C3D965D55221C9B /* UTweenBase.swift */; };
-		FC5DC6D6E446CA52238502538F0D96BE /* Quart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FD2259BCA698950B3B1238559DED4 /* Quart.swift */; };
-		FCA2FFE8861644E8608BE34C99A62360 /* Elastic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0894B70C5B44FDB8D6717EC42C78F3F7 /* Elastic.swift */; };
+		0325703ABAD967DDC84340D9623972A5 /* CGPointExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1F156B74ACB4EDD2E12C0D2077037E /* CGPointExtension.m */; };
+		0AC29C4906B6E019C2288EEA86D0FA12 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AADA4BFB957281C5C7003332924E1F /* Math.swift */; };
+		1566AE0A0FAF1E5D0381EF3DCFFC242A /* UTweenLoggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FFCEF73972FFB318A9DE6EDE5A845 /* UTweenLoggable.swift */; };
+		201DDB749BCEEA8C76AF448B17C7AD6E /* CGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4FD4170538F006B357FFBCA90480D4 /* CGPath.swift */; };
+		31D704F3885169FBAAB6F2A42512A7D5 /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D76E1000B3515E090E837D7F36464B /* Bezier.swift */; };
+		38DF4806FC00E8B4A262967C1D685427 /* Ubergang-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 744863875E0A5328D56220F383249F81 /* Ubergang-dummy.m */; };
+		3B2AB6A85B307D6B98E75FE79DF08026 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		3BECF1435215EB60B3C9B325DB210848 /* UTweenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1397B12BCDB8FF51B7E28CE0D3422A28 /* UTweenBuilder.swift */; };
+		4E03EBA3868FBFC82F0E9C76D70DEF51 /* TweenOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71CA4FE909A8E489516E4523169A6AB /* TweenOptions.swift */; };
+		51661A470D80C98866ACF14B8B5E96F1 /* Ease.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D549697D27E8ECE15BDB1C8FE35091 /* Ease.swift */; };
+		5C5B313917E4EBD72370D5210EE0CD19 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C600258427197ACE9E61E2A3C4085E63 /* Engine.swift */; };
+		5ED3263B7760C6684B113549C5D8ED63 /* NumericTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5D6596F64E7656798F235A23BD86E7 /* NumericTween.swift */; };
+		684186B0E781B1912B3E1DEC35837669 /* TransformTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813C5C1CC1962D14B310CF6C809B14 /* TransformTween.swift */; };
+		6B461B8BFBCAC5B23A4A4D24E3DF0A11 /* UTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E055DDD77B22F34FCF849CE70D9BEE /* UTween.swift */; };
+		6EFD303FD33DCA5C1C4A442A62F51304 /* Back.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E92B5A5B73FCEB399AFC5B44B6796 /* Back.swift */; };
+		732429FC31563BE59FB7888D62DAF7E1 /* TweenDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9D31615B6EB34FF45EC86FB8590358 /* TweenDirection.swift */; };
+		7995039CAA267CB9CA0B5E93D449539B /* Circ.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C5F5AE0D40B4A91686D1271F27EC7F /* Circ.swift */; };
+		7BDCA9DCD26BC705E4A65C5487E9F448 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		94F9FAF39A85D67E0C8C9790E255A7C9 /* UTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF78B122ED319E6D1B73FA47735E323D /* UTimeline.swift */; };
+		95B6E5BEC5CBC92B894108E5C99BF2A4 /* Sine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9053E1A53429237894A2587FFC2F063 /* Sine.swift */; };
+		99F7FC365C25778268102E2DA5A41566 /* Linear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8953479F2C519E90F224C5183CED93DA /* Linear.swift */; };
+		9D0FA15D137E0827E707585E8C63B209 /* Quart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246A1E523E2A99F6759BABF6D9DD284 /* Quart.swift */; };
+		9EB316CC2FB2DEABC66175C638AC11C6 /* ColorTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0017C48EA7FC352752ECF1628EC0EA06 /* ColorTween.swift */; };
+		9FA442F2B495F9BC85C5A81F2FD87ABA /* Cubic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B544738DB30BE8CDC096F7B8AD7A09E /* Cubic.swift */; };
+		A0210F6DF4B9393ADB8FE1E8084F4436 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50BD4F9B4450C8100ACAD1E6FA06307 /* Quad.swift */; };
+		A23F18A3E402878DAE0F8AF60EED8268 /* TypeTweenable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999ADFEA1C9318ACB99BE2AC0ADE20A /* TypeTweenable.swift */; };
+		A7A093F9D89B53A9EBAE8DD5A440D737 /* Elastic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC29C403C2DC3AF21D54F8542C4BF1 /* Elastic.swift */; };
+		A94926B075B8AED40BD036A7BBB97600 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A624D4EBE23023D0EEE45E8421D2E9 /* Numeric.swift */; };
+		B67F80AB6539D6FCADD2947377DA4AB9 /* UIBezierPath+Interpolation.h in Headers */ = {isa = PBXBuildFile; fileRef = 15941A4A651BF0EA9AABE123FA9658C6 /* UIBezierPath+Interpolation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C04CB794FCC1D7F9E783B7D7ED15AAED /* Pods-TweenApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 16610D978EEB23246503230ADF97BD13 /* Pods-TweenApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C19D4D7BF2C959F7B40068E482329019 /* UTweenSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92A0CE2E7FDD967861F927735252C8 /* UTweenSetup.swift */; };
+		C39F227E986E72F5FECCEC872710E0AC /* BezierPathTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2464CDC7E04734AD2948EFFD0AE798A /* BezierPathTween.swift */; };
+		C6EA7D059CCAEB0EFC0514A38A55B527 /* UTween.h in Headers */ = {isa = PBXBuildFile; fileRef = F8AA0B2A7D7B22AD75E6F76D6C77A9E3 /* UTween.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD6B32F5C693EEE19EFB8C8870CBCC87 /* Bounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F644699315C750077CC276098C5322 /* Bounce.swift */; };
+		CF98644428E16DAE0162FE822C9655E9 /* Tweenable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AD9A36E46338E3855D587743B54D22 /* Tweenable.swift */; };
+		D312CD467D1F485C799D85D3B755934E /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA010914BE18C19E36553958F94D7C /* Timer.swift */; };
+		D9F890554A03B2A10CB62E4405D3B17F /* CGPointTween.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBF5DBADF7BA1D0FFABAAEFBCA4A346 /* CGPointTween.swift */; };
+		DA12BFA3217C765046D74F8AA70C56F0 /* WeaklyLoopable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C587AB38811D2A32BB62F031630C4B64 /* WeaklyLoopable.swift */; };
+		E01FAD750804BA51B1B75C4FC1E80247 /* UTweenBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC838FE84B8C377721618AFB363D2CD /* UTweenBase.swift */; };
+		E2D05CE84606BF4950500D1EE287701F /* UIBezierPath+Interpolation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007F823713633500061D139D8349FD1 /* UIBezierPath+Interpolation.m */; };
+		E88C7FE3606B08F9698B632C3C3348FF /* Expo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61D7F784746B6D5E4734C4A3C9C59F /* Expo.swift */; };
+		ECEF95A3536F0B1E3C3654EB38362BB2 /* Ubergang-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF7EAA74C2B0CA0688E9C7FE18694A71 /* Ubergang-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8E8EF388120CCDE48F1CE62372BA2A4 /* Pods-TweenApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD911FE7BC05DB5F9FB59F0DE6FAF471 /* Pods-TweenApp-dummy.m */; };
+		FB3430C5B158F895B2B9393C6BE14E33 /* TweenMemoryReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E4F282DE12E262477CB9191C96033C /* TweenMemoryReference.swift */; };
+		FDB48BCA3DE07C9C5D2ABFF54DD1B295 /* Quint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3F865FC0EBAAEBF4D72A437550365 /* Quint.swift */; };
+		FF746315EEBD2A1E29A45E42D34338C3 /* CGPointExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 2228E4580FD146861407A7D3FA74A3C1 /* CGPointExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C5BBFCFB80ABE661472CE2D3FB427C71 /* PBXContainerItemProxy */ = {
+		A3DE1D6BD111783ABBE299445F53EB25 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 42F4F9EA138A6A1B749C83A8F25D7966;
+			remoteGlobalIDString = B3ACBC5B4801D2694C2C451D839203C1;
 			remoteInfo = Ubergang;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		003FDABE778AA541CD56203DD463435F /* TransformTween.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransformTween.swift; sourceTree = "<group>"; };
-		03DF25132A2B859F2EC27E0F3973AD32 /* TweenMemoryReference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweenMemoryReference.swift; sourceTree = "<group>"; };
-		054930CF8719A68BC94F359AB10EC21E /* BezierPathTween.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BezierPathTween.swift; sourceTree = "<group>"; };
-		056E805A09AB1AF81263288E77E7E24A /* TweenDirection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweenDirection.swift; sourceTree = "<group>"; };
-		0894B70C5B44FDB8D6717EC42C78F3F7 /* Elastic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Elastic.swift; sourceTree = "<group>"; };
-		0F1EA083DEEADF4D3E7078C8DDE3E2B9 /* UIBezierPath+Interpolation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Interpolation.h"; sourceTree = "<group>"; };
-		13418CF0711112A97F6F2DF73BD28E91 /* UTween.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UTween.h; sourceTree = "<group>"; };
-		1C7EE0E94EF82D1F5F7F2C04D8245BDF /* ColorTween.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ColorTween.swift; sourceTree = "<group>"; };
-		213178F31964909F768EC58B757FFD95 /* UTimeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UTimeline.swift; sourceTree = "<group>"; };
-		21C11B23E6322939D1A00D9D56295E43 /* Ubergang-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ubergang-umbrella.h"; sourceTree = "<group>"; };
-		25D3B68C92D81939BD500E9324A2A6AE /* CGPointExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CGPointExtension.m; sourceTree = "<group>"; };
-		270DDACA471F517D7A3DE21B5B8D2DA6 /* CGPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CGPath.swift; sourceTree = "<group>"; };
-		281236EE6C0DEE172C09C8B3EFC05C24 /* Tweenable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Tweenable.swift; sourceTree = "<group>"; };
-		2CBA876E31AECF2F49DC418C89AAC3FB /* Ubergang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Ubergang.framework; path = Ubergang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		360273A5935E4E043A093691BA17B316 /* Bounce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bounce.swift; sourceTree = "<group>"; };
-		39637FF7F3FB153C54102304DC64A100 /* Bezier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bezier.swift; sourceTree = "<group>"; };
-		3A3E11E0E656D5A99E194AA3F1E8F23D /* Ubergang-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Ubergang-dummy.m"; sourceTree = "<group>"; };
-		3E5BFFE86484DC38F65BB2ED7108BFA7 /* NumericTween.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NumericTween.swift; sourceTree = "<group>"; };
-		4C65BED07AB52D46E2C2167A806D3E75 /* UTweenBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UTweenBuilder.swift; sourceTree = "<group>"; };
-		55DC2FDAC756ACAACD2E9B3A037E1C57 /* Pods_TweenApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TweenApp.framework; path = "Pods-TweenApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D9FC4ABF19FC62B60B7937B8D3151A8 /* Circ.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Circ.swift; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		672B90CE16739766B15C7C76C9D9CCFB /* Quad.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
-		6BCE998D423FACAA1A02321A05976686 /* UTween.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UTween.swift; sourceTree = "<group>"; };
-		700F1C90AD46CB01B29041A51194C309 /* Engine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
-		724FD2259BCA698950B3B1238559DED4 /* Quart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Quart.swift; sourceTree = "<group>"; };
-		765B81035ED7146014042FF986787692 /* Pods-TweenApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TweenApp.release.xcconfig"; sourceTree = "<group>"; };
-		768151351B408139F24EDF1609D5349B /* CGPointExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGPointExtension.h; sourceTree = "<group>"; };
-		7FB05C812E46C49535DE58BDD0FC6DCB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		82F67553012D514753158B5ED67F4DD1 /* WeaklyLoopable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WeaklyLoopable.swift; sourceTree = "<group>"; };
-		83479615FD3AD2C94FA427F5F441AD37 /* UTweenSetup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UTweenSetup.swift; sourceTree = "<group>"; };
-		880A391B9CCC6A07433F27983634E87F /* Pods-TweenApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TweenApp.debug.xcconfig"; sourceTree = "<group>"; };
-		8BFB5BD15437F6A8E90AE1C6AAD7474D /* TypeTweenable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TypeTweenable.swift; sourceTree = "<group>"; };
-		8E78AB3DB33C2A06FF2AF433FD8A58D8 /* CGPointTween.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CGPointTween.swift; sourceTree = "<group>"; };
-		8EDDB1C3E0CA24272C3D965D55221C9B /* UTweenBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UTweenBase.swift; sourceTree = "<group>"; };
-		8F51101420054FA91721E09FB08A471B /* Math.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
-		90C9DD205DF46A7B42E6A64A0C392DEF /* Ubergang-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ubergang-prefix.pch"; sourceTree = "<group>"; };
-		93310EBA7F38BD0FD2AB6EB6F31A4CC4 /* Pods-TweenApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TweenApp-resources.sh"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9408B104E98BB75A000AD777263340B3 /* Sine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Sine.swift; sourceTree = "<group>"; };
-		9676AB97B34442AEFD916B09819F73C7 /* Expo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Expo.swift; sourceTree = "<group>"; };
-		9862559CAA8F35750A97275A01698DB5 /* Pods-TweenApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TweenApp-frameworks.sh"; sourceTree = "<group>"; };
-		9A8857C61CC6DCB544496D9C73ED6D08 /* Back.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Back.swift; sourceTree = "<group>"; };
-		9D19E712BE3FF70D81E8C17FB736173E /* Ubergang.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Ubergang.modulemap; sourceTree = "<group>"; };
-		9D33D9D1E8BC520560E272256D7A438E /* Linear.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Linear.swift; sourceTree = "<group>"; };
-		A61A55E5938A12DA98DE07FF64D7F17C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB1D1F8E2B25D00166F4FFF7CAF79D6F /* Pods-TweenApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TweenApp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		AE1FC474BB943FE682DA11C3DF9AC463 /* Ubergang.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Ubergang.xcconfig; sourceTree = "<group>"; };
-		BB6A7828BE6CA73CEF351F07667E33ED /* UTweenLoggable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UTweenLoggable.swift; sourceTree = "<group>"; };
-		C888861B3EC0D1D3A2042E377BCF1822 /* Timer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		C8A54B7C2E5FBA7CB1B6F545F87FE447 /* Pods-TweenApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TweenApp-dummy.m"; sourceTree = "<group>"; };
-		D8645551D0421FC23EEDF66F13905C8B /* Cubic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cubic.swift; sourceTree = "<group>"; };
-		DD006FAD8E72EDFD9BFF4C2B73144658 /* Ease.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Ease.swift; sourceTree = "<group>"; };
-		EB129C8A94570F8B06280862A8C5AC2A /* Numeric.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
-		EF52B3669473B03CE95B1FD92746D2F6 /* Pods-TweenApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TweenApp-umbrella.h"; sourceTree = "<group>"; };
-		F573479C3B92BD23CD6B011CF35EFD1F /* Pods-TweenApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TweenApp.modulemap"; sourceTree = "<group>"; };
-		F615E8B66F78DE6C512E2B9D5013A70C /* UIBezierPath+Interpolation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Interpolation.m"; sourceTree = "<group>"; };
-		F8ED6A2A93975F4BC85A78F240B0433F /* Quint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Quint.swift; sourceTree = "<group>"; };
-		FB009722C037FB7DF3E1488884452CA0 /* TweenOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweenOptions.swift; sourceTree = "<group>"; };
-		FE93DDFF71DDD322C583458A5AAA56D2 /* Pods-TweenApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TweenApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		0017C48EA7FC352752ECF1628EC0EA06 /* ColorTween.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ColorTween.swift; sourceTree = "<group>"; };
+		04B689E16B4F56599992F7CFD8C49DED /* Pods-TweenApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TweenApp-Info.plist"; sourceTree = "<group>"; };
+		080F64D71B75CCCF224A54C76C109547 /* Pods-TweenApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TweenApp.debug.xcconfig"; sourceTree = "<group>"; };
+		0D7EB311208BE78FD427D463362B169C /* Pods-TweenApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TweenApp.release.xcconfig"; sourceTree = "<group>"; };
+		0F854D98F13600CD16AFF5737652E7DF /* Ubergang.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Ubergang.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0F9D31615B6EB34FF45EC86FB8590358 /* TweenDirection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweenDirection.swift; sourceTree = "<group>"; };
+		1397B12BCDB8FF51B7E28CE0D3422A28 /* UTweenBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UTweenBuilder.swift; path = Ubergang/UTweenBuilder.swift; sourceTree = "<group>"; };
+		15941A4A651BF0EA9AABE123FA9658C6 /* UIBezierPath+Interpolation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Interpolation.h"; sourceTree = "<group>"; };
+		16610D978EEB23246503230ADF97BD13 /* Pods-TweenApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TweenApp-umbrella.h"; sourceTree = "<group>"; };
+		1999ADFEA1C9318ACB99BE2AC0ADE20A /* TypeTweenable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TypeTweenable.swift; sourceTree = "<group>"; };
+		1B4FD4170538F006B357FFBCA90480D4 /* CGPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CGPath.swift; sourceTree = "<group>"; };
+		1BD842F4C042FEAE6867AF7CA8DFE09E /* Pods-TweenApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TweenApp.modulemap"; sourceTree = "<group>"; };
+		21B2BDA6ADF93C4BACA13C160151D0B9 /* Ubergang.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Ubergang.modulemap; sourceTree = "<group>"; };
+		2228E4580FD146861407A7D3FA74A3C1 /* CGPointExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CGPointExtension.h; sourceTree = "<group>"; };
+		2B544738DB30BE8CDC096F7B8AD7A09E /* Cubic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cubic.swift; sourceTree = "<group>"; };
+		2FC838FE84B8C377721618AFB363D2CD /* UTweenBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UTweenBase.swift; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4007F823713633500061D139D8349FD1 /* UIBezierPath+Interpolation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Interpolation.m"; sourceTree = "<group>"; };
+		4318948EAAA6CA36871A4BD9F53E2657 /* Pods-TweenApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TweenApp-frameworks.sh"; sourceTree = "<group>"; };
+		44B0EA619C7CA852FFB38590B306A287 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		45813C5C1CC1962D14B310CF6C809B14 /* TransformTween.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransformTween.swift; sourceTree = "<group>"; };
+		48E3F865FC0EBAAEBF4D72A437550365 /* Quint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Quint.swift; sourceTree = "<group>"; };
+		4A1F156B74ACB4EDD2E12C0D2077037E /* CGPointExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CGPointExtension.m; sourceTree = "<group>"; };
+		56EC29C403C2DC3AF21D54F8542C4BF1 /* Elastic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Elastic.swift; sourceTree = "<group>"; };
+		5F92A0CE2E7FDD967861F927735252C8 /* UTweenSetup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UTweenSetup.swift; sourceTree = "<group>"; };
+		648CFF72377624E977A52C2631459C8E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		65EF8CD03100D52FC9CD18D2E66D3535 /* Ubergang.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Ubergang.xcconfig; sourceTree = "<group>"; };
+		744863875E0A5328D56220F383249F81 /* Ubergang-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Ubergang-dummy.m"; sourceTree = "<group>"; };
+		744E92B5A5B73FCEB399AFC5B44B6796 /* Back.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Back.swift; sourceTree = "<group>"; };
+		74AADA4BFB957281C5C7003332924E1F /* Math.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		8705AB5D5257A9C34B52A5816FA5E52D /* Ubergang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Ubergang.framework; path = Ubergang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8953479F2C519E90F224C5183CED93DA /* Linear.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Linear.swift; sourceTree = "<group>"; };
+		90E055DDD77B22F34FCF849CE70D9BEE /* UTween.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UTween.swift; sourceTree = "<group>"; };
+		93C4EE3911B78431020A8D99CED6550F /* Pods-TweenApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TweenApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A2C5F5AE0D40B4A91686D1271F27EC7F /* Circ.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Circ.swift; sourceTree = "<group>"; };
+		A2D76E1000B3515E090E837D7F36464B /* Bezier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bezier.swift; sourceTree = "<group>"; };
+		A80080DE2A9104460BBA708B70A40B83 /* Pods_TweenApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TweenApp.framework; path = "Pods-TweenApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AECA010914BE18C19E36553958F94D7C /* Timer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		B2F644699315C750077CC276098C5322 /* Bounce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bounce.swift; sourceTree = "<group>"; };
+		B3E4F282DE12E262477CB9191C96033C /* TweenMemoryReference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweenMemoryReference.swift; sourceTree = "<group>"; };
+		B50BD4F9B4450C8100ACAD1E6FA06307 /* Quad.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
+		C0A624D4EBE23023D0EEE45E8421D2E9 /* Numeric.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
+		C4C920A85566C9E8EA732734A70C105C /* Pods-TweenApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TweenApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C587AB38811D2A32BB62F031630C4B64 /* WeaklyLoopable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WeaklyLoopable.swift; sourceTree = "<group>"; };
+		C600258427197ACE9E61E2A3C4085E63 /* Engine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		C8AD9A36E46338E3855D587743B54D22 /* Tweenable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Tweenable.swift; sourceTree = "<group>"; };
+		CD911FE7BC05DB5F9FB59F0DE6FAF471 /* Pods-TweenApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TweenApp-dummy.m"; sourceTree = "<group>"; };
+		CD92F928318A4DA61718DAC93BDD460D /* Ubergang-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Ubergang-Info.plist"; sourceTree = "<group>"; };
+		CF78B122ED319E6D1B73FA47735E323D /* UTimeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UTimeline.swift; sourceTree = "<group>"; };
+		D33CA3F886CF51368501EE27CE652B4B /* Ubergang-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ubergang-prefix.pch"; sourceTree = "<group>"; };
+		D71CA4FE909A8E489516E4523169A6AB /* TweenOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TweenOptions.swift; sourceTree = "<group>"; };
+		DC6FFCEF73972FFB318A9DE6EDE5A845 /* UTweenLoggable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UTweenLoggable.swift; sourceTree = "<group>"; };
+		DE5D6596F64E7656798F235A23BD86E7 /* NumericTween.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NumericTween.swift; sourceTree = "<group>"; };
+		DF7EAA74C2B0CA0688E9C7FE18694A71 /* Ubergang-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ubergang-umbrella.h"; sourceTree = "<group>"; };
+		E1D549697D27E8ECE15BDB1C8FE35091 /* Ease.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Ease.swift; sourceTree = "<group>"; };
+		E2464CDC7E04734AD2948EFFD0AE798A /* BezierPathTween.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BezierPathTween.swift; sourceTree = "<group>"; };
+		E246A1E523E2A99F6759BABF6D9DD284 /* Quart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Quart.swift; sourceTree = "<group>"; };
+		F8AA0B2A7D7B22AD75E6F76D6C77A9E3 /* UTween.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UTween.h; sourceTree = "<group>"; };
+		F9053E1A53429237894A2587FFC2F063 /* Sine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Sine.swift; sourceTree = "<group>"; };
+		FA61D7F784746B6D5E4734C4A3C9C59F /* Expo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Expo.swift; sourceTree = "<group>"; };
+		FDBF5DBADF7BA1D0FFABAAEFBCA4A346 /* CGPointTween.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CGPointTween.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7D1A1FFFA629998DCE16548BD982B5E2 /* Frameworks */ = {
+		4D197C701F26E70FE3AAD5C50D13FBF9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA7342CE30F6A3AE6C77694EB317FDAB /* Foundation.framework in Frameworks */,
+				3B2AB6A85B307D6B98E75FE79DF08026 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BA91187EAA88132D04D50D534182670 /* Frameworks */ = {
+		B2B3150E7B27894F42FE9F699978F63A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A32B78712DC0756C7EA7F74B3C66292 /* Foundation.framework in Frameworks */,
+				7BDCA9DCD26BC705E4A65C5487E9F448 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08C30FE4FA66AB566EA9C7B3F5EAADB9 /* Data */ = {
+		0117D74ADEF444C8D6A73706CAD143B7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				056E805A09AB1AF81263288E77E7E24A /* TweenDirection.swift */,
-				03DF25132A2B859F2EC27E0F3973AD32 /* TweenMemoryReference.swift */,
-				FB009722C037FB7DF3E1488884452CA0 /* TweenOptions.swift */,
-			);
-			name = Data;
-			path = Data;
-			sourceTree = "<group>";
-		};
-		08E034E061524B250BFDAAD43474542F /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5EA66719DC9E58EC6D39DAB3FA73FC2B /* Ubergang */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		0C1A6CBE65CB95488ADBDEFC0DF87D33 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				700F1C90AD46CB01B29041A51194C309 /* Engine.swift */,
-				C888861B3EC0D1D3A2042E377BCF1822 /* Timer.swift */,
-				83479615FD3AD2C94FA427F5F441AD37 /* UTweenSetup.swift */,
+				C600258427197ACE9E61E2A3C4085E63 /* Engine.swift */,
+				AECA010914BE18C19E36553958F94D7C /* Timer.swift */,
+				5F92A0CE2E7FDD967861F927735252C8 /* UTweenSetup.swift */,
 			);
 			name = Core;
-			path = Core;
+			path = Ubergang/Core;
 			sourceTree = "<group>";
 		};
-		19B12B2678E15923EA7C5E1DE9704DE5 /* Extension */ = {
+		05FD09FE3534254FFB969EDBE3B73D4C /* Ease */ = {
 			isa = PBXGroup;
 			children = (
-				270DDACA471F517D7A3DE21B5B8D2DA6 /* CGPath.swift */,
-				768151351B408139F24EDF1609D5349B /* CGPointExtension.h */,
-				25D3B68C92D81939BD500E9324A2A6AE /* CGPointExtension.m */,
-				0F1EA083DEEADF4D3E7078C8DDE3E2B9 /* UIBezierPath+Interpolation.h */,
-				F615E8B66F78DE6C512E2B9D5013A70C /* UIBezierPath+Interpolation.m */,
-			);
-			name = Extension;
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		325775BE5B0471988B9B79C241FF8D02 /* Pods-TweenApp */ = {
-			isa = PBXGroup;
-			children = (
-				7FB05C812E46C49535DE58BDD0FC6DCB /* Info.plist */,
-				F573479C3B92BD23CD6B011CF35EFD1F /* Pods-TweenApp.modulemap */,
-				AB1D1F8E2B25D00166F4FFF7CAF79D6F /* Pods-TweenApp-acknowledgements.markdown */,
-				FE93DDFF71DDD322C583458A5AAA56D2 /* Pods-TweenApp-acknowledgements.plist */,
-				C8A54B7C2E5FBA7CB1B6F545F87FE447 /* Pods-TweenApp-dummy.m */,
-				9862559CAA8F35750A97275A01698DB5 /* Pods-TweenApp-frameworks.sh */,
-				93310EBA7F38BD0FD2AB6EB6F31A4CC4 /* Pods-TweenApp-resources.sh */,
-				EF52B3669473B03CE95B1FD92746D2F6 /* Pods-TweenApp-umbrella.h */,
-				880A391B9CCC6A07433F27983634E87F /* Pods-TweenApp.debug.xcconfig */,
-				765B81035ED7146014042FF986787692 /* Pods-TweenApp.release.xcconfig */,
-			);
-			name = "Pods-TweenApp";
-			path = "Target Support Files/Pods-TweenApp";
-			sourceTree = "<group>";
-		};
-		3E9DF57E1B156EF2A02EAAC89C22229C /* Ease */ = {
-			isa = PBXGroup;
-			children = (
-				9A8857C61CC6DCB544496D9C73ED6D08 /* Back.swift */,
-				360273A5935E4E043A093691BA17B316 /* Bounce.swift */,
-				5D9FC4ABF19FC62B60B7937B8D3151A8 /* Circ.swift */,
-				D8645551D0421FC23EEDF66F13905C8B /* Cubic.swift */,
-				DD006FAD8E72EDFD9BFF4C2B73144658 /* Ease.swift */,
-				0894B70C5B44FDB8D6717EC42C78F3F7 /* Elastic.swift */,
-				9676AB97B34442AEFD916B09819F73C7 /* Expo.swift */,
-				9D33D9D1E8BC520560E272256D7A438E /* Linear.swift */,
-				672B90CE16739766B15C7C76C9D9CCFB /* Quad.swift */,
-				724FD2259BCA698950B3B1238559DED4 /* Quart.swift */,
-				F8ED6A2A93975F4BC85A78F240B0433F /* Quint.swift */,
-				9408B104E98BB75A000AD777263340B3 /* Sine.swift */,
+				744E92B5A5B73FCEB399AFC5B44B6796 /* Back.swift */,
+				B2F644699315C750077CC276098C5322 /* Bounce.swift */,
+				A2C5F5AE0D40B4A91686D1271F27EC7F /* Circ.swift */,
+				2B544738DB30BE8CDC096F7B8AD7A09E /* Cubic.swift */,
+				E1D549697D27E8ECE15BDB1C8FE35091 /* Ease.swift */,
+				56EC29C403C2DC3AF21D54F8542C4BF1 /* Elastic.swift */,
+				FA61D7F784746B6D5E4734C4A3C9C59F /* Expo.swift */,
+				8953479F2C519E90F224C5183CED93DA /* Linear.swift */,
+				B50BD4F9B4450C8100ACAD1E6FA06307 /* Quad.swift */,
+				E246A1E523E2A99F6759BABF6D9DD284 /* Quart.swift */,
+				48E3F865FC0EBAAEBF4D72A437550365 /* Quint.swift */,
+				F9053E1A53429237894A2587FFC2F063 /* Sine.swift */,
 			);
 			name = Ease;
-			path = Ease;
+			path = Ubergang/Ease;
 			sourceTree = "<group>";
 		};
-		54A850259C6E89BF964FCDB008E00F22 /* Support Files */ = {
+		1D861B7B310A63BED016D69C66119FC7 /* Tween */ = {
 			isa = PBXGroup;
 			children = (
-				A61A55E5938A12DA98DE07FF64D7F17C /* Info.plist */,
-				9D19E712BE3FF70D81E8C17FB736173E /* Ubergang.modulemap */,
-				AE1FC474BB943FE682DA11C3DF9AC463 /* Ubergang.xcconfig */,
-				3A3E11E0E656D5A99E194AA3F1E8F23D /* Ubergang-dummy.m */,
-				90C9DD205DF46A7B42E6A64A0C392DEF /* Ubergang-prefix.pch */,
-				21C11B23E6322939D1A00D9D56295E43 /* Ubergang-umbrella.h */,
+				E2464CDC7E04734AD2948EFFD0AE798A /* BezierPathTween.swift */,
+				FDBF5DBADF7BA1D0FFABAAEFBCA4A346 /* CGPointTween.swift */,
+				0017C48EA7FC352752ECF1628EC0EA06 /* ColorTween.swift */,
+				DE5D6596F64E7656798F235A23BD86E7 /* NumericTween.swift */,
+				45813C5C1CC1962D14B310CF6C809B14 /* TransformTween.swift */,
+				CF78B122ED319E6D1B73FA47735E323D /* UTimeline.swift */,
+				F8AA0B2A7D7B22AD75E6F76D6C77A9E3 /* UTween.h */,
+				90E055DDD77B22F34FCF849CE70D9BEE /* UTween.swift */,
+				2FC838FE84B8C377721618AFB363D2CD /* UTweenBase.swift */,
+			);
+			name = Tween;
+			path = Ubergang/Tween;
+			sourceTree = "<group>";
+		};
+		65F48482E6784C6C39A8DE2AF57ACF44 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				21B2BDA6ADF93C4BACA13C160151D0B9 /* Ubergang.modulemap */,
+				65EF8CD03100D52FC9CD18D2E66D3535 /* Ubergang.xcconfig */,
+				744863875E0A5328D56220F383249F81 /* Ubergang-dummy.m */,
+				CD92F928318A4DA61718DAC93BDD460D /* Ubergang-Info.plist */,
+				D33CA3F886CF51368501EE27CE652B4B /* Ubergang-prefix.pch */,
+				DF7EAA74C2B0CA0688E9C7FE18694A71 /* Ubergang-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Examples/TweenApp/Pods/Target Support Files/Ubergang";
 			sourceTree = "<group>";
 		};
-		5EA66719DC9E58EC6D39DAB3FA73FC2B /* Ubergang */ = {
+		68B0F4C82EBFBB9B58E416C035375902 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				54A850259C6E89BF964FCDB008E00F22 /* Support Files */,
-				98414DA2C71107102B88B7D86729F4E1 /* Ubergang */,
+				1B4FD4170538F006B357FFBCA90480D4 /* CGPath.swift */,
+				2228E4580FD146861407A7D3FA74A3C1 /* CGPointExtension.h */,
+				4A1F156B74ACB4EDD2E12C0D2077037E /* CGPointExtension.m */,
+				15941A4A651BF0EA9AABE123FA9658C6 /* UIBezierPath+Interpolation.h */,
+				4007F823713633500061D139D8349FD1 /* UIBezierPath+Interpolation.m */,
+			);
+			name = Extension;
+			path = Ubergang/Extension;
+			sourceTree = "<group>";
+		};
+		6B8097FF44932C0EDD73FFCA6D994983 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A2D76E1000B3515E090E837D7F36464B /* Bezier.swift */,
+				74AADA4BFB957281C5C7003332924E1F /* Math.swift */,
+			);
+			name = Util;
+			path = Ubergang/Util;
+			sourceTree = "<group>";
+		};
+		843468FB7191B989912985E16D780A69 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				44B0EA619C7CA852FFB38590B306A287 /* LICENSE */,
+				648CFF72377624E977A52C2631459C8E /* README.md */,
+				0F854D98F13600CD16AFF5737652E7DF /* Ubergang.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		909AFE2E8CE3304750D8BFAC34F614F6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0F9D31615B6EB34FF45EC86FB8590358 /* TweenDirection.swift */,
+				B3E4F282DE12E262477CB9191C96033C /* TweenMemoryReference.swift */,
+				D71CA4FE909A8E489516E4523169A6AB /* TweenOptions.swift */,
+			);
+			name = Data;
+			path = Ubergang/Data;
+			sourceTree = "<group>";
+		};
+		9B3ADAAD568FBF3795F0DFECFB295DDE /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FEA5B81EC93AEDDB7286D33680F912C0 /* Ubergang */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		9C0AE72150AE51947D1CADE7E0343925 /* Pods-TweenApp */ = {
+			isa = PBXGroup;
+			children = (
+				1BD842F4C042FEAE6867AF7CA8DFE09E /* Pods-TweenApp.modulemap */,
+				C4C920A85566C9E8EA732734A70C105C /* Pods-TweenApp-acknowledgements.markdown */,
+				93C4EE3911B78431020A8D99CED6550F /* Pods-TweenApp-acknowledgements.plist */,
+				CD911FE7BC05DB5F9FB59F0DE6FAF471 /* Pods-TweenApp-dummy.m */,
+				4318948EAAA6CA36871A4BD9F53E2657 /* Pods-TweenApp-frameworks.sh */,
+				04B689E16B4F56599992F7CFD8C49DED /* Pods-TweenApp-Info.plist */,
+				16610D978EEB23246503230ADF97BD13 /* Pods-TweenApp-umbrella.h */,
+				080F64D71B75CCCF224A54C76C109547 /* Pods-TweenApp.debug.xcconfig */,
+				0D7EB311208BE78FD427D463362B169C /* Pods-TweenApp.release.xcconfig */,
+			);
+			name = "Pods-TweenApp";
+			path = "Target Support Files/Pods-TweenApp";
+			sourceTree = "<group>";
+		};
+		9C3880F69357F102F059C0F1397C930B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C0A624D4EBE23023D0EEE45E8421D2E9 /* Numeric.swift */,
+				C8AD9A36E46338E3855D587743B54D22 /* Tweenable.swift */,
+				1999ADFEA1C9318ACB99BE2AC0ADE20A /* TypeTweenable.swift */,
+				DC6FFCEF73972FFB318A9DE6EDE5A845 /* UTweenLoggable.swift */,
+				C587AB38811D2A32BB62F031630C4B64 /* WeaklyLoopable.swift */,
+			);
+			name = Protocols;
+			path = Ubergang/Protocols;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C583DE188A7561B4A7906AE2AB278626 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C0AE72150AE51947D1CADE7E0343925 /* Pods-TweenApp */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				9B3ADAAD568FBF3795F0DFECFB295DDE /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				F2F0FC102050AF551A019FD73AE753DE /* Products */,
+				C583DE188A7561B4A7906AE2AB278626 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F2F0FC102050AF551A019FD73AE753DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A80080DE2A9104460BBA708B70A40B83 /* Pods_TweenApp.framework */,
+				8705AB5D5257A9C34B52A5816FA5E52D /* Ubergang.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FEA5B81EC93AEDDB7286D33680F912C0 /* Ubergang */ = {
+			isa = PBXGroup;
+			children = (
+				1397B12BCDB8FF51B7E28CE0D3422A28 /* UTweenBuilder.swift */,
+				0117D74ADEF444C8D6A73706CAD143B7 /* Core */,
+				909AFE2E8CE3304750D8BFAC34F614F6 /* Data */,
+				05FD09FE3534254FFB969EDBE3B73D4C /* Ease */,
+				68B0F4C82EBFBB9B58E416C035375902 /* Extension */,
+				843468FB7191B989912985E16D780A69 /* Pod */,
+				9C3880F69357F102F059C0F1397C930B /* Protocols */,
+				65F48482E6784C6C39A8DE2AF57ACF44 /* Support Files */,
+				1D861B7B310A63BED016D69C66119FC7 /* Tween */,
+				6B8097FF44932C0EDD73FFCA6D994983 /* Util */,
 			);
 			name = Ubergang;
 			path = /Users/Fuzz/Workspace/mobile/Ubergang;
 			sourceTree = "<absolute>";
 		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				08E034E061524B250BFDAAD43474542F /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				F35532E945D97D7107B795E895BD6D9F /* Products */,
-				AC09CE1FCCB2F0759C19E13C86A7B4FE /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		98414DA2C71107102B88B7D86729F4E1 /* Ubergang */ = {
-			isa = PBXGroup;
-			children = (
-				4C65BED07AB52D46E2C2167A806D3E75 /* UTweenBuilder.swift */,
-				0C1A6CBE65CB95488ADBDEFC0DF87D33 /* Core */,
-				08C30FE4FA66AB566EA9C7B3F5EAADB9 /* Data */,
-				3E9DF57E1B156EF2A02EAAC89C22229C /* Ease */,
-				19B12B2678E15923EA7C5E1DE9704DE5 /* Extension */,
-				C6EE8051C2A8CCF1EB187CB60350AA68 /* Protocols */,
-				C2567771357FD439062799D9BCBBF4B9 /* Tween */,
-				DFB72015FB9E75B134874476BB58A295 /* Util */,
-			);
-			name = Ubergang;
-			path = Ubergang;
-			sourceTree = "<group>";
-		};
-		AC09CE1FCCB2F0759C19E13C86A7B4FE /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				325775BE5B0471988B9B79C241FF8D02 /* Pods-TweenApp */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C2567771357FD439062799D9BCBBF4B9 /* Tween */ = {
-			isa = PBXGroup;
-			children = (
-				054930CF8719A68BC94F359AB10EC21E /* BezierPathTween.swift */,
-				8E78AB3DB33C2A06FF2AF433FD8A58D8 /* CGPointTween.swift */,
-				1C7EE0E94EF82D1F5F7F2C04D8245BDF /* ColorTween.swift */,
-				3E5BFFE86484DC38F65BB2ED7108BFA7 /* NumericTween.swift */,
-				003FDABE778AA541CD56203DD463435F /* TransformTween.swift */,
-				213178F31964909F768EC58B757FFD95 /* UTimeline.swift */,
-				13418CF0711112A97F6F2DF73BD28E91 /* UTween.h */,
-				6BCE998D423FACAA1A02321A05976686 /* UTween.swift */,
-				8EDDB1C3E0CA24272C3D965D55221C9B /* UTweenBase.swift */,
-			);
-			name = Tween;
-			path = Tween;
-			sourceTree = "<group>";
-		};
-		C6EE8051C2A8CCF1EB187CB60350AA68 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				EB129C8A94570F8B06280862A8C5AC2A /* Numeric.swift */,
-				281236EE6C0DEE172C09C8B3EFC05C24 /* Tweenable.swift */,
-				8BFB5BD15437F6A8E90AE1C6AAD7474D /* TypeTweenable.swift */,
-				BB6A7828BE6CA73CEF351F07667E33ED /* UTweenLoggable.swift */,
-				82F67553012D514753158B5ED67F4DD1 /* WeaklyLoopable.swift */,
-			);
-			name = Protocols;
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		DFB72015FB9E75B134874476BB58A295 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				39637FF7F3FB153C54102304DC64A100 /* Bezier.swift */,
-				8F51101420054FA91721E09FB08A471B /* Math.swift */,
-			);
-			name = Util;
-			path = Util;
-			sourceTree = "<group>";
-		};
-		F35532E945D97D7107B795E895BD6D9F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				55DC2FDAC756ACAACD2E9B3A037E1C57 /* Pods_TweenApp.framework */,
-				2CBA876E31AECF2F49DC418C89AAC3FB /* Ubergang.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		92E0C029AC599499E9602923FA875BD2 /* Headers */ = {
+		36DF4644F7AA5BE0B4197C269A34D3F6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80C5AAB8F0A51C147DBCF131DD9B7289 /* Pods-TweenApp-umbrella.h in Headers */,
+				C04CB794FCC1D7F9E783B7D7ED15AAED /* Pods-TweenApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC98DCBD146552ABCBC093A1C34C0337 /* Headers */ = {
+		B6E60AE4709838FF557E6B53390DB6CC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ACB1AA6D0900584C831FEF272CB7221 /* CGPointExtension.h in Headers */,
-				21D620CEC845FF35F87F076D66662E77 /* Ubergang-umbrella.h in Headers */,
-				AAA2B51793FB6595B1B0E36C0DD0BDA5 /* UIBezierPath+Interpolation.h in Headers */,
-				24EE58446DC7588F6698C8E06883EEEE /* UTween.h in Headers */,
+				FF746315EEBD2A1E29A45E42D34338C3 /* CGPointExtension.h in Headers */,
+				ECEF95A3536F0B1E3C3654EB38362BB2 /* Ubergang-umbrella.h in Headers */,
+				B67F80AB6539D6FCADD2947377DA4AB9 /* UIBezierPath+Interpolation.h in Headers */,
+				C6EA7D059CCAEB0EFC0514A38A55B527 /* UTween.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		42F4F9EA138A6A1B749C83A8F25D7966 /* Ubergang */ = {
+		8B0AB81D4D8F80BACBD6109A1A9F5A53 /* Pods-TweenApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8241F9B7B4C5290D2C7065BD698DB7B /* Build configuration list for PBXNativeTarget "Ubergang" */;
+			buildConfigurationList = 32659DF3077B015C3C5AA20655FEE1A8 /* Build configuration list for PBXNativeTarget "Pods-TweenApp" */;
 			buildPhases = (
-				3E0A909C2D78F8533FAF0E22888BB97A /* Sources */,
-				7D1A1FFFA629998DCE16548BD982B5E2 /* Frameworks */,
-				DC98DCBD146552ABCBC093A1C34C0337 /* Headers */,
+				36DF4644F7AA5BE0B4197C269A34D3F6 /* Headers */,
+				80AB08D9ACC0EDE1830FF49246E33744 /* Sources */,
+				4D197C701F26E70FE3AAD5C50D13FBF9 /* Frameworks */,
+				B145EABB9B0048464C8C41E62E75CB39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6FA2919CB8DCAE70B582BAA68302FF3 /* PBXTargetDependency */,
+			);
+			name = "Pods-TweenApp";
+			productName = "Pods-TweenApp";
+			productReference = A80080DE2A9104460BBA708B70A40B83 /* Pods_TweenApp.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B3ACBC5B4801D2694C2C451D839203C1 /* Ubergang */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D7453670E1E94907EF13635C28BD535 /* Build configuration list for PBXNativeTarget "Ubergang" */;
+			buildPhases = (
+				B6E60AE4709838FF557E6B53390DB6CC /* Headers */,
+				D2F71DFC7438B9AFAA24A4E758A4F036 /* Sources */,
+				B2B3150E7B27894F42FE9F699978F63A /* Frameworks */,
+				646138B0F17DF578B5D267301BDFE353 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -392,389 +415,404 @@
 			);
 			name = Ubergang;
 			productName = Ubergang;
-			productReference = 2CBA876E31AECF2F49DC418C89AAC3FB /* Ubergang.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		99855E1FABB66EAB3486F5245CC8EFB8 /* Pods-TweenApp */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C4BFADA95F179CDCA1B2282BB3251309 /* Build configuration list for PBXNativeTarget "Pods-TweenApp" */;
-			buildPhases = (
-				252E9DC9D35781FBCC778B84581759C3 /* Sources */,
-				9BA91187EAA88132D04D50D534182670 /* Frameworks */,
-				92E0C029AC599499E9602923FA875BD2 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				32FE2454C0FB8D8582848C41D99D4347 /* PBXTargetDependency */,
-			);
-			name = "Pods-TweenApp";
-			productName = "Pods-TweenApp";
-			productReference = 55DC2FDAC756ACAACD2E9B3A037E1C57 /* Pods_TweenApp.framework */;
+			productReference = 8705AB5D5257A9C34B52A5816FA5E52D /* Ubergang.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = F35532E945D97D7107B795E895BD6D9F /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = F2F0FC102050AF551A019FD73AE753DE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				99855E1FABB66EAB3486F5245CC8EFB8 /* Pods-TweenApp */,
-				42F4F9EA138A6A1B749C83A8F25D7966 /* Ubergang */,
+				8B0AB81D4D8F80BACBD6109A1A9F5A53 /* Pods-TweenApp */,
+				B3ACBC5B4801D2694C2C451D839203C1 /* Ubergang */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		252E9DC9D35781FBCC778B84581759C3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		646138B0F17DF578B5D267301BDFE353 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0531824C3A4573B396D3A98548B5534 /* Pods-TweenApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E0A909C2D78F8533FAF0E22888BB97A /* Sources */ = {
+		B145EABB9B0048464C8C41E62E75CB39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80AB08D9ACC0EDE1830FF49246E33744 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5492CA13D27C21A000C1B26EAF3B2F47 /* Back.swift in Sources */,
-				3DC00A4178C1EE1A6BA42DC6C2337A1E /* Bezier.swift in Sources */,
-				7A5673313140794B28B344F5A405E254 /* BezierPathTween.swift in Sources */,
-				04FFA8BDC982588437C59713ED1386DA /* Bounce.swift in Sources */,
-				BF7628F7A9528C8384D1A7508B51D3E5 /* CGPath.swift in Sources */,
-				02AA18730F3A0AB0B56BAFC8A41E23CA /* CGPointExtension.m in Sources */,
-				7E64EA8D654761A728BDD0622B774776 /* CGPointTween.swift in Sources */,
-				9D615998528D37362AA3C766914F5E24 /* Circ.swift in Sources */,
-				4864B1A7A61AE1B09A8B5BFF69AA13BB /* ColorTween.swift in Sources */,
-				6C1A9AC8FC04D7120A85E0951055079F /* Cubic.swift in Sources */,
-				8BE1DBC7519E57AD561CCD0453BD7745 /* Ease.swift in Sources */,
-				FCA2FFE8861644E8608BE34C99A62360 /* Elastic.swift in Sources */,
-				0CCA21932DC889F81B26C9765BD58696 /* Engine.swift in Sources */,
-				AEDBCA252F68AD7566122F799DB41342 /* Expo.swift in Sources */,
-				12AF8F935A800E1644A47DA519E9E6E6 /* Linear.swift in Sources */,
-				001F78356C75BD7760668D88DA3D4F58 /* Math.swift in Sources */,
-				127E917DC0791EBD7DE5B96156573D62 /* Numeric.swift in Sources */,
-				C91AEE8E0809AB9D64D8AC0B4F12EB48 /* NumericTween.swift in Sources */,
-				534A6EBA99879CDE079113940518881E /* Quad.swift in Sources */,
-				FC5DC6D6E446CA52238502538F0D96BE /* Quart.swift in Sources */,
-				398C329AEC37FA3A3A492D6E5B2E0B65 /* Quint.swift in Sources */,
-				A177F062A6B6083BB01324935C5769DE /* Sine.swift in Sources */,
-				50819AB6EF9DDE6E9E143BB6B6889783 /* Timer.swift in Sources */,
-				CB78FEC6BD3A47948C6B94C87F997044 /* TransformTween.swift in Sources */,
-				389171866DB3178D258095F3FD85CCD2 /* Tweenable.swift in Sources */,
-				244CFFC7A7497DD10814FB8CE712F587 /* TweenDirection.swift in Sources */,
-				A2B4C9882BB706F36F51F3750ADB364A /* TweenMemoryReference.swift in Sources */,
-				24D9D706976AEF1D8DE5C9B019367A31 /* TweenOptions.swift in Sources */,
-				5C472E4A361CF9629E92FCF4D95CE016 /* TypeTweenable.swift in Sources */,
-				1AA3E56FAFB88AA5B2493865D270B3E8 /* Ubergang-dummy.m in Sources */,
-				8E8C91BBE6AB911BE566738808E9CCEF /* UIBezierPath+Interpolation.m in Sources */,
-				1DA8CC2AEA4F6578198019B0568D4524 /* UTimeline.swift in Sources */,
-				78E12F714CB9E9B0AE0EFD7AC7C672EE /* UTween.swift in Sources */,
-				F47DE6EFF7DF45C4999B671A5BB6B728 /* UTweenBase.swift in Sources */,
-				CE4A5B1821323A79061617E11077D7A0 /* UTweenBuilder.swift in Sources */,
-				9F1F713DE11BD935D191548AF869A4C8 /* UTweenLoggable.swift in Sources */,
-				27AAB8E8DA67E56C58AB450ACD89C3AA /* UTweenSetup.swift in Sources */,
-				8FEEA89A90BF23250A42D097F03FCD91 /* WeaklyLoopable.swift in Sources */,
+				F8E8EF388120CCDE48F1CE62372BA2A4 /* Pods-TweenApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2F71DFC7438B9AFAA24A4E758A4F036 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EFD303FD33DCA5C1C4A442A62F51304 /* Back.swift in Sources */,
+				31D704F3885169FBAAB6F2A42512A7D5 /* Bezier.swift in Sources */,
+				C39F227E986E72F5FECCEC872710E0AC /* BezierPathTween.swift in Sources */,
+				CD6B32F5C693EEE19EFB8C8870CBCC87 /* Bounce.swift in Sources */,
+				201DDB749BCEEA8C76AF448B17C7AD6E /* CGPath.swift in Sources */,
+				0325703ABAD967DDC84340D9623972A5 /* CGPointExtension.m in Sources */,
+				D9F890554A03B2A10CB62E4405D3B17F /* CGPointTween.swift in Sources */,
+				7995039CAA267CB9CA0B5E93D449539B /* Circ.swift in Sources */,
+				9EB316CC2FB2DEABC66175C638AC11C6 /* ColorTween.swift in Sources */,
+				9FA442F2B495F9BC85C5A81F2FD87ABA /* Cubic.swift in Sources */,
+				51661A470D80C98866ACF14B8B5E96F1 /* Ease.swift in Sources */,
+				A7A093F9D89B53A9EBAE8DD5A440D737 /* Elastic.swift in Sources */,
+				5C5B313917E4EBD72370D5210EE0CD19 /* Engine.swift in Sources */,
+				E88C7FE3606B08F9698B632C3C3348FF /* Expo.swift in Sources */,
+				99F7FC365C25778268102E2DA5A41566 /* Linear.swift in Sources */,
+				0AC29C4906B6E019C2288EEA86D0FA12 /* Math.swift in Sources */,
+				A94926B075B8AED40BD036A7BBB97600 /* Numeric.swift in Sources */,
+				5ED3263B7760C6684B113549C5D8ED63 /* NumericTween.swift in Sources */,
+				A0210F6DF4B9393ADB8FE1E8084F4436 /* Quad.swift in Sources */,
+				9D0FA15D137E0827E707585E8C63B209 /* Quart.swift in Sources */,
+				FDB48BCA3DE07C9C5D2ABFF54DD1B295 /* Quint.swift in Sources */,
+				95B6E5BEC5CBC92B894108E5C99BF2A4 /* Sine.swift in Sources */,
+				D312CD467D1F485C799D85D3B755934E /* Timer.swift in Sources */,
+				684186B0E781B1912B3E1DEC35837669 /* TransformTween.swift in Sources */,
+				CF98644428E16DAE0162FE822C9655E9 /* Tweenable.swift in Sources */,
+				732429FC31563BE59FB7888D62DAF7E1 /* TweenDirection.swift in Sources */,
+				FB3430C5B158F895B2B9393C6BE14E33 /* TweenMemoryReference.swift in Sources */,
+				4E03EBA3868FBFC82F0E9C76D70DEF51 /* TweenOptions.swift in Sources */,
+				A23F18A3E402878DAE0F8AF60EED8268 /* TypeTweenable.swift in Sources */,
+				38DF4806FC00E8B4A262967C1D685427 /* Ubergang-dummy.m in Sources */,
+				E2D05CE84606BF4950500D1EE287701F /* UIBezierPath+Interpolation.m in Sources */,
+				94F9FAF39A85D67E0C8C9790E255A7C9 /* UTimeline.swift in Sources */,
+				6B461B8BFBCAC5B23A4A4D24E3DF0A11 /* UTween.swift in Sources */,
+				E01FAD750804BA51B1B75C4FC1E80247 /* UTweenBase.swift in Sources */,
+				3BECF1435215EB60B3C9B325DB210848 /* UTweenBuilder.swift in Sources */,
+				1566AE0A0FAF1E5D0381EF3DCFFC242A /* UTweenLoggable.swift in Sources */,
+				C19D4D7BF2C959F7B40068E482329019 /* UTweenSetup.swift in Sources */,
+				DA12BFA3217C765046D74F8AA70C56F0 /* WeaklyLoopable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		32FE2454C0FB8D8582848C41D99D4347 /* PBXTargetDependency */ = {
+		D6FA2919CB8DCAE70B582BAA68302FF3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Ubergang;
-			target = 42F4F9EA138A6A1B749C83A8F25D7966 /* Ubergang */;
-			targetProxy = C5BBFCFB80ABE661472CE2D3FB427C71 /* PBXContainerItemProxy */;
+			target = B3ACBC5B4801D2694C2C451D839203C1 /* Ubergang */;
+			targetProxy = A3DE1D6BD111783ABBE299445F53EB25 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		04FFB8019F4CC58219CF5EF10C5CB745 /* Debug */ = {
+		14E8A05AA4DFF7B10348D63549100E16 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 880A391B9CCC6A07433F27983634E87F /* Pods-TweenApp.debug.xcconfig */;
+			baseConfigurationReference = 65EF8CD03100D52FC9CD18D2E66D3535 /* Ubergang.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TweenApp/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Ubergang/Ubergang-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Ubergang/Ubergang-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TweenApp/Pods-TweenApp.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TweenApp;
+				MODULEMAP_FILE = "Target Support Files/Ubergang/Ubergang.modulemap";
+				PRODUCT_MODULE_NAME = Ubergang;
+				PRODUCT_NAME = Ubergang;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		2CC5B64A397C947D9EB101779D9BC005 /* Release */ = {
+		19797F12BEDDAEA23D4C75223277D36C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE1FC474BB943FE682DA11C3DF9AC463 /* Ubergang.xcconfig */;
+			baseConfigurationReference = 080F64D71B75CCCF224A54C76C109547 /* Pods-TweenApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Ubergang/Ubergang-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Ubergang/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TweenApp/Pods-TweenApp-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Ubergang/Ubergang.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Ubergang;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TweenApp/Pods-TweenApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		39E8DD539A9B84ED2289659C42735981 /* Release */ = {
+		89A5A7CB70E823B925DFC7C3149114E8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		5FAF28F9385225F726A28C8025104632 /* Debug */ = {
+		AA1C57C74312DABE66611D98A5C1BEC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		994A08ADA04137A70E36555362E8F208 /* Release */ = {
+		B0C73B025634F71CDD83DDE8885B010C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 765B81035ED7146014042FF986787692 /* Pods-TweenApp.release.xcconfig */;
+			baseConfigurationReference = 0D7EB311208BE78FD427D463362B169C /* Pods-TweenApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TweenApp/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TweenApp/Pods-TweenApp-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-TweenApp/Pods-TweenApp.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TweenApp;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		BBC3C10436395A663AD13D09BF97DA5A /* Debug */ = {
+		D20F2577813D7F6AD921C9AA0E2E6C12 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE1FC474BB943FE682DA11C3DF9AC463 /* Ubergang.xcconfig */;
+			baseConfigurationReference = 65EF8CD03100D52FC9CD18D2E66D3535 /* Ubergang.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Ubergang/Ubergang-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Ubergang/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Ubergang/Ubergang-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Ubergang/Ubergang.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_MODULE_NAME = Ubergang;
 				PRODUCT_NAME = Ubergang;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		0D7453670E1E94907EF13635C28BD535 /* Build configuration list for PBXNativeTarget "Ubergang" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5FAF28F9385225F726A28C8025104632 /* Debug */,
-				39E8DD539A9B84ED2289659C42735981 /* Release */,
+				14E8A05AA4DFF7B10348D63549100E16 /* Debug */,
+				D20F2577813D7F6AD921C9AA0E2E6C12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C4BFADA95F179CDCA1B2282BB3251309 /* Build configuration list for PBXNativeTarget "Pods-TweenApp" */ = {
+		32659DF3077B015C3C5AA20655FEE1A8 /* Build configuration list for PBXNativeTarget "Pods-TweenApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04FFB8019F4CC58219CF5EF10C5CB745 /* Debug */,
-				994A08ADA04137A70E36555362E8F208 /* Release */,
+				19797F12BEDDAEA23D4C75223277D36C /* Debug */,
+				B0C73B025634F71CDD83DDE8885B010C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8241F9B7B4C5290D2C7065BD698DB7B /* Build configuration list for PBXNativeTarget "Ubergang" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BBC3C10436395A663AD13D09BF97DA5A /* Debug */,
-				2CC5B64A397C947D9EB101779D9BC005 /* Release */,
+				AA1C57C74312DABE66611D98A5C1BEC0 /* Debug */,
+				89A5A7CB70E823B925DFC7C3149114E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

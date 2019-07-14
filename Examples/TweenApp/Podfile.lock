@@ -1,16 +1,16 @@
 PODS:
-  - Ubergang (1.0)
+  - Ubergang (1.2.0)
 
 DEPENDENCIES:
   - Ubergang (from `~/Workspace/mobile/Ubergang`)
 
 EXTERNAL SOURCES:
   Ubergang:
-    :path: ~/Workspace/mobile/Ubergang
+    :path: "~/Workspace/mobile/Ubergang"
 
 SPEC CHECKSUMS:
-  Ubergang: 13cc220150abb0a95905600653dfe55cb4302e3c
+  Ubergang: b5db74966f6fabcab09c4fbc207d316aa9469b06
 
 PODFILE CHECKSUM: f0dbfb25a7fe3142bfc0573ae587a9b44a3f0491
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.7.2

@@ -49,7 +49,7 @@ class TweenControlsView: UIView {
         
         progressSlider.addTarget(self, action: #selector(TweenControlsView.sliderValueChanged(_:)), for: .valueChanged)
         
-        progressSlider.setThumbImage(UIImage(named: "SliderThumb"), for: UIControlState())
+        progressSlider.setThumbImage(UIImage(named: "SliderThumb"), for: UIControl.State())
         progressSlider.setThumbImage(UIImage(named: "SliderThumb"), for: .highlighted)
         
         progress(0)
@@ -117,11 +117,10 @@ class TweenControlsView: UIView {
         case .forward:
             currentDerection = .reverse
             directionButton.isSelected = true
-            break
         case .reverse:
             currentDerection = .forward
             directionButton.isSelected = false
-            break
+        default: break
         }
         
         onDirection?(currentDerection)

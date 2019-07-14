@@ -25,7 +25,7 @@ class TransformViewController: ExampleViewController {
                     self.testView.transform = value
             }
             .duration(4)
-            .ease(Elastic.easeOut)
+            .ease(.elastic(.out))
             .reference(.weak)
             .updateTotal { [unowned self] (progressTotal) in
                 self.tweenControls.progress(progressTotal)

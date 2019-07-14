@@ -35,17 +35,17 @@ class BezierPathViewController: ExampleViewController {
         
         return BezierPathTween(id: "bezierTween")
             .along(path)
-            .update { [unowned self] in
-                self.targetView.center = $0
+            .update { [weak self] in
+                self?.targetView.center = $0
             }
             .duration(15)
-            .ease(Linear.ease)
+            .ease(.linear)
             .options(.repeat(1))
-            .updateTotal { [unowned self] value in
-                self.tweenControls.progress(value)
+            .updateTotal { [weak self] value in
+                self?.tweenControls.progress(value)
             }
-            .complete { [unowned self] in
-                self.tweenControls.stop()
+            .complete { [weak self] in
+                self?.tweenControls.stop()
             }
     }
     
