@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Expo: Ease {
+open class Expo: Easing, CurveEasing {
     
     /**
      Expo ease in.

@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Quad: Ease {
+open class Quad: Easing, CurveEasing {
     
     /**
      Quad ease in.

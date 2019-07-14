@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Cubic: Ease {
+open class Cubic: Easing, CurveEasing {
     
     /**
      Cubic ease in.

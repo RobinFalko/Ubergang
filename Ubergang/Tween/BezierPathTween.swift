@@ -53,7 +53,7 @@ open class BezierPathTween: UTweenBase {
         set {
             time = newValue * duration
             
-            easeValue = ease(time, 0.0, 1.0, duration)
+            easeValue = ease.function(time, 0.0, 1.0, duration)
             
             //if an offset is set, add it to the current ease value
             if let offset = offset {
@@ -205,7 +205,7 @@ open class BezierPathTween: UTweenBase {
         return self
     }
     
-    open func ease(_ ease: @escaping Easing) -> Self {
+    open func ease(_ ease: Ease) -> Self {
         self.ease = ease
         return self
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Linear: Ease {
+open class Linear: Easing {
     
     /**
      Linear ease.
