@@ -25,7 +25,7 @@ open class UTweenBase {
     var durationTotal = 0.5
     
     var ease: Ease = .linear
-    var currentEase: Ease!
+    var currentEase: Ease = .linear
     var easeValue = 0.0
     
     var absolute = false
