@@ -84,7 +84,7 @@ open class UTimeline: UTweenBase {
         set {
             time = newValue * duration
             
-            for (i, tween) in tweens.enumerated() {
+            for tween in tweens {
                 let repeatCount = tweenOptions.repeatCount()    
                 var cycles = Double(repeatCount + 1)
                 
